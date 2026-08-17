@@ -17,7 +17,7 @@ import re
 import subprocess
 import sys
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, unquote
 
 HUB = os.path.dirname(os.path.abspath(__file__))
 PORT = 4870
@@ -108,7 +108,7 @@ class Handler(SimpleHTTPRequestHandler):
             return self._json({"weeks": load_weeks(venue)})
         m = re.match(r"^/media/([a-z-]+)/([0-9-]+)/(.+)$", u.path)
         if m:
-            venue, week, rel = m.group(1), m.group(2), m.group(3)
+            venue, week, rel = m.group(1), m.group(2), unquote(m.group(3))
             if venue not in VENUES:
                 return self.send_error(404)
             base = week_dir(venue, week)
@@ -116,6 +116,22 @@ class Handler(SimpleHTTPRequestHandler):
             if not path.startswith(base) or not os.path.isfile(path):
                 return self.send_error(404)
             return self._serve_file(path)
+        m = re.match(r"^/root/([a-z-]+)/(.+)$", u.path)
+        if m:
+            venue, rel = m.group(1), unquote(m.group(2))
+            if venue not in VENUES:
+                return self.send_error(404)
+            base = os.path.realpath(VENUES[venue]["root"])
+            path = os.path.realpath(os.path.join(base, rel))
+            if not path.startswith(base) or not os.path.isfile(path):
+                return self.send_error(404)
+            return self._serve_file(path)
+        if u.path == "/api/photos":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            if venue not in VENUES:
+                return self._json({"error": "unknown venue"}, 400)
+            return self._json({"photos": self._recent_photos(venue)})
         # static site files from the hub directory
         self.directory = HUB
         return super().do_GET()
@@ -155,7 +171,65 @@ class Handler(SimpleHTTPRequestHandler):
             return self._patch_slot(body)
         if u.path == "/api/render":
             return self._render(body)
+        if u.path == "/api/setbg":
+            return self._setbg(body)
         return self._json({"error": "unknown endpoint"}, 404)
+
+    def _setbg(self, body):
+        """Point a templated slot's content at a different photo, then re-render."""
+        venue = body.get("venue")
+        photo = body.get("photo", "")
+        try:
+            slot, _ = self._find_slot(venue, body.get("week_start"), body.get("id"))
+        except LookupError as e:
+            return self._json({"error": str(e)}, 404)
+        tpl = slot.get("template") or {}
+        if not tpl.get("content"):
+            return self._json({"error": "slot has no editable content"}, 400)
+        root = os.path.realpath(VENUES[venue]["root"])
+        photo_abs = os.path.realpath(os.path.join(root, photo))
+        if not photo_abs.startswith(root) or not os.path.isfile(photo_abs):
+            return self._json({"error": "photo not found"}, 404)
+        cpath = os.path.join(root, tpl["content"])
+        with open(cpath) as f:
+            content = json.load(f)
+        content["bg"] = photo_abs
+        tmp = cpath + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(content, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, cpath)
+        return self._render({"venue": venue, "week_start": body.get("week_start"), "id": body.get("id")})
+
+    def _recent_photos(self, venue, limit=80):
+        """Latest delivery/week images for the photo picker, newest folders first."""
+        root = VENUES[venue]["root"]
+        candidates = []
+        search_dirs = []
+        hub_deliveries = os.path.join(root, "HUB", "deliveries")
+        if os.path.isdir(hub_deliveries):
+            for d in sorted(os.listdir(hub_deliveries), reverse=True):
+                p = os.path.join(hub_deliveries, d)
+                if os.path.isdir(p):
+                    search_dirs.append(p)
+        weeks_dir = os.path.join(root, "WEEKS")
+        if os.path.isdir(weeks_dir):
+            for d in sorted(os.listdir(weeks_dir), reverse=True):
+                p = os.path.join(weeks_dir, d)
+                if os.path.isdir(p):
+                    search_dirs.append(p)
+        for d in search_dirs:
+            if len(candidates) >= limit:
+                break
+            for dirpath, _dirnames, filenames in os.walk(d):
+                for name in sorted(filenames):
+                    if name.lower().endswith((".jpg", ".jpeg", ".png")) and not name.startswith("."):
+                        rel = os.path.relpath(os.path.join(dirpath, name), root)
+                        candidates.append(rel)
+                        if len(candidates) >= limit:
+                            break
+                if len(candidates) >= limit:
+                    break
+        return candidates
 
     def _find_slot(self, venue, week, slot_id):
         if venue not in VENUES:

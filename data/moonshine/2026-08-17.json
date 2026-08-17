@@ -36,27 +36,35 @@
     "Unpin last week's What's On post, pin today's (looked already swapped when I checked 12:30, verify)",
     "Run the graphic as a native story with a sticker line"
    ],
-   "template": null
+   "template": null,
+   "reference": "TEMPLATES/canva-refs/ms-whatson-ref.png",
+   "reference_label": "Canva reference"
   },
   {
    "id": "tue-grid-flex",
    "date": "2026-08-18",
    "day": "Tuesday",
    "kind": "grid",
-   "slot": "Reel / Carousel / Photo",
-   "title": "Tuesday post",
+   "slot": "Carousel from Ringlight delivery",
+   "title": "Weekend photos carousel",
    "status": "waiting",
    "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
+   "media_kind": "carousel",
+   "caption": "A few moments from inside Moonshine.\n\nLive music, late laughter, tables that stayed busy.\n\nWill you be joining us this weekend?",
+   "alternates": [
+    "A few moments from inside Moonshine.\n\nThe kind of Saturday that rolls on by itself.\n\nSee you this weekend?"
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
-     "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+     "text": "Chelsea's Drive graphics folder intentionally has no Tuesday file. Tuesday is the photo carousel from the photographer's delivery."
     }
    ],
-   "checklist": [],
+   "checklist": [
+    "Ringlight Media uploads the weekend's photos Sunday/Monday to the shared Drive folder (link in Chelsea's email)",
+    "Pick 6 to 8: candid, natural, atmosphere first, skip flash-heavy and anyone not at their best",
+    "Drop picks into grid/tuesday-post/ and I finalise order + caption"
+   ],
    "template": null
   },
   {
@@ -97,7 +105,9 @@
     "Thursday: The Nola Jam Session, hosted by Kingbrasstards (@kbrasstards, verified handle)",
     "Chelsea's Thursday artist graphic may land Tuesday, download from her Drive folder"
    ],
-   "template": null
+   "template": null,
+   "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
+   "reference_label": "Canva reference"
   },
   {
    "id": "wed-am-story-weekend",
@@ -153,7 +163,9 @@
     "Friday: Moonshine Fridays with DJ Benzo, 90s anthems to today",
     "Download Chelsea's graphic from her Drive folder"
    ],
-   "template": null
+   "template": null,
+   "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
+   "reference_label": "Canva reference"
   },
   {
    "id": "thu-am-story-artist-hh",
@@ -216,7 +228,9 @@
     "Saturday: Marcius Riley, Motown and soul tribute (@marciusriley)",
     "Download Chelsea's graphic from her Drive folder"
    ],
-   "template": null
+   "template": null,
+   "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
+   "reference_label": "Canva reference"
   },
   {
    "id": "fri-am-story-fri-artist",

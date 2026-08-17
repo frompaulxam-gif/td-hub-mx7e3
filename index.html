@@ -33,7 +33,13 @@
 
 <main id="main">
   <div id="keydates" class="keydates" hidden></div>
-  <section id="board" class="board" aria-live="polite"></section>
+  <section id="board" aria-label="Week overview">
+    <div class="board-head" id="board-head" hidden>
+      <div></div><div class="board-col-label">Grid post</div><div class="board-col-label">Story</div>
+    </div>
+    <div id="board-rows"></div>
+  </section>
+  <section id="expanded" aria-label="Day by day review"></section>
   <section id="calendar" class="calendar" hidden></section>
   <div id="empty" class="empty" hidden>
     <div class="empty-art" aria-hidden="true"></div>
@@ -41,58 +47,10 @@
   </div>
 </main>
 
-<div id="focus" class="focus" hidden>
-  <div class="focus-card" role="dialog" aria-modal="true">
-    <div class="focus-head">
-      <button class="icon-btn" id="focus-close" aria-label="Close">&#10005;</button>
-      <div class="focus-title-wrap">
-        <div class="focus-slotname" id="focus-slotname"></div>
-        <div class="focus-daytag" id="focus-daytag"></div>
-      </div>
-      <div class="focus-nav">
-        <button class="icon-btn" id="focus-prev" aria-label="Previous post">&#8249;</button>
-        <button class="icon-btn" id="focus-next" aria-label="Next post">&#8250;</button>
-      </div>
-    </div>
-    <div class="focus-scroll">
-      <div class="focus-media" id="focus-media"></div>
-      <div class="focus-body">
-        <button class="mini-btn editor-open" id="editor-open" hidden>Adjust layout</button>
-        <div class="field-label-row">
-          <span class="field-label">Caption</span>
-          <button class="mini-btn" id="copy-caption">Copy</button>
-        </div>
-        <div class="caption-edit" id="caption-edit" contenteditable="plaintext-only" spellcheck="false"></div>
-        <div id="alternates-wrap" hidden>
-          <span class="field-label">Alternates, tap to swap in</span>
-          <div class="alt-chips" id="alt-chips"></div>
-        </div>
-        <div id="checklist-wrap" hidden>
-          <span class="field-label">Still to do</span>
-          <ul class="checklist" id="checklist"></ul>
-        </div>
-        <div id="notes-wrap">
-          <span class="field-label">Notes</span>
-          <ul class="notes" id="notes"></ul>
-          <div class="note-input-row">
-            <input type="text" id="note-input" placeholder="Add a note for the next session" aria-label="Add a note">
-            <button class="mini-btn" id="note-add">Add</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="focus-actions" id="focus-actions">
-      <button class="act-btn act-changes" id="act-changes">Needs changes</button>
-      <button class="act-btn act-approve" id="act-approve">Approve</button>
-      <button class="act-btn act-posted" id="act-posted" hidden>Mark posted</button>
-    </div>
-  </div>
-</div>
-
 <div id="editor" class="editor" hidden>
   <div class="editor-bar">
     <button class="mini-btn editor-cancel" id="editor-cancel">Cancel</button>
-    <span class="editor-hint" id="editor-hint">Drag any text block. Tap one to resize.</span>
+    <span class="editor-hint" id="editor-hint">Drag any text block. Tap one to restyle it.</span>
     <div class="editor-size" id="editor-size" hidden>
       <span class="ed-ctl-label">Text</span>
       <button class="icon-btn" id="size-down" aria-label="Smaller text">&#8722;</button>
@@ -106,6 +64,16 @@
     <button class="mini-btn editor-save" id="editor-save">Save &amp; re-render</button>
   </div>
   <div class="editor-stage-wrap"><div class="editor-stage" id="editor-stage"></div></div>
+</div>
+
+<div id="photo-picker" class="photo-picker" hidden>
+  <div class="picker-card">
+    <div class="picker-head">
+      <span class="picker-title">Change photo</span>
+      <button class="icon-btn" id="picker-close" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="picker-grid" id="picker-grid"></div>
+  </div>
 </div>
 
 <div class="toast" id="toast" role="status"></div>

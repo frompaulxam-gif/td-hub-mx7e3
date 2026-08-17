@@ -27,11 +27,10 @@
     }
    ],
    "checklist": [
-    "Needs weekend clips (15-16 Aug)",
-    "15-30 clips, one trending audio, cuts on the beat, under 20s",
-    "End on the busiest wide",
-    "Caption sells the coming Friday, not the past",
-    "Post 7pm tonight"
+    "YOU: pick clips and edit the reel (CapCut), post 7pm",
+    "STUDIO: reference recap reels + caption drafts are the deliverable",
+    "15-30 clips, one trending audio, under 20s, end on the busiest wide",
+    "Caption sells the coming Friday, not the past"
    ],
    "template": null
   },
@@ -74,7 +73,9 @@
    "template": {
     "name": "whats-on",
     "layout": "TEMPLATES/whats-on/layout.json"
-   }
+   },
+   "reference": "TEMPLATES/canva-refs/MY - What's On.png",
+   "reference_label": "Canva reference"
   },
   {
    "id": "tue-story-whatson",
@@ -106,8 +107,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [
-    "Menu: drinks hero / repost winner / photo single / announce / staff or vendor / throwback",
-    "Anything Chelsea flags midweek takes priority"
+    "YOU: if you fancy a trend recreation, send the link; polls and stickers are made in the IG app",
+    "STUDIO: otherwise drafts from the menu: drinks hero / repost winner / photo single / announce / staff / throwback"
    ],
    "template": null
   },
@@ -168,7 +169,9 @@
    "checklist": [
     "Regenerates any time: python3 /Users/paulventura/tdg-hub/tools/weather_sticker.py"
    ],
-   "template": null
+   "template": null,
+   "reference": "HUB/refs/weathercheckaa-final.png",
+   "reference_label": "Last week's sticker"
   },
   {
    "id": "thu-story-reactive",
@@ -204,8 +207,14 @@
      "text": "PL opener tonight, Arsenal v Coventry. If no live trend fits, the queue: CCTV creature teaser, brightness-slider reveal, empty-to-full same frame, glasses-wipe drink reveal, why come/why stay split screen, three-beat loop, blind pour challenge, pinned-line montage."
     }
    ],
-   "checklist": [],
-   "template": null
+   "checklist": [
+    "YOU: scroll, pick a trend reel to recreate, send the link",
+    "STUDIO: watches the link, writes the shot-by-shot recreation brief + caption",
+    "Fallback queue in the notes if no live trend fits"
+   ],
+   "template": null,
+   "reference": "TEMPLATES/canva-refs/my-football-semifinals-ref.png",
+   "reference_label": "Football poster reference"
   },
   {
    "id": "fri-story-lineup",
@@ -230,7 +239,9 @@
     "layout": "WEEKS/2026-08-17/renders/fri-lineup.layout.json",
     "content": "WEEKS/2026-08-17/renders/fri-lineup.content.json",
     "out": "WEEKS/2026-08-17/stories/friday-lineup/friday-lineup.png"
-   }
+   },
+   "reference": "TEMPLATES/canva-refs/MY - What's On.png",
+   "reference_label": "Canva voice reference"
   },
   {
    "id": "fri-story-live",
@@ -271,7 +282,9 @@
     "layout": "WEEKS/2026-08-17/renders/sat-lineup.layout.json",
     "content": "WEEKS/2026-08-17/renders/sat-lineup.content.json",
     "out": "WEEKS/2026-08-17/stories/saturday-lineup/saturday-lineup.png"
-   }
+   },
+   "reference": "TEMPLATES/canva-refs/MY - What's On.png",
+   "reference_label": "Canva voice reference"
   },
   {
    "id": "sat-story-live",

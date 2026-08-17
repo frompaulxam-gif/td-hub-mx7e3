@@ -65,6 +65,17 @@ def build():
                 with open(wj) as f:
                     data = json.load(f)
                 for slot in data.get("slots", []):
+                    ref = slot.get("reference")
+                    if ref:
+                        src = os.path.join(v["root"], ref)
+                        if os.path.isfile(src):
+                            base = os.path.basename(ref)
+                            out_base = base if base.lower().endswith(".png") else os.path.splitext(base)[0] + ".jpg"
+                            dst = os.path.join(HUB, "media", slug, "refs", out_base)
+                            try:
+                                proxy_image(src, dst)
+                            except subprocess.CalledProcessError as e:
+                                print(f"  ref proxy failed {ref}: {e}")
                     new_media = []
                     for rel in slot.get("media", []):
                         src = os.path.join(weeks_dir, name, rel)

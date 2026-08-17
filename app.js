@@ -9,15 +9,13 @@ const state = {
   live: false,
   venue: localStorage.getItem("hub-venue") || "merchants-yard",
   venues: [],
-  weeks: {},          // venue -> [week objects]
-  weekIdx: {},        // venue -> current index
+  weeks: {},
+  weekIdx: {},
   view: "board",
-  focusList: [],
-  focusIdx: -1,
 };
 
 const DONE = new Set(["approved", "posted"]);
-const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready", approved: "approved", changes: "needs changes", posted: "posted" };
+const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", changes: "changes asked", posted: "posted" };
 
 /* ---------- data ---------- */
 
@@ -65,6 +63,11 @@ function mediaUrl(week, path, slot) {
   return base + state.venue + "/" + week.week_start + "/" + path.split("/").map(encodeURIComponent).join("/") + v;
 }
 
+function rootUrl(path) {
+  const enc = path.split("/").map(encodeURIComponent).join("/");
+  return state.live ? `/root/${state.venue}/${enc}` : `media/${state.venue}/refs/${enc.split("/").pop()}`;
+}
+
 async function patchSlot(slot, payload, quiet) {
   if (!state.live) { toast("Read-only snapshot, changes not saved"); return false; }
   const week = curWeek();
@@ -76,7 +79,9 @@ async function patchSlot(slot, payload, quiet) {
     });
     const j = await r.json();
     if (!r.ok || !j.ok) throw new Error(j.error || "save failed");
+    const v = slot._v;
     Object.assign(slot, j.slot);
+    if (v) slot._v = v;
     if (!quiet) toast("Saved");
     return true;
   } catch (e) {
@@ -85,15 +90,41 @@ async function patchSlot(slot, payload, quiet) {
   }
 }
 
+/* ---------- shared helpers ---------- */
+
+function groupSlots(week) {
+  const groups = [];
+  const byDay = new Map();
+  for (const s of week.slots) {
+    const key = s.day || s.date;
+    if (!byDay.has(key)) { byDay.set(key, []); groups.push({ key, date: s.date, slots: byDay.get(key) }); }
+    byDay.get(key).push(s);
+  }
+  for (const g of groups) g.slots.sort((a, b) => (a.kind === b.kind ? 0 : a.kind === "grid" ? -1 : 1));
+  return groups;
+}
+
+function fmtDate(iso) {
+  if (!iso) return "";
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+}
+const todayIso = () => new Date().toLocaleDateString("sv-SE");
+const dayComplete = g => g.slots.length > 0 && g.slots.every(s => DONE.has(s.status));
+const dayId = key => "xday-" + key.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
 /* ---------- rendering ---------- */
 
 function render() {
   renderWeekBar();
   renderKeyDates();
   renderBoard();
+  renderExpanded();
   renderCalendar();
   const week = curWeek();
-  $("#board").hidden = state.view !== "board" || !week;
+  const onBoard = state.view === "board" && !!week;
+  $("#board").hidden = !onBoard;
+  $("#expanded").hidden = !onBoard;
   $("#calendar").hidden = state.view !== "calendar" || !week;
   $("#empty").hidden = !!week;
   if (!week) $("#empty-text").textContent =
@@ -121,7 +152,7 @@ function renderKeyDates() {
   const week = curWeek();
   const el = $("#keydates");
   const dates = week?.key_dates || [];
-  el.hidden = !dates.length;
+  el.hidden = !dates.length || state.view !== "board";
   el.innerHTML = "";
   for (const d of dates) {
     const chip = document.createElement("span");
@@ -131,128 +162,354 @@ function renderKeyDates() {
   }
 }
 
-function groupSlots(week) {
-  const groups = [];
-  const byDay = new Map();
-  for (const s of week.slots) {
-    const key = s.day || s.date;
-    if (!byDay.has(key)) { byDay.set(key, []); groups.push({ key, date: s.date, slots: byDay.get(key) }); }
-    byDay.get(key).push(s);
-  }
-  for (const g of groups) g.slots.sort((a, b) => (a.kind === b.kind ? 0 : a.kind === "grid" ? -1 : 1));
-  return groups;
-}
-
-function fmtDate(iso) {
-  if (!iso) return "";
-  const d = new Date(iso + "T12:00:00");
-  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-}
-const todayIso = () => new Date().toLocaleDateString("sv-SE");
+/* ----- compact board: one row per day, grid | story ----- */
 
 function renderBoard() {
   const week = curWeek();
-  const board = $("#board");
-  board.innerHTML = "";
+  const rows = $("#board-rows");
+  rows.innerHTML = "";
+  $("#board-head").hidden = !week;
   if (!week) return;
-  state.focusList = [];
   const today = todayIso();
-  let i = 0;
   for (const g of groupSlots(week)) {
-    const sec = document.createElement("section");
-    sec.className = "day-section";
-    const head = document.createElement("div");
-    head.className = "day-head";
-    head.innerHTML = `<span class="day-name"></span><span class="day-date"></span>`;
-    $(".day-name", head).textContent = g.key;
-    $(".day-date", head).textContent = g.key.toLowerCase().includes("any") ? "post any day" : fmtDate(g.date);
-    if (g.date === today && !g.key.toLowerCase().includes("any")) {
-      const t = document.createElement("span");
-      t.className = "today-chip"; t.textContent = "Today";
-      head.appendChild(t);
+    const row = document.createElement("div");
+    row.className = "day-row" + (dayComplete(g) ? " is-complete" : "");
+    const label = document.createElement("div");
+    label.className = "day-cell-label";
+    const name = document.createElement("button");
+    name.textContent = g.key;
+    name.title = "Jump to " + g.key;
+    name.addEventListener("click", () => {
+      document.getElementById(dayId(g.key))?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    const date = document.createElement("span");
+    date.className = "d-date";
+    date.textContent = g.key.toLowerCase().includes("any") ? "any day" :
+      fmtDate(g.date) + (g.date === today ? " · today" : "");
+    label.append(name, date);
+    if (dayComplete(g)) {
+      const done = document.createElement("span");
+      done.className = "d-done";
+      done.textContent = "Done";
+      label.appendChild(done);
     }
-    sec.appendChild(head);
-    const cards = document.createElement("div");
-    cards.className = "cards";
-    for (const s of g.slots) {
-      const idx = state.focusList.length;
-      state.focusList.push(s);
-      cards.appendChild(makeCard(week, s, idx, i++));
+    row.appendChild(label);
+    for (const kind of ["grid", "story"]) {
+      const cell = document.createElement("div");
+      cell.className = "day-cell";
+      const items = g.slots.filter(s => s.kind === kind);
+      if (!items.length) {
+        const off = document.createElement("span");
+        off.className = "cell-off";
+        off.textContent = kind === "grid" ? "Grid off" : "No story slot";
+        cell.appendChild(off);
+      }
+      for (const s of items) cell.appendChild(makeMini(week, s, g));
+      row.appendChild(cell);
     }
-    sec.appendChild(cards);
-    board.appendChild(sec);
+    rows.appendChild(row);
   }
 }
 
-function makeCard(week, s, focusIdx, animIdx) {
-  const card = document.createElement("button");
-  card.className = "card" + (DONE.has(s.status) ? " is-done" : "");
-  if (document.hidden) card.style.animation = "none";
-  else card.style.animationDelay = Math.min(animIdx * 28, 400) + "ms";
-  card.addEventListener("click", () => openFocus(focusIdx));
-
-  const thumb = makeThumb(week, s);
-  card.appendChild(thumb);
-
+function makeMini(week, s, g) {
+  const b = document.createElement("button");
+  b.className = "mini" + (DONE.has(s.status) ? " is-done" : "");
+  const first = s.media?.[0];
+  if (first && !/\.(mp4|mov|m4v|webm)$/i.test(first)) {
+    const img = document.createElement("img");
+    img.className = "mini-thumb";
+    img.loading = "lazy";
+    img.src = mediaUrl(week, first, s);
+    img.alt = "";
+    b.appendChild(img);
+  } else {
+    const d = document.createElement("div");
+    d.className = "mini-thumb is-empty";
+    b.appendChild(d);
+  }
   const main = document.createElement("div");
-  main.className = "card-main";
-  const slotLabel = document.createElement("div");
-  slotLabel.className = "slot-label";
+  main.className = "mini-main";
+  const t = document.createElement("div");
+  t.className = "mini-title";
+  t.textContent = s.title || s.slot;
+  const st = document.createElement("div");
+  st.className = "mini-status " + s.status;
+  st.textContent = STATUS_LABEL[s.status] || s.status;
+  main.append(t, st);
+  b.appendChild(main);
+  b.addEventListener("click", () => {
+    document.getElementById("xpost-" + s.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  return b;
+}
+
+/* ----- expanded day-by-day review ----- */
+
+function renderExpanded() {
+  const week = curWeek();
+  const wrap = $("#expanded");
+  wrap.innerHTML = "";
+  if (!week) return;
+  for (const g of groupSlots(week)) {
+    const sec = document.createElement("section");
+    sec.className = "xday" + (dayComplete(g) ? " is-complete" : "");
+    sec.id = dayId(g.key);
+    const head = document.createElement("div");
+    head.className = "xday-head";
+    const n = document.createElement("span");
+    n.className = "xday-name";
+    n.textContent = g.key;
+    const d = document.createElement("span");
+    d.className = "xday-date";
+    d.textContent = g.key.toLowerCase().includes("any") ? "post any day" : fmtDate(g.date);
+    head.append(n, d);
+    if (dayComplete(g)) {
+      const c = document.createElement("span");
+      c.className = "xday-complete-chip";
+      c.textContent = "Day done";
+      head.appendChild(c);
+    }
+    sec.appendChild(head);
+    for (const s of g.slots) sec.appendChild(makeXpost(week, s));
+    wrap.appendChild(sec);
+  }
+}
+
+function makeXpost(week, s) {
+  const card = document.createElement("article");
+  card.className = "xpost" + (DONE.has(s.status) ? " is-done" : "");
+  card.id = "xpost-" + s.id;
+
+  const head = document.createElement("div");
+  head.className = "xpost-head";
   const kind = document.createElement("span");
   kind.className = "kind-tag";
   kind.textContent = s.kind === "grid" ? "Grid" : "Story";
-  slotLabel.appendChild(kind);
-  slotLabel.appendChild(document.createTextNode(s.slot || ""));
-  const title = document.createElement("div");
-  title.className = "card-title";
+  const title = document.createElement("span");
+  title.className = "xpost-title";
   title.textContent = s.title || s.slot;
+  const slotName = document.createElement("span");
+  slotName.className = "xpost-slot";
+  slotName.textContent = s.slot;
+  head.append(kind, title, slotName);
+  card.appendChild(head);
+
+  const body = document.createElement("div");
+  body.className = "xpost-body";
+
+  // LEFT: reference
+  const left = document.createElement("div");
+  left.className = "xpane";
+  const refLabel = document.createElement("span");
+  refLabel.className = "xpane-label";
+  refLabel.textContent = s.reference_label || "Reference";
+  left.appendChild(refLabel);
+  const refMedia = document.createElement("div");
+  refMedia.className = "xmedia";
+  if (s.reference) {
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.src = rootUrl(s.reference);
+    img.alt = "";
+    img.onerror = () => { refMedia.innerHTML = '<div class="placeholder">Reference image not bundled in this snapshot.</div>'; };
+    refMedia.appendChild(img);
+  } else {
+    const p = document.createElement("div");
+    p.className = "placeholder";
+    p.textContent = "No reference for this one. Next week this side becomes last week's post.";
+    refMedia.appendChild(p);
+  }
+  left.appendChild(refMedia);
+  body.appendChild(left);
+
+  // RIGHT: this week
+  const right = document.createElement("div");
+  right.className = "xpane";
+  const thisLabel = document.createElement("span");
+  thisLabel.className = "xpane-label";
+  thisLabel.textContent = "This week";
+  right.appendChild(thisLabel);
+  right.appendChild(makeMedia(week, s));
+
+  const actions = document.createElement("div");
+  actions.className = "xactions";
+  const approve = document.createElement("button");
+  approve.className = "xbtn approve" + (DONE.has(s.status) ? " is-on" : "");
+  approve.textContent = DONE.has(s.status) ? "Approved" : "Happy with it";
+  approve.addEventListener("click", async () => {
+    const to = DONE.has(s.status) ? "ready" : "approved";
+    if (await patchSlot(s, { set: { status: to } }, true)) {
+      toast(to === "approved" ? "Approved" : "Back in review");
+      render();
+    }
+  });
+  actions.appendChild(approve);
+  const posted = document.createElement("button");
+  posted.className = "xbtn posted" + (s.status === "posted" ? " is-on" : "");
+  posted.textContent = s.status === "posted" ? "Posted" : "Mark posted";
+  posted.addEventListener("click", async () => {
+    const to = s.status === "posted" ? "approved" : "posted";
+    if (await patchSlot(s, { set: { status: to } }, true)) { toast(to === "posted" ? "Marked posted" : "Back to approved"); render(); }
+  });
+  actions.appendChild(posted);
+  if (state.live && s.template?.content && s.template?.out) {
+    const adj = document.createElement("button");
+    adj.className = "xbtn";
+    adj.textContent = "Adjust layout";
+    adj.addEventListener("click", () => openEditor(s));
+    actions.appendChild(adj);
+    const photo = document.createElement("button");
+    photo.className = "xbtn";
+    photo.textContent = "Change photo";
+    photo.addEventListener("click", () => openPicker(s));
+    actions.appendChild(photo);
+  }
+  right.appendChild(actions);
+
+  // caption
+  const capRow = document.createElement("div");
+  capRow.className = "xcap-label-row";
+  const capLabel = document.createElement("span");
+  capLabel.className = "xpane-label";
+  capLabel.textContent = "Caption";
+  const copyBtn = document.createElement("button");
+  copyBtn.className = "mini-btn";
+  copyBtn.textContent = "Copy";
+  capRow.append(capLabel, copyBtn);
+  right.appendChild(capRow);
   const cap = document.createElement("div");
-  cap.className = "card-cap";
+  cap.className = "caption-edit";
   cap.textContent = s.caption || "";
-  const foot = document.createElement("div");
-  foot.className = "card-foot";
-  const chip = document.createElement("span");
-  chip.className = "chip " + s.status;
-  chip.textContent = STATUS_LABEL[s.status] || s.status;
-  foot.appendChild(chip);
+  cap.contentEditable = state.live ? "plaintext-only" : "false";
+  cap.spellcheck = false;
+  cap.addEventListener("blur", async () => {
+    if (!state.live) return;
+    const text = cap.innerText.replace(/\n{3,}/g, "\n\n").trimEnd();
+    if (text === (s.caption || "")) return;
+    if (await patchSlot(s, { set: { caption: text } }, true)) toast("Caption saved");
+  });
+  copyBtn.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(cap.innerText);
+    toast("Caption copied");
+  });
+  right.appendChild(cap);
+
+  // alternates
+  if (s.alternates?.length) {
+    const altWrap = document.createElement("div");
+    const altLabel = document.createElement("span");
+    altLabel.className = "xpane-label";
+    altLabel.style.marginTop = "10px";
+    altLabel.textContent = "Alternates, tap to swap in";
+    altWrap.appendChild(altLabel);
+    const chips = document.createElement("div");
+    chips.className = "alt-chips";
+    s.alternates.forEach((alt, i) => {
+      const b = document.createElement("button");
+      b.className = "alt-chip";
+      b.textContent = alt;
+      b.addEventListener("click", async () => {
+        const alts = s.alternates.slice();
+        alts[i] = s.caption;
+        if (await patchSlot(s, { set: { caption: alt, alternates: alts.filter(Boolean) } })) render();
+      });
+      chips.appendChild(b);
+    });
+    altWrap.appendChild(chips);
+    right.appendChild(altWrap);
+  }
+
+  // checklist
   if (s.checklist?.length) {
-    const m = document.createElement("span");
-    m.className = "meta-note";
-    m.textContent = s.checklist.length + " to-do" + (s.checklist.length > 1 ? "s" : "");
-    foot.appendChild(m);
+    const cl = document.createElement("ul");
+    cl.className = "xchecklist";
+    for (const item of s.checklist) {
+      const li = document.createElement("li");
+      li.textContent = item;
+      cl.appendChild(li);
+    }
+    right.appendChild(cl);
   }
-  if (s.notes?.length) {
-    const m = document.createElement("span");
-    m.className = "meta-note";
-    m.textContent = s.notes.length + " note" + (s.notes.length > 1 ? "s" : "");
-    foot.appendChild(m);
+
+  // comment thread
+  const thread = document.createElement("ul");
+  thread.className = "thread";
+  for (const n of s.notes || []) {
+    const li = document.createElement("li");
+    const meta = document.createElement("span");
+    meta.className = "t-meta";
+    meta.textContent = (n.by === "paul" ? "You" : "Studio") + " · " + n.ts;
+    li.appendChild(meta);
+    li.appendChild(document.createTextNode(n.text));
+    thread.appendChild(li);
   }
-  main.append(slotLabel, title, cap, foot);
-  card.appendChild(main);
+  right.appendChild(thread);
+  if (state.live) {
+    const row = document.createElement("div");
+    row.className = "thread-input";
+    const input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "Comment or change request";
+    const add = document.createElement("button");
+    add.className = "mini-btn";
+    add.textContent = "Add";
+    const send = async () => {
+      const text = input.value.trim();
+      if (!text) return;
+      const payload = { add_note: { text } };
+      if (!DONE.has(s.status) && s.status !== "waiting") payload.set = { status: "changes" };
+      if (await patchSlot(s, payload, true)) { toast("Comment saved"); render(); }
+    };
+    add.addEventListener("click", send);
+    input.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
+    row.append(input, add);
+    right.appendChild(row);
+  }
+
+  body.appendChild(right);
+  card.appendChild(body);
   return card;
 }
 
-function makeThumb(week, s) {
-  const first = s.media?.[0];
-  if (!first) {
-    const d = document.createElement("div");
-    d.className = "thumb is-empty";
-    d.textContent = s.media_kind === "none" ? "action" : "no file";
-    return d;
+function makeMedia(week, s) {
+  const m = document.createElement("div");
+  m.className = "xmedia";
+  if (!s.media?.length) {
+    const p = document.createElement("div");
+    p.className = "placeholder";
+    p.textContent = s.media_kind === "none"
+      ? "No file needed, this one is an action on the day."
+      : "Nothing here yet. " + (s.checklist?.[0] || "");
+    m.appendChild(p);
+    return m;
   }
-  if (/\.(mp4|mov|m4v|webm)$/i.test(first)) {
+  if (s.media.length > 1) {
+    const strip = document.createElement("div");
+    strip.className = "carousel";
+    for (const path of s.media) {
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.src = mediaUrl(week, path, s);
+      img.alt = "";
+      strip.appendChild(img);
+    }
+    m.appendChild(strip);
+    return m;
+  }
+  const path = s.media[0];
+  if (/\.(mp4|mov|m4v|webm)$/i.test(path)) {
     const v = document.createElement("video");
-    v.className = "thumb";
-    v.src = mediaUrl(week, first) + "#t=0.5";
-    v.muted = true; v.playsInline = true; v.preload = "metadata";
-    return v;
+    v.src = mediaUrl(week, path, s);
+    v.controls = true; v.playsInline = true; v.preload = "metadata";
+    m.appendChild(v);
+  } else {
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.src = mediaUrl(week, path, s);
+    img.alt = "";
+    m.appendChild(img);
   }
-  const img = document.createElement("img");
-  img.className = "thumb";
-  img.loading = "lazy";
-  img.src = mediaUrl(week, first);
-  img.alt = "";
-  return img;
+  return m;
 }
 
 /* ---------- calendar ---------- */
@@ -286,14 +543,18 @@ function renderCalendar() {
         cell.appendChild(off);
       }
       for (const s of items) {
-        const idx = state.focusList.indexOf(s);
         const it = document.createElement("button");
         it.className = "cal-item" + (DONE.has(s.status) ? " is-done" : "");
         const dot = document.createElement("span");
         dot.className = "dot " + s.status;
         it.appendChild(dot);
         it.appendChild(document.createTextNode(s.title || s.slot));
-        it.addEventListener("click", () => openFocus(idx));
+        it.addEventListener("click", () => {
+          state.view = "board";
+          render();
+          requestAnimationFrame(() =>
+            document.getElementById("xpost-" + s.id)?.scrollIntoView({ behavior: "smooth", block: "start" }));
+        });
         cell.appendChild(it);
       }
       row.appendChild(cell);
@@ -302,165 +563,14 @@ function renderCalendar() {
   }
 }
 
-/* ---------- focus mode ---------- */
-
-function openFocus(idx) {
-  if (idx < 0 || idx >= state.focusList.length) return;
-  state.focusIdx = idx;
-  const f = $("#focus");
-  f.hidden = false;
-  requestAnimationFrame(() => f.classList.add("is-open"));
-  fillFocus();
-  document.body.style.overflow = "hidden";
-}
-
-function closeFocus() {
-  const f = $("#focus");
-  f.classList.remove("is-open");
-  setTimeout(() => { f.hidden = true; }, 280);
-  document.body.style.overflow = "";
-  state.focusIdx = -1;
-  renderBoard(); renderCalendar(); renderWeekBar();
-}
-
-function fillFocus() {
-  const week = curWeek();
-  const s = state.focusList[state.focusIdx];
-  if (!s) return;
-  $(".focus-scroll").scrollTop = 0;
-  $("#focus-slotname").textContent = s.title || s.slot;
-  $("#focus-daytag").textContent =
-    `${s.day}${s.day !== s.slot ? " · " + s.slot : ""} · ${s.kind === "grid" ? "grid post" : "story"}`;
-  $("#focus-prev").disabled = state.focusIdx <= 0;
-  $("#focus-next").disabled = state.focusIdx >= state.focusList.length - 1;
-
-  // media
-  const m = $("#focus-media");
-  m.innerHTML = "";
-  if (!s.media?.length) {
-    const p = document.createElement("div");
-    p.className = "placeholder";
-    p.textContent = s.media_kind === "none"
-      ? "No file needed, this one is an action on the day."
-      : "Nothing here yet. " + (s.checklist?.[0] || "");
-    m.appendChild(p);
-  } else if (s.media.length > 1) {
-    const strip = document.createElement("div");
-    strip.className = "carousel";
-    for (const path of s.media) {
-      const img = document.createElement("img");
-      img.loading = "lazy";
-      img.src = mediaUrl(week, path, s);
-      img.alt = "";
-      strip.appendChild(img);
-    }
-    m.appendChild(strip);
-    const dots = document.createElement("div");
-    dots.className = "car-dots";
-    s.media.forEach((_, i) => {
-      const d = document.createElement("span");
-      d.className = "car-dot" + (i === 0 ? " is-on" : "");
-      dots.appendChild(d);
-    });
-    m.appendChild(dots);
-    strip.addEventListener("scroll", () => {
-      const i = Math.round(strip.scrollLeft / strip.clientWidth);
-      $$(".car-dot", dots).forEach((d, j) => d.classList.toggle("is-on", j === i));
-    }, { passive: true });
-  } else {
-    const path = s.media[0];
-    if (/\.(mp4|mov|m4v|webm)$/i.test(path)) {
-      const v = document.createElement("video");
-      v.src = mediaUrl(week, path, s);
-      v.controls = true; v.playsInline = true; v.preload = "metadata";
-      m.appendChild(v);
-    } else {
-      const img = document.createElement("img");
-      img.src = mediaUrl(week, path, s);
-      img.alt = "";
-      m.appendChild(img);
-    }
-  }
-
-  // caption
-  const cap = $("#caption-edit");
-  cap.textContent = s.caption || "";
-  cap.contentEditable = state.live ? "plaintext-only" : "false";
-
-  // alternates
-  $("#alternates-wrap").hidden = !s.alternates?.length;
-  const chips = $("#alt-chips");
-  chips.innerHTML = "";
-  (s.alternates || []).forEach((alt, i) => {
-    const b = document.createElement("button");
-    b.className = "alt-chip";
-    b.textContent = alt;
-    b.addEventListener("click", async () => {
-      const old = s.caption;
-      const alts = s.alternates.slice();
-      alts[i] = old;
-      if (await patchSlot(s, { set: { caption: alt, alternates: alts.filter(Boolean) } })) fillFocus();
-    });
-    chips.appendChild(b);
-  });
-
-  // checklist
-  $("#checklist-wrap").hidden = !s.checklist?.length;
-  const cl = $("#checklist");
-  cl.innerHTML = "";
-  (s.checklist || []).forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item;
-    cl.appendChild(li);
-  });
-
-  // notes
-  const notes = $("#notes");
-  notes.innerHTML = "";
-  (s.notes || []).forEach(n => {
-    const li = document.createElement("li");
-    const b = document.createElement("b");
-    b.textContent = n.ts + " ";
-    li.appendChild(b);
-    li.appendChild(document.createTextNode(n.text));
-    notes.appendChild(li);
-  });
-  $("#note-input").value = "";
-
-  // layout editor availability
-  $("#editor-open").hidden = !(state.live && s.template?.content && s.template?.out);
-
-  // actions
-  const approved = s.status === "approved" || s.status === "posted";
-  $("#act-approve").textContent = approved ? "Approved ✓" : "Approve";
-  $("#act-approve").style.opacity = approved ? .7 : 1;
-  $("#act-posted").hidden = !(s.status === "approved" || s.status === "posted");
-  $("#act-posted").textContent = s.status === "posted" ? "Posted ✓" : "Mark posted";
-  $("#focus-actions").style.display = state.live ? "" : "none";
-}
-
-function focusStep(delta) {
-  const next = state.focusIdx + delta;
-  if (next < 0 || next >= state.focusList.length) return;
-  state.focusIdx = next;
-  fillFocus();
-}
-
-async function saveCaption() {
-  const s = state.focusList[state.focusIdx];
-  if (!s || !state.live) return;
-  const text = $("#caption-edit").innerText.replace(/\n{3,}/g, "\n\n").trimEnd();
-  if (text === (s.caption || "")) return;
-  if (await patchSlot(s, { set: { caption: text } }, true)) toast("Caption saved");
-}
-
-/* ---------- events ---------- */
+/* ---------- top-level events ---------- */
 
 $$(".venue-btn").forEach(b => b.addEventListener("click", () => {
   if (state.venue === b.dataset.venueBtn) return;
   state.venue = b.dataset.venueBtn;
   localStorage.setItem("hub-venue", state.venue);
   document.documentElement.dataset.venue = state.venue;
+  window.scrollTo({ top: 0 });
   render();
 }));
 
@@ -469,98 +579,17 @@ $$(".view-btn").forEach(b => b.addEventListener("click", () => {
   render();
 }));
 
-$("#week-prev").addEventListener("click", () => { state.weekIdx[state.venue]--; render(); });
-$("#week-next").addEventListener("click", () => { state.weekIdx[state.venue]++; render(); });
-
-$("#focus-close").addEventListener("click", closeFocus);
-$("#focus").addEventListener("click", e => { if (e.target === $("#focus")) closeFocus(); });
-$("#focus-prev").addEventListener("click", () => focusStep(-1));
-$("#focus-next").addEventListener("click", () => focusStep(1));
-
-$("#caption-edit").addEventListener("blur", saveCaption);
-$("#caption-edit").addEventListener("keydown", e => {
-  if ((e.metaKey || e.ctrlKey) && e.key === "Enter") e.target.blur();
-});
-
-$("#copy-caption").addEventListener("click", async () => {
-  const s = state.focusList[state.focusIdx];
-  await navigator.clipboard.writeText($("#caption-edit").innerText);
-  toast("Caption copied");
-});
-
-$("#note-add").addEventListener("click", addNote);
-$("#note-input").addEventListener("keydown", e => { if (e.key === "Enter") addNote(); });
-async function addNote() {
-  const s = state.focusList[state.focusIdx];
-  const text = $("#note-input").value.trim();
-  if (!s || !text) return;
-  if (await patchSlot(s, { add_note: { text } })) fillFocus();
-}
-
-$("#act-approve").addEventListener("click", async () => {
-  const s = state.focusList[state.focusIdx];
-  if (!s) return;
-  const to = DONE.has(s.status) ? "ready" : "approved";
-  if (await patchSlot(s, { set: { status: to } }, true)) {
-    toast(to === "approved" ? "Approved" : "Back to ready");
-    fillFocus();
-    if (to === "approved") setTimeout(() => {
-      const nxt = state.focusList.findIndex((x, i) => i > state.focusIdx && !DONE.has(x.status));
-      if (nxt >= 0) { state.focusIdx = nxt; fillFocus(); } else closeFocus();
-    }, 420);
-  }
-});
-
-$("#act-changes").addEventListener("click", async () => {
-  const s = state.focusList[state.focusIdx];
-  if (!s) return;
-  const note = $("#note-input").value.trim();
-  const payload = { set: { status: "changes" } };
-  if (note) payload.add_note = { text: note };
-  if (await patchSlot(s, payload, true)) {
-    toast(note ? "Flagged with note" : "Flagged, add a note so the next session knows why");
-    fillFocus();
-  }
-});
-
-$("#act-posted").addEventListener("click", async () => {
-  const s = state.focusList[state.focusIdx];
-  if (!s) return;
-  const to = s.status === "posted" ? "approved" : "posted";
-  if (await patchSlot(s, { set: { status: to } }, true)) { toast(to === "posted" ? "Marked posted" : "Back to approved"); fillFocus(); }
-});
-
-document.addEventListener("keydown", e => {
-  if ($("#focus").hidden) return;
-  if (e.key === "Escape") { e.target.blur?.(); closeFocus(); }
-  if (e.target.closest?.("[contenteditable], input")) return;
-  if (e.key === "ArrowLeft") focusStep(-1);
-  if (e.key === "ArrowRight") focusStep(1);
-});
-
-let touchX = null, touchY = null;
-$("#focus").addEventListener("touchstart", e => {
-  touchX = e.touches[0].clientX; touchY = e.touches[0].clientY;
-}, { passive: true });
-$("#focus").addEventListener("touchend", e => {
-  if (touchX == null) return;
-  const dx = e.changedTouches[0].clientX - touchX;
-  const dy = e.changedTouches[0].clientY - touchY;
-  if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6 && !e.target.closest(".carousel"))
-    focusStep(dx < 0 ? 1 : -1);
-  touchX = null;
-}, { passive: true });
+$("#week-prev").addEventListener("click", () => { state.weekIdx[state.venue]--; window.scrollTo({ top: 0 }); render(); });
+$("#week-next").addEventListener("click", () => { state.weekIdx[state.venue]++; window.scrollTo({ top: 0 }); render(); });
 
 /* ---------- layout editor ---------- */
 
 const ed = { layout: null, content: null, slot: null, scale: 1, sel: null };
-
 const ED_FONTS = [
   "", "Poppins", "Poppins SemiBold", "Bodoni 72", "Snell Roundhand",
   "Barlow Semi Condensed", "Playfair Display", "Helvetica Neue",
 ];
 
-$("#editor-open").addEventListener("click", openEditor);
 $("#editor-cancel").addEventListener("click", () => { $("#editor").hidden = true; });
 $("#size-down").addEventListener("click", () => bumpSize(-2));
 $("#size-up").addEventListener("click", () => bumpSize(2));
@@ -575,15 +604,13 @@ $("#font-select").addEventListener("change", e => {
 });
 $("#editor-save").addEventListener("click", saveEditor);
 
-async function openEditor() {
-  const s = state.focusList[state.focusIdx];
+async function openEditor(slot) {
   const week = curWeek();
-  if (!s?.template) return;
   try {
-    const r = await fetch(`/api/template?venue=${state.venue}&week=${week.week_start}&id=${s.id}`);
+    const r = await fetch(`/api/template?venue=${state.venue}&week=${week.week_start}&id=${slot.id}`);
     const j = await r.json();
     if (!j.layout) throw new Error(j.error || "no layout");
-    ed.layout = j.layout; ed.content = j.content || {}; ed.slot = s; ed.sel = null;
+    ed.layout = j.layout; ed.content = j.content || {}; ed.slot = slot; ed.sel = null;
     $("#editor").hidden = false;
     $("#editor-size").hidden = true;
     buildEditorStage();
@@ -608,9 +635,11 @@ function buildEditorStage() {
   stage.style.width = W * scale + "px";
   stage.style.height = H * scale + "px";
   const week = curWeek();
-  const bgPath = ed.slot.media?.[0] || ed.slot.template.out;
-  stage.style.backgroundImage = `url("${mediaUrl(week, bgPath)}?v=${ed.slot._v || 0}")`;
-  for (const b of ed.layout.blocks || []) {
+  const bgPath = ed.slot.media?.[0];
+  if (bgPath) stage.style.backgroundImage = `url("${mediaUrl(week, bgPath)}?v=${ed.slot._v || 0}")`;
+  const blocks = ed.layout.blocks || [];
+  for (const b of blocks) {
+    if (b.id === "logo") continue;
     const t = edText(b.id);
     if (!t) continue;
     const el = document.createElement("div");
@@ -631,12 +660,12 @@ function styleEdBlock(el, b) {
     width: b.w * k + "px",
     fontSize: b.size * k + "px",
     fontWeight: b.weight || 700,
-    fontFamily: b.font ? `"${b.font}", Poppins, sans-serif` : "",
+    fontFamily: b.font ? `"${b.font}", "Helvetica Neue", sans-serif` : "",
     textAlign: b.align || "center",
-    lineHeight: String(b.lineHeight || 1.28),
+    lineHeight: String(b.lineHeight || 1.16),
     letterSpacing: (b.letterSpacing || 0) + "em",
-    textTransform: b.uppercase === false ? "none" : "uppercase",
-    color: b.color || "#f5e9b3",
+    textTransform: b.uppercase === true ? "uppercase" : "none",
+    color: b.color || "#ffffff",
   });
 }
 
@@ -706,7 +735,7 @@ async function saveEditor() {
     s._v = Date.now();
     $("#editor").hidden = true;
     toast("Re-rendered");
-    fillFocus();
+    render();
   } catch (e) {
     toast("Render failed: " + e.message);
   } finally {
@@ -717,6 +746,59 @@ async function saveEditor() {
 window.addEventListener("resize", () => {
   if (!$("#editor").hidden && ed.layout) buildEditorStage();
 });
+
+/* ---------- photo picker ---------- */
+
+let pickerSlot = null;
+$("#picker-close").addEventListener("click", () => { $("#photo-picker").hidden = true; });
+$("#photo-picker").addEventListener("click", e => { if (e.target === $("#photo-picker")) $("#photo-picker").hidden = true; });
+
+async function openPicker(slot) {
+  pickerSlot = slot;
+  const grid = $("#picker-grid");
+  grid.innerHTML = '<div class="placeholder">Loading photos…</div>';
+  $("#photo-picker").hidden = false;
+  try {
+    const r = await fetch("/api/photos?venue=" + state.venue);
+    const j = await r.json();
+    grid.innerHTML = "";
+    for (const rel of j.photos || []) {
+      const b = document.createElement("button");
+      b.title = rel;
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.src = rootUrl(rel);
+      img.alt = "";
+      b.appendChild(img);
+      b.addEventListener("click", () => pickPhoto(rel));
+      grid.appendChild(b);
+    }
+    if (!grid.children.length) grid.innerHTML = '<div class="placeholder">No photos found.</div>';
+  } catch (e) {
+    grid.innerHTML = '<div class="placeholder">Could not load photos.</div>';
+  }
+}
+
+async function pickPhoto(rel) {
+  const s = pickerSlot, week = curWeek();
+  if (!s) return;
+  $("#photo-picker").hidden = true;
+  toast("Re-rendering with the new photo…");
+  try {
+    const r = await fetch("/api/setbg", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ venue: state.venue, week_start: week.week_start, id: s.id, photo: rel }),
+    });
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || "failed");
+    s._v = Date.now();
+    toast("Photo swapped");
+    render();
+  } catch (e) {
+    toast("Photo swap failed: " + e.message);
+  }
+}
 
 let toastTimer;
 function toast(msg) {
