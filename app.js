@@ -105,7 +105,7 @@ function renderWeekBar() {
   const ws = state.weeks[state.venue] || [];
   const idx = state.weekIdx[state.venue] ?? -1;
   const week = ws[idx];
-  $("#week-label").textContent = week ? week.label || week.week_start : "—";
+  $("#week-label").textContent = week ? week.label || week.week_start : "No weeks yet";
   $("#week-prev").disabled = idx <= 0;
   $("#week-next").disabled = idx >= ws.length - 1;
   if (week) {
@@ -281,7 +281,7 @@ function renderCalendar() {
       if (!items.length) {
         const off = document.createElement("span");
         off.className = "cal-off";
-        off.textContent = kind === "grid" ? "Grid off" : "—";
+        off.textContent = kind === "grid" ? "Grid off" : "no story slot";
         cell.appendChild(off);
       }
       for (const s of items) {

@@ -23,11 +23,12 @@
    "notes": [
     {
      "ts": "2026-08-17",
-     "text": "Template waits on the Canva scan and brand pack. Until then this is made by hand."
+     "text": "Chelsea makes this week's graphics (a week ahead) and uploads to her Drive folder, link in her 12 Aug email. Monday post should be ready to post as is."
     }
    ],
    "checklist": [
-    "Needs this week's acts and offers"
+    "Download from Chelsea's Drive folder",
+    "Post to grid, then run as native story with a sticker line each day after"
    ],
    "template": null
   },
@@ -75,7 +76,12 @@
    "media_kind": "image",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Chelsea says Thursday artist graphics may not be done until Tuesday. Chase gently if missing Wednesday morning."
+    }
+   ],
    "checklist": [
     "Thursday act not in booking calendar, needs confirming"
    ],
