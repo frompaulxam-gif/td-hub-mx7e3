@@ -14,22 +14,25 @@
    "day": "Monday",
    "kind": "grid",
    "slot": "What's On This Week infographic",
-   "status": "waiting",
+   "status": "posted",
    "title": "What's On This Week",
-   "media": [],
+   "media": [
+    "grid/monday-whats-on/whats-on-this-week.png"
+   ],
    "media_kind": "image",
-   "caption": "",
+   "caption": "This week at Moonshine.\n\nThursday, The NOLA Jam Session brings an open night of live collaboration.\nFriday, DJ Benzo soundtracks the weekend.\nSaturday, Marcius Riley takes us through Motown and soul classics.\n\nTables are available to book via the website.",
    "alternates": [],
    "notes": [
     {
      "ts": "2026-08-17",
-     "text": "Chelsea makes this week's graphics (a week ahead) and uploads to her Drive folder, link in her 12 Aug email. Monday post should be ready to post as is."
+     "text": "Acts this week confirmed from Chelsea's graphic: Thu Nola Jam Session (Kingbrasstards), Fri DJ Benzo, Sat Marcius Riley."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Already live and pinned on the grid (posted 17 Aug ~12:00, caption above is the live one). Still to do: run it as a native story with a sticker line."
     }
    ],
-   "checklist": [
-    "Download from Chelsea's Drive folder",
-    "Post to grid, then run as native story with a sticker line each day after"
-   ],
+   "checklist": [],
    "template": null
   },
   {
@@ -44,7 +47,12 @@
    "media_kind": "none",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    }
+   ],
    "checklist": [],
    "template": null
   },
@@ -83,7 +91,8 @@
     }
    ],
    "checklist": [
-    "Thursday act not in booking calendar, needs confirming"
+    "Thursday: The Nola Jam Session, hosted by Kingbrasstards (@kbrasstards, verified handle)",
+    "Chelsea's Thursday artist graphic may land Tuesday, download from her Drive folder"
    ],
    "template": null
   },
@@ -115,7 +124,12 @@
    "media_kind": "video",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    }
+   ],
    "checklist": [],
    "template": null
   },
@@ -133,7 +147,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [
-    "Friday act not in booking calendar, needs confirming"
+    "Friday: Moonshine Fridays with DJ Benzo, 90s anthems to today",
+    "Download Chelsea's graphic from her Drive folder"
    ],
    "template": null
   },
@@ -167,7 +182,12 @@
    "media_kind": "none",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    }
+   ],
    "checklist": [],
    "template": null
   },
@@ -189,7 +209,10 @@
      "text": "Sat 22 daytime act confirmed: Marcius Riley 12pm, tag @marciusriley (handle confirmed, venue link unproven). Evening act unknown."
     }
    ],
-   "checklist": [],
+   "checklist": [
+    "Saturday: Marcius Riley, Motown and soul tribute (@marciusriley)",
+    "Download Chelsea's graphic from her Drive folder"
+   ],
    "template": null
   },
   {
@@ -220,7 +243,12 @@
    "media_kind": "none",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    }
+   ],
    "checklist": [],
    "template": null
   },

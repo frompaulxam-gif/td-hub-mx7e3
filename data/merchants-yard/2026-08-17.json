@@ -20,7 +20,12 @@
    "media_kind": "video",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul edits the reel himself. Provide reference reels and clip shortlist only."
+    }
+   ],
    "checklist": [
     "Needs weekend clips (15-16 Aug)",
     "15-30 clips, one trending audio, cuts on the beat, under 20s",
@@ -61,9 +66,9 @@
    "notes": [],
    "checklist": [
     "Waiting on Chelsea's line-up, chase by 2pm Monday",
-    "Slide 1 is a photo with the weekend's headline over it",
-    "One slide per thing, closing slide doors times + book link",
-    "PL opener Friday is this week's headline candidate"
+    "Format per BRAND-SCAN: slide 1 photo + white Poppins sentence-case stack + logo, slide 2 booking CTA",
+    "Naming: The Friday Social with [name] / MY Presents: [name]",
+    "Caption pattern in CAPTION-BANK.md"
    ],
    "template": {
     "name": "whats-on",
@@ -151,7 +156,7 @@
    "title": "Weather check sticker",
    "status": "ready",
    "media": [
-    "stories/weather-sticker-2026-08-20.png"
+    "stories/weather-check/weather-sticker-2026-08-20.png"
    ],
    "media_kind": "image",
    "caption": "Sticker over any yard clip. Add on top in the app: doors Friday 5pm / book a table, link in bio",
@@ -210,7 +215,7 @@
    "title": "Friday line-up story",
    "status": "draft",
    "media": [
-    "stories/friday-lineup.png"
+    "stories/friday-lineup/friday-lineup.png"
    ],
    "media_kind": "image",
    "caption": "Tonight's line-up, doors open 5pm. PL opener Arsenal v Coventry on the big screen.",
@@ -223,7 +228,7 @@
     "name": "lineup-story",
     "layout": "WEEKS/2026-08-17/renders/fri-lineup.layout.json",
     "content": "WEEKS/2026-08-17/renders/fri-lineup.content.json",
-    "out": "WEEKS/2026-08-17/stories/friday-lineup.png"
+    "out": "WEEKS/2026-08-17/stories/friday-lineup/friday-lineup.png"
    }
   },
   {
@@ -251,7 +256,7 @@
    "title": "Saturday line-up story",
    "status": "draft",
    "media": [
-    "stories/saturday-lineup.png"
+    "stories/saturday-lineup/saturday-lineup.png"
    ],
    "media_kind": "image",
    "caption": "Today's line-up, doors 2pm. First full PL Saturday, 3pm and 5:30 kick-offs.",
@@ -264,7 +269,7 @@
     "name": "lineup-story",
     "layout": "WEEKS/2026-08-17/renders/sat-lineup.layout.json",
     "content": "WEEKS/2026-08-17/renders/sat-lineup.content.json",
-    "out": "WEEKS/2026-08-17/stories/saturday-lineup.png"
+    "out": "WEEKS/2026-08-17/stories/saturday-lineup/saturday-lineup.png"
    }
   },
   {
