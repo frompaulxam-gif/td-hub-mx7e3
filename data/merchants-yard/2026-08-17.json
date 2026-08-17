@@ -394,7 +394,7 @@
    "kind": "story",
    "slot": "Info: opening hours",
    "title": "When we're open",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "stories/opening-hours/opening-hours.png"
    ],

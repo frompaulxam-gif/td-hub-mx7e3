@@ -62,6 +62,104 @@ def save_week(venue, week, data):
     os.replace(tmp, path)
 
 
+def _slug(text):
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", (text or "").lower())).strip()
+
+
+def _crop_45(src, dst, pos):
+    """Bake the Instagram 4:5 crop using the saved objectPosition percentages."""
+    from PIL import Image
+    px, py = 50.0, 50.0
+    m = re.match(r"([\d.]+)%\s+([\d.]+)%", pos or "")
+    if m:
+        px, py = float(m.group(1)), float(m.group(2))
+    img = Image.open(src)
+    img = img.convert("RGB")
+    w, h = img.size
+    target = 4 / 5
+    if w / h > target:
+        cw, ch = int(h * target), h
+        x = int((w - cw) * px / 100)
+        box = (x, 0, x + cw, ch)
+    else:
+        cw, ch = w, int(w / target)
+        y = int((h - ch) * py / 100)
+        box = (0, y, cw, y + ch)
+    img = img.crop(box).resize((1080, 1350), Image.LANCZOS)
+    img.save(dst, "JPEG", quality=92)
+
+
+def build_export(venue, week):
+    """The week as a handover zip: w-c folder, grid post + story post,
+    numbered day files, baked 4:5 carousel crops, placeholders for gaps,
+    captions.txt so anyone can post it."""
+    import shutil
+    import tempfile
+    weeks = load_weeks(venue)
+    data = next((w for w in weeks if w.get("week_start") == week), None)
+    if not data:
+        raise ValueError("unknown week")
+    wdir = week_dir(venue, week)
+    label = _slug(data.get("label") or ("w c " + week))
+    stage = tempfile.mkdtemp(prefix="hub-export-")
+    root = os.path.join(stage, label)
+    gdir = os.path.join(root, "grid post")
+    sdir = os.path.join(root, "story post")
+    os.makedirs(gdir)
+    os.makedirs(sdir)
+
+    def day_sort(s):
+        d = (s.get("day") or "").lower()
+        anyday = "any" in d or "quiet" in d
+        return ("9999-99-99" if anyday else (s.get("date") or "9999-99-98"))
+
+    captions = {"grid post": [], "story post": []}
+    for kind, outdir, foldername in (("grid", gdir, "grid post"), ("story", sdir, "story post")):
+        slots = sorted([s for s in data["slots"] if s.get("kind") == kind], key=day_sort)
+        n = 0
+        for s in slots:
+            n += 1
+            day = _slug(s.get("day"))
+            title = _slug(s.get("title") or s.get("slot"))
+            base = f"{n} {day} {title}".strip()
+            status = s.get("status", "")
+            approved = status in ("approved", "posted")
+            media = s.get("media") or []
+            crops = s.get("crops") or {}
+            if not media:
+                why = [status]
+                for c in s.get("checklist") or []:
+                    why.append("- " + (c["text"] if isinstance(c, dict) else str(c)))
+                with open(os.path.join(outdir, base + " - PLACEHOLDER.txt"), "w") as f:
+                    f.write(f"{s.get('title')}\nStatus: {status}\n" + "\n".join(why[1:]) + "\n")
+            else:
+                multi = len(media) > 1
+                for i, rel in enumerate(media, 1):
+                    src = os.path.join(wdir, rel)
+                    if not os.path.isfile(src):
+                        continue
+                    ext = os.path.splitext(rel)[1].lower()
+                    suffix = f" {i}" if multi else ""
+                    flag = "" if approved else " (not approved)"
+                    is_photo = ext in (".jpg", ".jpeg", ".png") and s.get("candidates")
+                    if is_photo and ext != ".png":
+                        dst = os.path.join(outdir, base + suffix + flag + ".jpg")
+                        _crop_45(src, dst, crops.get(rel))
+                    else:
+                        dst = os.path.join(outdir, base + suffix + flag + ext)
+                        shutil.copyfile(src, dst)
+            cap = (s.get("caption") or "").strip()
+            captions[foldername].append(f"{n} {day} {title}  [{status}]\n{cap or '(no caption yet)'}\n")
+
+    with open(os.path.join(root, "captions.txt"), "w") as f:
+        f.write("GRID POSTS\n==========\n\n" + "\n".join(captions["grid post"]))
+        f.write("\n\nSTORIES\n=======\n\n" + "\n".join(captions["story post"]))
+
+    zbase = os.path.join(stage, label)
+    shutil.make_archive(zbase, "zip", stage, label)
+    return zbase + ".zip"
+
+
 class Handler(SimpleHTTPRequestHandler):
     def log_message(self, fmt, *args):
         sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
@@ -132,6 +230,26 @@ class Handler(SimpleHTTPRequestHandler):
             if not path.startswith(base) or not os.path.isfile(path):
                 return self.send_error(404)
             return self._serve_file(path)
+        if u.path == "/api/export":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            week = q.get("week", [""])[0]
+            if venue not in VENUES:
+                return self._json({"error": "unknown venue"}, 400)
+            try:
+                zpath = build_export(venue, week)
+            except Exception as e:
+                return self._json({"error": str(e)}, 500)
+            with open(zpath, "rb") as f:
+                data = f.read()
+            self.send_response(200)
+            self.send_header("Content-Type", "application/zip")
+            self.send_header("Content-Disposition",
+                             f'attachment; filename="{os.path.basename(zpath)}"')
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+            return
         if u.path == "/api/photos":
             q = parse_qs(u.query)
             venue = q.get("venue", [""])[0]

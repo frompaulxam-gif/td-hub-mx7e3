@@ -178,6 +178,7 @@ function renderWeekBar() {
   } else {
     $("#week-progress").textContent = "";
   }
+  $("#week-download").hidden = !week || !state.live;
 }
 
 /* ----- collapsible sections ----- */
@@ -1044,6 +1045,13 @@ $$(".view-btn").forEach(b => b.addEventListener("click", () => {
 
 $("#week-prev").addEventListener("click", () => { state.weekIdx[state.venue]--; window.scrollTo({ top: 0 }); render(); });
 $("#week-next").addEventListener("click", () => { state.weekIdx[state.venue]++; window.scrollTo({ top: 0 }); render(); });
+
+$("#week-download").addEventListener("click", () => {
+  const week = curWeek();
+  if (!week) return;
+  toast("Building the week zip…");
+  window.location.href = `/api/export?venue=${state.venue}&week=${week.week_start}`;
+});
 
 /* ---------- layout editor ---------- */
 
