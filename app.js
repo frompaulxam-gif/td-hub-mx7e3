@@ -539,7 +539,7 @@ function makeXpost(week, s) {
     if (await patchSlot(s, { set: { status: to } }, true)) { toast(to === "posted" ? "Marked posted" : "Back to approved"); render(); }
   });
   actions.appendChild(posted);
-  if (state.live && s.template?.content && s.template?.out) {
+  if (state.live && s.template?.content && (s.template?.out || s.template?.outdir)) {
     const adj = document.createElement("button");
     adj.className = "xbtn";
     adj.textContent = "Adjust layout";
@@ -915,7 +915,20 @@ async function openEditor(slot) {
     const r = await fetch(`/api/template?venue=${state.venue}&week=${week.week_start}&id=${slot.id}`);
     const j = await r.json();
     if (!j.layout) throw new Error(j.error || "no layout");
-    ed.layout = j.layout; ed.content = j.content || {}; ed.slot = slot; ed.sel = null; ed.dirty = false;
+    ed.fullLayout = j.layout;
+    ed.fullContent = j.content || {};
+    ed.slot = slot; ed.sel = null; ed.dirty = false;
+    if (j.layout.slides && j.content?.slides?.length) {
+      // multi-slide template: edit the first slide's blocks
+      const type = j.content.slides[0].type;
+      ed.layout = { width: j.layout.width, height: j.layout.height, blocks: j.layout.slides[type] || [] };
+      ed.content = j.content.slides[0];
+      ed.slideType = type;
+    } else {
+      ed.layout = j.layout;
+      ed.content = j.content || {};
+      ed.slideType = null;
+    }
     $("#editor").hidden = false;
     $("#editor-size").hidden = true;
     buildEditorStage();
@@ -1035,11 +1048,18 @@ function bumpSize(d) {
 async function saveEditor() {
   const s = ed.slot, week = curWeek();
   $("#editor-save").textContent = "Rendering…";
+  let layout = ed.layout, content = ed.content;
+  if (ed.slideType) {
+    ed.fullLayout.slides[ed.slideType] = ed.layout.blocks;
+    ed.fullContent.slides[0] = ed.content;
+    layout = ed.fullLayout;
+    content = ed.fullContent;
+  }
   try {
     const r = await fetch("/api/render", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ venue: state.venue, week_start: week.week_start, id: s.id, layout: ed.layout, content: ed.content }),
+      body: JSON.stringify({ venue: state.venue, week_start: week.week_start, id: s.id, layout, content }),
     });
     const j = await r.json();
     if (!j.ok) throw new Error(j.error || "render failed");

@@ -201,7 +201,10 @@ class Handler(SimpleHTTPRequestHandler):
         cpath = os.path.join(root, tpl["content"])
         with open(cpath) as f:
             content = json.load(f)
-        content["bg"] = photo_abs
+        if isinstance(content.get("slides"), list) and content["slides"]:
+            content["slides"][0]["bg"] = photo_abs
+        else:
+            content["bg"] = photo_abs
         tmp = cpath + ".tmp"
         with open(tmp, "w") as f:
             json.dump(content, f, indent=2, ensure_ascii=False)
