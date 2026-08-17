@@ -108,11 +108,21 @@
     "stories/whats-on-story/whats-on-story.png"
    ],
    "media_kind": "image",
-   "caption": "Postable 9:16 story version of Chelsea's What's On, art centred on a blurred wash. Post Tuesday with a sticker line: One more sleep until the week begins ✨",
+   "caption": "9:16 What's On story, recreated natively on the pour shot. Post Tuesday with a sticker line: One more sleep until the week begins ✨",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Recreated at 9:16 on RING1837 per Paul. Editable: Adjust layout for text, Change photo to swap the background."
+    }
+   ],
    "checklist": [],
-   "template": null,
+   "template": {
+    "name": "whats-on",
+    "layout": "WEEKS/2026-08-17/renders/whats-on-story.layout.json",
+    "content": "WEEKS/2026-08-17/renders/whats-on-story.content.json",
+    "out": "WEEKS/2026-08-17/stories/whats-on-story/whats-on-story.png"
+   },
    "reference": "WEEKS/2026-08-10/ig/last-whats-on.jpg",
    "reference_label": "Last week's What's On, story ran day after"
   },
