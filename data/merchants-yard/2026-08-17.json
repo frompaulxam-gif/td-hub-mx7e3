@@ -14,21 +14,27 @@
    "kind": "grid",
    "slot": "Recap montage reel",
    "title": "Weekend recap reel",
-   "status": "waiting",
+   "status": "draft",
    "media": [],
    "media_kind": "video",
-   "caption": "",
-   "alternates": [],
+   "caption": "No phones needed. Just another weekend in the yard.\n\nBack Friday from 5pm. Park Life takes over Saturday from 2pm.",
+   "alternates": [
+    "That was the weekend. The next one has Park Life in it.\n\nFriday from 5pm, Saturday from 2pm."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
      "text": "Paul edits the reel himself. Provide reference reels and clip shortlist only."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Paul has the recap edit ready in trial reels. Caption drafted below, post Tuesday evening."
     }
    ],
    "checklist": [
     {
      "text": "YOU: pick clips and edit the reel (CapCut), post Tuesday evening",
-     "done": false
+     "done": true
     },
     {
      "text": "STUDIO: reference recap reels + caption drafts are the deliverable",
@@ -65,8 +71,8 @@
   },
   {
    "id": "tue-grid-whatson",
-   "date": "2026-08-18",
-   "day": "Tuesday",
+   "date": "2026-08-19",
+   "day": "Wednesday",
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
@@ -103,12 +109,12 @@
    },
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva reference",
-   "alert": "Check: does What's On stay Tuesday next to the recap, or shift to Wednesday's now-free slot?"
+   "alert": "Moved to Wednesday per Paul: the recap owns Tuesday, What's On replaces the flexible slot."
   },
   {
    "id": "tue-story-whatson",
-   "date": "2026-08-18",
-   "day": "Tuesday",
+   "date": "2026-08-19",
+   "day": "Wednesday",
    "kind": "story",
    "slot": "What's On + reactive",
    "title": "What's On story",
@@ -119,7 +125,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Moves with the What's On carousel to Wednesday."
   },
   {
    "id": "wed-grid-flexible",
@@ -373,30 +380,20 @@
    "reference_label": "Your IG-text version was the reference"
   },
   {
-   "id": "wed-grid-flexible-2",
-   "date": "2026-08-19",
-   "day": "Wednesday",
-   "kind": "grid",
-   "slot": "Flexible, pick one",
-   "title": "Flexible post",
+   "id": "tue-story-reactive",
+   "date": "2026-08-18",
+   "day": "Tuesday",
+   "kind": "story",
+   "slot": "Reactive",
+   "title": "Reactive pick of the day",
    "status": "waiting",
    "media": [],
    "media_kind": "none",
-   "caption": "",
+   "caption": "Pick from the reactive menu below.",
    "alternates": [],
    "notes": [],
-   "checklist": [
-    {
-     "text": "YOU: if a trend or viral idea wins, send the link and the brief gets written",
-     "done": false
-    },
-    {
-     "text": "STUDIO: otherwise drafts from the menu: drinks hero / repost winner / photo single / announce / staff / throwback",
-     "done": false
-    }
-   ],
-   "template": null,
-   "alert": "Fresh slot: the original Wednesday flexible became Monday's Park Life post, this replaces it."
+   "checklist": [],
+   "template": null
   }
  ],
  "alerts": [
