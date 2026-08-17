@@ -15,7 +15,7 @@ const state = {
 };
 
 const DONE = new Set(["approved", "posted"]);
-const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", changes: "changes asked", posted: "posted" };
+const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", changes: "changes asked", posted: "✓ posted" };
 
 /* ---------- data ---------- */
 
@@ -122,12 +122,14 @@ function render() {
   renderWeekBar();
   renderKeyDates();
   renderBoard();
+  renderPrep();
   renderExpanded();
   renderCalendar();
   const week = curWeek();
   const onBoard = state.view === "board" && !!week;
   $("#board").hidden = !onBoard;
   $("#expanded").hidden = !onBoard;
+  $("#prep").hidden = !onBoard || !(week?.prep || []).length;
   $("#calendar").hidden = state.view !== "calendar" || !week;
   $("#empty").hidden = !!week;
   if (!week) $("#empty-text").textContent =
@@ -193,6 +195,13 @@ function renderBoard() {
     label.className = "day-cell-label";
     const name = document.createElement("button");
     name.textContent = g.key;
+    if (g.slots.some(s => s.alert)) {
+      const star = document.createElement("span");
+      star.className = "day-star";
+      star.textContent = " *";
+      star.title = g.slots.filter(s => s.alert).map(s => s.alert).join("\n");
+      name.appendChild(star);
+    }
     name.title = "Jump to " + g.key;
     name.addEventListener("click", () => {
       document.getElementById(dayId(g.key))?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -265,6 +274,44 @@ function makeMini(week, s, g) {
   return b;
 }
 
+/* ----- week prep checklist ----- */
+
+function renderPrep() {
+  const week = curWeek();
+  const list = $("#prep-list");
+  list.innerHTML = "";
+  if (!week?.prep?.length) return;
+  week.prep.forEach((item, i) => {
+    const li = document.createElement("li");
+    li.className = item.done ? "is-ticked" : "";
+    const box = document.createElement("input");
+    box.type = "checkbox";
+    box.checked = !!item.done;
+    box.disabled = !state.live;
+    box.addEventListener("change", async () => {
+      if (!state.live) return;
+      const next = week.prep.map(x => ({ ...x }));
+      next[i].done = box.checked;
+      try {
+        const r = await fetch("/api/week", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ venue: state.venue, week_start: week.week_start, set: { prep: next } }),
+        });
+        const j = await r.json();
+        if (!j.ok) throw new Error(j.error || "save failed");
+        week.prep = next;
+        toast(box.checked ? "Ticked off" : "Unticked");
+        renderPrep();
+      } catch (e) { toast("Save failed: " + e.message); }
+    });
+    const label = document.createElement("span");
+    label.textContent = item.text;
+    li.append(box, label);
+    list.appendChild(li);
+  });
+}
+
 /* ----- expanded day-by-day review ----- */
 
 function renderExpanded() {
@@ -281,6 +328,13 @@ function renderExpanded() {
     const n = document.createElement("span");
     n.className = "xday-name";
     n.textContent = g.key;
+    if (g.slots.some(s => s.alert)) {
+      const star = document.createElement("span");
+      star.className = "day-star";
+      star.textContent = " *";
+      star.title = g.slots.filter(s => s.alert).map(s => s.alert).join("\n");
+      n.appendChild(star);
+    }
     const d = document.createElement("span");
     d.className = "xday-date";
     d.textContent = g.key.toLowerCase().includes("any") ? "post any day" : fmtDate(g.date);
@@ -391,7 +445,7 @@ function makeXpost(week, s) {
   actions.appendChild(approve);
   const posted = document.createElement("button");
   posted.className = "xbtn posted" + (s.status === "posted" ? " is-on" : "");
-  posted.textContent = s.status === "posted" ? "Posted" : "Mark posted";
+  posted.textContent = s.status === "posted" ? "Posted ✓" : "Mark posted";
   posted.addEventListener("click", async () => {
     const to = s.status === "posted" ? "approved" : "posted";
     if (await patchSlot(s, { set: { status: to } }, true)) { toast(to === "posted" ? "Marked posted" : "Back to approved"); render(); }
@@ -669,6 +723,15 @@ $("#font-select").addEventListener("change", e => {
   const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
   if (el) styleEdBlock(el, ed.sel);
 });
+$("#text-edit").addEventListener("input", e => {
+  if (!ed.sel) return;
+  const id = ed.sel.id, val = e.target.value;
+  if (id === "acts") ed.content.acts = val.split("\n").map(line => ({ time: "", name: line }));
+  else if (Array.isArray(ed.content[id])) ed.content[id] = val.split("\n");
+  else ed.content[id] = val;
+  const el = $(`.ed-block[data-id="${id}"]`);
+  if (el) el.textContent = id === "acts" ? edText("acts") : val;
+});
 $("#editor-save").addEventListener("click", saveEditor);
 
 async function openEditor(slot) {
@@ -778,6 +841,9 @@ function selectBlock(el, b) {
       sel.appendChild(o);
     }
   sel.value = ED_FONTS.includes(b.font) ? b.font : "";
+  const te = $("#text-edit");
+  te.value = edText(b.id);
+  te.rows = Math.min(3, te.value.split("\n").length);
 }
 
 function bumpSize(d) {
@@ -795,7 +861,7 @@ async function saveEditor() {
     const r = await fetch("/api/render", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ venue: state.venue, week_start: week.week_start, id: s.id, layout: ed.layout }),
+      body: JSON.stringify({ venue: state.venue, week_start: week.week_start, id: s.id, layout: ed.layout, content: ed.content }),
     });
     const j = await r.json();
     if (!j.ok) throw new Error(j.error || "render failed");

@@ -66,6 +66,12 @@ class Handler(SimpleHTTPRequestHandler):
     def log_message(self, fmt, *args):
         sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
 
+    def end_headers(self):
+        # app shell must never go stale; media stays cacheable (busted via ?v=)
+        if not self.path.startswith(("/media/", "/root/")):
+            self.send_header("Cache-Control", "no-store")
+        super().end_headers()
+
     def _json(self, obj, code=200):
         body = json.dumps(obj, ensure_ascii=False).encode()
         self.send_response(code)
@@ -169,6 +175,8 @@ class Handler(SimpleHTTPRequestHandler):
 
         if u.path == "/api/slot":
             return self._patch_slot(body)
+        if u.path == "/api/week":
+            return self._patch_week(body)
         if u.path == "/api/render":
             return self._render(body)
         if u.path == "/api/setbg":
@@ -243,6 +251,21 @@ class Handler(SimpleHTTPRequestHandler):
             raise LookupError("unknown slot")
         return slot, data
 
+    def _patch_week(self, body):
+        venue = body.get("venue")
+        week = body.get("week_start")
+        if venue not in VENUES:
+            return self._json({"error": "unknown venue"}, 400)
+        weeks = load_weeks(venue)
+        data = next((w for w in weeks if w.get("week_start") == week), None)
+        if not data:
+            return self._json({"error": "unknown week"}, 404)
+        for k, v in (body.get("set") or {}).items():
+            if k in {"prep", "alerts", "key_dates"}:
+                data[k] = v
+        save_week(venue, week, data)
+        return self._json({"ok": True, "week": {k: data.get(k) for k in ("prep", "alerts", "key_dates")}})
+
     def _patch_slot(self, body):
         venue = body.get("venue")
         week = body.get("week_start")
@@ -285,6 +308,13 @@ class Handler(SimpleHTTPRequestHandler):
             with open(tmp, "w") as f:
                 json.dump(layout, f, indent=2, ensure_ascii=False)
             os.replace(tmp, layout_path)
+        content = body.get("content")
+        if content is not None and tpl.get("content"):
+            cpath = os.path.join(root, tpl["content"])
+            tmp = cpath + ".tmp"
+            with open(tmp, "w") as f:
+                json.dump(content, f, indent=2, ensure_ascii=False)
+            os.replace(tmp, cpath)
         args = [sys.executable, script, "--layout", layout_path]
         if tpl.get("content"):
             args += ["--content", os.path.join(root, tpl["content"])]

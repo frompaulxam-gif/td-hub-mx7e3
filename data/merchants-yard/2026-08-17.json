@@ -109,7 +109,7 @@
    "kind": "story",
    "slot": "What's On + reactive",
    "title": "What's On story",
-   "status": "waiting",
+   "status": "ready",
    "media": [],
    "media_kind": "none",
    "caption": "Share the What's On carousel to story, plus one reactive pick.",
@@ -396,5 +396,23 @@
  ],
  "alerts": [
   "Schedule change: Park Life announce went out Monday 17th. The weekend recap reel moves to Tuesday 18th. Wednesday's grid slot is now open."
+ ],
+ "prep": [
+  {
+   "text": "Chase Chelsea's line-up (playbook says by 2pm Monday)",
+   "done": false
+  },
+  {
+   "text": "Get the weekend clips together for the recap reel edit",
+   "done": false
+  },
+  {
+   "text": "Check the photographer's weekend delivery has landed in HUB/deliveries",
+   "done": false
+  },
+  {
+   "text": "Scroll for a trend reel for Friday, send the link when found",
+   "done": false
+  }
  ]
 }

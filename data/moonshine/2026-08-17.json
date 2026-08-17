@@ -61,9 +61,14 @@
     }
    ],
    "checklist": [
-    "Ringlight Media uploads the weekend's photos Sunday/Monday to the shared Drive folder (link in Chelsea's email)",
-    "Pick 6 to 8: candid, natural, atmosphere first, skip flash-heavy and anyone not at their best",
-    "Drop picks into grid/tuesday-post/ and I finalise order + caption"
+    {
+     "text": "Pick 6 to 8: candid, natural, atmosphere first, skip flash-heavy and anyone not at their best",
+     "done": false
+    },
+    {
+     "text": "Drop picks into grid/tuesday-post/ and I finalise order + caption",
+     "done": false
+    }
    ],
    "template": null
   },
@@ -284,6 +289,24 @@
    "notes": [],
    "checklist": [],
    "template": null
+  }
+ ],
+ "prep": [
+  {
+   "text": "Download Ringlight's weekend photos from the shared Drive folder (they upload Sunday/Monday)",
+   "done": false
+  },
+  {
+   "text": "Upload the photographer's weekend video into the central Drive content library",
+   "done": false
+  },
+  {
+   "text": "Grab Chelsea's Thursday artist graphic from her Drive folder when it lands (may be Tuesday)",
+   "done": false
+  },
+  {
+   "text": "Confirm Saturday's evening act with Nat, it is not in the booking calendar",
+   "done": false
   }
  ]
 }

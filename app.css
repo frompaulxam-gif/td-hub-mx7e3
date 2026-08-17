@@ -18,7 +18,7 @@
   --surface-2: #f3f1ed;
   --ink-strong: #211a12;
   --ink-mid: #6d655a;
-  --line: rgba(33, 26, 18, .12);
+  --line: rgba(33, 26, 18, .22);
   --hairline: rgba(33, 26, 18, .08);
   --brand: #55402c;
   --accent: #2e6b38;
@@ -31,8 +31,8 @@
   --st-done: #877e72;
   --ok: #2e6b38;
   --ok-soft: rgba(46, 107, 56, .10);
-  --kind-grid: rgba(85, 64, 44, .07);
-  --kind-story: rgba(145, 112, 30, .09);
+  --kind-grid: rgba(84, 58, 32, .16);
+  --kind-story: rgba(150, 114, 18, .17);
   --scrim: rgba(24, 18, 12, .38);
   --shadow-float: 0 1px 2px rgba(30, 22, 12, .06), 0 12px 40px rgba(30, 22, 12, .14);
   color-scheme: light;
@@ -43,7 +43,7 @@
   --surface-2: #241f20;
   --ink-strong: #f1eae5;
   --ink-mid: #a49890;
-  --line: rgba(241, 234, 229, .14);
+  --line: rgba(241, 234, 229, .24);
   --hairline: rgba(241, 234, 229, .09);
   --brand: #7e2231;
   --accent: #c04052;
@@ -56,8 +56,8 @@
   --st-done: #8d827b;
   --ok: #5da571;
   --ok-soft: rgba(93, 165, 113, .12);
-  --kind-grid: rgba(122, 138, 178, .10);
-  --kind-story: rgba(196, 154, 86, .10);
+  --kind-grid: rgba(122, 138, 178, .17);
+  --kind-story: rgba(196, 150, 70, .17);
   --scrim: rgba(8, 6, 7, .55);
   --shadow-float: 0 1px 2px rgba(0, 0, 0, .5), 0 16px 48px rgba(0, 0, 0, .55);
   color-scheme: dark;
@@ -160,6 +160,7 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
   margin-bottom: 8px;
 }
 .xalert { font-size: 13px; font-weight: 600; color: var(--st-changes); padding: 2px 0 4px; }
+.day-star { color: var(--st-changes); font-weight: 800; margin-left: 2px; }
 .mini-alert { color: var(--st-changes); font-weight: 800; }
 
 /* ---------- compact board ---------- */
@@ -181,7 +182,8 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .day-row.z-b.sub { background: color-mix(in srgb, var(--surface-2) 55%, var(--bg)); }
 .day-row.z-a { background: transparent; }
 .day-row.z-a.sub { background: color-mix(in srgb, var(--surface-2) 30%, var(--bg)); }
-.day-row .day-cell + .day-cell { border-left: 1px solid var(--line); padding-left: 18px; }
+.day-row .day-cell { border-left: 1px solid var(--line); padding-left: 18px; }
+.day-cell-label { border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 2px; align-self: start; }
 .day-row.is-complete {
   background: linear-gradient(90deg, var(--ok-soft), color-mix(in srgb, var(--ok-soft) 25%, transparent));
 }
@@ -222,8 +224,18 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .mini-status.draft { color: var(--st-draft); background: color-mix(in srgb, var(--st-draft) 14%, transparent); }
 .mini-status.ready { color: var(--st-ready); background: color-mix(in srgb, var(--st-ready) 14%, transparent); }
 .mini-status.changes { color: var(--st-changes); background: color-mix(in srgb, var(--st-changes) 14%, transparent); }
-.mini-status.approved, .mini-status.posted { color: var(--st-done); background: color-mix(in srgb, var(--st-done) 13%, transparent); }
+.mini-status.approved { color: var(--st-done); background: color-mix(in srgb, var(--st-done) 13%, transparent); }
+.mini-status.posted { color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, transparent); }
 .cell-off { font-size: 12.5px; color: var(--ink-mid); padding: 13px 0; }
+
+/* ---------- week prep ---------- */
+#prep {
+  margin-top: 44px; padding: 18px 20px 20px;
+  background: var(--surface-2);
+  border-top: 2px solid var(--ink-strong);
+}
+.prep-head { font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin-bottom: 12px; }
+#prep .xchecklist { margin-top: 0; }
 
 /* ---------- expanded review ---------- */
 #expanded { margin-top: 64px; display: flex; flex-direction: column; gap: 72px; }
@@ -287,7 +299,7 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .xbtn.approve { background: var(--accent); color: var(--on-accent); }
 .xbtn.approve:hover { background: color-mix(in srgb, var(--accent) 88%, black); }
 .xbtn.approve.is-on { background: var(--surface-2); color: var(--st-ready); }
-.xbtn.posted.is-on { background: var(--accent-soft); color: var(--st-ready); }
+.xbtn.posted.is-on { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
 
 .xcap-label-row { display: flex; align-items: center; justify-content: space-between; margin: 14px 0 8px; }
 .xcap-label-row .xpane-label { margin-bottom: 0; }
@@ -354,7 +366,7 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .cal-row.z-b { background: var(--surface-2); }
 .cal-row.z-b.sub { background: color-mix(in srgb, var(--surface-2) 55%, var(--bg)); }
 .cal-row.z-a.sub { background: color-mix(in srgb, var(--surface-2) 30%, var(--bg)); }
-.cal-row .cal-cell + .cal-cell { border-left: 1px solid var(--line); padding-left: 18px; }
+.cal-row .cal-cell { border-left: 1px solid var(--line); padding-left: 18px; }
 .cal-row.is-today { background: linear-gradient(90deg, var(--ok-soft), color-mix(in srgb, var(--ok-soft) 25%, transparent)); }
 .cal-head-row { padding: 0 0 10px; font-size: 12px; font-weight: 600; color: var(--ink-mid); }
 .cal-day { font-weight: 700; font-size: 14px; }
@@ -400,6 +412,12 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 }
 .icon-btn:hover { background: color-mix(in srgb, var(--surface-2) 60%, var(--line)); }
 .icon-btn:active { transform: scale(.94); }
+#text-edit {
+  font: inherit; font-size: 13px; color: var(--ink-strong);
+  background: var(--surface-2); border: 1px solid transparent;
+  padding: 7px 10px; min-width: 220px; max-width: 340px; resize: none;
+}
+#text-edit:focus { border-color: var(--accent); background: var(--surface); outline: none; }
 #font-select {
   font: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink-strong);
   background: var(--surface-2); border: 0; border-radius: 0;
@@ -471,6 +489,7 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
   .board-head { display: none !important; }
   .day-row { grid-template-columns: 1fr; gap: 6px; }
   .day-cell-label { flex-direction: row; align-items: baseline; gap: 8px; padding-top: 0; }
+  .day-row .day-cell { border-left: 0; padding-left: 0; }
   .xpost-body { grid-template-columns: 1fr; }
   .xkind { margin-left: 10px; }
   .xday-name { font-size: 29px; }

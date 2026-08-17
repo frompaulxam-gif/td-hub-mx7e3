@@ -39,6 +39,10 @@
     </div>
     <div id="board-rows"></div>
   </section>
+  <section id="prep" aria-label="Prep for the week" hidden>
+    <div class="prep-head">Before the week</div>
+    <ul class="xchecklist" id="prep-list"></ul>
+  </section>
   <section id="expanded" aria-label="Day by day review"></section>
   <section id="calendar" class="calendar" hidden></section>
   <div id="empty" class="empty" hidden>
@@ -60,6 +64,7 @@
       <button class="icon-btn" id="width-down" aria-label="Narrower">&#8722;</button>
       <button class="icon-btn" id="width-up" aria-label="Wider">&#43;</button>
       <select id="font-select" aria-label="Font"></select>
+      <textarea id="text-edit" rows="1" placeholder="Edit the text" aria-label="Edit block text"></textarea>
     </div>
     <button class="mini-btn editor-save" id="editor-save">Save &amp; re-render</button>
   </div>
