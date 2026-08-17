@@ -15,8 +15,10 @@
    "slot": "Recap montage reel",
    "title": "Weekend recap reel",
    "status": "ready",
-   "media": [],
-   "media_kind": "video",
+   "media": [
+    "grid/monday-recap-reel/trial-reel-preview.png"
+   ],
+   "media_kind": "image",
    "caption": "No trending audio.\nThat's just the sound of last weekend in Leicester",
    "alternates": [
     "That was the weekend. The next one has Park Life in it.\n\nFriday from 5pm, Saturday from 2pm.",
@@ -285,8 +287,10 @@
    "slot": "Reactive",
    "title": "Reactive: Ask us anything",
    "status": "ready",
-   "media": [],
-   "media_kind": "none",
+   "media": [
+    "stories/reactive/ask-us-anything-preview.png"
+   ],
+   "media_kind": "image",
    "caption": "Made in the app: question box 'Ask us any questions' over the busy crowd clip. Answers feed next week's captions and the DJ.",
    "alternates": [],
    "notes": [
@@ -445,8 +449,10 @@
    "slot": "Reactive",
    "title": "Reactive: Secure your dancefloor",
    "status": "ready",
-   "media": [],
-   "media_kind": "none",
+   "media": [
+    "stories/reactive/secure-your-dancefloor-preview.png"
+   ],
+   "media_kind": "image",
    "caption": "Made in the app: SECURE YOUR DANCEFLOOR over the dancing clip. Music on, post Tuesday.",
    "alternates": [],
    "notes": [

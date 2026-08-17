@@ -777,9 +777,11 @@ function makeMedia(week, s) {
   if (!s.media?.length) {
     const p = document.createElement("div");
     p.className = "placeholder";
+    const first = s.checklist?.[0];
+    const hint = typeof first === "string" ? first : (first?.text || "");
     p.textContent = s.media_kind === "none"
       ? "No file needed, this one is an action on the day."
-      : "Nothing here yet. " + (s.checklist?.[0] || "");
+      : "Nothing here yet. " + hint;
     m.appendChild(p);
     return m;
   }
