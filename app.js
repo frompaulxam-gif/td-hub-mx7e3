@@ -64,6 +64,15 @@ async function boot() {
   }
   if (!state.weeks[state.venue]) state.venue = state.venues[0]?.slug;
   document.documentElement.dataset.venue = state.venue;
+  if (state.live) {
+    state.banks = {};
+    await Promise.all(state.venues.map(async v => {
+      try {
+        const r = await fetch(`/root/${v.slug}/captions-bank.json`);
+        if (r.ok) state.banks[v.slug] = await r.json();
+      } catch { /* no bank for this venue */ }
+    }));
+  }
   render();
 }
 
@@ -595,6 +604,56 @@ function makeXpost(week, s) {
     });
     altWrap.appendChild(chips);
     right.appendChild(altWrap);
+  }
+
+  // caption helper: similar past captions of this slot's category
+  const bank = state.banks?.[state.venue];
+  if (bank && s.kind === "grid") {
+    const hay = ((s.slot || "") + " " + (s.title || "")).toLowerCase();
+    let catKey = null;
+    for (const [needle, key] of Object.entries(bank.slot_category_map || {}))
+      if (hay.includes(needle)) { catKey = key; break; }
+    const cat = catKey && bank.categories[catKey];
+    if (cat?.captions?.length) {
+      const cWrap = document.createElement("div");
+      const cLabel = document.createElement("span");
+      cLabel.className = "xpane-label";
+      cLabel.style.marginTop = "12px";
+      cLabel.textContent = "Similar past captions · " + cat.label;
+      cWrap.appendChild(cLabel);
+      for (const past of cat.captions) {
+        const card = document.createElement("div");
+        card.className = "cap-ref" + (s.caption_ref === past.date + ":" + catKey ? " is-picked" : "");
+        const txt = document.createElement("div");
+        txt.className = "cap-ref-text";
+        txt.textContent = past.text;
+        const row = document.createElement("div");
+        row.className = "cap-ref-row";
+        const meta = document.createElement("span");
+        meta.className = "cap-ref-meta";
+        meta.textContent = past.date;
+        const use = document.createElement("button");
+        use.className = "mini-btn";
+        use.textContent = s.caption_ref === past.date + ":" + catKey ? "Style reference ✓" : "Use as style reference";
+        use.addEventListener("click", async () => {
+          if (await patchSlot(s, {
+            set: { caption_ref: past.date + ":" + catKey },
+            add_note: { text: "Style reference picked: the " + past.date + " " + cat.label + " caption. Draft the next options in this style." },
+          }, true)) { toast("Style reference saved"); render(); }
+        });
+        const copy = document.createElement("button");
+        copy.className = "mini-btn";
+        copy.textContent = "Copy";
+        copy.addEventListener("click", async () => {
+          await navigator.clipboard.writeText(past.text);
+          toast("Copied");
+        });
+        row.append(meta, use, copy);
+        card.append(txt, row);
+        cWrap.appendChild(card);
+      }
+      right.appendChild(cWrap);
+    }
   }
 
   // reactive idea clicker for open reactive story slots

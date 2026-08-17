@@ -382,6 +382,18 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .thread-input input::placeholder { color: var(--ink-mid); }
 .thread-input input:focus { border-color: var(--accent); background: var(--surface); outline: none; }
 
+/* ---------- caption helper ---------- */
+.cap-ref {
+  background: var(--surface-2); padding: 11px 13px; margin-top: 8px;
+  border: 1px solid transparent;
+  transition: border-color .15s var(--ease);
+}
+.cap-ref.is-picked { border-color: var(--accent); }
+.cap-ref-text { font-size: 12.5px; line-height: 1.5; color: var(--ink-mid); white-space: pre-wrap; max-height: 110px; overflow: hidden; }
+.cap-ref:hover .cap-ref-text { max-height: none; color: var(--ink-strong); }
+.cap-ref-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.cap-ref-meta { font-size: 11px; color: var(--ink-mid); font-weight: 600; margin-right: auto; }
+
 /* ---------- reactive menu + day summary ---------- */
 .xday-sum { font-size: 13.5px; color: var(--ink-mid); font-weight: 600; }
 .reactive-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }

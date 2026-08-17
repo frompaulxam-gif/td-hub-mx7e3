@@ -273,7 +273,7 @@ class Handler(SimpleHTTPRequestHandler):
             slot, data = self._find_slot(venue, week, body.get("id"))
         except LookupError as e:
             return self._json({"error": str(e)}, 404)
-        allowed = {"status", "caption", "alternates", "title", "checklist"}
+        allowed = {"status", "caption", "alternates", "title", "checklist", "caption_ref"}
         for k, v in (body.get("set") or {}).items():
             if k in allowed:
                 slot[k] = v

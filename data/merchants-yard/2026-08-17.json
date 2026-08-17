@@ -77,7 +77,7 @@
     "grid/tuesday-whats-on/slide-02.png"
    ],
    "media_kind": "carousel",
-   "caption": "Big one this weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna. The easiest way to shake off the week.\n\n🎸 Saturday - MY Presents: Park Life. The biggest Britpop anthems from Oasis, Blur, Pulp and The Verve, with King Ocean Club live. Pay on the door.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "caption": "Big one this weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna. The easiest way to shake off the week.\n\n🎸 Saturday - MY Presents: Park Life. Live music from King Ocean Club plus DJs on the best of 90s Britpop & indie anthems, performances from 5pm. Pay on the door.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
    "alternates": [
     "Football Friday, Britpop Saturday.\n\nThe Friday Social with Jonna from 5pm, then Park Life takes over Saturday from 2pm with King Ocean Club live.\n\nTables via the website. See you in the yard."
    ],
@@ -139,10 +139,8 @@
     "grid/wednesday-flexible/park-life-announce.png"
    ],
    "media_kind": "image",
-   "caption": "Merchants Yard presents Park Life ☀️\n\nLive music from King Ocean Club, plus DJs on the best of 90s Britpop and indie anthems.\n\nSaturday 22nd August, 2pm til midnight.\nPay on the door, tables via merchantsyardleicester.co.uk\n\nSee you in the yard.",
-   "alternates": [
-    "Park Life takes over the yard this Saturday 🎸\n\nKing Ocean Club live, Britpop and indie anthems all day, 2pm til midnight.\n\nNo advance tickets, just turn up. Tables via the website."
-   ],
+   "caption": "Park Life is coming to the yard 🇬🇧\n\nSaturday 22nd August, we're bringing you live music from King Ocean Club, plus DJs playing the best of 90s Britpop & indie anthems.\n\nLive performances from 5pm, with all your usual Merchant's Yard anthems before and after.\n\n2pm till midnight. Pay on the door, no advance tickets.\n\nReserve your table now via merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [],
    "notes": [
     {
      "ts": "2026-08-17",
@@ -151,6 +149,10 @@
     {
      "ts": "2026-08-17",
      "text": "Paul posted this Monday 17th. If the live caption differs from the draft here, paste it over so the bank stays accurate."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Caption replaced with the live posted one from Paul's ChatGPT flow. Performances from 5pm with the usual anthems before and after, per the band's WhatsApp."
     }
    ],
    "checklist": [],
@@ -276,8 +278,8 @@
    "date": "2026-08-21",
    "day": "Friday",
    "kind": "story",
-   "slot": "Tonight's line-up + doors 5pm",
-   "title": "Friday line-up story",
+   "slot": "Doors open story",
+   "title": "Friday doors open story",
    "status": "draft",
    "media": [
     "stories/friday-lineup/friday-lineup.png"
@@ -299,27 +301,11 @@
    "reference_label": "Canva voice reference"
   },
   {
-   "id": "fri-story-live",
-   "date": "2026-08-21",
-   "day": "Friday 5pm",
-   "kind": "story",
-   "slot": "Live clips from the day",
-   "title": "Live night run, six stories minimum",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "1 Doors. 2 First drinks. 3 First tables in. 4 The act. 5 Peak. 6 Last call. Vertical, sound on, tag @merchants.yard location.",
-   "alternates": [],
-   "notes": [],
-   "checklist": [],
-   "template": null
-  },
-  {
    "id": "sat-story-lineup",
    "date": "2026-08-22",
    "day": "Saturday",
    "kind": "story",
-   "slot": "Today's line-up, doors 2pm",
+   "slot": "Doors open story",
    "title": "Park Life story",
    "status": "draft",
    "media": [
@@ -347,22 +333,6 @@
    "template": null,
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva voice reference"
-  },
-  {
-   "id": "sat-story-live",
-   "date": "2026-08-22",
-   "day": "Saturday 2pm",
-   "kind": "story",
-   "slot": "Live clips from the day",
-   "title": "Live night run, six stories minimum",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "Same six-story run as Friday. Saturday's clips become Monday's recap.",
-   "alternates": [],
-   "notes": [],
-   "checklist": [],
-   "template": null
   },
   {
    "id": "sun-story-reactive",
