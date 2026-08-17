@@ -47,8 +47,16 @@
    "kind": "grid",
    "slot": "Carousel from Ringlight delivery",
    "title": "Weekend photos carousel",
-   "status": "waiting",
-   "media": [],
+   "status": "ready",
+   "media": [
+    "grid/tuesday-post/RING1752.jpg",
+    "grid/tuesday-post/RING1755.jpg",
+    "grid/tuesday-post/RING1802.jpg",
+    "grid/tuesday-post/RING1804.jpg",
+    "grid/tuesday-post/RING1837.jpg",
+    "grid/tuesday-post/RING1881.jpg",
+    "grid/tuesday-post/RING1774.jpg"
+   ],
    "media_kind": "carousel",
    "caption": "A few moments from inside Moonshine.\n\nLive music, late laughter, tables that stayed busy.\n\nWill you be joining us this weekend?",
    "alternates": [
@@ -59,6 +67,10 @@
     {
      "ts": "2026-08-17",
      "text": "Chelsea's Drive graphics folder intentionally has no Tuesday file. Tuesday is the photo carousel from the photographer's delivery."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Seven Ringlight shots from the Cigarto night loaded as candidates. Cut and reorder in the carousel QC, the IG preview shows the real 4:5 crop."
     }
    ],
    "checklist": [
@@ -71,7 +83,16 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "candidates": [
+    "grid/tuesday-post/RING1752.jpg",
+    "grid/tuesday-post/RING1755.jpg",
+    "grid/tuesday-post/RING1774.jpg",
+    "grid/tuesday-post/RING1802.jpg",
+    "grid/tuesday-post/RING1804.jpg",
+    "grid/tuesday-post/RING1837.jpg",
+    "grid/tuesday-post/RING1881.jpg"
+   ]
   },
   {
    "id": "tue-story-whatson",

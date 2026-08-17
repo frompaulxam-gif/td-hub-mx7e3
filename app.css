@@ -408,6 +408,46 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .r-chip:active { transform: scale(.96); }
 .r-chip.is-picked { background: var(--accent); color: var(--on-accent); }
 
+/* ---------- carousel QC + IG preview ---------- */
+.car-qc-wrap { max-width: 380px; }
+.ig-preview { background: var(--surface); border: 1px solid var(--line); }
+.ig-head { display: flex; align-items: center; gap: 8px; padding: 9px 11px; font-size: 12.5px; }
+.ig-avatar { width: 26px; height: 26px; border-radius: 50%; background: var(--brand); }
+.ig-frame { position: relative; aspect-ratio: 4 / 5; background: #000; overflow: hidden; }
+.ig-car { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; height: 100%; }
+.ig-car img { min-width: 100%; height: 100%; object-fit: cover; scroll-snap-align: center; }
+.ig-count {
+  position: absolute; top: 10px; right: 10px;
+  background: rgba(0,0,0,.65); color: #fff; font-size: 11px; font-weight: 600;
+  padding: 3px 8px; border-radius: 999px;
+}
+.ig-bar { display: flex; gap: 14px; padding: 9px 11px 4px; }
+.ig-bar span { width: 22px; height: 22px; display: block; }
+.ig-bar svg { width: 22px; height: 22px; }
+.ig-bar .ig-save { margin-left: auto; }
+.ig-likes { font-size: 12.5px; font-weight: 600; padding: 2px 11px; }
+.ig-cap { font-size: 12.5px; padding: 1px 11px 10px; color: var(--ink-strong); }
+.car-qc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.car-thumb {
+  position: relative; width: 84px; height: 105px; overflow: hidden;
+  background: var(--surface-2); cursor: grab;
+}
+.car-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.car-thumb.dragging { opacity: .4; }
+.car-thumb.is-cut { opacity: .35; cursor: default; }
+.car-thumb.is-cut:hover { opacity: .6; }
+.car-n {
+  position: absolute; left: 5px; top: 5px;
+  background: rgba(0,0,0,.65); color: #fff; font-size: 10.5px; font-weight: 700;
+  padding: 2px 6px;
+}
+.car-cut {
+  position: absolute; right: 4px; top: 4px; width: 22px; height: 22px;
+  background: rgba(0,0,0,.65); color: #fff; font-size: 14px; line-height: 1;
+  display: grid; place-items: center;
+}
+.car-cut:hover { background: rgba(0,0,0,.85); }
+
 /* ---------- calendar ---------- */
 .calendar { display: flex; flex-direction: column; }
 .cal-row {

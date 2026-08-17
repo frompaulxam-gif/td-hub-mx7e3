@@ -516,7 +516,8 @@ function makeXpost(week, s) {
   thisLabel.className = "xpane-label";
   thisLabel.textContent = "This week";
   right.appendChild(thisLabel);
-  right.appendChild(makeMedia(week, s));
+  if (s.candidates?.length) right.appendChild(makeCarouselQC(week, s));
+  else right.appendChild(makeMedia(week, s));
 
   const actions = document.createElement("div");
   actions.className = "xactions";
@@ -808,6 +809,128 @@ function makeMedia(week, s) {
     m.appendChild(img);
   }
   return m;
+}
+
+/* ---------- carousel QC: IG-true preview + cut and reorder ---------- */
+
+const IG_HANDLE = { "merchants-yard": "merchants.yard", "moonshine": "moonshineleicester" };
+const IG_ICONS = {
+  heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20.5C7 16.7 3.5 13.4 3.5 9.7 3.5 7 5.6 5 8.1 5c1.6 0 3 .8 3.9 2.1C12.9 5.8 14.3 5 15.9 5c2.5 0 4.6 2 4.6 4.7 0 3.7-3.5 7-8.5 10.8z"/></svg>',
+  comment: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8.5 8.5 0 0 1-8.5 8.5c-1.5 0-3-.4-4.2-1.1L3 21l1.7-5A8.5 8.5 0 1 1 21 12z"/></svg>',
+  send: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 3 9.7 14.3M21 3l-7 18-4.3-6.7L3 10z"/></svg>',
+  save: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h12v18l-6-4.5L6 21z"/></svg>',
+};
+
+function makeCarouselQC(week, s) {
+  const wrap = document.createElement("div");
+  wrap.className = "car-qc-wrap";
+  const kept = s.media || [];
+  const cut = s.candidates.filter(c => !kept.includes(c));
+
+  // IG-true preview
+  const ig = document.createElement("div");
+  ig.className = "ig-preview";
+  const head = document.createElement("div");
+  head.className = "ig-head";
+  const av = document.createElement("span");
+  av.className = "ig-avatar";
+  const handle = document.createElement("b");
+  handle.textContent = IG_HANDLE[state.venue] || state.venue;
+  head.append(av, handle);
+  ig.appendChild(head);
+  const frame = document.createElement("div");
+  frame.className = "ig-frame";
+  if (kept.length) {
+    const strip = document.createElement("div");
+    strip.className = "ig-car";
+    for (const path of kept) {
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.src = mediaUrl(week, path, s);
+      img.alt = "";
+      strip.appendChild(img);
+    }
+    frame.appendChild(strip);
+    const count = document.createElement("span");
+    count.className = "ig-count";
+    count.textContent = "1/" + kept.length;
+    frame.appendChild(count);
+    strip.addEventListener("scroll", () => {
+      count.textContent = (Math.round(strip.scrollLeft / strip.clientWidth) + 1) + "/" + kept.length;
+    }, { passive: true });
+  } else {
+    frame.innerHTML = '<div class="placeholder">Everything is cut. Restore something below.</div>';
+  }
+  ig.appendChild(frame);
+  const bar = document.createElement("div");
+  bar.className = "ig-bar";
+  bar.innerHTML = `<span>${IG_ICONS.heart}</span><span>${IG_ICONS.comment}</span><span>${IG_ICONS.send}</span><span class="ig-save">${IG_ICONS.save}</span>`;
+  ig.appendChild(bar);
+  const likes = document.createElement("div");
+  likes.className = "ig-likes";
+  likes.textContent = "Liked by kbrasstards and others";
+  ig.appendChild(likes);
+  const cap = document.createElement("div");
+  cap.className = "ig-cap";
+  const capText = (s.caption || "").split("\n")[0];
+  cap.innerHTML = `<b>${IG_HANDLE[state.venue] || state.venue}</b> `;
+  cap.appendChild(document.createTextNode(capText));
+  ig.appendChild(cap);
+  wrap.appendChild(ig);
+
+  // QC strip: kept in order, then cut dimmed
+  const label = document.createElement("span");
+  label.className = "xpane-label";
+  label.style.marginTop = "12px";
+  label.textContent = "Cut and reorder, drag to move, tap × to cut";
+  wrap.appendChild(label);
+  const strip = document.createElement("div");
+  strip.className = "car-qc";
+  const save = async (newKept) => {
+    if (await patchSlot(s, { set: { media: newKept } }, true)) { toast("Carousel updated"); render(); }
+  };
+  const makeThumb = (path, idx, isCut) => {
+    const cell = document.createElement("div");
+    cell.className = "car-thumb" + (isCut ? " is-cut" : "");
+    cell.draggable = !isCut;
+    const img = document.createElement("img");
+    img.loading = "lazy";
+    img.src = mediaUrl(week, path, s);
+    img.alt = "";
+    cell.appendChild(img);
+    const n = document.createElement("span");
+    n.className = "car-n";
+    n.textContent = isCut ? "cut" : (idx + 1);
+    cell.appendChild(n);
+    const btn = document.createElement("button");
+    btn.className = "car-cut";
+    btn.textContent = isCut ? "+" : "×";
+    btn.title = isCut ? "Restore" : "Cut from carousel";
+    btn.addEventListener("click", () => {
+      const now = isCut ? [...kept, path] : kept.filter(p => p !== path);
+      save(now);
+    });
+    cell.appendChild(btn);
+    if (!isCut) {
+      cell.addEventListener("dragstart", e => { e.dataTransfer.setData("text/plain", String(idx)); cell.classList.add("dragging"); });
+      cell.addEventListener("dragend", () => cell.classList.remove("dragging"));
+      cell.addEventListener("dragover", e => e.preventDefault());
+      cell.addEventListener("drop", e => {
+        e.preventDefault();
+        const from = parseInt(e.dataTransfer.getData("text/plain"), 10);
+        if (isNaN(from) || from === idx) return;
+        const now = kept.slice();
+        const [moved] = now.splice(from, 1);
+        now.splice(idx, 0, moved);
+        save(now);
+      });
+    }
+    return cell;
+  };
+  kept.forEach((p, i) => strip.appendChild(makeThumb(p, i, false)));
+  cut.forEach(p => strip.appendChild(makeThumb(p, -1, true)));
+  wrap.appendChild(strip);
+  return wrap;
 }
 
 /* ---------- calendar ---------- */
