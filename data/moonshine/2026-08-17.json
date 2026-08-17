@@ -47,21 +47,21 @@
    "kind": "grid",
    "slot": "Carousel from Ringlight delivery",
    "title": "Weekend photos carousel",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "grid/tuesday-post/RING1881.jpg",
     "grid/tuesday-post/RING1752.jpg",
-    "grid/tuesday-post/RING1755.jpg",
-    "grid/tuesday-post/RING1837.jpg",
     "grid/tuesday-post/RING1774.jpg",
+    "grid/tuesday-post/RING1837.jpg",
+    "grid/tuesday-post/RING1755.jpg",
     "grid/tuesday-post/RING1802.jpg",
     "grid/tuesday-post/RING1804.jpg"
    ],
    "media_kind": "carousel",
-   "caption": "A few moments from inside Moonshine.\n\nLive music, late laughter, tables that stayed busy.\n\nWill you be joining us this weekend?",
+   "caption": "Saturday, as it happened.\n\nGood music, better company. Joining us this weekend?",
    "alternates": [
     "A few moments from inside Moonshine.\n\nThe kind of Saturday that rolls on by itself.\n\nSee you this weekend?",
-    "Saturday, as it happened.\n\nGood music, better company. Joining us this weekend?"
+    "A few moments from inside Moonshine.\n\nLive music, late laughter, tables that stayed busy.\n\nWill you be joining us this weekend?"
    ],
    "notes": [
     {
@@ -162,14 +162,26 @@
    "day": "Wednesday AM",
    "kind": "story",
    "slot": "Photos / reel from the weekend",
-   "title": "Weekend photos or reel",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
+   "title": "Weekend collage story",
+   "status": "draft",
+   "media": [
+    "stories/wednesday-collage/weekend-collage.png"
+   ],
+   "media_kind": "image",
+   "caption": "2x2 collage from the weekend. Add ✨ as a sticker in the app if you want it, plus music.",
    "alternates": [],
-   "notes": [],
-   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Built with tools/collage_story.py. Currently uses RING1752, RING1837, RING1881, RING1804 from the same night as a stand-in for the guitarist, bar-wide and band-on-stage shots."
+    }
+   ],
+   "checklist": [
+    {
+     "text": "DRAFT PHOTOS: three of the four you showed are not on disk (chat images only). Drop them in Downloads and I regenerate in seconds.",
+     "done": false
+    }
+   ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-photos-2.jpg",
    "reference_label": "Last week: weekend photos"
