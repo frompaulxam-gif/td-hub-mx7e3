@@ -71,33 +71,41 @@
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "waiting",
-   "media": [],
+   "status": "draft",
+   "media": [
+    "grid/tuesday-whats-on/slide-01.png",
+    "grid/tuesday-whats-on/slide-02.png"
+   ],
    "media_kind": "carousel",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
+   "caption": "Big one this weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna. The easiest way to shake off the week.\n\n🎸 Saturday - MY Presents: Park Life. The biggest Britpop anthems from Oasis, Blur, Pulp and The Verve, with King Ocean Club live. Pay on the door.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [
+    "Football Friday, Britpop Saturday.\n\nThe Friday Social with Jonna from 5pm, then Park Life takes over Saturday from 2pm with King Ocean Club live.\n\nTables via the website. See you in the yard."
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Drafted from merchantsyardleicester.co.uk events: Fri 21 The Friday Social with Jonna, Sat 22 MY Presents: Park Life (site says Merchant's Yard Presents: Parklife). PL opener not listed on the site, kept out of the graphic, keep it in captions only unless confirmed."
+    }
+   ],
    "checklist": [
     {
-     "text": "Waiting on Chelsea's line-up, chase by 2pm Monday",
+     "text": "Line-up pulled from the website events section, cross-check when Chelsea's message lands",
      "done": false
     },
     {
-     "text": "Saturday headline is PARK LIFE with King Ocean Club",
+     "text": "Photo is swappable with Change photo, current pick is a wide balcony shot",
      "done": false
     },
     {
-     "text": "Format per BRAND-SCAN: photo + white sentence-case stack + logo, slide 2 booking CTA",
-     "done": false
-    },
-    {
-     "text": "Caption pattern in CAPTION-BANK.md",
+     "text": "Unpin last week's What's On, pin the new one",
      "done": false
     }
    ],
    "template": {
     "name": "whats-on",
-    "layout": "TEMPLATES/whats-on/layout.json"
+    "layout": "WEEKS/2026-08-17/renders/whats-on.layout.json",
+    "content": "WEEKS/2026-08-17/renders/whats-on.content.json",
+    "outdir": "WEEKS/2026-08-17/grid/tuesday-whats-on"
    },
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva reference",
