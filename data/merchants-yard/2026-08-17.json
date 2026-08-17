@@ -14,7 +14,7 @@
    "kind": "grid",
    "slot": "Recap montage reel",
    "title": "Weekend recap reel",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "grid/monday-recap-reel/trial-reel-preview.png"
    ],
@@ -448,7 +448,7 @@
    "kind": "story",
    "slot": "Reactive",
    "title": "Reactive: Secure your dancefloor",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "stories/reactive/secure-your-dancefloor-preview.png"
    ],
