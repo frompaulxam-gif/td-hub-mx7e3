@@ -534,6 +534,15 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
   border-radius: var(--r-m); box-shadow: var(--shadow-float);
   overflow: hidden; touch-action: none;
 }
+.ed-safe {
+  position: absolute; pointer-events: none;
+  border: 1px dashed rgba(255, 255, 255, .3);
+}
+.ed-guide {
+  position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+  background: var(--accent); pointer-events: none;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+}
 .ed-block {
   position: absolute; color: #ffffff; white-space: pre-line;
   border: 1px dashed rgba(255, 255, 255, .6); border-radius: 0;

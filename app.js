@@ -1086,6 +1086,14 @@ $("#text-edit").addEventListener("input", e => {
   const el = $(`.ed-block[data-id="${id}"]`);
   if (el) el.textContent = id === "acts" ? edText("acts") : val;
 });
+$("#center-block").addEventListener("click", () => {
+  if (!ed.sel) return;
+  ed.sel.x = Math.round(((ed.layout.width || 1080) - ed.sel.w) / 2);
+  ed.dirty = true;
+  const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
+  if (el) styleEdBlock(el, ed.sel);
+  toast("Centred");
+});
 $("#editor-save").addEventListener("click", saveEditor);
 
 async function openEditor(slot) {
@@ -1139,6 +1147,20 @@ function buildEditorStage() {
   stage.style.backgroundImage = bgUrl
     ? `linear-gradient(180deg, rgba(20,12,8,.32) 0%, rgba(20,12,8,.24) 40%, rgba(20,12,8,.5) 100%), url("${bgUrl}")`
     : "linear-gradient(180deg, #241c12, #17110b)";
+  const SAFE = ed.safe = Math.round((ed.layout.width || 1080) * 0.067);
+  const safeBox = document.createElement("div");
+  safeBox.className = "ed-safe";
+  Object.assign(safeBox.style, {
+    left: SAFE * scale + "px", top: SAFE * scale + "px",
+    right: SAFE * scale + "px", bottom: SAFE * scale + "px",
+  });
+  stage.appendChild(safeBox);
+  const guide = document.createElement("div");
+  guide.className = "ed-guide";
+  guide.hidden = true;
+  stage.appendChild(guide);
+  ed.guide = guide;
+
   const blocks = ed.layout.blocks || [];
   for (const b of blocks) {
     if (b.id === "logo") continue;
@@ -1185,12 +1207,29 @@ function attachDrag(el, b) {
     el.setPointerCapture(e.pointerId);
     selectBlock(el, b);
     const startX = e.clientX, startY = e.clientY;
-    let dx = 0, dy = 0, raf = null;
+    const ox = b.x, oy = b.y;
+    const W = ed.layout.width || 1080, H = ed.layout.height || 1920;
+    const SAFE = ed.safe || 72, SNAP = 16;
+    let nx = ox, ny = oy, raf = null;
     el.style.willChange = "transform";
-    const apply = () => { raf = null; el.style.transform = `translate3d(${dx}px, ${dy}px, 0)`; };
+    const apply = () => {
+      raf = null;
+      el.style.transform = `translate3d(${(nx - b.x) * ed.scale}px, ${(ny - b.y) * ed.scale}px, 0)`;
+    };
     const move = ev => {
-      dx = ev.clientX - startX;
-      dy = ev.clientY - startY;
+      nx = ox + (ev.clientX - startX) / ed.scale;
+      ny = oy + (ev.clientY - startY) / ed.scale;
+      // sticky centre
+      const centred = (W - b.w) / 2;
+      let onCentre = false;
+      if (Math.abs(nx - centred) < SNAP) { nx = centred; onCentre = true; }
+      // sticky safe margins
+      if (Math.abs(nx - SAFE) < SNAP) nx = SAFE;
+      if (Math.abs((nx + b.w) - (W - SAFE)) < SNAP) nx = W - SAFE - b.w;
+      if (Math.abs(ny - SAFE) < SNAP) ny = SAFE;
+      if (Math.abs(ny - (H - SAFE)) < SNAP) ny = H - SAFE;
+      nx = Math.round(nx); ny = Math.round(ny);
+      if (ed.guide) ed.guide.hidden = !onCentre;
       ed.dirty = true;
       if (!raf) raf = requestAnimationFrame(apply);
     };
@@ -1198,8 +1237,8 @@ function attachDrag(el, b) {
       el.removeEventListener("pointermove", move);
       el.removeEventListener("pointerup", up);
       if (raf) cancelAnimationFrame(raf);
-      b.x = Math.round(b.x + dx / ed.scale);
-      b.y = Math.round(b.y + dy / ed.scale);
+      if (ed.guide) ed.guide.hidden = true;
+      b.x = nx; b.y = ny;
       el.style.transform = "";
       el.style.willChange = "";
       styleEdBlock(el, b);

@@ -49,13 +49,13 @@
    "title": "Weekend photos carousel",
    "status": "ready",
    "media": [
+    "grid/tuesday-post/RING1881.jpg",
     "grid/tuesday-post/RING1752.jpg",
     "grid/tuesday-post/RING1755.jpg",
-    "grid/tuesday-post/RING1802.jpg",
-    "grid/tuesday-post/RING1804.jpg",
     "grid/tuesday-post/RING1837.jpg",
-    "grid/tuesday-post/RING1881.jpg",
-    "grid/tuesday-post/RING1774.jpg"
+    "grid/tuesday-post/RING1774.jpg",
+    "grid/tuesday-post/RING1802.jpg",
+    "grid/tuesday-post/RING1804.jpg"
    ],
    "media_kind": "carousel",
    "caption": "A few moments from inside Moonshine.\n\nLive music, late laughter, tables that stayed busy.\n\nWill you be joining us this weekend?",
@@ -103,7 +103,7 @@
    "kind": "story",
    "slot": "Repost the grid post",
    "title": "What's On story",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "stories/whats-on-story/whats-on-story.png"
    ],
