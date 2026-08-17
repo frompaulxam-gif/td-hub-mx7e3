@@ -41,7 +41,7 @@ def cover(img, cw, ch):
 p = argparse.ArgumentParser()
 p.add_argument("--photos", nargs=4, required=True)
 p.add_argument("--caption", default="")
-p.add_argument("--top", type=int, default=150)
+p.add_argument("--top", type=int, default=0)
 p.add_argument("--out", required=True)
 a = p.parse_args()
 
