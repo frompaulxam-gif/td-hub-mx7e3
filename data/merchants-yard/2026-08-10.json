@@ -1,0 +1,281 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-08-10",
+ "label": "W/C Mon 10 Aug 2026",
+ "archived": true,
+ "slots": [
+  {
+   "id": "mon-grid-recap",
+   "date": "2026-08-10",
+   "day": "Monday",
+   "kind": "grid",
+   "slot": "Recap montage reel",
+   "title": "Life without phones recap",
+   "status": "posted",
+   "media": [
+    "grid/1-MON-10-recap-reel/MY-recap-mon-10-aug.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "No phones out. Just a weekend in Leicester.\n\nBack Friday from 5pm. Saturday from 2pm.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Burn on-screen text: Life without phones",
+    "Add trending audio"
+   ],
+   "template": null
+  },
+  {
+   "id": "tue-grid-whatson",
+   "date": "2026-08-11",
+   "day": "Tuesday",
+   "kind": "grid",
+   "slot": "What's On carousel",
+   "title": "What's on this week",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-10",
+     "text": "Chelsea's line-up never landed in the folder. Slot went unfilled here."
+    }
+   ],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-grid-beerpour",
+   "date": "2026-08-12",
+   "day": "Wednesday",
+   "kind": "grid",
+   "slot": "Flexible: drinks hero",
+   "title": "Beer pour",
+   "status": "posted",
+   "media": [
+    "grid/3-WED-12-beer-pour/beers.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "One pour, no notes.\n\nFriday from 5. Saturday from 2.",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-10",
+     "text": "Draft was 720x950; flagged for a bigger export. Status assumed posted, correct in QC if not."
+    }
+   ],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "thu-grid-sayhi",
+   "date": "2026-08-13",
+   "day": "Thursday",
+   "kind": "grid",
+   "slot": "Photos from the weekend",
+   "title": "Everyone say hi carousel",
+   "status": "posted",
+   "media": [
+    "grid/4-THU-13-everyone-say-hi/01-0808-056-crowd-at-the-benches-waving.jpg",
+    "grid/4-THU-13-everyone-say-hi/02-0808-029-two-peace-signs-overhead.jpg",
+    "grid/4-THU-13-everyone-say-hi/03-0808-002-the-lads-getting-photographed.jpg",
+    "grid/4-THU-13-everyone-say-hi/04-0808-040-three-on-the-balcony.jpg",
+    "grid/4-THU-13-everyone-say-hi/05-0808-054-grey-tee-among-the-tables.jpg",
+    "grid/4-THU-13-everyone-say-hi/06-0808-036-arms-up-by-the-ember-truck.jpg"
+   ],
+   "media_kind": "carousel",
+   "caption": "Everyone say hi.\nWeekends in the yard hit different, and you lot proved it.\n\nFriday from 5, Saturday from 2. Bring your people",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-grid-kindachic",
+   "date": "2026-08-14",
+   "day": "Friday",
+   "kind": "grid",
+   "slot": "One-off: kinda chic carousel",
+   "title": "Kinda chic carousel",
+   "status": "posted",
+   "media": [
+    "grid/5-FRI-14-kinda-chic/01-0724-040-to-come-straight-from-work.jpg",
+    "grid/5-FRI-14-kinda-chic/02-0620-057-to-fall-for-whoever-s-on-the-decks.jpg",
+    "grid/5-FRI-14-kinda-chic/03-0530-036-to-give-it-the-full-chorus.jpg",
+    "grid/5-FRI-14-kinda-chic/04-0808-052-to-bring-your-mum.jpg",
+    "grid/5-FRI-14-kinda-chic/05-0620-017-to-bring-the-group-chat.jpg",
+    "grid/5-FRI-14-kinda-chic/06-0724-045-to-carry-your-drink-like-an-accessory.jpg",
+    "grid/5-FRI-14-kinda-chic/07-carousel-to-hug-someone-you-met-at-the-bar.jpg",
+    "grid/5-FRI-14-kinda-chic/08-0724-031-to-fall-for-the-bartender.jpg",
+    "grid/5-FRI-14-kinda-chic/09-0724-054-that-you-might-bump-into-your-ex.jpg"
+   ],
+   "media_kind": "carousel",
+   "caption": "Kinda chic at Merchants Yard.",
+   "alternates": [
+    "Kinda chic, kinda yours. Friday from 5."
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-10",
+     "text": "Ran in place of the trend reel this week, one-off."
+    }
+   ],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "story-dancing-partner",
+   "date": "2026-08-10",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive: clip of the vibe",
+   "title": "You need a dancing partner",
+   "status": "ready",
+   "media": [
+    "stories/01-you-need-a-dancing-partner.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "ON SCREEN: you need a dancing partner. No sticker needed, add music if you want.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "story-dance-noone",
+   "date": "2026-08-10",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive: clip of the vibe",
+   "title": "Dance like no one is around",
+   "status": "ready",
+   "media": [
+    "stories/02-dance-like-no-one-is-around.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "ON SCREEN: dance like no one is around. Trim to about 5s before posting.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Trim from 12.3s to ~5s"
+   ],
+   "template": null
+  },
+  {
+   "id": "story-ibiza",
+   "date": "2026-08-10",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive: DJ / music",
+   "title": "Get that ibiza feel",
+   "status": "ready",
+   "media": [
+    "stories/03-get-that-ibiza-feel.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "ON SCREEN: get that ibiza feel 🍒🪩. Sound on, needs the music.",
+   "alternates": [
+    "Just 🍒 in the corner if text is already on the clip"
+   ],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "story-dj-question",
+   "date": "2026-08-10",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive: poll question",
+   "title": "What should the DJ play",
+   "status": "ready",
+   "media": [
+    "stories/04-question-what-should-the-dj-play.jpg"
+   ],
+   "media_kind": "image",
+   "caption": "QUESTION BOX sticker: what should he play next?",
+   "alternates": [
+    "one song, go",
+    "what gets you on the dancefloor?",
+    "request a track for Friday"
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-10",
+     "text": "Whatever comes back goes to the DJ and feeds next week's captions."
+    }
+   ],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "story-entry-policy",
+   "date": "2026-08-10",
+   "day": "Quiet midweek day",
+   "kind": "story",
+   "slot": "Reactive: entry policy",
+   "title": "Door policy + opening hours",
+   "status": "changes",
+   "media": [
+    "stories/05-entry-policy-and-opening-hours.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Run as TWO stories. One: DOOR POLICY / No strict dress code. Come as you are. / Keep it right for the time and the event. / Daytime, casual sportswear fine. / Busier evenings we may turn sportswear away. / No football tops. Two: WHEN WE'RE OPEN / Fridays 5pm til midnight / Saturdays and Bank Holiday Sundays 2pm til midnight / Freeschool Lane, LE1 4FY",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-10",
+     "text": "Blocked on venue confirming 18+ and ID lines before this goes public. Save to a Highlight called Info or Door once posted."
+    }
+   ],
+   "checklist": [
+    "Confirm 18+ / ID wording with venue"
+   ],
+   "template": null
+  },
+  {
+   "id": "story-question-box",
+   "date": "2026-08-10",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive: poll question",
+   "title": "Ask us anything",
+   "status": "ready",
+   "media": [
+    "stories/06-question-box-ask-us-anything.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "QUESTION BOX sticker: ask us anything",
+   "alternates": [
+    "what do you want to see more of?",
+    "who should we book next?",
+    "what are we missing?"
+   ],
+   "notes": [],
+   "checklist": [
+    "Trim to ~6s"
+   ],
+   "template": null
+  },
+  {
+   "id": "story-share-partner",
+   "date": "2026-08-10",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive: shares play",
+   "title": "Share this to your dancing partner",
+   "status": "ready",
+   "media": [
+    "stories/07-share-this-to-your-dancing-partner.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "ON SCREEN: share this to your dancing partner. Post when you want sends rather than views.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  }
+ ]
+}

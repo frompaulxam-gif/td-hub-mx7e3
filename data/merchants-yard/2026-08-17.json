@@ -1,0 +1,303 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-08-17",
+ "label": "W/C Mon 17 Aug 2026",
+ "archived": false,
+ "key_dates": [
+  "Fri 21 Aug: PL opener, Arsenal v Coventry, in Friday hours",
+  "Sat 22 Aug: first full PL Saturday, 3pm + 5:30 KOs"
+ ],
+ "slots": [
+  {
+   "id": "mon-grid-recap",
+   "date": "2026-08-17",
+   "day": "Monday",
+   "kind": "grid",
+   "slot": "Recap montage reel",
+   "title": "Weekend recap reel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "video",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Needs weekend clips (15-16 Aug)",
+    "15-30 clips, one trending audio, cuts on the beat, under 20s",
+    "End on the busiest wide",
+    "Caption sells the coming Friday, not the past",
+    "Post 7pm tonight"
+   ],
+   "template": null
+  },
+  {
+   "id": "mon-story-repost",
+   "date": "2026-08-17",
+   "day": "Monday",
+   "kind": "story",
+   "slot": "Repost the recap",
+   "title": "Repost recap + reshare weekend tags",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Repost the recap reel to story. Reshare every tag and mention from the weekend.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "tue-grid-whatson",
+   "date": "2026-08-18",
+   "day": "Tuesday",
+   "kind": "grid",
+   "slot": "What's On carousel",
+   "title": "What's on this week",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "carousel",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Waiting on Chelsea's line-up, chase by 2pm Monday",
+    "Slide 1 is a photo with the weekend's headline over it",
+    "One slide per thing, closing slide doors times + book link",
+    "PL opener Friday is this week's headline candidate"
+   ],
+   "template": {
+    "name": "whats-on",
+    "layout": "TEMPLATES/whats-on/layout.json"
+   }
+  },
+  {
+   "id": "tue-story-whatson",
+   "date": "2026-08-18",
+   "day": "Tuesday",
+   "kind": "story",
+   "slot": "What's On + reactive",
+   "title": "What's On story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Share the What's On carousel to story, plus one reactive pick.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-grid-flexible",
+   "date": "2026-08-19",
+   "day": "Wednesday",
+   "kind": "grid",
+   "slot": "Flexible, pick one",
+   "title": "Flexible post",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Menu: drinks hero / repost winner / photo single / announce / staff or vendor / throwback",
+    "Anything Chelsea flags midweek takes priority"
+   ],
+   "template": null
+  },
+  {
+   "id": "wed-story-reactive",
+   "date": "2026-08-19",
+   "day": "Wednesday",
+   "kind": "story",
+   "slot": "Reactive",
+   "title": "Reactive pick of the day",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Any pick from the reactive menu. Leftover W/C 10 reactive clips still available in the archive week.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "thu-grid-photos",
+   "date": "2026-08-20",
+   "day": "Thursday",
+   "kind": "grid",
+   "slot": "Photos from the weekend",
+   "title": "Weekend photos carousel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "carousel",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "6 to 8 from the weekly delivery, lead with the best laugh",
+    "Include the mixed-age tables",
+    "Caption tags the night, encourage tags",
+    "No photo reused on the grid within 14 days"
+   ],
+   "template": null
+  },
+  {
+   "id": "thu-story-weather",
+   "date": "2026-08-20",
+   "day": "Thursday",
+   "kind": "story",
+   "slot": "Reactive: weather check",
+   "title": "Weather check sticker",
+   "status": "ready",
+   "media": [
+    "stories/weather-sticker-2026-08-20.png"
+   ],
+   "media_kind": "image",
+   "caption": "Sticker over any yard clip. Add on top in the app: doors Friday 5pm / book a table, link in bio",
+   "alternates": [
+    "Grey day version: the forecast says Friday's fine, book anyway."
+   ],
+   "notes": [],
+   "checklist": [
+    "Regenerates any time: python3 /Users/paulventura/tdg-hub/tools/weather_sticker.py"
+   ],
+   "template": null
+  },
+  {
+   "id": "thu-story-reactive",
+   "date": "2026-08-20",
+   "day": "Thursday",
+   "kind": "story",
+   "slot": "Reactive x2",
+   "title": "Second reactive pick",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Thursday runs two stories. Weather check plus one more from the menu.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-grid-trend",
+   "date": "2026-08-21",
+   "day": "Friday",
+   "kind": "grid",
+   "slot": "Trend reel",
+   "title": "Trend reel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "video",
+   "caption": "",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "PL opener tonight, Arsenal v Coventry. If no live trend fits, the queue: CCTV creature teaser, brightness-slider reveal, empty-to-full same frame, glasses-wipe drink reveal, why come/why stay split screen, three-beat loop, blind pour challenge, pinned-line montage."
+    }
+   ],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-story-lineup",
+   "date": "2026-08-21",
+   "day": "Friday",
+   "kind": "story",
+   "slot": "Tonight's line-up + doors 5pm",
+   "title": "Friday line-up story",
+   "status": "draft",
+   "media": [
+    "stories/friday-lineup.png"
+   ],
+   "media_kind": "image",
+   "caption": "Tonight's line-up, doors open 5pm. PL opener Arsenal v Coventry on the big screen.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Draft uses confirmed info only, add acts when Chelsea's list lands"
+   ],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-17/renders/fri-lineup.layout.json",
+    "content": "WEEKS/2026-08-17/renders/fri-lineup.content.json",
+    "out": "WEEKS/2026-08-17/stories/friday-lineup.png"
+   }
+  },
+  {
+   "id": "fri-story-live",
+   "date": "2026-08-21",
+   "day": "Friday 5pm",
+   "kind": "story",
+   "slot": "Live clips from the day",
+   "title": "Live night run, six stories minimum",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "1 Doors. 2 First drinks. 3 First tables in. 4 The act. 5 Peak. 6 Last call. Vertical, sound on, tag @merchants.yard location.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "sat-story-lineup",
+   "date": "2026-08-22",
+   "day": "Saturday",
+   "kind": "story",
+   "slot": "Today's line-up, doors 2pm",
+   "title": "Saturday line-up story",
+   "status": "draft",
+   "media": [
+    "stories/saturday-lineup.png"
+   ],
+   "media_kind": "image",
+   "caption": "Today's line-up, doors 2pm. First full PL Saturday, 3pm and 5:30 kick-offs.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Draft uses confirmed info only, add acts when Chelsea's list lands"
+   ],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-17/renders/sat-lineup.layout.json",
+    "content": "WEEKS/2026-08-17/renders/sat-lineup.content.json",
+    "out": "WEEKS/2026-08-17/stories/saturday-lineup.png"
+   }
+  },
+  {
+   "id": "sat-story-live",
+   "date": "2026-08-22",
+   "day": "Saturday 2pm",
+   "kind": "story",
+   "slot": "Live clips from the day",
+   "title": "Live night run, six stories minimum",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Same six-story run as Friday. Saturday's clips become Monday's recap.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "sun-story-reactive",
+   "date": "2026-08-23",
+   "day": "Sunday",
+   "kind": "story",
+   "slot": "Reactive",
+   "title": "Reactive pick of the day",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Grid off. One reactive story keeps the run alive.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  }
+ ]
+}

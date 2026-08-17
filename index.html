@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-venue="merchants-yard">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>TDG Hub</title>
+<link rel="stylesheet" href="app.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗓️</text></svg>">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-row">
+    <div class="wordmark">Hub</div>
+    <div class="venue-switch" role="tablist" aria-label="Venue">
+      <span class="venue-thumb" aria-hidden="true"></span>
+      <button class="venue-btn" role="tab" data-venue-btn="merchants-yard">Merchants Yard</button>
+      <button class="venue-btn" role="tab" data-venue-btn="moonshine">Moonshine</button>
+    </div>
+    <div class="view-switch" role="tablist" aria-label="View">
+      <button class="view-btn is-on" role="tab" data-view-btn="board">Board</button>
+      <button class="view-btn" role="tab" data-view-btn="calendar">Calendar</button>
+    </div>
+  </div>
+  <div class="topbar-row week-row">
+    <button class="week-nav" id="week-prev" aria-label="Previous week">&#8249;</button>
+    <div class="week-label" id="week-label">&nbsp;</div>
+    <button class="week-nav" id="week-next" aria-label="Next week">&#8250;</button>
+    <div class="week-progress" id="week-progress"></div>
+    <span class="ro-pill" id="ro-pill" hidden>read only</span>
+  </div>
+</header>
+
+<main id="main">
+  <div id="keydates" class="keydates" hidden></div>
+  <section id="board" class="board" aria-live="polite"></section>
+  <section id="calendar" class="calendar" hidden></section>
+  <div id="empty" class="empty" hidden>
+    <div class="empty-art" aria-hidden="true"></div>
+    <p id="empty-text">No weeks here yet.</p>
+  </div>
+</main>
+
+<div id="focus" class="focus" hidden>
+  <div class="focus-card" role="dialog" aria-modal="true">
+    <div class="focus-head">
+      <button class="icon-btn" id="focus-close" aria-label="Close">&#10005;</button>
+      <div class="focus-title-wrap">
+        <div class="focus-slotname" id="focus-slotname"></div>
+        <div class="focus-daytag" id="focus-daytag"></div>
+      </div>
+      <div class="focus-nav">
+        <button class="icon-btn" id="focus-prev" aria-label="Previous post">&#8249;</button>
+        <button class="icon-btn" id="focus-next" aria-label="Next post">&#8250;</button>
+      </div>
+    </div>
+    <div class="focus-scroll">
+      <div class="focus-media" id="focus-media"></div>
+      <div class="focus-body">
+        <button class="mini-btn editor-open" id="editor-open" hidden>Adjust layout</button>
+        <div class="field-label-row">
+          <span class="field-label">Caption</span>
+          <button class="mini-btn" id="copy-caption">Copy</button>
+        </div>
+        <div class="caption-edit" id="caption-edit" contenteditable="plaintext-only" spellcheck="false"></div>
+        <div id="alternates-wrap" hidden>
+          <span class="field-label">Alternates, tap to swap in</span>
+          <div class="alt-chips" id="alt-chips"></div>
+        </div>
+        <div id="checklist-wrap" hidden>
+          <span class="field-label">Still to do</span>
+          <ul class="checklist" id="checklist"></ul>
+        </div>
+        <div id="notes-wrap">
+          <span class="field-label">Notes</span>
+          <ul class="notes" id="notes"></ul>
+          <div class="note-input-row">
+            <input type="text" id="note-input" placeholder="Add a note for the next session" aria-label="Add a note">
+            <button class="mini-btn" id="note-add">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="focus-actions" id="focus-actions">
+      <button class="act-btn act-changes" id="act-changes">Needs changes</button>
+      <button class="act-btn act-approve" id="act-approve">Approve</button>
+      <button class="act-btn act-posted" id="act-posted" hidden>Mark posted</button>
+    </div>
+  </div>
+</div>
+
+<div id="editor" class="editor" hidden>
+  <div class="editor-bar">
+    <button class="mini-btn editor-cancel" id="editor-cancel">Cancel</button>
+    <span class="editor-hint" id="editor-hint">Drag any text block. Tap one to resize.</span>
+    <div class="editor-size" id="editor-size" hidden>
+      <button class="icon-btn" id="size-down" aria-label="Smaller text">&#8722;</button>
+      <span id="size-val"></span>
+      <button class="icon-btn" id="size-up" aria-label="Bigger text">&#43;</button>
+    </div>
+    <button class="mini-btn editor-save" id="editor-save">Save &amp; re-render</button>
+  </div>
+  <div class="editor-stage-wrap"><div class="editor-stage" id="editor-stage"></div></div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+"""TDG Hub local server.
+
+Serves the QC site, venue media, and write-back APIs.
+Run:  python3 /Users/paulventura/tdg-hub/serve.py   (port 4870)
+
+APIs
+  GET  /api/venues                       venue list + current week
+  GET  /api/weeks?venue=<slug>           all weeks with their slots
+  GET  /media/<venue>/<week>/<path>      file from that week folder
+  POST /api/slot                         patch a slot (status/caption/alternates/add_note)
+  POST /api/render                       re-render a template after layout edit
+"""
+import json
+import os
+import re
+import subprocess
+import sys
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import urlparse, parse_qs
+
+HUB = os.path.dirname(os.path.abspath(__file__))
+PORT = 4870
+
+VENUES = {
+    "merchants-yard": {"root": "/Users/paulventura/merchantsyard_tdg", "name": "Merchants Yard"},
+    "moonshine": {"root": "/Users/paulventura/moonshine_tdg", "name": "Moonshine"},
+}
+
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+def week_dir(venue, week):
+    root = VENUES[venue]["root"]
+    d = os.path.realpath(os.path.join(root, "WEEKS", week))
+    if not d.startswith(os.path.realpath(os.path.join(root, "WEEKS"))):
+        raise ValueError("bad path")
+    return d
+
+
+def load_weeks(venue):
+    root = os.path.join(VENUES[venue]["root"], "WEEKS")
+    weeks = []
+    if os.path.isdir(root):
+        for name in sorted(os.listdir(root)):
+            wj = os.path.join(root, name, "week.json")
+            if os.path.isfile(wj):
+                try:
+                    with open(wj) as f:
+                        weeks.append(json.load(f))
+                except json.JSONDecodeError as e:
+                    print(f"warn: {wj}: {e}")
+    return weeks
+
+
+def save_week(venue, week, data):
+    path = os.path.join(week_dir(venue, week), "week.json")
+    tmp = path + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    os.replace(tmp, path)
+
+
+class Handler(SimpleHTTPRequestHandler):
+    def log_message(self, fmt, *args):
+        sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
+
+    def _json(self, obj, code=200):
+        body = json.dumps(obj, ensure_ascii=False).encode()
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_GET(self):
+        u = urlparse(self.path)
+        if u.path == "/api/template":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            week = q.get("week", [""])[0]
+            slot_id = q.get("id", [""])[0]
+            try:
+                slot, _ = self._find_slot(venue, week, slot_id)
+            except LookupError as e:
+                return self._json({"error": str(e)}, 404)
+            tpl = slot.get("template") or {}
+            root = VENUES[venue]["root"]
+            out = {"template": tpl}
+            for key in ("layout", "content"):
+                p = tpl.get(key)
+                if p and os.path.isfile(os.path.join(root, p)):
+                    with open(os.path.join(root, p)) as f:
+                        out[key] = json.load(f)
+            return self._json(out)
+        if u.path == "/api/venues":
+            return self._json({
+                "live": True,
+                "venues": [{"slug": k, "name": v["name"]} for k, v in VENUES.items()],
+            })
+        if u.path == "/api/weeks":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            if venue not in VENUES:
+                return self._json({"error": "unknown venue"}, 400)
+            return self._json({"weeks": load_weeks(venue)})
+        m = re.match(r"^/media/([a-z-]+)/([0-9-]+)/(.+)$", u.path)
+        if m:
+            venue, week, rel = m.group(1), m.group(2), m.group(3)
+            if venue not in VENUES:
+                return self.send_error(404)
+            base = week_dir(venue, week)
+            path = os.path.realpath(os.path.join(base, rel))
+            if not path.startswith(base) or not os.path.isfile(path):
+                return self.send_error(404)
+            return self._serve_file(path)
+        # static site files from the hub directory
+        self.directory = HUB
+        return super().do_GET()
+
+    def _serve_file(self, path):
+        ctype = self.guess_type(path)
+        size = os.path.getsize(path)
+        # naive range support so <video> scrubbing works in Safari
+        rng = self.headers.get("Range")
+        with open(path, "rb") as f:
+            if rng:
+                m = re.match(r"bytes=(\d+)-(\d*)", rng)
+                start = int(m.group(1))
+                end = int(m.group(2)) if m.group(2) else size - 1
+                f.seek(start)
+                data = f.read(end - start + 1)
+                self.send_response(206)
+                self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+            else:
+                data = f.read()
+                self.send_response(200)
+            self.send_header("Content-Type", ctype)
+            self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+
+    def do_POST(self):
+        u = urlparse(self.path)
+        try:
+            length = int(self.headers.get("Content-Length", 0))
+            body = json.loads(self.rfile.read(length) or b"{}")
+        except (ValueError, json.JSONDecodeError):
+            return self._json({"error": "bad json"}, 400)
+
+        if u.path == "/api/slot":
+            return self._patch_slot(body)
+        if u.path == "/api/render":
+            return self._render(body)
+        return self._json({"error": "unknown endpoint"}, 404)
+
+    def _find_slot(self, venue, week, slot_id):
+        if venue not in VENUES:
+            raise LookupError("unknown venue")
+        weeks = load_weeks(venue)
+        data = next((w for w in weeks if w.get("week_start") == week), None)
+        if not data:
+            raise LookupError("unknown week")
+        slot = next((s for s in data["slots"] if s.get("id") == slot_id), None)
+        if not slot:
+            raise LookupError("unknown slot")
+        return slot, data
+
+    def _patch_slot(self, body):
+        venue = body.get("venue")
+        week = body.get("week_start")
+        try:
+            slot, data = self._find_slot(venue, week, body.get("id"))
+        except LookupError as e:
+            return self._json({"error": str(e)}, 404)
+        allowed = {"status", "caption", "alternates", "title"}
+        for k, v in (body.get("set") or {}).items():
+            if k in allowed:
+                slot[k] = v
+        note = body.get("add_note")
+        if note and note.get("text"):
+            from datetime import date
+            slot.setdefault("notes", []).append(
+                {"ts": str(date.today()), "text": note["text"], "by": "paul"})
+        save_week(venue, week, data)
+        return self._json({"ok": True, "slot": slot})
+
+    def _render(self, body):
+        """Re-render a slot's template, optionally saving an edited layout first."""
+        venue = body.get("venue")
+        try:
+            slot, _ = self._find_slot(venue, body.get("week_start"), body.get("id"))
+        except LookupError as e:
+            return self._json({"error": str(e)}, 404)
+        tpl = slot.get("template") or {}
+        name = tpl.get("name", "")
+        if not re.match(r"^[a-z0-9-]+$", name):
+            return self._json({"error": "slot has no template"}, 400)
+        root = VENUES[venue]["root"]
+        script = os.path.join(root, "TEMPLATES", name, "render.py")
+        if not os.path.isfile(script):
+            return self._json({"error": f"no renderer at {script}"}, 404)
+        layout = body.get("layout")
+        layout_path = os.path.join(root, tpl.get("layout") or f"TEMPLATES/{name}/layout.json")
+        if layout is not None:
+            os.makedirs(os.path.dirname(layout_path), exist_ok=True)
+            tmp = layout_path + ".tmp"
+            with open(tmp, "w") as f:
+                json.dump(layout, f, indent=2, ensure_ascii=False)
+            os.replace(tmp, layout_path)
+        args = [sys.executable, script, "--layout", layout_path]
+        if tpl.get("content"):
+            args += ["--content", os.path.join(root, tpl["content"])]
+        if tpl.get("outdir"):
+            args += ["--outdir", os.path.join(root, tpl["outdir"])]
+        elif tpl.get("out"):
+            args += ["--out", os.path.join(root, tpl["out"])]
+        else:
+            return self._json({"error": "template has no out path"}, 400)
+        try:
+            out = subprocess.run(args, capture_output=True, text=True, timeout=120)
+        except subprocess.TimeoutExpired:
+            return self._json({"error": "render timed out"}, 500)
+        if out.returncode != 0:
+            return self._json({"error": (out.stderr or out.stdout)[-2000:]}, 500)
+        return self._json({"ok": True, "stdout": out.stdout[-1000:]})
+
+
+if __name__ == "__main__":
+    os.chdir(HUB)
+    port = int(sys.argv[1]) if len(sys.argv) > 1 else PORT
+    print(f"TDG Hub on http://localhost:{port}")
+    ThreadingHTTPServer(("127.0.0.1", port), Handler).serve_forever()

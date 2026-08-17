@@ -1,0 +1,19 @@
+{
+ "venues": [
+  {
+   "slug": "merchants-yard",
+   "name": "Merchants Yard",
+   "weeks": [
+    "2026-08-10",
+    "2026-08-17"
+   ]
+  },
+  {
+   "slug": "moonshine",
+   "name": "Moonshine",
+   "weeks": [
+    "2026-08-17"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,238 @@
+{
+ "venue": "moonshine",
+ "week_start": "2026-08-17",
+ "label": "W/C Mon 17 Aug 2026",
+ "archived": false,
+ "key_dates": [
+  "Sat 22 Aug 12pm: Marcius Riley (daytime), IG @marciusriley",
+  "Evening act for Sat 22 not in the booking calendar, ask Nat"
+ ],
+ "slots": [
+  {
+   "id": "mon-grid-whatson",
+   "date": "2026-08-17",
+   "day": "Monday",
+   "kind": "grid",
+   "slot": "What's On This Week infographic",
+   "status": "waiting",
+   "title": "What's On This Week",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Template waits on the Canva scan and brand pack. Until then this is made by hand."
+    }
+   ],
+   "checklist": [
+    "Needs this week's acts and offers"
+   ],
+   "template": null
+  },
+  {
+   "id": "tue-grid-flex",
+   "date": "2026-08-18",
+   "day": "Tuesday",
+   "kind": "grid",
+   "slot": "Reel / Carousel / Photo",
+   "title": "Tuesday post",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "tue-story-whatson",
+   "date": "2026-08-18",
+   "day": "Tuesday",
+   "kind": "story",
+   "slot": "What's On infographic",
+   "title": "What's On story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "Share Monday's What's On infographic to story.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-am-grid-thu-artist",
+   "date": "2026-08-19",
+   "day": "Wednesday AM",
+   "kind": "grid",
+   "slot": "Thursday artist graphic",
+   "title": "Thursday artist graphic",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Thursday act not in booking calendar, needs confirming"
+   ],
+   "template": null
+  },
+  {
+   "id": "wed-am-story-weekend",
+   "date": "2026-08-19",
+   "day": "Wednesday AM",
+   "kind": "story",
+   "slot": "Photos / reel from the weekend",
+   "title": "Weekend photos or reel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-pm-grid-reel",
+   "date": "2026-08-19",
+   "day": "Wednesday PM",
+   "kind": "grid",
+   "slot": "Reel",
+   "title": "Wednesday reel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "video",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "thu-am-grid-fri-artist",
+   "date": "2026-08-20",
+   "day": "Thursday AM",
+   "kind": "grid",
+   "slot": "Friday artist graphic",
+   "title": "Friday artist graphic",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Friday act not in booking calendar, needs confirming"
+   ],
+   "template": null
+  },
+  {
+   "id": "thu-am-story-artist-hh",
+   "date": "2026-08-20",
+   "day": "Thursday AM",
+   "kind": "story",
+   "slot": "Thursday artist graphic + Happy Hour",
+   "title": "Thursday artist + Happy Hour",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    "Happy hour details needed"
+   ],
+   "template": null
+  },
+  {
+   "id": "thu-pm-grid-flex",
+   "date": "2026-08-20",
+   "day": "Thursday PM",
+   "kind": "grid",
+   "slot": "Reel / Carousel / Photo",
+   "title": "Thursday post",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-am-grid-sat-artist",
+   "date": "2026-08-21",
+   "day": "Friday AM",
+   "kind": "grid",
+   "slot": "Saturday artist graphic",
+   "title": "Saturday artist graphic",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Sat 22 daytime act confirmed: Marcius Riley 12pm, tag @marciusriley (handle confirmed, venue link unproven). Evening act unknown."
+    }
+   ],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-am-story-fri-artist",
+   "date": "2026-08-21",
+   "day": "Friday AM",
+   "kind": "story",
+   "slot": "Friday artist graphic",
+   "title": "Friday artist story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "sat-am-grid-flex",
+   "date": "2026-08-22",
+   "day": "Saturday AM",
+   "kind": "grid",
+   "slot": "Reel / Carousel / Photo",
+   "title": "Saturday post",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "sat-am-story-sat-artist",
+   "date": "2026-08-22",
+   "day": "Saturday AM",
+   "kind": "story",
+   "slot": "Saturday artist graphic",
+   "title": "Saturday artist story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  }
+ ]
+}
