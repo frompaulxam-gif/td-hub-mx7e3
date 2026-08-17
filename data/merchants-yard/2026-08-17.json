@@ -136,6 +136,10 @@
     {
      "ts": "2026-08-17",
      "text": "Poster is the finished 4x5 art Paul dropped in Downloads. Story version filed under Saturday."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "PROPOSAL ONLY, Paul reviews before anything is used. Say the word to revert this slot to how it was."
     }
    ],
    "checklist": [
@@ -306,7 +310,7 @@
    "kind": "story",
    "slot": "Today's line-up, doors 2pm",
    "title": "Park Life story",
-   "status": "ready",
+   "status": "draft",
    "media": [
     "stories/saturday-lineup/park-life-story.png"
    ],
@@ -317,6 +321,10 @@
     {
      "ts": "2026-08-17",
      "text": "Finished 9x16 poster art. The code-rendered PL Saturday version still sits in this folder as fallback."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "PROPOSAL ONLY, Paul reviews before anything is used. Say the word to revert this slot to how it was."
     }
    ],
    "checklist": [
