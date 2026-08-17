@@ -5,7 +5,7 @@
  "archived": false,
  "key_dates": [
   "Fri 21 Aug: PL opener, Arsenal v Coventry, in Friday hours",
-  "Sat 22 Aug: first full PL Saturday, 3pm + 5:30 KOs"
+  "Sat 22 Aug: PARK LIFE, King Ocean Club live + 90s Britpop and indie DJs, 2pm til midnight, pay on the door"
  ],
  "slots": [
   {
@@ -27,10 +27,22 @@
     }
    ],
    "checklist": [
-    "YOU: pick clips and edit the reel (CapCut), post 7pm",
-    "STUDIO: reference recap reels + caption drafts are the deliverable",
-    "15-30 clips, one trending audio, under 20s, end on the busiest wide",
-    "Caption sells the coming Friday, not the past"
+    {
+     "text": "YOU: pick clips and edit the reel (CapCut), post 7pm",
+     "done": false
+    },
+    {
+     "text": "STUDIO: reference recap reels + caption drafts are the deliverable",
+     "done": false
+    },
+    {
+     "text": "15-30 clips, one trending audio, under 20s, end on the busiest wide",
+     "done": false
+    },
+    {
+     "text": "Caption sells the coming Friday, not the past",
+     "done": false
+    }
    ],
    "template": null
   },
@@ -64,11 +76,22 @@
    "alternates": [],
    "notes": [],
    "checklist": [
-    "Waiting on Chelsea's line-up, chase by 2pm Monday",
-    "Format per BRAND-SCAN: slide 1 photo + white Poppins sentence-case stack + logo, slide 2 booking CTA",
-    "Naming: The Friday Social with [name] / MY Presents: [name]",
-    "Caption pattern in CAPTION-BANK.md",
-    "Unpin last week's What's On, pin the new one"
+    {
+     "text": "Waiting on Chelsea's line-up, chase by 2pm Monday",
+     "done": false
+    },
+    {
+     "text": "Saturday headline is PARK LIFE with King Ocean Club",
+     "done": false
+    },
+    {
+     "text": "Format per BRAND-SCAN: photo + white sentence-case stack + logo, slide 2 booking CTA",
+     "done": false
+    },
+    {
+     "text": "Caption pattern in CAPTION-BANK.md",
+     "done": false
+    }
    ],
    "template": {
     "name": "whats-on",
@@ -98,19 +121,36 @@
    "date": "2026-08-19",
    "day": "Wednesday",
    "kind": "grid",
-   "slot": "Flexible, pick one",
-   "title": "Flexible post",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
-   "checklist": [
-    "YOU: if you fancy a trend recreation, send the link; polls and stickers are made in the IG app",
-    "STUDIO: otherwise drafts from the menu: drinks hero / repost winner / photo single / announce / staff / throwback"
+   "slot": "Flexible: announce",
+   "title": "Park Life announce",
+   "status": "draft",
+   "media": [
+    "grid/wednesday-flexible/park-life-announce.png"
    ],
-   "template": null
+   "media_kind": "image",
+   "caption": "Merchants Yard presents Park Life ☀️\n\nLive music from King Ocean Club, plus DJs on the best of 90s Britpop and indie anthems.\n\nSaturday 22nd August, 2pm til midnight.\nPay on the door, tables via merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [
+    "Park Life takes over the yard this Saturday 🎸\n\nKing Ocean Club live, Britpop and indie anthems all day, 2pm til midnight.\n\nNo advance tickets, just turn up. Tables via the website."
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Poster is the finished 4x5 art Paul dropped in Downloads. Story version filed under Saturday."
+    }
+   ],
+   "checklist": [
+    {
+     "text": "Announce takes priority over the flexible menu (playbook rule)",
+     "done": false
+    },
+    {
+     "text": "YOU: if a trend reel wins instead, send the link and this moves to Thursday-ish",
+     "done": false
+    }
+   ],
+   "template": null,
+   "reference": "WEEKS/2026-08-10/grid/wednesday-beer-pour/beers.mp4",
+   "reference_label": "Last Wednesday: beer pour"
   },
   {
    "id": "wed-story-reactive",
@@ -213,8 +253,8 @@
     "Fallback queue in the notes if no live trend fits"
    ],
    "template": null,
-   "reference": "TEMPLATES/canva-refs/my-football-semifinals-ref.png",
-   "reference_label": "Football poster reference"
+   "reference": "WEEKS/2026-08-10/grid/friday-kinda-chic/01-0724-040-to-come-straight-from-work.jpg",
+   "reference_label": "Last Friday: kinda chic"
   },
   {
    "id": "fri-story-lineup",
@@ -265,24 +305,27 @@
    "day": "Saturday",
    "kind": "story",
    "slot": "Today's line-up, doors 2pm",
-   "title": "Saturday line-up story",
-   "status": "draft",
+   "title": "Park Life story",
+   "status": "ready",
    "media": [
-    "stories/saturday-lineup/saturday-lineup.png"
+    "stories/saturday-lineup/park-life-story.png"
    ],
    "media_kind": "image",
-   "caption": "Today's line-up, doors 2pm. First full PL Saturday, 3pm and 5:30 kick-offs.",
+   "caption": "Today. Park Life at Merchants Yard. King Ocean Club live, Britpop anthems all day. Doors 2pm, pay on the door.",
    "alternates": [],
-   "notes": [],
-   "checklist": [
-    "Draft uses confirmed info only, add acts when Chelsea's list lands"
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Finished 9x16 poster art. The code-rendered PL Saturday version still sits in this folder as fallback."
+    }
    ],
-   "template": {
-    "name": "lineup-story",
-    "layout": "WEEKS/2026-08-17/renders/sat-lineup.layout.json",
-    "content": "WEEKS/2026-08-17/renders/sat-lineup.content.json",
-    "out": "WEEKS/2026-08-17/stories/saturday-lineup/saturday-lineup.png"
-   },
+   "checklist": [
+    {
+     "text": "Post Saturday AM with a countdown or doors sticker",
+     "done": false
+    }
+   ],
+   "template": null,
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva voice reference"
   },
@@ -317,6 +360,36 @@
    "notes": [],
    "checklist": [],
    "template": null
+  },
+  {
+   "id": "story-hours",
+   "date": "2026-08-17",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Info: opening hours",
+   "title": "When we're open",
+   "status": "ready",
+   "media": [
+    "stories/opening-hours/opening-hours.png"
+   ],
+   "media_kind": "image",
+   "caption": "Proper graphic version of the hours story. Post any quiet day, save to the Info Highlight, re-post before big nights.",
+   "alternates": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Replaces the IG-text-overlay version from Paul's reference screenshots. Door policy wording still waits on the venue confirming 18+ and ID lines."
+    }
+   ],
+   "checklist": [],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-17/renders/hours-story.layout.json",
+    "content": "WEEKS/2026-08-17/renders/hours-story.content.json",
+    "out": "WEEKS/2026-08-17/stories/opening-hours/opening-hours.png"
+   },
+   "reference": null,
+   "reference_label": "Your IG-text version was the reference"
   }
  ]
 }

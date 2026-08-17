@@ -270,7 +270,18 @@ function renderExpanded() {
       head.appendChild(c);
     }
     sec.appendChild(head);
-    for (const s of g.slots) sec.appendChild(makeXpost(week, s));
+    for (const kind of ["grid", "story"]) {
+      const items = g.slots.filter(s => s.kind === kind);
+      if (!items.length) continue;
+      const kwrap = document.createElement("div");
+      kwrap.className = "xkind";
+      const klabel = document.createElement("div");
+      klabel.className = "xkind-head";
+      klabel.textContent = kind === "grid" ? "Grid post" : "Story";
+      kwrap.appendChild(klabel);
+      for (const s of items) kwrap.appendChild(makeXpost(week, s));
+      sec.appendChild(kwrap);
+    }
     wrap.appendChild(sec);
   }
 }
@@ -282,16 +293,13 @@ function makeXpost(week, s) {
 
   const head = document.createElement("div");
   head.className = "xpost-head";
-  const kind = document.createElement("span");
-  kind.className = "kind-tag";
-  kind.textContent = s.kind === "grid" ? "Grid" : "Story";
   const title = document.createElement("span");
   title.className = "xpost-title";
   title.textContent = s.title || s.slot;
   const slotName = document.createElement("span");
   slotName.className = "xpost-slot";
   slotName.textContent = s.slot;
-  head.append(kind, title, slotName);
+  head.append(title, slotName);
   card.appendChild(head);
 
   const body = document.createElement("div");
@@ -306,7 +314,12 @@ function makeXpost(week, s) {
   left.appendChild(refLabel);
   const refMedia = document.createElement("div");
   refMedia.className = "xmedia";
-  if (s.reference) {
+  if (s.reference && /\.(mp4|mov|m4v|webm)$/i.test(s.reference)) {
+    const v = document.createElement("video");
+    v.src = rootUrl(s.reference);
+    v.controls = true; v.playsInline = true; v.preload = "metadata";
+    refMedia.appendChild(v);
+  } else if (s.reference) {
     const img = document.createElement("img");
     img.loading = "lazy";
     img.src = rootUrl(s.reference);
@@ -419,15 +432,32 @@ function makeXpost(week, s) {
     right.appendChild(altWrap);
   }
 
-  // checklist
+  // checklist with tickboxes (string items and {text, done} both supported)
   if (s.checklist?.length) {
     const cl = document.createElement("ul");
     cl.className = "xchecklist";
-    for (const item of s.checklist) {
+    s.checklist.forEach((item, i) => {
+      const text = typeof item === "string" ? item : item.text;
+      const done = typeof item === "object" && !!item.done;
       const li = document.createElement("li");
-      li.textContent = item;
+      li.className = done ? "is-ticked" : "";
+      const box = document.createElement("input");
+      box.type = "checkbox";
+      box.checked = done;
+      box.disabled = !state.live;
+      box.addEventListener("change", async () => {
+        const next = s.checklist.map(it => typeof it === "string" ? { text: it, done: false } : { ...it });
+        next[i].done = box.checked;
+        if (await patchSlot(s, { set: { checklist: next } }, true)) {
+          toast(box.checked ? "Ticked off" : "Unticked");
+          render();
+        }
+      });
+      const label = document.createElement("span");
+      label.textContent = text;
+      li.append(box, label);
       cl.appendChild(li);
-    }
+    });
     right.appendChild(cl);
   }
 
