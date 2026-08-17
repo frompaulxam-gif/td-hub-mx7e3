@@ -1000,16 +1000,25 @@ function attachDrag(el, b) {
     e.preventDefault();
     el.setPointerCapture(e.pointerId);
     selectBlock(el, b);
-    const startX = e.clientX, startY = e.clientY, ox = b.x, oy = b.y;
+    const startX = e.clientX, startY = e.clientY;
+    let dx = 0, dy = 0, raf = null;
+    el.style.willChange = "transform";
+    const apply = () => { raf = null; el.style.transform = `translate3d(${dx}px, ${dy}px, 0)`; };
     const move = ev => {
-      b.x = Math.round(ox + (ev.clientX - startX) / ed.scale);
-      b.y = Math.round(oy + (ev.clientY - startY) / ed.scale);
+      dx = ev.clientX - startX;
+      dy = ev.clientY - startY;
       ed.dirty = true;
-      styleEdBlock(el, b);
+      if (!raf) raf = requestAnimationFrame(apply);
     };
     const up = () => {
       el.removeEventListener("pointermove", move);
       el.removeEventListener("pointerup", up);
+      if (raf) cancelAnimationFrame(raf);
+      b.x = Math.round(b.x + dx / ed.scale);
+      b.y = Math.round(b.y + dy / ed.scale);
+      el.style.transform = "";
+      el.style.willChange = "";
+      styleEdBlock(el, b);
     };
     el.addEventListener("pointermove", move);
     el.addEventListener("pointerup", up);

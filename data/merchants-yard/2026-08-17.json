@@ -4,7 +4,6 @@
  "label": "W/C Mon 17 Aug 2026",
  "archived": false,
  "key_dates": [
-  "Fri 21 Aug: PL opener, Arsenal v Coventry, in Friday hours",
   "Sat 22 Aug: PARK LIFE, King Ocean Club live + 90s Britpop and indie DJs, 2pm til midnight, pay on the door"
  ],
  "slots": [
@@ -79,14 +78,9 @@
    "media_kind": "carousel",
    "caption": "Big one this weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna. The easiest way to shake off the week.\n\n🎸 Saturday - MY Presents: Park Life. Live music from King Ocean Club plus DJs on the best of 90s Britpop & indie anthems, performances from 5pm. Pay on the door.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
    "alternates": [
-    "Football Friday, Britpop Saturday.\n\nThe Friday Social with Jonna from 5pm, then Park Life takes over Saturday from 2pm with King Ocean Club live.\n\nTables via the website. See you in the yard."
+    "The Friday Social with Jonna from 5pm, then Park Life takes over Saturday from 2pm with King Ocean Club live.\n\nTables via the website. See you in the yard."
    ],
-   "notes": [
-    {
-     "ts": "2026-08-17",
-     "text": "Drafted from merchantsyardleicester.co.uk events: Fri 21 The Friday Social with Jonna, Sat 22 MY Presents: Park Life (site says Merchant's Yard Presents: Parklife). PL opener not listed on the site, kept out of the graphic, keep it in captions only unless confirmed."
-    }
-   ],
+   "notes": [],
    "checklist": [
     {
      "text": "Line-up pulled from the website events section, cross-check when Chelsea's message lands",
@@ -261,7 +255,7 @@
    "notes": [
     {
      "ts": "2026-08-17",
-     "text": "PL opener tonight, Arsenal v Coventry. If no live trend fits, the queue: CCTV creature teaser, brightness-slider reveal, empty-to-full same frame, glasses-wipe drink reveal, why come/why stay split screen, three-beat loop, blind pour challenge, pinned-line montage."
+     "text": "If no live trend fits, the queue: CCTV creature teaser, brightness-slider reveal, empty-to-full same frame, glasses-wipe drink reveal, why come/why stay split screen, three-beat loop, blind pour challenge, pinned-line montage."
     }
    ],
    "checklist": [
@@ -285,12 +279,10 @@
     "stories/friday-lineup/friday-lineup.png"
    ],
    "media_kind": "image",
-   "caption": "Tonight's line-up, doors open 5pm. PL opener Arsenal v Coventry on the big screen.",
+   "caption": "Tonight. The Friday Social with Jonna, doors open 5pm. Tomorrow, Park Life.",
    "alternates": [],
    "notes": [],
-   "checklist": [
-    "Draft uses confirmed info only, add acts when Chelsea's list lands"
-   ],
+   "checklist": [],
    "template": {
     "name": "lineup-story",
     "layout": "WEEKS/2026-08-17/renders/fri-lineup.layout.json",
