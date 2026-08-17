@@ -193,18 +193,36 @@
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
    "title": "Wednesday post - Reel / Carousel / Photo",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
+   "status": "draft",
+   "media": [
+    "grid/wednesday-reel/RING1757.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Some things don't come through a recording.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
+   "alternates": [
+    "You can hear the music from the street.\n\nYou can't hear the room.\n\nLive at Moonshine, every weekend.",
+    "No playlist does this.\n\nFour players, one room, and whatever the night decides.\n\nJoin us this weekend."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
      "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "RING1757: opens on the keys player's hands, guitarist behind, cuts to the drummer mid-song. Red light, curtain and mural. Instrumental. Ten caption options given in chat, top three loaded here."
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "text": "YOU: trim to 15-30s in CapCut, one line of Playfair Display Italic size 10",
+     "done": false
+    },
+    {
+     "text": "Source clip is 4K vertical, 14s",
+     "done": false
+    }
+   ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/reel_Db-_bl0MySq.mp4",
    "reference_label": "Last week's reel (playable)"
