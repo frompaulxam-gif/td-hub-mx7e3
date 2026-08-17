@@ -410,23 +410,19 @@
  ],
  "prep": [
   {
-   "text": "Download Ringlight's weekend photos from the shared Drive folder (they upload Sunday/Monday)",
-   "done": true
-  },
-  {
-   "text": "Upload the photographer's weekend video into the central Drive content library",
+   "text": "Upload the weekend photos and videos to the Moonshine drives (pictures + raw content)",
    "done": false
   },
   {
-   "text": "Grab Chelsea's Thursday artist graphic from her Drive folder when it lands (may be Tuesday)",
+   "text": "Pick 4 to 8 of the best photos from the Ringlight delivery (feeds the carousel and the week's photo posts)",
    "done": false
   },
   {
-   "text": "Confirm Saturday's evening act with Nat, it is not in the booking calendar",
+   "text": "Pick 1 good video for a simple caption over it",
    "done": false
   },
   {
-   "text": "Check last week's Moonshine photos and videos made it into the pictures and raw content drives",
+   "text": "Download Chelsea's graphics folder for the week",
    "done": false
   }
  ],
