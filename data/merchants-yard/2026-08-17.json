@@ -115,20 +115,20 @@
   },
   {
    "id": "tue-story-whatson",
-   "date": "2026-08-19",
-   "day": "Wednesday",
+   "date": "2026-08-20",
+   "day": "Thursday",
    "kind": "story",
-   "slot": "What's On + reactive",
-   "title": "What's On story",
+   "slot": "Repost the grid post",
+   "title": "What's On story share",
    "status": "ready",
    "media": [],
    "media_kind": "none",
-   "caption": "Share the What's On carousel to story, plus one reactive pick.",
+   "caption": "Repost the What's On carousel to your story, the day after it went on the grid.",
    "alternates": [],
    "notes": [],
    "checklist": [],
    "template": null,
-   "alert": "Moves with the What's On carousel to Wednesday."
+   "alert": "Rule change: the What's On story is a repost of the grid post, posted the day after."
   },
   {
    "id": "wed-grid-flexible",
@@ -204,7 +204,7 @@
   {
    "id": "thu-story-weather",
    "date": "2026-08-20",
-   "day": "Thursday",
+   "day": "Any day",
    "kind": "story",
    "slot": "Reactive: weather check",
    "title": "Weather check sticker",
@@ -218,7 +218,12 @@
     "Grey week version: the forecast says Friday's fine, book anyway.",
     "thirty degrees says table in the sun\nFriday from 5pm"
    ],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Reclassified: the weather sticker is one of the reactive story options, not a fixed Thursday slot. Sticker stays freshly generated and ready to grab."
+    }
+   ],
    "checklist": [
     {
      "text": "YOU: add the sticker over a yard clip in the IG app + music",
@@ -238,12 +243,12 @@
    "date": "2026-08-20",
    "day": "Thursday",
    "kind": "story",
-   "slot": "Reactive x2",
-   "title": "Second reactive pick",
+   "slot": "Reactive",
+   "title": "Reactive pick of the day",
    "status": "waiting",
    "media": [],
    "media_kind": "none",
-   "caption": "Thursday runs two stories. Weather check plus one more from the menu.",
+   "caption": "Pick from the reactive menu below. The weather sticker is one of the options, ready-made.",
    "alternates": [],
    "notes": [],
    "checklist": [],
