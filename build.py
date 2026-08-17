@@ -70,10 +70,15 @@ def build():
                         src = os.path.join(v["root"], ref)
                         if os.path.isfile(src):
                             base = os.path.basename(ref)
-                            out_base = base if base.lower().endswith(".png") else os.path.splitext(base)[0] + ".jpg"
-                            dst = os.path.join(HUB, "media", slug, "refs", out_base)
+                            ext = os.path.splitext(base)[1].lower()
                             try:
-                                proxy_image(src, dst)
+                                if ext in VID_EXT:
+                                    dst = os.path.join(HUB, "media", slug, "refs", os.path.splitext(base)[0] + ".mp4")
+                                    proxy_video(src, dst)
+                                else:
+                                    out_base = base if ext == ".png" else os.path.splitext(base)[0] + ".jpg"
+                                    dst = os.path.join(HUB, "media", slug, "refs", out_base)
+                                    proxy_image(src, dst)
                             except subprocess.CalledProcessError as e:
                                 print(f"  ref proxy failed {ref}: {e}")
                     new_media = []

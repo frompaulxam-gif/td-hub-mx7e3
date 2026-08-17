@@ -93,8 +93,8 @@
     "grid/tuesday-post/RING1837.jpg",
     "grid/tuesday-post/RING1881.jpg"
    ],
-   "reference": "WEEKS/2026-08-10/ig/last-photos-1.jpg",
-   "reference_label": "Last week: photos carousel"
+   "reference": "WEEKS/2026-08-10/ig/reel_Db6LOCmMjVg.mp4",
+   "reference_label": "Last Tuesday: the reel (playable)"
   },
   {
    "id": "tue-story-whatson",
@@ -184,8 +184,8 @@
    ],
    "checklist": [],
    "template": null,
-   "reference": "WEEKS/2026-08-10/ig/last-reel-frame.jpg",
-   "reference_label": "Last week's reel, frame"
+   "reference": "WEEKS/2026-08-10/ig/reel_Db-_bl0MySq.mp4",
+   "reference_label": "Last week's reel (playable)"
   },
   {
    "id": "thu-am-grid-fri-artist",
@@ -258,8 +258,8 @@
    ],
    "checklist": [],
    "template": null,
-   "reference": "WEEKS/2026-08-10/ig/last-photos-3.jpg",
-   "reference_label": "Last week: Thursday post"
+   "reference": "WEEKS/2026-08-10/ig/last-photos-1.jpg",
+   "reference_label": "Last Thursday: photos carousel"
   },
   {
    "id": "fri-am-grid-sat-artist",
@@ -341,8 +341,8 @@
    ],
    "checklist": [],
    "template": null,
-   "reference": "WEEKS/2026-08-10/ig/last-photos-4.jpg",
-   "reference_label": "Last week: Saturday post"
+   "reference": "WEEKS/2026-08-10/ig/last-photos-2.jpg",
+   "reference_label": "Last week: weekend photos"
   },
   {
    "id": "sat-am-story-sat-artist",
@@ -371,7 +371,7 @@
  "prep": [
   {
    "text": "Download Ringlight's weekend photos from the shared Drive folder (they upload Sunday/Monday)",
-   "done": false
+   "done": true
   },
   {
    "text": "Upload the photographer's weekend video into the central Drive content library",
