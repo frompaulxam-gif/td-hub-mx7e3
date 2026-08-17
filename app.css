@@ -263,9 +263,16 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 #expanded .xday:first-of-type { border-top: 0; padding-top: 0; }
 .xday.is-complete {
   background: linear-gradient(180deg, var(--ok-soft), transparent 60%);
-  border-radius: var(--r-l); padding: 24px 24px 8px; margin: 0 -24px;
+  border-radius: var(--r-l); padding: 0 24px 8px; margin: 0 -24px;
 }
-.xday-head { display: flex; align-items: baseline; gap: 14px; margin: 0 0 30px; }
+.xday-head {
+  position: sticky; top: 112px; z-index: 20;
+  display: flex; align-items: baseline; gap: 14px;
+  margin: 0 0 26px; padding: 14px 0 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.xday.is-complete .xday-head { background: color-mix(in srgb, var(--ok) 10%, var(--bg)); }
 .xday-name { font-size: 38px; font-weight: 800; letter-spacing: -.025em; line-height: 1; }
 .xday-date { font-size: 14px; color: var(--ink-mid); }
 .xday-complete-chip {
@@ -589,7 +596,8 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
   .xpost-body { grid-template-columns: 1fr; }
   .xkind { margin-left: 10px; }
   .xday-name { font-size: 29px; }
-  .xday.is-complete { margin: 0 -14px; padding: 16px 14px 4px; }
+  .xday.is-complete { margin: 0 -14px; padding: 0 14px 4px; }
+  .xday-head { top: 104px; }
   .day-row.is-complete { margin: 0 -8px; padding-left: 8px; padding-right: 8px; }
   .cal-row { grid-template-columns: 90px 1fr; }
   .cal-cell.cal-cell-story { grid-column: 2; border-top: 1px dashed var(--hairline); padding-top: 6px; margin-top: 2px; }
