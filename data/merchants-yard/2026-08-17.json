@@ -200,7 +200,7 @@
    "kind": "grid",
    "slot": "Photos from the weekend",
    "title": "Weekend photos carousel",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "grid/thursday-weekend-photos/RING1467.jpg",
     "grid/thursday-weekend-photos/RING1477.jpg",
@@ -210,9 +210,9 @@
     "grid/thursday-weekend-photos/RING1720.jpg"
    ],
    "media_kind": "carousel",
-   "caption": "Everyone was up by the end. 👋\nThat's what a Saturday in the yard does.\n\nFriday from 5pm\nSaturday from 2pm\n\nBring your people.",
+   "caption": "Dancing like no one's around. 💃\nThat's the yard on a Saturday.\n\nFriday from 5pm, Park Life Saturday from 2pm.",
    "alternates": [
-    "Dancing like no one's around. 💃\nThat's the yard on a Saturday.\n\nFriday from 5pm, Park Life Saturday from 2pm.",
+    "Everyone was up by the end. 👋\nThat's what a Saturday in the yard does.\n\nFriday from 5pm\nSaturday from 2pm\n\nBring your people.",
     "No one's watching. Everyone's dancing.\n\nBack Friday from 5pm. Park Life takes over Saturday from 2pm."
    ],
    "notes": [
@@ -286,7 +286,7 @@
    "kind": "story",
    "slot": "Reactive",
    "title": "Reactive: Ask us anything",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "stories/reactive/ask-us-anything-preview.png"
    ],
