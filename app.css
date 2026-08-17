@@ -352,6 +352,8 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
   transition: color .15s var(--ease), background-color .15s var(--ease);
 }
 .alt-chip:hover { color: var(--ink-strong); background: color-mix(in srgb, var(--surface-2) 60%, var(--line)); }
+.alt-chip.is-current { color: var(--st-ready); font-weight: 700; cursor: default; background: color-mix(in srgb, var(--st-ready) 10%, transparent); }
+.alt-tag { display: block; font-size: 11px; font-weight: 700; color: var(--ink-strong); margin-bottom: 4px; }
 
 .xchecklist { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .xchecklist li { font-size: 13.5px; color: var(--ink-strong); display: flex; gap: 10px; align-items: baseline; }

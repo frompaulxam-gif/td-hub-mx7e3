@@ -581,24 +581,33 @@ function makeXpost(week, s) {
   });
   right.appendChild(cap);
 
-  // alternates
+  // caption options: the live one plus pre-drafted alternates, pick of three
   if (s.alternates?.length) {
     const altWrap = document.createElement("div");
     const altLabel = document.createElement("span");
     altLabel.className = "xpane-label";
     altLabel.style.marginTop = "10px";
-    altLabel.textContent = "Alternates, tap to swap in";
+    altLabel.textContent = "Caption options, tap one to use it";
     altWrap.appendChild(altLabel);
     const chips = document.createElement("div");
     chips.className = "alt-chips";
+    const current = document.createElement("div");
+    current.className = "alt-chip is-current";
+    current.textContent = "Option 1 · in use above";
+    chips.appendChild(current);
     s.alternates.forEach((alt, i) => {
       const b = document.createElement("button");
       b.className = "alt-chip";
-      b.textContent = alt;
+      const tag = document.createElement("span");
+      tag.className = "alt-tag";
+      tag.textContent = "Option " + (i + 2);
+      const body = document.createElement("span");
+      body.textContent = alt;
+      b.append(tag, body);
       b.addEventListener("click", async () => {
         const alts = s.alternates.slice();
         alts[i] = s.caption;
-        if (await patchSlot(s, { set: { caption: alt, alternates: alts.filter(Boolean) } })) render();
+        if (await patchSlot(s, { set: { caption: alt, alternates: alts.filter(Boolean) } })) { toast("Option swapped in"); render(); }
       });
       chips.appendChild(b);
     });
@@ -652,7 +661,7 @@ function makeXpost(week, s) {
         card.append(txt, row);
         cWrap.appendChild(card);
       }
-      right.appendChild(cWrap);
+      left.appendChild(cWrap);
     }
   }
 
