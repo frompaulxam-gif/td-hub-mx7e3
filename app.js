@@ -952,9 +952,14 @@ function buildEditorStage() {
   ed.scale = scale;
   stage.style.width = W * scale + "px";
   stage.style.height = H * scale + "px";
-  const week = curWeek();
-  const bgPath = ed.slot.media?.[0];
-  if (bgPath) stage.style.backgroundImage = `url("${mediaUrl(week, bgPath)}?v=${ed.slot._v || 0}")`;
+  // backdrop is the RAW photo (never the finished render, or old text ghosts behind the blocks)
+  let bg = ed.content?.bg || "";
+  bg = bg.replace(/^file:\/\//, "");
+  let bgUrl = null;
+  if (bg.includes("_tdg/")) bgUrl = `/root/${state.venue}/` + bg.split("_tdg/")[1].split("/").map(encodeURIComponent).join("/");
+  stage.style.backgroundImage = bgUrl
+    ? `linear-gradient(180deg, rgba(20,12,8,.32) 0%, rgba(20,12,8,.24) 40%, rgba(20,12,8,.5) 100%), url("${bgUrl}")`
+    : "linear-gradient(180deg, #241c12, #17110b)";
   const blocks = ed.layout.blocks || [];
   for (const b of blocks) {
     if (b.id === "logo") continue;
