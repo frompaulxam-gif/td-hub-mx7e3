@@ -187,19 +187,44 @@
    "kind": "grid",
    "slot": "Photos from the weekend",
    "title": "Weekend photos carousel",
-   "status": "waiting",
-   "media": [],
+   "status": "ready",
+   "media": [
+    "grid/thursday-weekend-photos/RING1467.jpg",
+    "grid/thursday-weekend-photos/RING1477.jpg",
+    "grid/thursday-weekend-photos/RING1542.jpg",
+    "grid/thursday-weekend-photos/RING1567.jpg",
+    "grid/thursday-weekend-photos/RING1570.jpg",
+    "grid/thursday-weekend-photos/RING1720.jpg",
+    "grid/thursday-weekend-photos/RING1729.jpg"
+   ],
    "media_kind": "carousel",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
+   "caption": "Everyone was up by the end. 👋\nThat's what a Saturday in the yard does.\n\nFriday from 5pm\nSaturday from 2pm\n\nBring your people.",
+   "alternates": [
+    "Scenes from the weekend. You lot don't miss.\n\nFriday from 5pm, Saturday from 2pm.",
+    "If you know, you were there. 👀\n\nBack Friday from 5pm. Park Life Saturday from 2pm."
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul's seven picks loaded as candidates. Cut, reorder and adjust crops in the carousel QC."
+    }
+   ],
    "checklist": [
     "6 to 8 from the weekly delivery, lead with the best laugh",
     "Include the mixed-age tables",
     "Caption tags the night, encourage tags",
     "No photo reused on the grid within 14 days"
    ],
-   "template": null
+   "template": null,
+   "candidates": [
+    "grid/thursday-weekend-photos/RING1467.jpg",
+    "grid/thursday-weekend-photos/RING1477.jpg",
+    "grid/thursday-weekend-photos/RING1542.jpg",
+    "grid/thursday-weekend-photos/RING1567.jpg",
+    "grid/thursday-weekend-photos/RING1570.jpg",
+    "grid/thursday-weekend-photos/RING1720.jpg",
+    "grid/thursday-weekend-photos/RING1729.jpg"
+   ]
   },
   {
    "id": "thu-story-weather",

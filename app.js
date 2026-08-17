@@ -843,11 +843,15 @@ function makeCarouselQC(week, s) {
   if (kept.length) {
     const strip = document.createElement("div");
     strip.className = "ig-car";
+    const crops = s.crops || {};
     for (const path of kept) {
       const img = document.createElement("img");
       img.loading = "lazy";
       img.src = mediaUrl(week, path, s);
       img.alt = "";
+      img.style.objectPosition = crops[path] || "50% 50%";
+      img.title = "Drag to adjust the crop";
+      attachCrop(img, s, path);
       strip.appendChild(img);
     }
     frame.appendChild(strip);
@@ -931,6 +935,39 @@ function makeCarouselQC(week, s) {
   cut.forEach(p => strip.appendChild(makeThumb(p, -1, true)));
   wrap.appendChild(strip);
   return wrap;
+}
+
+function attachCrop(img, s, path) {
+  let startX, startY, sx, sy, moved = false, raf = null;
+  const parse = v => { const m = (v || "50% 50%").split(" "); return [parseFloat(m[0]), parseFloat(m[1])]; };
+  img.addEventListener("pointerdown", e => {
+    e.preventDefault();
+    img.setPointerCapture(e.pointerId);
+    [sx, sy] = parse(img.style.objectPosition);
+    startX = e.clientX; startY = e.clientY; moved = false;
+    const frame = img.closest(".ig-frame");
+    const w = frame.clientWidth, h = frame.clientHeight;
+    let nx = sx, ny = sy;
+    const apply = () => { raf = null; img.style.objectPosition = nx + "% " + ny + "%"; };
+    const move = ev => {
+      nx = Math.max(0, Math.min(100, sx - ((ev.clientX - startX) / w) * 120));
+      ny = Math.max(0, Math.min(100, sy - ((ev.clientY - startY) / h) * 120));
+      if (Math.abs(ev.clientX - startX) + Math.abs(ev.clientY - startY) > 4) moved = true;
+      if (!raf) raf = requestAnimationFrame(apply);
+    };
+    const up = async () => {
+      img.removeEventListener("pointermove", move);
+      img.removeEventListener("pointerup", up);
+      if (raf) cancelAnimationFrame(raf);
+      if (moved) {
+        const crops = { ...(s.crops || {}) };
+        crops[path] = Math.round(nx) + "% " + Math.round(ny) + "%";
+        if (await patchSlot(s, { set: { crops } }, true)) toast("Crop saved");
+      }
+    };
+    img.addEventListener("pointermove", move);
+    img.addEventListener("pointerup", up);
+  });
 }
 
 /* ---------- calendar ---------- */
