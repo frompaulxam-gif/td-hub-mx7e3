@@ -187,7 +187,8 @@ function renderBoard() {
 function makeCard(week, s, focusIdx, animIdx) {
   const card = document.createElement("button");
   card.className = "card" + (DONE.has(s.status) ? " is-done" : "");
-  card.style.animationDelay = Math.min(animIdx * 28, 400) + "ms";
+  if (document.hidden) card.style.animation = "none";
+  else card.style.animationDelay = Math.min(animIdx * 28, 400) + "ms";
   card.addEventListener("click", () => openFocus(focusIdx));
 
   const thumb = makeThumb(week, s);
