@@ -10,8 +10,8 @@
  "slots": [
   {
    "id": "mon-grid-recap",
-   "date": "2026-08-17",
-   "day": "Monday",
+   "date": "2026-08-18",
+   "day": "Tuesday",
    "kind": "grid",
    "slot": "Recap montage reel",
    "title": "Weekend recap reel",
@@ -28,7 +28,7 @@
    ],
    "checklist": [
     {
-     "text": "YOU: pick clips and edit the reel (CapCut), post 7pm",
+     "text": "YOU: pick clips and edit the reel (CapCut), post Tuesday evening",
      "done": false
     },
     {
@@ -44,7 +44,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "Moved from Monday: Park Life took Monday's grid slot, recap goes out Tuesday."
   },
   {
    "id": "mon-story-repost",
@@ -98,7 +99,8 @@
     "layout": "TEMPLATES/whats-on/layout.json"
    },
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
-   "reference_label": "Canva reference"
+   "reference_label": "Canva reference",
+   "alert": "Check: does What's On stay Tuesday next to the recap, or shift to Wednesday's now-free slot?"
   },
   {
    "id": "tue-story-whatson",
@@ -118,12 +120,12 @@
   },
   {
    "id": "wed-grid-flexible",
-   "date": "2026-08-19",
-   "day": "Wednesday",
+   "date": "2026-08-17",
+   "day": "Monday",
    "kind": "grid",
    "slot": "Flexible: announce",
    "title": "Park Life announce",
-   "status": "draft",
+   "status": "posted",
    "media": [
     "grid/wednesday-flexible/park-life-announce.png"
    ],
@@ -139,22 +141,14 @@
     },
     {
      "ts": "2026-08-17",
-     "text": "PROPOSAL ONLY, Paul reviews before anything is used. Say the word to revert this slot to how it was."
+     "text": "Paul posted this Monday 17th. If the live caption differs from the draft here, paste it over so the bank stays accurate."
     }
    ],
-   "checklist": [
-    {
-     "text": "Announce takes priority over the flexible menu (playbook rule)",
-     "done": false
-    },
-    {
-     "text": "YOU: if a trend reel wins instead, send the link and this moves to Thursday-ish",
-     "done": false
-    }
-   ],
+   "checklist": [],
    "template": null,
    "reference": "WEEKS/2026-08-10/grid/wednesday-beer-pour/beers.mp4",
-   "reference_label": "Last Wednesday: beer pour"
+   "reference_label": "Last Wednesday: beer pour",
+   "alert": "Schedule change: posted Monday instead of the planned Wednesday slot."
   },
   {
    "id": "wed-story-reactive",
@@ -399,5 +393,8 @@
    "reference": null,
    "reference_label": "Your IG-text version was the reference"
   }
+ ],
+ "alerts": [
+  "Schedule change: Park Life announce went out Monday 17th. The weekend recap reel moves to Tuesday 18th. Wednesday's grid slot is now open."
  ]
 }

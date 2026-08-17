@@ -101,6 +101,9 @@ function groupSlots(week) {
     byDay.get(key).push(s);
   }
   for (const g of groups) g.slots.sort((a, b) => (a.kind === b.kind ? 0 : a.kind === "grid" ? -1 : 1));
+  const sortKey = g => (g.key.toLowerCase().includes("any") || g.key.toLowerCase().includes("quiet"))
+    ? "9999-99-99" : (g.date || "9999-99-98");
+  groups.sort((a, b) => sortKey(a) < sortKey(b) ? -1 : sortKey(a) > sortKey(b) ? 1 : 0);
   return groups;
 }
 
@@ -152,8 +155,15 @@ function renderKeyDates() {
   const week = curWeek();
   const el = $("#keydates");
   const dates = week?.key_dates || [];
-  el.hidden = !dates.length || state.view !== "board";
+  const alerts = week?.alerts || [];
+  el.hidden = (!dates.length && !alerts.length) || state.view !== "board";
   el.innerHTML = "";
+  for (const a of alerts) {
+    const w = document.createElement("div");
+    w.className = "week-alert";
+    w.textContent = "* " + a;
+    el.appendChild(w);
+  }
   for (const d of dates) {
     const chip = document.createElement("span");
     chip.className = "keydate";
@@ -171,9 +181,14 @@ function renderBoard() {
   $("#board-head").hidden = !week;
   if (!week) return;
   const today = todayIso();
+  let zebra = 0, prevDate = null;
   for (const g of groupSlots(week)) {
+    const isSub = prevDate !== null && g.date === prevDate && !g.key.toLowerCase().includes("any");
+    if (!isSub) zebra++;
+    prevDate = g.date;
     const row = document.createElement("div");
-    row.className = "day-row" + (dayComplete(g) ? " is-complete" : "");
+    row.className = "day-row " + (zebra % 2 ? "z-a" : "z-b") + (isSub ? " sub" : "") +
+      (dayComplete(g) ? " is-complete" : "");
     const label = document.createElement("div");
     label.className = "day-cell-label";
     const name = document.createElement("button");
@@ -232,6 +247,13 @@ function makeMini(week, s, g) {
   const t = document.createElement("div");
   t.className = "mini-title";
   t.textContent = s.title || s.slot;
+  if (s.alert) {
+    const star = document.createElement("span");
+    star.className = "mini-alert";
+    star.textContent = " *";
+    star.title = s.alert;
+    t.appendChild(star);
+  }
   const st = document.createElement("div");
   st.className = "mini-status " + s.status;
   st.textContent = STATUS_LABEL[s.status] || s.status;
@@ -274,7 +296,7 @@ function renderExpanded() {
       const items = g.slots.filter(s => s.kind === kind);
       if (!items.length) continue;
       const kwrap = document.createElement("div");
-      kwrap.className = "xkind";
+      kwrap.className = "xkind " + (kind === "grid" ? "k-grid" : "k-story");
       const klabel = document.createElement("div");
       klabel.className = "xkind-head";
       klabel.textContent = kind === "grid" ? "Grid post" : "Story";
@@ -299,8 +321,18 @@ function makeXpost(week, s) {
   const slotName = document.createElement("span");
   slotName.className = "xpost-slot";
   slotName.textContent = s.slot;
-  head.append(title, slotName);
+  const stTag = document.createElement("span");
+  stTag.className = "mini-status " + s.status;
+  stTag.textContent = STATUS_LABEL[s.status] || s.status;
+  stTag.style.marginLeft = "auto";
+  head.append(title, slotName, stTag);
   card.appendChild(head);
+  if (s.alert) {
+    const al = document.createElement("div");
+    al.className = "xalert";
+    al.textContent = "* " + s.alert;
+    card.appendChild(al);
+  }
 
   const body = document.createElement("div");
   body.className = "xpost-body";
@@ -554,9 +586,14 @@ function renderCalendar() {
   head.innerHTML = "<div></div><div>Grid</div><div>IG Story</div>";
   cal.appendChild(head);
   const today = todayIso();
+  let zebra = 0, prevDate = null;
   for (const g of groupSlots(week)) {
+    const isSub = prevDate !== null && g.date === prevDate && !g.key.toLowerCase().includes("any");
+    if (!isSub) zebra++;
+    prevDate = g.date;
     const row = document.createElement("div");
-    row.className = "cal-row" + (g.date === today && !g.key.toLowerCase().includes("any") ? " is-today" : "");
+    row.className = "cal-row " + (zebra % 2 ? "z-a" : "z-b") + (isSub ? " sub" : "") +
+      (g.date === today && !g.key.toLowerCase().includes("any") ? " is-today" : "");
     const day = document.createElement("div");
     day.className = "cal-day";
     day.innerHTML = `${g.key}<small></small>`;
