@@ -122,16 +122,23 @@
    "date": "2026-08-20",
    "day": "Thursday",
    "kind": "story",
-   "slot": "Repost the grid post",
-   "title": "What's On story share",
+   "slot": "Story version, post day after the grid",
+   "title": "What's On story",
    "status": "ready",
-   "media": [],
-   "media_kind": "none",
-   "caption": "Repost the What's On carousel to your story, the day after it went on the grid.",
+   "media": [
+    "stories/whats-on-story/whats-on-story.png"
+   ],
+   "media_kind": "image",
+   "caption": "Postable 9:16 story version. Post Thursday, the day after the grid carousel.",
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null,
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-17/renders/whats-on-story.layout.json",
+    "content": "WEEKS/2026-08-17/renders/whats-on-story.content.json",
+    "out": "WEEKS/2026-08-17/stories/whats-on-story/whats-on-story.png"
+   },
    "alert": "Rule change: the What's On story is a repost of the grid post, posted the day after."
   },
   {

@@ -37,8 +37,8 @@
     "Run the graphic as a native story with a sticker line"
    ],
    "template": null,
-   "reference": "TEMPLATES/canva-refs/ms-whatson-ref.png",
-   "reference_label": "Canva reference"
+   "reference": "WEEKS/2026-08-10/ig/last-whats-on.jpg",
+   "reference_label": "Last Monday: What's On"
   },
   {
    "id": "tue-grid-flex",
@@ -92,7 +92,9 @@
     "grid/tuesday-post/RING1804.jpg",
     "grid/tuesday-post/RING1837.jpg",
     "grid/tuesday-post/RING1881.jpg"
-   ]
+   ],
+   "reference": "WEEKS/2026-08-10/ig/last-photos-1.jpg",
+   "reference_label": "Last week: photos carousel"
   },
   {
    "id": "tue-story-whatson",
@@ -101,14 +103,18 @@
    "kind": "story",
    "slot": "Repost the grid post",
    "title": "What's On story",
-   "status": "waiting",
-   "media": [],
+   "status": "ready",
+   "media": [
+    "stories/whats-on-story/whats-on-story.png"
+   ],
    "media_kind": "image",
-   "caption": "Repost Monday's What's On post to your story, the day after it went on the grid.",
+   "caption": "Postable 9:16 story version of Chelsea's What's On, art centred on a blurred wash. Post Tuesday with a sticker line: One more sleep until the week begins ✨",
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "reference": "WEEKS/2026-08-10/ig/last-whats-on.jpg",
+   "reference_label": "Last week's What's On, story ran day after"
   },
   {
    "id": "wed-am-grid-thu-artist",
@@ -137,8 +143,8 @@
     "Chelsea's Thursday artist graphic may land Tuesday, download from her Drive folder"
    ],
    "template": null,
-   "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
-   "reference_label": "Canva reference"
+   "reference": "WEEKS/2026-08-10/ig/last-artist-elyssa.jpg",
+   "reference_label": "Last artist post (Elyssa Dean)"
   },
   {
    "id": "wed-am-story-weekend",
@@ -154,7 +160,9 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "reference": "WEEKS/2026-08-10/ig/last-photos-2.jpg",
+   "reference_label": "Last week: weekend photos"
   },
   {
    "id": "wed-pm-grid-reel",
@@ -175,7 +183,9 @@
     }
    ],
    "checklist": [],
-   "template": null
+   "template": null,
+   "reference": "WEEKS/2026-08-10/ig/last-reel-frame.jpg",
+   "reference_label": "Last week's reel, frame"
   },
   {
    "id": "thu-am-grid-fri-artist",
@@ -247,7 +257,9 @@
     }
    ],
    "checklist": [],
-   "template": null
+   "template": null,
+   "reference": "WEEKS/2026-08-10/ig/last-photos-3.jpg",
+   "reference_label": "Last week: Thursday post"
   },
   {
    "id": "fri-am-grid-sat-artist",
@@ -328,7 +340,9 @@
     }
    ],
    "checklist": [],
-   "template": null
+   "template": null,
+   "reference": "WEEKS/2026-08-10/ig/last-photos-4.jpg",
+   "reference_label": "Last week: Saturday post"
   },
   {
    "id": "sat-am-story-sat-artist",
