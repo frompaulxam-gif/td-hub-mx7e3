@@ -94,9 +94,14 @@
     <button class="mini-btn editor-cancel" id="editor-cancel">Cancel</button>
     <span class="editor-hint" id="editor-hint">Drag any text block. Tap one to resize.</span>
     <div class="editor-size" id="editor-size" hidden>
+      <span class="ed-ctl-label">Text</span>
       <button class="icon-btn" id="size-down" aria-label="Smaller text">&#8722;</button>
       <span id="size-val"></span>
       <button class="icon-btn" id="size-up" aria-label="Bigger text">&#43;</button>
+      <span class="ed-ctl-label">Width</span>
+      <button class="icon-btn" id="width-down" aria-label="Narrower">&#8722;</button>
+      <button class="icon-btn" id="width-up" aria-label="Wider">&#43;</button>
+      <select id="font-select" aria-label="Font"></select>
     </div>
     <button class="mini-btn editor-save" id="editor-save">Save &amp; re-render</button>
   </div>

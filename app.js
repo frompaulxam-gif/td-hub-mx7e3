@@ -555,10 +555,24 @@ $("#focus").addEventListener("touchend", e => {
 
 const ed = { layout: null, content: null, slot: null, scale: 1, sel: null };
 
+const ED_FONTS = [
+  "", "Poppins", "Poppins SemiBold", "Bodoni 72", "Snell Roundhand",
+  "Barlow Semi Condensed", "Playfair Display", "Helvetica Neue",
+];
+
 $("#editor-open").addEventListener("click", openEditor);
 $("#editor-cancel").addEventListener("click", () => { $("#editor").hidden = true; });
 $("#size-down").addEventListener("click", () => bumpSize(-2));
 $("#size-up").addEventListener("click", () => bumpSize(2));
+$("#width-down").addEventListener("click", () => bumpWidth(-20));
+$("#width-up").addEventListener("click", () => bumpWidth(20));
+$("#font-select").addEventListener("change", e => {
+  if (!ed.sel) return;
+  if (e.target.value) ed.sel.font = e.target.value;
+  else delete ed.sel.font;
+  const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
+  if (el) styleEdBlock(el, ed.sel);
+});
 $("#editor-save").addEventListener("click", saveEditor);
 
 async function openEditor() {
@@ -617,12 +631,20 @@ function styleEdBlock(el, b) {
     width: b.w * k + "px",
     fontSize: b.size * k + "px",
     fontWeight: b.weight || 700,
+    fontFamily: b.font ? `"${b.font}", Poppins, sans-serif` : "",
     textAlign: b.align || "center",
     lineHeight: String(b.lineHeight || 1.28),
     letterSpacing: (b.letterSpacing || 0) + "em",
     textTransform: b.uppercase === false ? "none" : "uppercase",
     color: b.color || "#f5e9b3",
   });
+}
+
+function bumpWidth(d) {
+  if (!ed.sel) return;
+  ed.sel.w = Math.max(80, Math.min((ed.layout.width || 1080), ed.sel.w + d));
+  const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
+  if (el) styleEdBlock(el, ed.sel);
 }
 
 function attachDrag(el, b) {
@@ -651,6 +673,15 @@ function selectBlock(el, b) {
   ed.sel = b;
   $("#editor-size").hidden = false;
   $("#size-val").textContent = b.size + "px";
+  const sel = $("#font-select");
+  if (!sel.options.length)
+    for (const f of ED_FONTS) {
+      const o = document.createElement("option");
+      o.value = f;
+      o.textContent = f || "Template font";
+      sel.appendChild(o);
+    }
+  sel.value = ED_FONTS.includes(b.font) ? b.font : "";
 }
 
 function bumpSize(d) {

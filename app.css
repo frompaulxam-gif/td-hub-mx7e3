@@ -387,8 +387,14 @@ img.thumb, video.thumb { display: block; }
 }
 .editor-hint { font-size: 12.5px; color: var(--ink-mid); flex: 1; text-align: center; }
 .editor-save { background: var(--accent); color: var(--on-accent); }
-.editor-size { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; }
+.editor-size { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; flex-wrap: wrap; }
 .editor-size .icon-btn { width: 32px; height: 32px; background: var(--surface); }
+.ed-ctl-label { font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-mid); margin-left: 6px; }
+#font-select {
+  font: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink-strong);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  padding: 6px 10px; max-width: 190px;
+}
 .editor-stage-wrap {
   flex: 1; display: grid; place-items: center; overflow: hidden;
   padding: 10px 16px calc(env(safe-area-inset-bottom) + 14px);
