@@ -104,6 +104,10 @@
     {
      "ts": "2026-08-17",
      "text": "Chelsea says Thursday artist graphics may not be done until Tuesday. Chase gently if missing Wednesday morning."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Not in Chelsea's folder yet, matches her email saying Thursday artist graphics may land Tuesday. Chase gently Wednesday morning if still missing."
     }
    ],
    "checklist": [
@@ -157,16 +161,27 @@
    "day": "Thursday AM",
    "kind": "grid",
    "slot": "Friday artist graphic",
-   "title": "Friday artist graphic",
-   "status": "waiting",
-   "media": [],
+   "title": "Friday artist: DJ Benzo",
+   "status": "ready",
+   "media": [
+    "grid/thursday-friday-artist/friday-artist-dj-benzo.png"
+   ],
    "media_kind": "image",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
+   "caption": "Friday's soundtrack is sorted.\n\nDJ Benzo, funk, soul, R&B and house classics, every Friday this August.\n\nSecure your table via the website and settle in for the evening.",
+   "alternates": [
+    "Moonshine Fridays.\n\nDJ Benzo takes the decks from open til late.\n\nTables via the website."
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Chelsea's finished graphic, filed from her Drive folder."
+    }
+   ],
    "checklist": [
-    "Friday: Moonshine Fridays with DJ Benzo, 90s anthems to today",
-    "Download Chelsea's graphic from her Drive folder"
+    {
+     "text": "Tag @manlikebenzo",
+     "done": false
+    }
    ],
    "template": null,
    "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
@@ -217,21 +232,31 @@
    "day": "Friday AM",
    "kind": "grid",
    "slot": "Saturday artist graphic",
-   "title": "Saturday artist graphic",
-   "status": "waiting",
-   "media": [],
+   "title": "Saturday artist: Marcius Riley",
+   "status": "ready",
+   "media": [
+    "grid/friday-saturday-artist/saturday-artist-marcius-riley.png"
+   ],
    "media_kind": "image",
-   "caption": "",
-   "alternates": [],
+   "caption": "Saturday night at Moonshine.\n\nMarcius Riley, a soulful tribute to Motown and soul classics, from Otis Redding to the Four Tops and beyond.\n\nTables are available to book via the website.",
+   "alternates": [
+    "Soul and Motown, sung the way it should be.\n\nMarcius Riley, this Saturday at Moonshine."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
      "text": "Sat 22 daytime act confirmed: Marcius Riley 12pm, tag @marciusriley (handle confirmed, venue link unproven). Evening act unknown."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Chelsea's finished graphic, filed from her Drive folder."
     }
    ],
    "checklist": [
-    "Saturday: Marcius Riley, Motown and soul tribute (@marciusriley)",
-    "Download Chelsea's graphic from her Drive folder"
+    {
+     "text": "Tag @marciusriley",
+     "done": false
+    }
    ],
    "template": null,
    "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
@@ -244,12 +269,19 @@
    "kind": "story",
    "slot": "Friday artist graphic",
    "title": "Friday artist story",
-   "status": "waiting",
-   "media": [],
+   "status": "ready",
+   "media": [
+    "stories/friday-artist/friday-artist-story.png"
+   ],
    "media_kind": "image",
-   "caption": "",
+   "caption": "Story version, post Friday AM with a sticker line: Tonight at Moonshine ✨",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Chelsea's 9:16 story art."
+    }
+   ],
    "checklist": [],
    "template": null
   },
@@ -281,12 +313,19 @@
    "kind": "story",
    "slot": "Saturday artist graphic",
    "title": "Saturday artist story",
-   "status": "waiting",
-   "media": [],
+   "status": "ready",
+   "media": [
+    "stories/saturday-artist/saturday-artist-story.png"
+   ],
    "media_kind": "image",
-   "caption": "",
+   "caption": "Story version, post Saturday AM with a sticker line: Tonight at Moonshine ✨",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Chelsea's 9:16 story art."
+    }
+   ],
    "checklist": [],
    "template": null
   }
@@ -307,6 +346,35 @@
   {
    "text": "Confirm Saturday's evening act with Nat, it is not in the booking calendar",
    "done": false
+  },
+  {
+   "text": "Check last week's Moonshine photos and videos made it into the pictures and raw content drives",
+   "done": false
   }
+ ],
+ "links": [
+  {
+   "label": "Pictures drive",
+   "url": "https://drive.google.com/drive/folders/1trybrzAT90Bw4Jax5wCFZ2m4YVzgpZL_"
+  },
+  {
+   "label": "Raw content drive",
+   "url": "https://drive.google.com/drive/folders/1kPbGlwpWEBo5nmDd7D-xKBwnJe_O0P7B"
+  },
+  {
+   "label": "This week's graphics",
+   "url": "https://drive.google.com/drive/folders/1bLeNTNnpJDUcdUjVm9ZosK-arovqSRnv"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAG_jNPgOQU/FLc2Emcu9dFV8tRh4N5AnQ/edit"
+  },
+  {
+   "label": "@moonshineleicester",
+   "url": "https://www.instagram.com/moonshineleicester/"
+  }
+ ],
+ "alerts": [
+  "Chelsea's graphics are in and marked ready: Friday artist (DJ Benzo), Saturday artist (Marcius Riley), both story versions. Still to come from her: the Thursday artist graphic."
  ]
 }

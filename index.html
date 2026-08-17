@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow,noarchive">
 <title>TDG Hub</title>
-<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="app.css?v=3">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='4' y='4' width='56' height='56' rx='14' fill='%23211a12'/><circle cx='32' cy='32' r='9' fill='%232e6b38'/></svg>">
 </head>
 <body>
@@ -33,15 +33,25 @@
 
 <main id="main">
   <div id="keydates" class="keydates" hidden></div>
+  <div id="links" class="links-row" hidden></div>
   <section id="board" aria-label="Week overview">
-    <div class="board-head" id="board-head" hidden>
-      <div></div><div class="board-col-label">Grid post</div><div class="board-col-label">Story</div>
+    <div class="sec-head">
+      <span class="sec-title">Overview</span>
+      <button class="collapse-btn" data-collapse="board" aria-label="Collapse overview">&#8964;</button>
     </div>
-    <div id="board-rows"></div>
+    <div id="board-body">
+      <div class="board-head" id="board-head" hidden>
+        <div></div><div class="board-col-label">Grid post</div><div class="board-col-label">Story</div>
+      </div>
+      <div id="board-rows"></div>
+    </div>
   </section>
   <section id="prep" aria-label="Prep for the week" hidden>
-    <div class="prep-head">Before the week</div>
-    <ul class="xchecklist" id="prep-list"></ul>
+    <div class="sec-head">
+      <span class="prep-head">Before the week</span>
+      <button class="collapse-btn" data-collapse="prep" aria-label="Collapse prep">&#8964;</button>
+    </div>
+    <div id="prep-body"><ul class="xchecklist" id="prep-list"></ul></div>
   </section>
   <section id="expanded" aria-label="Day by day review"></section>
   <section id="calendar" class="calendar" hidden></section>
@@ -82,6 +92,6 @@
 </div>
 
 <div class="toast" id="toast" role="status"></div>
-<script src="app.js"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>

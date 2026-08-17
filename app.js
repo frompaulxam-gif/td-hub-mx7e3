@@ -15,6 +15,21 @@ const state = {
 };
 
 const DONE = new Set(["approved", "posted"]);
+const REACTIVE_MENU = [
+  { name: "Poll question", prompt: "QUESTION BOX or poll sticker. A real decision: Sax or DJ this Saturday? Spritz or pint first?" },
+  { name: "Clip of the vibe", prompt: "One clip that shows what it feels like: room mid-song, table mid-laugh, the pour. Raw is fine." },
+  { name: "Weather check", prompt: "Weather sticker over a yard clip. Sun's out: you know where to be. Grey: the forecast says Friday's fine, book anyway." },
+  { name: "Updates", prompt: "This week's acts, new drink on the bar, food truck this weekend, anything Chelsea flags." },
+  { name: "DJ / music", prompt: "Clip of the decks or sax. Who's on this Friday name-drop, or guess-the-song from a 2 second clip." },
+  { name: "Whole space", prompt: "Slow pan of the empty yard in the morning, festoon lights coming on, overhead at peak. The room is the star." },
+  { name: "Drinks", prompt: "The pour, the garnish, the frozen tap, condensation macro. One drink per story, no menus." },
+  { name: "Funny caption", prompt: "A normal clip with the caption doing the work: the table that said one drink, an hour ago." },
+  { name: "Clips as-is", prompt: "Anything real from the camera roll, posted raw. No edit, no caption if it doesn't need one." },
+  { name: "Behind the scenes", prompt: "Setup before doors, keg change, chalkboard being written, sound check. The venue waking up." },
+  { name: "Booking nudge", prompt: "Booking-link sticker over a busy clip. Friday tables going, midweek." },
+  { name: "People / UGC", prompt: "Reshare every tag and mention, repost customer stories, staff intro when someone new starts." },
+  { name: "Countdown", prompt: "Countdown sticker to Friday doors, PL fixtures, bank holiday Sunday, season close weekend." },
+];
 const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", changes: "changes asked", posted: "✓ posted" };
 
 /* ---------- data ---------- */
@@ -120,6 +135,7 @@ const dayId = key => "xday-" + key.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
 function render() {
   renderWeekBar();
+  renderLinks();
   renderKeyDates();
   renderBoard();
   renderPrep();
@@ -130,6 +146,8 @@ function render() {
   $("#board").hidden = !onBoard;
   $("#expanded").hidden = !onBoard;
   $("#prep").hidden = !onBoard || !(week?.prep || []).length;
+  applyCollapse("board", $("#board-body"), $('[data-collapse="board"]'));
+  applyCollapse("prep", $("#prep-body"), $('[data-collapse="prep"]'));
   $("#calendar").hidden = state.view !== "calendar" || !week;
   $("#empty").hidden = !!week;
   if (!week) $("#empty-text").textContent =
@@ -151,6 +169,41 @@ function renderWeekBar() {
   } else {
     $("#week-progress").textContent = "";
   }
+}
+
+/* ----- collapsible sections ----- */
+
+const collapsed = new Set(JSON.parse(localStorage.getItem("hub-collapsed") || "[]"));
+
+function applyCollapse(id, bodyEl, btn) {
+  const off = collapsed.has(id);
+  if (bodyEl) bodyEl.hidden = off;
+  if (btn) btn.classList.toggle("is-collapsed", off);
+}
+
+function toggleCollapse(id) {
+  if (collapsed.has(id)) collapsed.delete(id);
+  else collapsed.add(id);
+  localStorage.setItem("hub-collapsed", JSON.stringify([...collapsed]));
+  render();
+}
+
+$$("[data-collapse]").forEach(b => b.addEventListener("click", () => toggleCollapse(b.dataset.collapse)));
+
+function renderLinks() {
+  const week = curWeek();
+  const el = $("#links");
+  const links = week?.links || [];
+  el.hidden = !links.length || state.view !== "board";
+  el.innerHTML = "";
+  links.forEach(l => {
+    const a = document.createElement("a");
+    a.href = l.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = l.label;
+    el.appendChild(a);
+  });
 }
 
 function renderKeyDates() {
@@ -246,6 +299,11 @@ function makeMini(week, s, g) {
     img.src = mediaUrl(week, first, s);
     img.alt = "";
     b.appendChild(img);
+  } else if (first) {
+    const d = document.createElement("div");
+    d.className = "mini-thumb is-video";
+    d.textContent = "▶";
+    b.appendChild(d);
   } else {
     const d = document.createElement("div");
     d.className = "mini-thumb is-empty";
@@ -284,6 +342,8 @@ function renderPrep() {
   week.prep.forEach((item, i) => {
     const li = document.createElement("li");
     li.className = item.done ? "is-ticked" : "";
+    const wrap = document.createElement("label");
+    wrap.className = "tick-label";
     const box = document.createElement("input");
     box.type = "checkbox";
     box.checked = !!item.done;
@@ -307,7 +367,8 @@ function renderPrep() {
     });
     const label = document.createElement("span");
     label.textContent = item.text;
-    li.append(box, label);
+    wrap.append(box, label);
+    li.appendChild(wrap);
     list.appendChild(li);
   });
 }
@@ -339,13 +400,30 @@ function renderExpanded() {
     d.className = "xday-date";
     d.textContent = g.key.toLowerCase().includes("any") ? "post any day" : fmtDate(g.date);
     head.append(n, d);
+    const gridTitles = g.slots.filter(s => s.kind === "grid").map(s => s.title || s.slot);
+    const storyTitles = g.slots.filter(s => s.kind === "story").map(s => s.title || s.slot);
+    if (gridTitles.length || storyTitles.length) {
+      const sum = document.createElement("span");
+      sum.className = "xday-sum";
+      sum.textContent = "- " + (gridTitles.join(" + ") || "grid off") + "  //  " + (storyTitles.join(" + ") || "no story");
+      head.appendChild(sum);
+    }
     if (dayComplete(g)) {
       const c = document.createElement("span");
       c.className = "xday-complete-chip";
       c.textContent = "Day done";
       head.appendChild(c);
     }
+    const cid = "day:" + g.key;
+    const cbtn = document.createElement("button");
+    cbtn.className = "collapse-btn" + (collapsed.has(cid) ? " is-collapsed" : "");
+    cbtn.setAttribute("aria-label", "Collapse " + g.key);
+    cbtn.innerHTML = "&#8964;";
+    cbtn.addEventListener("click", () => toggleCollapse(cid));
+    head.appendChild(cbtn);
     sec.appendChild(head);
+    const dayBody = document.createElement("div");
+    dayBody.hidden = collapsed.has(cid);
     for (const kind of ["grid", "story"]) {
       const items = g.slots.filter(s => s.kind === kind);
       if (!items.length) continue;
@@ -356,8 +434,9 @@ function renderExpanded() {
       klabel.textContent = kind === "grid" ? "Grid post" : "Story";
       kwrap.appendChild(klabel);
       for (const s of items) kwrap.appendChild(makeXpost(week, s));
-      sec.appendChild(kwrap);
+      dayBody.appendChild(kwrap);
     }
+    sec.appendChild(dayBody);
     wrap.appendChild(sec);
   }
 }
@@ -518,6 +597,34 @@ function makeXpost(week, s) {
     right.appendChild(altWrap);
   }
 
+  // reactive idea clicker for open reactive story slots
+  const isReactive = (s.slot || "").toLowerCase().includes("reactive") && s.kind === "story";
+  if (isReactive && state.live) {
+    const rWrap = document.createElement("div");
+    const rLabel = document.createElement("span");
+    rLabel.className = "xpane-label";
+    rLabel.style.marginTop = "12px";
+    rLabel.textContent = "Reactive menu, tap to pick";
+    rWrap.appendChild(rLabel);
+    const rRow = document.createElement("div");
+    rRow.className = "reactive-row";
+    for (const opt of REACTIVE_MENU) {
+      const b = document.createElement("button");
+      b.className = "r-chip" + ((s.title || "").includes(opt.name) ? " is-picked" : "");
+      b.textContent = opt.name;
+      b.title = opt.prompt;
+      b.addEventListener("click", async () => {
+        if (await patchSlot(s, {
+          set: { title: "Reactive: " + opt.name, caption: opt.prompt },
+          add_note: { text: "Picked " + opt.name + " from the reactive menu." },
+        }, true)) { toast(opt.name + " picked"); render(); }
+      });
+      rRow.appendChild(b);
+    }
+    rWrap.appendChild(rRow);
+    right.appendChild(rWrap);
+  }
+
   // checklist with tickboxes (string items and {text, done} both supported)
   if (s.checklist?.length) {
     const cl = document.createElement("ul");
@@ -527,6 +634,8 @@ function makeXpost(week, s) {
       const done = typeof item === "object" && !!item.done;
       const li = document.createElement("li");
       li.className = done ? "is-ticked" : "";
+      const wrap = document.createElement("label");
+      wrap.className = "tick-label";
       const box = document.createElement("input");
       box.type = "checkbox";
       box.checked = done;
@@ -541,7 +650,8 @@ function makeXpost(week, s) {
       });
       const label = document.createElement("span");
       label.textContent = text;
-      li.append(box, label);
+      wrap.append(box, label);
+      li.appendChild(wrap);
       cl.appendChild(li);
     });
     right.appendChild(cl);
@@ -573,8 +683,12 @@ function makeXpost(week, s) {
       const text = input.value.trim();
       if (!text) return;
       const payload = { add_note: { text } };
-      if (!DONE.has(s.status) && s.status !== "waiting") payload.set = { status: "changes" };
-      if (await patchSlot(s, payload, true)) { toast("Comment saved"); render(); }
+      const flips = !DONE.has(s.status) && s.status !== "waiting";
+      if (flips) payload.set = { status: "changes" };
+      if (await patchSlot(s, payload, true)) {
+        toast(flips ? "Comment saved · marked changes asked" : "Comment saved");
+        render();
+      }
     };
     add.addEventListener("click", send);
     input.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
@@ -711,13 +825,14 @@ const ED_FONTS = [
   "Barlow Semi Condensed", "Playfair Display", "Helvetica Neue",
 ];
 
-$("#editor-cancel").addEventListener("click", () => { $("#editor").hidden = true; });
+$("#editor-cancel").addEventListener("click", () => closeEditor());
 $("#size-down").addEventListener("click", () => bumpSize(-2));
 $("#size-up").addEventListener("click", () => bumpSize(2));
 $("#width-down").addEventListener("click", () => bumpWidth(-20));
 $("#width-up").addEventListener("click", () => bumpWidth(20));
 $("#font-select").addEventListener("change", e => {
   if (!ed.sel) return;
+  ed.dirty = true;
   if (e.target.value) ed.sel.font = e.target.value;
   else delete ed.sel.font;
   const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
@@ -725,6 +840,7 @@ $("#font-select").addEventListener("change", e => {
 });
 $("#text-edit").addEventListener("input", e => {
   if (!ed.sel) return;
+  ed.dirty = true;
   const id = ed.sel.id, val = e.target.value;
   if (id === "acts") ed.content.acts = val.split("\n").map(line => ({ time: "", name: line }));
   else if (Array.isArray(ed.content[id])) ed.content[id] = val.split("\n");
@@ -740,7 +856,7 @@ async function openEditor(slot) {
     const r = await fetch(`/api/template?venue=${state.venue}&week=${week.week_start}&id=${slot.id}`);
     const j = await r.json();
     if (!j.layout) throw new Error(j.error || "no layout");
-    ed.layout = j.layout; ed.content = j.content || {}; ed.slot = slot; ed.sel = null;
+    ed.layout = j.layout; ed.content = j.content || {}; ed.slot = slot; ed.sel = null; ed.dirty = false;
     $("#editor").hidden = false;
     $("#editor-size").hidden = true;
     buildEditorStage();
@@ -801,6 +917,7 @@ function styleEdBlock(el, b) {
 
 function bumpWidth(d) {
   if (!ed.sel) return;
+  ed.dirty = true;
   ed.sel.w = Math.max(80, Math.min((ed.layout.width || 1080), ed.sel.w + d));
   const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
   if (el) styleEdBlock(el, ed.sel);
@@ -815,6 +932,7 @@ function attachDrag(el, b) {
     const move = ev => {
       b.x = Math.round(ox + (ev.clientX - startX) / ed.scale);
       b.y = Math.round(oy + (ev.clientY - startY) / ed.scale);
+      ed.dirty = true;
       styleEdBlock(el, b);
     };
     const up = () => {
@@ -848,6 +966,7 @@ function selectBlock(el, b) {
 
 function bumpSize(d) {
   if (!ed.sel) return;
+  ed.dirty = true;
   ed.sel.size = Math.max(12, ed.sel.size + d);
   $("#size-val").textContent = ed.sel.size + "px";
   const el = $(`.ed-block[data-id="${ed.sel.id}"]`);
@@ -866,6 +985,7 @@ async function saveEditor() {
     const j = await r.json();
     if (!j.ok) throw new Error(j.error || "render failed");
     s._v = Date.now();
+    ed.dirty = false;
     $("#editor").hidden = true;
     toast("Re-rendered");
     render();
@@ -879,6 +999,18 @@ async function saveEditor() {
 window.addEventListener("resize", () => {
   if (!$("#editor").hidden && ed.layout) buildEditorStage();
 });
+
+document.addEventListener("keydown", e => {
+  if (e.key !== "Escape") return;
+  if (!$("#photo-picker").hidden) { $("#photo-picker").hidden = true; return; }
+  if (!$("#editor").hidden) closeEditor();
+});
+
+function closeEditor() {
+  if (ed.dirty && !confirm("Discard layout and text changes?")) return;
+  $("#editor").hidden = true;
+  ed.dirty = false;
+}
 
 /* ---------- photo picker ---------- */
 

@@ -52,16 +52,17 @@
    "date": "2026-08-17",
    "day": "Monday",
    "kind": "story",
-   "slot": "Repost the recap",
-   "title": "Repost recap + reshare weekend tags",
-   "status": "waiting",
+   "slot": "Share the announce",
+   "title": "Park Life to story",
+   "status": "posted",
    "media": [],
    "media_kind": "none",
-   "caption": "Repost the recap reel to story. Reshare every tag and mention from the weekend.",
+   "caption": "Park Life poster ran as the story too, with the announce.",
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Swapped with the schedule: Park Life share instead of the recap repost."
   },
   {
    "id": "tue-grid-whatson",
@@ -199,13 +200,21 @@
     "stories/weather-check/weather-sticker-2026-08-20.png"
    ],
    "media_kind": "image",
-   "caption": "Sticker over any yard clip. Add on top in the app: doors Friday 5pm / book a table, link in bio",
+   "caption": "Sticker lines to add over your clip:\n\nsun's out, you know where to be\ndoors Friday 5pm\nbook a table, link in bio",
    "alternates": [
-    "Grey day version: the forecast says Friday's fine, book anyway."
+    "Grey week version: the forecast says Friday's fine, book anyway.",
+    "thirty degrees says table in the sun\nFriday from 5pm"
    ],
    "notes": [],
    "checklist": [
-    "Regenerates any time: python3 /Users/paulventura/tdg-hub/tools/weather_sticker.py"
+    {
+     "text": "YOU: add the sticker over a yard clip in the IG app + music",
+     "done": false
+    },
+    {
+     "text": "STUDIO: sticker regenerates Thursday from the live forecast",
+     "done": false
+    }
    ],
    "template": null,
    "reference": "HUB/refs/weathercheckaa-final.png",
@@ -392,6 +401,32 @@
    },
    "reference": null,
    "reference_label": "Your IG-text version was the reference"
+  },
+  {
+   "id": "wed-grid-flexible-2",
+   "date": "2026-08-19",
+   "day": "Wednesday",
+   "kind": "grid",
+   "slot": "Flexible, pick one",
+   "title": "Flexible post",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "YOU: if a trend or viral idea wins, send the link and the brief gets written",
+     "done": false
+    },
+    {
+     "text": "STUDIO: otherwise drafts from the menu: drinks hero / repost winner / photo single / announce / staff / throwback",
+     "done": false
+    }
+   ],
+   "template": null,
+   "alert": "Fresh slot: the original Wednesday flexible became Monday's Park Life post, this replaces it."
   }
  ],
  "alerts": [
@@ -413,6 +448,24 @@
   {
    "text": "Scroll for a trend reel for Friday, send the link when found",
    "done": false
+  },
+  {
+   "text": "Upload this weekend's photos and videos to the Merchants Yard photos drive (Merchants Yard 15-08-26 is in Downloads)",
+   "done": false
+  }
+ ],
+ "links": [
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
   }
  ]
 }
