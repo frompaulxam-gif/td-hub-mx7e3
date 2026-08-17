@@ -1,0 +1,310 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-08-24",
+ "label": "W/C Mon 24 Aug 2026",
+ "archived": false,
+ "key_dates": [
+  "Sun 30 Aug: Carnival in the Courtyard, bank holiday Sunday, open 2pm (website + playbook)",
+  "Mon 31 Aug: bank holiday Monday, closed",
+  "Fri 28: The Friday Social with Jonna & Yumna Black · Sat 29: MY Presents: DJ Benzo (website)"
+ ],
+ "alerts": [],
+ "links": [
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  }
+ ],
+ "prep": [
+  {
+   "text": "Chase Chelsea's line-up, cross-check the website events",
+   "done": false
+  },
+  {
+   "text": "Weekend clips together for the recap edit (Park Life Saturday = the recap gold)",
+   "done": false
+  },
+  {
+   "text": "Upload weekend photos and videos to the photos drive",
+   "done": false
+  },
+  {
+   "text": "Scroll for a trend for the Flexible trend slot, send the link",
+   "done": false
+  },
+  {
+   "text": "Carnival Sunday needs its own announce during the week, ask Chelsea for the poster",
+   "done": false
+  }
+ ],
+ "slots": [
+  {
+   "id": "mon-grid-recap",
+   "date": "2026-08-24",
+   "day": "Monday",
+   "kind": "grid",
+   "slot": "Recap montage reel",
+   "title": "Weekend recap reel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "video",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "YOU: edit the reel from Park Life weekend clips",
+     "done": false
+    },
+    {
+     "text": "STUDIO: references + caption options",
+     "done": false
+    },
+    {
+     "text": "Post Monday evening",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "mon-story-repost",
+   "date": "2026-08-24",
+   "day": "Monday",
+   "kind": "story",
+   "slot": "Repost the recap",
+   "title": "Repost recap + reshare weekend tags",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "tue-grid-whatson",
+   "date": "2026-08-25",
+   "day": "Tuesday",
+   "kind": "grid",
+   "slot": "What's On carousel",
+   "title": "What's on this week",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "carousel",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Website already lists: Fri Social with Jonna & Yumna Black, Sat MY Presents: DJ Benzo, Sun Carnival in the Courtyard",
+     "done": false
+    },
+    {
+     "text": "Bank holiday weekend, three events on the cover slide",
+     "done": false
+    },
+    {
+     "text": "Unpin last week's What's On, pin the new one",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "tue-story-reactive",
+   "date": "2026-08-25",
+   "day": "Tuesday",
+   "kind": "story",
+   "slot": "Reactive",
+   "title": "Reactive pick of the day",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-grid-flexible",
+   "date": "2026-08-26",
+   "day": "Wednesday",
+   "kind": "grid",
+   "slot": "Flexible, pick one",
+   "title": "Flexible post",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Carnival announce is the obvious pick if Chelsea's poster lands",
+     "done": false
+    },
+    {
+     "text": "Otherwise: drinks hero / repost winner / photo single",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "wed-story-whatson",
+   "date": "2026-08-26",
+   "day": "Wednesday",
+   "kind": "story",
+   "slot": "Repost the grid post",
+   "title": "What's On story share",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Repost the What's On carousel to story, the day after the grid post.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "thu-grid-photos",
+   "date": "2026-08-27",
+   "day": "Thursday",
+   "kind": "grid",
+   "slot": "Photos from the weekend",
+   "title": "Weekend photos carousel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "carousel",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Park Life photos, lead with the best crowd singalong",
+     "done": false
+    },
+    {
+     "text": "6 to 8, no repeats within 14 days",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "thu-story-reactive",
+   "date": "2026-08-27",
+   "day": "Thursday",
+   "kind": "story",
+   "slot": "Reactive",
+   "title": "Reactive pick of the day",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-grid-trend",
+   "date": "2026-08-28",
+   "day": "Friday",
+   "kind": "grid",
+   "slot": "Flexible trend",
+   "title": "Flexible trend - TBC",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "video",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "YOU: send the trend link",
+     "done": false
+    },
+    {
+     "text": "STUDIO: recreation brief + caption",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "fri-story-doors",
+   "date": "2026-08-28",
+   "day": "Friday",
+   "kind": "story",
+   "slot": "Doors open story",
+   "title": "Friday doors open story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "The Friday Social with Jonna & Yumna Black, doors 5pm",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "sat-story-doors",
+   "date": "2026-08-29",
+   "day": "Saturday",
+   "kind": "story",
+   "slot": "Doors open story",
+   "title": "Saturday doors open story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "MY Presents: DJ Benzo, doors 2pm",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "sun-story-carnival",
+   "date": "2026-08-30",
+   "day": "Sunday",
+   "kind": "story",
+   "slot": "Event day story",
+   "title": "Carnival in the Courtyard story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Bank holiday Sunday, open 2pm, carnival décor and 90s vs 00s anthems",
+     "done": false
+    }
+   ],
+   "template": null
+  }
+ ]
+}

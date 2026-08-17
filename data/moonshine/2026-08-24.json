@@ -1,0 +1,300 @@
+{
+ "venue": "moonshine",
+ "week_start": "2026-08-24",
+ "label": "W/C Mon 24 Aug 2026",
+ "archived": false,
+ "key_dates": [
+  "Sat 29 Aug 4pm: Hayley Di Rito brunch (@hayley_di_ritosingingtherapist, confirmed)",
+  "Sat 29 Aug 9:30pm: Stacey Lynn Crowe (@staceylynncrowe, confirmed)",
+  "Sun 30 Aug 6pm: Ben DJ (no socials found) · 9:30pm Tanni Browne (Facebook only, no IG)",
+  "Fri 28 Aug: bank holiday Friday, no act in the calendar, confirm with Nat"
+ ],
+ "alerts": [],
+ "links": [
+  {
+   "label": "Pictures drive",
+   "url": "https://drive.google.com/drive/folders/1trybrzAT90Bw4Jax5wCFZ2m4YVzgpZL_"
+  },
+  {
+   "label": "Raw content drive",
+   "url": "https://drive.google.com/drive/folders/1kPbGlwpWEBo5nmDd7D-xKBwnJe_O0P7B"
+  },
+  {
+   "label": "Next week's graphics",
+   "url": "https://drive.google.com/drive/folders/1bLeNTNnpJDUcdUjVm9ZosK-arovqSRnv"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAG_jNPgOQU/FLc2Emcu9dFV8tRh4N5AnQ/edit"
+  },
+  {
+   "label": "@moonshineleicester",
+   "url": "https://www.instagram.com/moonshineleicester/"
+  }
+ ],
+ "prep": [
+  {
+   "text": "Download Chelsea's w/c 24 graphics folder when it appears",
+   "done": false
+  },
+  {
+   "text": "Download Ringlight's weekend photos from the pictures drive",
+   "done": false
+  },
+  {
+   "text": "Upload the weekend video into the raw content drive",
+   "done": false
+  },
+  {
+   "text": "Confirm Thursday and Friday acts with Nat, calendar has gaps",
+   "done": false
+  },
+  {
+   "text": "Sunday has TWO acts (Ben DJ + Tanni Browne), check if the What's On needs a Sunday line",
+   "done": false
+  }
+ ],
+ "slots": [
+  {
+   "id": "mon-grid-whatson",
+   "date": "2026-08-24",
+   "day": "Monday",
+   "kind": "grid",
+   "slot": "What's On This Week infographic",
+   "title": "What's On This Week",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Post Chelsea's graphic as is",
+     "done": false
+    },
+    {
+     "text": "Unpin last week's What's On, pin this one",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "tue-grid-flex",
+   "date": "2026-08-25",
+   "day": "Tuesday",
+   "kind": "grid",
+   "slot": "Carousel from Ringlight delivery",
+   "title": "Weekend photos carousel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "carousel",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Pick 6 to 8 candid shots from the delivery",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "tue-story-whatson",
+   "date": "2026-08-25",
+   "day": "Tuesday",
+   "kind": "story",
+   "slot": "Repost the grid post",
+   "title": "What's On story share",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Repost Monday's What's On post to story, the day after.",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-am-grid-thu-artist",
+   "date": "2026-08-26",
+   "day": "Wednesday AM",
+   "kind": "grid",
+   "slot": "Thursday artist graphic",
+   "title": "Thursday artist graphic",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Act not in booking calendar, needs Nat",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "wed-am-story-weekend",
+   "date": "2026-08-26",
+   "day": "Wednesday AM",
+   "kind": "story",
+   "slot": "Photos / reel from the weekend",
+   "title": "Weekend photos or reel",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "wed-pm-grid-reel",
+   "date": "2026-08-26",
+   "day": "Wednesday PM",
+   "kind": "grid",
+   "slot": "Reel / Carousel / Photo",
+   "title": "Wednesday post - Reel / Carousel / Photo",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "video",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "thu-am-grid-fri-artist",
+   "date": "2026-08-27",
+   "day": "Thursday AM",
+   "kind": "grid",
+   "slot": "Friday artist graphic",
+   "title": "Friday artist graphic",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Bank holiday Friday act unconfirmed",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "thu-am-story-artist-hh",
+   "date": "2026-08-27",
+   "day": "Thursday AM",
+   "kind": "story",
+   "slot": "Thursday artist graphic + Happy Hour",
+   "title": "Thursday artist + Happy Hour",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "thu-pm-grid-flex",
+   "date": "2026-08-27",
+   "day": "Thursday PM",
+   "kind": "grid",
+   "slot": "Reel / Carousel / Photo",
+   "title": "Thursday post - Reel / Carousel / Photo",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "fri-am-grid-sat-artist",
+   "date": "2026-08-28",
+   "day": "Friday AM",
+   "kind": "grid",
+   "slot": "Saturday artist graphic",
+   "title": "Saturday artist: Stacey Lynn Crowe",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "image",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [
+    {
+     "text": "Tag @staceylynncrowe (confirmed)",
+     "done": false
+    },
+    {
+     "text": "Hayley Di Rito brunch 4pm too, tag @hayley_di_ritosingingtherapist",
+     "done": false
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "fri-am-story-fri-artist",
+   "date": "2026-08-28",
+   "day": "Friday AM",
+   "kind": "story",
+   "slot": "Friday artist graphic",
+   "title": "Friday artist story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "sat-am-grid-flex",
+   "date": "2026-08-29",
+   "day": "Saturday AM",
+   "kind": "grid",
+   "slot": "Reel / Carousel / Photo",
+   "title": "Saturday post - Reel / Carousel / Photo",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  },
+  {
+   "id": "sat-am-story-sat-artist",
+   "date": "2026-08-29",
+   "day": "Saturday AM",
+   "kind": "story",
+   "slot": "Saturday artist graphic",
+   "title": "Saturday artist story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "notes": [],
+   "checklist": [],
+   "template": null
+  }
+ ]
+}

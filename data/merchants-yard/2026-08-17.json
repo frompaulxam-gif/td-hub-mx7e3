@@ -14,10 +14,10 @@
    "kind": "grid",
    "slot": "Recap montage reel",
    "title": "Weekend recap reel",
-   "status": "draft",
+   "status": "ready",
    "media": [],
    "media_kind": "video",
-   "caption": "No phones needed. Just another weekend in the yard.\n\nBack Friday from 5pm. Park Life takes over Saturday from 2pm.",
+   "caption": "No trending audio.\nThat's just the sound of last weekend in Leicester",
    "alternates": [
     "That was the weekend. The next one has Park Life in it.\n\nFriday from 5pm, Saturday from 2pm.",
     "Proof the yard doesn't do quiet weekends. 👀\n\nBack Friday from 5pm. Park Life Saturday from 2pm."
@@ -30,6 +30,10 @@
     {
      "ts": "2026-08-17",
      "text": "Paul has the recap edit ready in trial reels. Caption drafted below, post Tuesday evening."
+    },
+    {
+     "ts": "2026-08-17",
+     "text": "Reel edited and sitting in trial reels with the Life without trending audio on-screen text. Use that thumbnail. Post Tuesday evening."
     }
    ],
    "checklist": [
@@ -269,13 +273,18 @@
    "day": "Thursday",
    "kind": "story",
    "slot": "Reactive",
-   "title": "Reactive pick of the day",
-   "status": "waiting",
+   "title": "Reactive: Ask us anything",
+   "status": "ready",
    "media": [],
    "media_kind": "none",
-   "caption": "Pick from the reactive menu below. The weather sticker is one of the options, ready-made.",
+   "caption": "Made in the app: question box 'Ask us any questions' over the busy crowd clip. Answers feed next week's captions and the DJ.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul built this in the IG app. Screenshot the good answers, they go to the reactive bank."
+    }
+   ],
    "checklist": [],
    "template": null
   },
@@ -284,9 +293,9 @@
    "date": "2026-08-21",
    "day": "Friday",
    "kind": "grid",
-   "slot": "Trend reel",
-   "title": "Trend reel",
-   "status": "waiting",
+   "slot": "Flexible trend",
+   "title": "Flexible trend - Kinda chic",
+   "status": "draft",
    "media": [],
    "media_kind": "video",
    "caption": "",
@@ -304,7 +313,8 @@
    ],
    "template": null,
    "reference": "WEEKS/2026-08-10/grid/friday-kinda-chic/01-0724-040-to-come-straight-from-work.jpg",
-   "reference_label": "Last Friday: kinda chic"
+   "reference_label": "Last Friday: kinda chic",
+   "alert": "Kinda chic round two pencilled for Friday, not fully confirmed yet."
   },
   {
    "id": "fri-story-lineup",
@@ -423,13 +433,18 @@
    "day": "Tuesday",
    "kind": "story",
    "slot": "Reactive",
-   "title": "Reactive pick of the day",
-   "status": "waiting",
+   "title": "Reactive: Secure your dancefloor",
+   "status": "ready",
    "media": [],
    "media_kind": "none",
-   "caption": "Pick from the reactive menu below.",
+   "caption": "Made in the app: SECURE YOUR DANCEFLOOR over the dancing clip. Music on, post Tuesday.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "Paul built this in the IG app from the weekend clip."
+    }
+   ],
    "checklist": [],
    "template": null
   }
@@ -444,7 +459,7 @@
   },
   {
    "text": "Get the weekend clips together for the recap reel edit",
-   "done": false
+   "done": true
   },
   {
    "text": "Check the photographer's weekend delivery has landed in HUB/deliveries",
