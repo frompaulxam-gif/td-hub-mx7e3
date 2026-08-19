@@ -87,10 +87,10 @@
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "draft",
+   "status": "approved",
    "media": [
-    "grid/tuesday-whats-on/slide-01.png",
-    "grid/tuesday-whats-on/slide-02.png"
+    "grid/tuesday-whats-on/final-slide-01.jpg",
+    "grid/tuesday-whats-on/final-slide-02.jpg"
    ],
    "media_kind": "carousel",
    "caption": "Big one this weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna. The easiest way to shake off the week.\n\n🎸 Saturday - MY Presents: Park Life. Live music from King Ocean Club plus DJs on the best of 90s Britpop & indie anthems, performances from 5pm. Pay on the door.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
@@ -98,7 +98,12 @@
     "The Friday Social with Jonna from 5pm, then Park Life takes over Saturday from 2pm with King Ocean Club live.\n\nTables via the website. See you in the yard.",
     "Britpop's coming to the yard 🎸\n\nFriday: The Friday Social with Jonna. Saturday: Park Life, King Ocean Club live, anthems all day. Pay on the door.\n\nTables via merchantsyardleicester.co.uk"
    ],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Replaced the render with Paul's final exported slides (agreed version, WhatsApp files from 18 Aug). These are what posts."
+    }
+   ],
    "checklist": [
     {
      "text": "Photo is swappable with Change photo, current pick is a wide balcony shot",
@@ -109,12 +114,6 @@
      "done": false
     }
    ],
-   "template": {
-    "name": "whats-on",
-    "layout": "WEEKS/2026-08-17/renders/whats-on.layout.json",
-    "content": "WEEKS/2026-08-17/renders/whats-on.content.json",
-    "outdir": "WEEKS/2026-08-17/grid/tuesday-whats-on"
-   },
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva reference",
    "alert": "Moved to Wednesday per Paul: the recap owns Tuesday, What's On replaces the flexible slot.",
@@ -122,7 +121,8 @@
     "Blur - Parklife  ·  the obvious one, and it works",
     "Oasis - Some Might Say  ·  Britpop without being on the nose",
     "Pulp - Common People  ·  the singalong everyone knows"
-   ]
+   ],
+   "_v": 1
   },
   {
    "id": "tue-story-whatson",
