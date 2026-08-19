@@ -89,7 +89,7 @@ def _crop_45(src, dst, pos):
     img.save(dst, "JPEG", quality=92)
 
 
-def build_export(venue, week):
+def build_export(venue, week, day=None):
     """The week as a handover zip: w-c folder, grid post + story post,
     numbered day files, baked 4:5 carousel crops, placeholders for gaps,
     captions.txt so anyone can post it."""
@@ -101,6 +101,8 @@ def build_export(venue, week):
         raise ValueError("unknown week")
     wdir = week_dir(venue, week)
     label = _slug(data.get("label") or ("w c " + week))
+    if day:
+        label = f"{label} {_slug(day)}"
     stage = tempfile.mkdtemp(prefix="hub-export-")
     root = os.path.join(stage, label)
     gdir = os.path.join(root, "grid post")
@@ -116,12 +118,14 @@ def build_export(venue, week):
     captions = {"grid post": [], "story post": []}
     for kind, outdir, foldername in (("grid", gdir, "grid post"), ("story", sdir, "story post")):
         slots = sorted([s for s in data["slots"] if s.get("kind") == kind], key=day_sort)
+        if day:
+            slots = [s for s in slots if (s.get("day") or "").lower().startswith(day.lower())]
         n = 0
         for s in slots:
             n += 1
-            day = _slug(s.get("day"))
+            dayslug = _slug(s.get("day"))
             title = _slug(s.get("title") or s.get("slot"))
-            base = f"{n} {day} {title}".strip()
+            base = f"{n} {dayslug} {title}".strip()
             status = s.get("status", "")
             approved = status in ("approved", "posted")
             media = s.get("media") or []
@@ -149,7 +153,7 @@ def build_export(venue, week):
                         dst = os.path.join(outdir, base + suffix + flag + ext)
                         shutil.copyfile(src, dst)
             cap = (s.get("caption") or "").strip()
-            captions[foldername].append(f"{n} {day} {title}  [{status}]\n{cap or '(no caption yet)'}\n")
+            captions[foldername].append(f"{n} {dayslug} {title}  [{status}]\n{cap or '(no caption yet)'}\n")
 
     with open(os.path.join(root, "captions.txt"), "w") as f:
         f.write("GRID POSTS\n==========\n\n" + "\n".join(captions["grid post"]))
@@ -234,10 +238,11 @@ class Handler(SimpleHTTPRequestHandler):
             q = parse_qs(u.query)
             venue = q.get("venue", [""])[0]
             week = q.get("week", [""])[0]
+            day = q.get("day", [""])[0] or None
             if venue not in VENUES:
                 return self._json({"error": "unknown venue"}, 400)
             try:
-                zpath = build_export(venue, week)
+                zpath = build_export(venue, week, day)
             except Exception as e:
                 return self._json({"error": str(e)}, 500)
             with open(zpath, "rb") as f:

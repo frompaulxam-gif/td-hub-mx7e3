@@ -15,14 +15,18 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1920
-FONTS = [
+SERIF = [
+    "/System/Library/Fonts/Supplemental/Bodoni 72.ttc",
+    "/System/Library/Fonts/Supplemental/Bodoni 72 OS.ttc",
+]
+SANS = [
     "/System/Library/Fonts/HelveticaNeue.ttc",
     "/System/Library/Fonts/Helvetica.ttc",
 ]
 
 
-def load_font(size):
-    for path in FONTS:
+def load_font(size, family="serif"):
+    for path in (SERIF if family == "serif" else SANS):
         try:
             return ImageFont.truetype(path, size)
         except Exception:
@@ -42,6 +46,8 @@ p = argparse.ArgumentParser()
 p.add_argument("--photos", nargs=4, required=True)
 p.add_argument("--caption", default="")
 p.add_argument("--top", type=int, default=0)
+p.add_argument("--font", choices=["serif", "sans"], default="serif")
+p.add_argument("--size", type=int, default=40)
 p.add_argument("--out", required=True)
 a = p.parse_args()
 
@@ -59,7 +65,7 @@ for i, path in enumerate(a.photos):
 if a.caption:
     d = ImageDraw.Draw(canvas, "RGBA")
     lines = a.caption.split("\n")
-    font = load_font(34)
+    font = load_font(a.size, a.font)
     pad_x, pad_y, gap = 26, 20, 10
     widths = [d.textbbox((0, 0), ln, font=font)[2] for ln in lines]
     line_h = d.textbbox((0, 0), "Hg", font=font)[3]
