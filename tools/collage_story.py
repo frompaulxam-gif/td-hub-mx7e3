@@ -47,7 +47,10 @@ p.add_argument("--photos", nargs=4, required=True)
 p.add_argument("--caption", default="")
 p.add_argument("--top", type=int, default=0)
 p.add_argument("--font", choices=["serif", "sans"], default="serif")
-p.add_argument("--size", type=int, default=40)
+p.add_argument("--size", type=int, default=58)
+p.add_argument("--track", type=float, default=2.5)
+p.add_argument("--caps", action="store_true", default=True)
+p.add_argument("--box", action="store_true", default=False)
 p.add_argument("--out", required=True)
 a = p.parse_args()
 
@@ -64,20 +67,37 @@ for i, path in enumerate(a.photos):
 
 if a.caption:
     d = ImageDraw.Draw(canvas, "RGBA")
-    lines = a.caption.split("\n")
-    font = load_font(a.size, a.font)
-    pad_x, pad_y, gap = 26, 20, 10
-    widths = [d.textbbox((0, 0), ln, font=font)[2] for ln in lines]
-    line_h = d.textbbox((0, 0), "Hg", font=font)[3]
-    box_w = max(widths) + pad_x * 2
-    box_h = line_h * len(lines) + gap * (len(lines) - 1) + pad_y * 2
-    bx = (W - box_w) // 2
-    by = a.top + ch - box_h // 2
-    d.rounded_rectangle([bx, by, bx + box_w, by + box_h], radius=14, fill=(48, 36, 38, 214))
-    ty = by + pad_y
-    for ln, lw in zip(lines, widths):
-        d.text(((W - lw) // 2, ty), ln, font=font, fill=(255, 255, 255, 255))
-        ty += line_h + gap
+    lines = [ln.upper() for ln in a.caption.split("\n")] if a.caps else a.caption.split("\n")
+    max_w = W - 120
+
+    def line_w(text, font, track):
+        return sum(d.textlength(c, font=font) + track for c in text) - track if text else 0
+
+    # auto-fit: shrink until the longest line sits inside the margins
+    size, track = a.size, a.track
+    while size > 18:
+        font = load_font(size, a.font)
+        if max(line_w(ln, font, track) for ln in lines) <= max_w:
+            break
+        size -= 2
+    font = load_font(size, a.font)
+
+    def draw_tracked(x, y, text, fill):
+        for c in text:
+            d.text((x, y), c, font=font, fill=fill)
+            x += d.textlength(c, font=font) + track
+
+    line_h = int(size * 1.42)
+    total_h = line_h * len(lines)
+    y = a.top + ch - total_h // 2
+    for ln in lines:
+        x = (W - line_w(ln, font, track)) / 2
+        if a.box:
+            pass
+        else:
+            draw_tracked(x + 2, y + 3, ln, (0, 0, 0, 130))   # soft shadow for legibility
+        draw_tracked(x, y, ln, (255, 255, 255, 255))
+        y += line_h
 
 os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
 canvas.save(a.out, "PNG")
