@@ -225,11 +225,11 @@
     "grid/wednesday-reel/piano-drums-v2-captioned.mp4"
    ],
    "media_kind": "video",
-   "caption": "The things you'd miss if you weren't paying attention.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
+   "caption": "You don't notice it until you do.\n\nLive, every weekend at Moonshine.",
    "alternates": [
-    "You don't notice it until you do.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
-    "This is the part that makes it live music, not just music.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
-    "Nobody's watching the piano. That's kind of the point.\n\nLive, every weekend at Moonshine."
+    "You don't notice it until you do.\n\nThe piano. The drums. Everything happening behind the voice.\n\nLive, every weekend at Moonshine.",
+    "You don't notice it until you do.\n\nThe hands on the keys, and the players you weren't watching.\n\nLive, every weekend at Moonshine.",
+    "You don't notice it until you do.\n\nThen you can't hear it any other way.\n\nLive, every weekend at Moonshine."
    ],
    "notes": [
     {
@@ -255,6 +255,10 @@
     {
      "ts": "2026-08-19",
      "text": "Captions reworked to match the on-screen line's angle: what you'd miss if you weren't paying attention, not a room description."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Paul kept the 'you don't notice it until you do' opener, cut the stick/breath-before-the-chorus line. Default is now opener + sign-off only."
     }
    ],
    "checklist": [
