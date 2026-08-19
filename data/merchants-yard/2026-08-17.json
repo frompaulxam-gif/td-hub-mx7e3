@@ -318,17 +318,17 @@
   },
   {
    "id": "thu-story-reactive",
-   "date": "2026-08-19",
-   "day": "Wednesday",
+   "date": "2026-08-20",
+   "day": "Thursday",
    "kind": "story",
    "slot": "Reactive",
-   "title": "Reactive: Ask us anything",
-   "status": "approved",
+   "title": "Reactive: Nowhere else will get you dancing like this",
+   "status": "ready",
    "media": [
-    "stories/reactive/ask-us-anything-preview.png"
+    "stories/reactive-built/nowhere-else-dancing.mp4"
    ],
-   "media_kind": "image",
-   "caption": "Made in the app: question box 'Ask us any questions' over the busy crowd clip. Answers feed next week's captions and the DJ.",
+   "media_kind": "video",
+   "caption": "Reactive story for Thursday. Text is burned in, no sticker needed.",
    "alternates": [],
    "notes": [
     {
@@ -338,11 +338,15 @@
     {
      "ts": "2026-08-19",
      "text": "Paul is moving this to Wednesday (today) alongside the Carnival post. Thursday is now open, no plan set yet."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Paul's call: Thursday's reactive becomes the LED-wall dancing clip with 'Nowhere else will get you dancing like this', replacing both Ask us anything and the earlier 'That Ibiza feeling' wording."
     }
    ],
    "checklist": [],
    "template": null,
-   "alert": "Moved from Thursday to Wednesday: ask us anything reactive story brought forward to make room for the Carnival promo push."
+   "alert": "Moved back to Thursday and repurposed: this is now the dancing clip, not Ask us anything."
   },
   {
    "id": "fri-grid-trend",
@@ -712,29 +716,6 @@
    ]
   },
   {
-   "id": "react-ibiza",
-   "day": "Any day",
-   "date": "2026-08-17",
-   "kind": "story",
-   "slot": "Reactive story",
-   "title": "Reactive: That Ibiza feeling",
-   "status": "ready",
-   "media": [
-    "stories/reactive-built/ibiza-feeling.mp4"
-   ],
-   "media_kind": "video",
-   "caption": "Any night, LED wall lit",
-   "alternates": [],
-   "songs": [],
-   "checklist": [],
-   "notes": [
-    {
-     "ts": "2026-08-19",
-     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. "
-    }
-   ]
-  },
-  {
    "id": "react-before-doors",
    "day": "Any day",
    "date": "2026-08-17",
@@ -876,7 +857,8 @@
  "alerts": [
   "Schedule change: Park Life announce went out Monday 17th. The weekend recap reel moves to Tuesday 18th. Wednesday's grid slot is now open.",
   "Schedule change: Carnival in the Courtyard posted early (Wed 19th) as an off-framework grid post + story, to get ahead on bank holiday promo. Thursday's weekend photos carousel and Ask us anything story both moved up to Wednesday to make room. Thursday is currently open, needs a decision.",
-  "Schedule change: What's On this week moved to Thursday 20th (Carnival promo took Wednesday). Its story repost follows on Friday 21st."
+  "Schedule change: What's On this week moved to Thursday 20th (Carnival promo took Wednesday). Its story repost follows on Friday 21st.",
+  "Thursday 20th: reactive story is now the dancing clip (Nowhere else will get you dancing like this). Ask us anything is dropped for this week."
  ],
  "prep": [
   {
