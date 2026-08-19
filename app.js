@@ -873,7 +873,6 @@ function makeMedia(week, s) {
     strip.className = "carousel";
     for (const path of s.media) {
       const img = document.createElement("img");
-      img.loading = "lazy";
       img.src = mediaUrl(week, path, s);
       img.alt = "";
       strip.appendChild(img);
@@ -932,7 +931,6 @@ function makeCarouselQC(week, s) {
     const crops = s.crops || {};
     for (const path of kept) {
       const img = document.createElement("img");
-      img.loading = "lazy";
       img.src = mediaUrl(week, path, s);
       img.alt = "";
       img.style.objectPosition = crops[path] || "50% 50%";
@@ -1076,7 +1074,6 @@ function openGallery(week, s) {
       const tile = document.createElement("div");
       tile.className = "g-tile" + (inCar ? " is-kept" : " is-out");
       const img = document.createElement("img");
-      img.loading = "lazy";
       img.src = mediaUrl(week, path, s);
       img.alt = "";
       tile.appendChild(img);
