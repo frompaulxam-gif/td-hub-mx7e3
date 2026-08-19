@@ -303,7 +303,7 @@
    "kind": "story",
    "slot": "Thursday artist graphic + Happy Hour",
    "title": "Thursday artist story + Happy Hour",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "stories/thursday-artist/nola-jam-session-story.jpg"
    ],
@@ -355,7 +355,7 @@
    "kind": "grid",
    "slot": "Saturday artist graphic",
    "title": "Saturday artist: Marcius Riley",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "grid/friday-saturday-artist/saturday-artist-marcius-riley.png"
    ],
@@ -438,7 +438,7 @@
    "kind": "story",
    "slot": "Saturday artist graphic",
    "title": "Saturday artist story",
-   "status": "ready",
+   "status": "approved",
    "media": [
     "stories/saturday-artist/saturday-artist-story.png"
    ],

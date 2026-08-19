@@ -1074,7 +1074,7 @@ function openGallery(week, s) {
       const i = kept.indexOf(path);
       const inCar = i >= 0;
       const tile = document.createElement("div");
-      tile.className = "g-tile" + (inCar ? "" : " is-out");
+      tile.className = "g-tile" + (inCar ? " is-kept" : " is-out");
       const img = document.createElement("img");
       img.loading = "lazy";
       img.src = mediaUrl(week, path, s);
