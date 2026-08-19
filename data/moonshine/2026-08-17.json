@@ -348,22 +348,40 @@
    "day": "Thursday PM",
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
-   "title": "Thursday post - Reel / Carousel / Photo",
-   "status": "waiting",
+   "title": "Thursday post - Reel: When class is the dress code",
+   "status": "draft",
    "media": [],
    "media_kind": "none",
-   "caption": "",
-   "alternates": [],
+   "caption": "The kind of room you dress up for.\n\nLive music, every weekend at Moonshine.",
+   "alternates": [
+    "Some nights you make an effort. This is one of them.\n\nLive at Moonshine, every weekend.",
+    "Nobody told them to dress up. The room did.\n\nLive music every weekend at Moonshine.",
+    "Brass, red light and live guitar.\n\nEvery weekend at Moonshine."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
      "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Paul's reel, guitarist and singer in the red room. Caption complements the on-screen line rather than repeating it."
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "text": "On-screen line already burned in: When class is the dress code",
+     "done": true
+    }
+   ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-photos-1.jpg",
-   "reference_label": "Last Thursday: photos carousel"
+   "reference_label": "Last Thursday: photos carousel",
+   "songs": [
+    "Peggy Lee - Fever  ·  sultry and instantly recognisable, matches the red light and the dress",
+    "Dean Martin - Sway  ·  elegant and dressed up, reads as class in two seconds",
+    "Etta James - I Just Want to Make Love to You  ·  bluesy, suits a live band rather than a DJ"
+   ]
   },
   {
    "id": "fri-am-grid-sat-artist",
