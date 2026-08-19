@@ -49,6 +49,7 @@ p.add_argument("--top", type=int, default=0)
 p.add_argument("--font", choices=["serif", "sans"], default="serif")
 p.add_argument("--size", type=int, default=58)
 p.add_argument("--track", type=float, default=2.5)
+p.add_argument("--leading", type=float, default=1.02)
 p.add_argument("--caps", action="store_true", default=True)
 p.add_argument("--box", action="store_true", default=False)
 p.add_argument("--out", required=True)
@@ -87,7 +88,7 @@ if a.caption:
             d.text((x, y), c, font=font, fill=fill)
             x += d.textlength(c, font=font) + track
 
-    line_h = int(size * 1.42)
+    line_h = int(size * a.leading)
     total_h = line_h * len(lines)
     y = a.top + ch - total_h // 2
     for ln in lines:
