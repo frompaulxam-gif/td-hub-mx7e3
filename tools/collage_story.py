@@ -25,7 +25,9 @@ SANS = [
 ]
 
 
-def load_font(size, family="serif"):
+def load_font(size, family="serif", bold=False):
+    if family == "serif" and bold:
+        return ImageFont.truetype(SERIF[0], size, index=2)   # Bodoni 72 Bold
     for path in (SERIF if family == "serif" else SANS):
         try:
             return ImageFont.truetype(path, size)
@@ -52,6 +54,7 @@ p.add_argument("--track", type=float, default=2.5)
 p.add_argument("--leading", type=float, default=1.02)
 p.add_argument("--ratio", type=float, default=0.72)
 p.add_argument("--margin", type=int, default=110)
+p.add_argument("--bold", action="store_true", default=False)
 p.add_argument("--caps", action="store_true", default=True)
 p.add_argument("--box", action="store_true", default=False)
 p.add_argument("--out", required=True)
@@ -87,8 +90,8 @@ if a.caption:
     # auto-fit: shrink both blocks together until the widest line fits the margins
     size, track = a.size, a.track
     while size > 18:
-        f1 = load_font(size, a.font)
-        f2 = load_font(max(14, int(size * a.ratio)), a.font)
+        f1 = load_font(size, a.font, a.bold)
+        f2 = load_font(max(14, int(size * a.ratio)), a.font, a.bold)
         widest = max([line_w(l, f1, track) for l in blocks[0]] or [0] +
                      [line_w(l, f2, track) for l in blocks[1]] or [0])
         if blocks[1]:
@@ -96,9 +99,9 @@ if a.caption:
         if widest <= max_w:
             break
         size -= 2
-    f1 = load_font(size, a.font)
+    f1 = load_font(size, a.font, a.bold)
     size2 = max(14, int(size * a.ratio))
-    f2 = load_font(size2, a.font)
+    f2 = load_font(size2, a.font, a.bold)
 
     def draw_tracked(x, y, text, font):
         for c in text:
