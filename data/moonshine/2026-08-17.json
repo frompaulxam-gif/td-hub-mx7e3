@@ -132,12 +132,17 @@
    "day": "Wednesday AM",
    "kind": "grid",
    "slot": "Thursday artist graphic",
-   "title": "Thursday artist graphic",
-   "status": "waiting",
-   "media": [],
+   "title": "Thursday artist: NOLA Jam Session",
+   "status": "ready",
+   "media": [
+    "grid/wednesday-thursday-artist/nola-jam-session.jpg"
+   ],
    "media_kind": "image",
-   "caption": "",
-   "alternates": [],
+   "caption": "Tomorrow night, the room plays along.\n\nThe NOLA Jam Session returns, hosted by King Brasstards. An open night of live collaboration, New Orleans style.\n\nThursday 20th August. Tables are available to book via the website.",
+   "alternates": [
+    "The NOLA Jam Session is back.\n\nHosted by King Brasstards, an open night of live collaboration.\n\nThursday 20th August at Moonshine.",
+    "Brass, and whoever else turns up.\n\nThe NOLA Jam Session, hosted by King Brasstards, Thursday 20th August.\n\nSecure your table via the website."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
@@ -146,11 +151,17 @@
     {
      "ts": "2026-08-17",
      "text": "Not in Chelsea's folder yet, matches her email saying Thursday artist graphics may land Tuesday. Chase gently Wednesday morning if still missing."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Chelsea's finished graphic, filed from chat. Post today (Wednesday AM slot)."
     }
    ],
    "checklist": [
-    "Thursday: The Nola Jam Session, hosted by Kingbrasstards (@kbrasstards, verified handle)",
-    "Chelsea's Thursday artist graphic may land Tuesday, download from her Drive folder"
+    {
+     "text": "Tag @kbrasstards (confirmed handle, 11k followers)",
+     "done": false
+    }
    ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-artist-elyssa.jpg",
@@ -270,13 +281,20 @@
    "day": "Thursday AM",
    "kind": "story",
    "slot": "Thursday artist graphic + Happy Hour",
-   "title": "Thursday artist + Happy Hour",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
+   "title": "Thursday artist story + Happy Hour",
+   "status": "ready",
+   "media": [
+    "stories/thursday-artist/nola-jam-session-story.jpg"
+   ],
+   "media_kind": "image",
+   "caption": "Post Thursday AM with a sticker line: Tonight at Moonshine ✨\n\nFollow it with the Happy Hour story: two cocktails £12.95, 2-for-1 house wine, bottled beers and vodka mixers, Thursday 7pm til midnight.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "9:16 version of the NOLA graphic, filed from chat."
+    }
+   ],
    "checklist": [
     "Happy hour details needed"
    ],
