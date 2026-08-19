@@ -187,6 +187,37 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         u = urlparse(self.path)
+        if u.path == "/api/source-clip":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            week = q.get("week", [""])[0]
+            slot_id = q.get("id", [""])[0]
+            if venue not in VENUES:
+                return self.send_error(404)
+            data = next((w for w in load_weeks(venue) if w.get("week_start") == week), None)
+            slot = next((x for x in (data or {}).get("slots", []) if x.get("id") == slot_id), None)
+            rel = (slot or {}).get("source_clip")
+            if not rel:
+                return self.send_error(404)
+            root = os.path.realpath(VENUES[venue]["root"])
+            path = os.path.realpath(os.path.join(root, rel))
+            if not path.startswith(root) or not os.path.isfile(path):
+                return self.send_error(404)
+            name = _slug(slot.get("title") or slot_id).replace(" ", "-")
+            ext = os.path.splitext(path)[1]
+            self.send_response(200)
+            self.send_header("Content-Type", "video/quicktime")
+            self.send_header("Content-Length", str(os.path.getsize(path)))
+            self.send_header("Content-Disposition",
+                             f'attachment; filename="{name}-original{ext}"')
+            self.end_headers()
+            with open(path, "rb") as f:
+                while True:
+                    chunk = f.read(1024 * 1024)
+                    if not chunk:
+                        break
+                    self.wfile.write(chunk)
+            return
         if u.path == "/api/chic-source":
             q = parse_qs(u.query)
             venue = q.get("venue", [""])[0]

@@ -598,6 +598,16 @@ function makeXpost(week, s) {
     photo.addEventListener("click", () => openPicker(s));
     actions.appendChild(photo);
   }
+  // the untouched source clip, no baked text
+  if (state.live && s.source_clip) {
+    const dl = document.createElement("a");
+    dl.className = "xbtn";
+    dl.style.textDecoration = "none";
+    dl.textContent = "Download original";
+    dl.title = "The source clip with no text on it";
+    dl.href = `/api/source-clip?venue=${state.venue}&week=${week.week_start}&id=${encodeURIComponent(s.id)}`;
+    actions.appendChild(dl);
+  }
   right.appendChild(actions);
 
   // caption
