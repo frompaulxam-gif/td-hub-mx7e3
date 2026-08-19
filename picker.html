@@ -93,6 +93,8 @@
   <h1 id="title">Choose slides</h1>
   <span class="count" id="count"></span>
   <span class="spacer"></span>
+  <button class="act" id="filter">Show kept only</button>
+  <button class="act" id="dl-all">Download all kept</button>
   <button class="act" id="clear">Clear all</button>
   <button class="act" id="close">Done</button>
 </header>
@@ -125,6 +127,7 @@
 const qs = new URLSearchParams(location.search);
 const VENUE = qs.get("venue"), WEEK = qs.get("week"), ID = qs.get("id");
 let slot = null, weekObj = null, poolPhotos = [], editingPath = null, editingPicked = null;
+let keptOnly = new URLSearchParams(location.search).get("qc") === "1";
 const verBust = {};   // path -> timestamp, so a re-rendered tile shows the new pixels immediately
 const lineOverride = {};   // path -> edited line text, so the caption below the tile stays accurate
 
@@ -146,11 +149,15 @@ async function load() {
 
 function render() {
   const kept = slot.media || [];
-  document.getElementById("count").textContent =
-    kept.length + " in the carousel, " + slot.candidates.length + " to choose from";
+  document.getElementById("count").textContent = keptOnly
+    ? `QC mode: your ${kept.length} picks, in order`
+    : kept.length + " in the carousel, " + slot.candidates.length + " to choose from";
+  document.getElementById("filter").textContent = keptOnly ? "Show all" : "Show kept only";
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
-  for (const path of slot.candidates) {
+  // in QC mode show the kept ones in carousel order, not candidate order
+  const list = keptOnly ? kept : slot.candidates;
+  for (const path of list) {
     const i = kept.indexOf(path);
     const card = document.createElement("div");
     card.className = "card" + (i >= 0 ? " kept" : "");
@@ -173,12 +180,25 @@ function render() {
     line.textContent = lineOverride[path] || label(path);
     card.appendChild(line);
 
+    const btnRow = document.createElement("div");
+    btnRow.className = "row2";
+
     const editBtn = document.createElement("button");
     editBtn.className = "edit-btn";
     editBtn.textContent = "Edit photo / text";
     editBtn.addEventListener("click", e => { e.stopPropagation(); openEditor(path); });
-    card.appendChild(editBtn);
+    btnRow.appendChild(editBtn);
 
+    // the clean source photo, no baked text, higher resolution than the slide
+    const dl = document.createElement("a");
+    dl.className = "edit-btn";
+    dl.style.textDecoration = "none";
+    dl.textContent = "Download photo";
+    dl.href = `/api/chic-source?venue=${VENUE}&slide=${encodeURIComponent(path.split("/").pop())}`;
+    dl.addEventListener("click", e => e.stopPropagation());
+    btnRow.appendChild(dl);
+
+    card.appendChild(btnRow);
     grid.appendChild(card);
   }
 }
@@ -253,6 +273,26 @@ function toggle(path) {
   const kept = slot.media || [];
   save(kept.includes(path) ? kept.filter(p => p !== path) : [...kept, path]);
 }
+
+document.getElementById("filter").addEventListener("click", () => {
+  keptOnly = !keptOnly;
+  render();
+  scrollTo(0, 0);
+});
+
+document.getElementById("dl-all").addEventListener("click", () => {
+  // one click per file: browsers block a burst, so stagger them
+  (slot.media || []).forEach((path, i) => {
+    setTimeout(() => {
+      const a = document.createElement("a");
+      a.href = `/api/chic-source?venue=${VENUE}&slide=${encodeURIComponent(path.split("/").pop())}`;
+      a.download = "";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+    }, i * 600);
+  });
+});
 
 document.getElementById("clear").addEventListener("click", () => {
   if (confirm("Remove all slides from the carousel?")) save([]);

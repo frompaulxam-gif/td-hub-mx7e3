@@ -187,6 +187,62 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         u = urlparse(self.path)
+        if u.path == "/api/chic-source":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            slide = unquote(q.get("slide", [""])[0])
+            if venue not in VENUES or not slide:
+                return self.send_error(404)
+            root = VENUES[venue]["root"]
+            H = os.path.join(root, "HUB", "refs", "H-chic")
+            fn = os.path.basename(slide)
+            tail = os.path.splitext(fn)[0].split("-", 1)[-1]
+            src = None
+            # route 1: the 52-slide bank, mapped to its pool photo
+            try:
+                with open(os.path.join(H, "slide-to-photo.json")) as f:
+                    m = json.load(f)
+                hit = m.get(fn) or next(
+                    (v for k, v in m.items()
+                     if os.path.splitext(k)[0].split("-", 1)[-1] == tail), None)
+                if hit:
+                    # "src" points anywhere under HUB (full-res delivery originals);
+                    # "photo" is a file in the H-chic pool
+                    if hit.get("src"):
+                        cand = os.path.realpath(os.path.join(root, "HUB", hit["src"]))
+                        if cand.startswith(os.path.realpath(root)) and os.path.isfile(cand):
+                            src = cand
+                    if not src:
+                        cand = os.path.join(H, "photos", hit["photo"])
+                        if os.path.isfile(cand):
+                            src = cand
+            except (FileNotFoundError, json.JSONDecodeError):
+                pass
+            # route 2: older slides carry their photo id, which maps to the full-res delivery
+            if not src:
+                pm = re.search(r"(\d{4}-\d{3})", fn)
+                if pm:
+                    try:
+                        with open(os.path.join(H, "pool-manifest.json")) as f:
+                            man = json.load(f)
+                        rel = man.get(pm.group(1))
+                        if rel:
+                            cand = os.path.realpath(os.path.join(root, "HUB", rel))
+                            if cand.startswith(os.path.realpath(root)) and os.path.isfile(cand):
+                                src = cand
+                    except (FileNotFoundError, json.JSONDecodeError):
+                        pass
+            if not src:
+                return self.send_error(404)
+            with open(src, "rb") as f:
+                body = f.read()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/jpeg")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Content-Disposition",
+                             f'attachment; filename="{tail}.jpg"')
+            self.end_headers()
+            return self.wfile.write(body)
         if u.path == "/api/kinda-chic-photos":
             q = parse_qs(u.query)
             venue = q.get("venue", [""])[0]
