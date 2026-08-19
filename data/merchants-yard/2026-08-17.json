@@ -127,9 +127,14 @@
     "stories/whats-on-story/whats-on-story.png"
    ],
    "media_kind": "image",
-   "caption": "Postable 9:16 story version. Post Thursday, the day after the grid carousel.",
+   "caption": "Story version of the What's On, post the day after the grid carousel.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Rebuilt at 9:16 to match today's grid post. Editable: Adjust layout for text, Change photo for the background."
+    }
+   ],
    "checklist": [],
    "template": {
     "name": "lineup-story",
