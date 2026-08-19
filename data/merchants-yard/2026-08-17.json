@@ -358,7 +358,7 @@
    "kind": "grid",
    "slot": "Flexible trend",
    "title": "Flexible trend - Kinda chic",
-   "status": "ready",
+   "status": "scheduled",
    "media": [
     "grid/friday-kinda-chic/28-to-never-look-at-the-menu.jpg",
     "grid/friday-kinda-chic/32-that-nobody-asks-what-you-do-for-a-living.jpg",
@@ -398,6 +398,10 @@
     {
      "ts": "2026-08-19",
      "text": "Added bring your mum (rendered last week, never posted, so not a repeat) plus the three Paul screenshotted: one drink turned into five, every word when the dj plays that song, tan line at the bar."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Scheduled by Paul in the IG app. 11 slides, final order locked."
     }
    ],
    "checklist": [
