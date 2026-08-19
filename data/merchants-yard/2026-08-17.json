@@ -687,6 +687,190 @@
     "content": "WEEKS/2026-08-17/renders/entry-policy-1.content.json",
     "out": "WEEKS/2026-08-17/stories/entry-policy/entry-policy-1.png"
    }
+  },
+  {
+   "id": "react-monday-off",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: No work tomorrow",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/monday-off.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Sunday 30 Aug, bank holiday  ·  Add the ☀️ as an IG sticker, it can't be baked in.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. Add the ☀️ as an IG sticker, it can't be baked in."
+    }
+   ]
+  },
+  {
+   "id": "react-ibiza",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: That Ibiza feeling",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/ibiza-feeling.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Any night, LED wall lit",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. "
+    }
+   ]
+  },
+  {
+   "id": "react-before-doors",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: An hour before you get here",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/before-doors.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Fri or Sat afternoon",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. "
+    }
+   ]
+  },
+  {
+   "id": "react-results",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Asked. Answered. Poured.",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/asked-answered-poured.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "A few hours after any poll",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. "
+    }
+   ]
+  },
+  {
+   "id": "react-secure-table",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Secure your table now",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/secure-your-table.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Thu to Sat when it's filling up  ·  Add the booking link sticker over it.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. Add the booking link sticker over it."
+    }
+   ]
+  },
+  {
+   "id": "react-poll-oasis",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive poll: Oasis or Blur",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/poll-oasis-blur-clean.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Thu 20 or Fri 21, before Park Life  ·  Clean clip. Add the poll sticker in the app: PICK YOUR SIDE, Oasis / Blur.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. Clean clip. Add the poll sticker in the app: PICK YOUR SIDE, Oasis / Blur."
+    }
+   ]
+  },
+  {
+   "id": "react-poll-carnival",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive poll: Carnival genre",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/poll-carnival-genre-clean.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Week of 24 Aug  ·  Clean clip. Poll sticker: WHICH ONE ARE YOU COMING FOR, House / Garage / Reggae / Disco.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. Clean clip. Poll sticker: WHICH ONE ARE YOU COMING FOR, House / Garage / Reggae / Disco."
+    }
+   ]
+  },
+  {
+   "id": "react-poll-drink",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive poll: First drink of the bank holiday",
+   "status": "ready",
+   "media": [
+    "stories/reactive-built/poll-first-drink-clean.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Sat 29 or Sun 30  ·  Clean clip. Poll sticker: FIRST DRINK OF THE BANK HOLIDAY, Pint / Spritz / Frozen.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. Clean clip. Poll sticker: FIRST DRINK OF THE BANK HOLIDAY, Pint / Spritz / Frozen."
+    }
+   ]
   }
  ],
  "alerts": [
