@@ -82,8 +82,8 @@
   },
   {
    "id": "tue-grid-whatson",
-   "date": "2026-08-19",
-   "day": "Wednesday",
+   "date": "2026-08-20",
+   "day": "Thursday",
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
@@ -102,6 +102,10 @@
     {
      "ts": "2026-08-19",
      "text": "Replaced the render with Paul's final exported slides (agreed version, WhatsApp files from 18 Aug). These are what posts."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Moved from Wednesday to Thursday per Paul. Carnival announce took Wednesday. Pin swap happens after it posts Thursday."
     }
    ],
    "checklist": [
@@ -116,7 +120,7 @@
    ],
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva reference",
-   "alert": "Moved to Wednesday per Paul: the recap owns Tuesday, What's On replaces the flexible slot.",
+   "alert": "Moved again to Thursday 20th: Carnival promo took Wednesday's grid slot.",
    "songs": [
     "Blur - Parklife  ·  the obvious one, and it works",
     "Oasis - Some Might Say  ·  Britpop without being on the nose",
@@ -126,8 +130,8 @@
   },
   {
    "id": "tue-story-whatson",
-   "date": "2026-08-20",
-   "day": "Thursday",
+   "date": "2026-08-21",
+   "day": "Friday",
    "kind": "story",
    "slot": "Story version, post day after the grid",
    "title": "What's On story",
@@ -142,6 +146,10 @@
     {
      "ts": "2026-08-19",
      "text": "Rebuilt at 9:16 to match today's grid post. Editable: Adjust layout for text, Change photo for the background."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Shifted with the grid post to keep the day-after repost rule."
     }
    ],
    "checklist": [],
@@ -151,7 +159,7 @@
     "content": "WEEKS/2026-08-17/renders/whats-on-story.content.json",
     "out": "WEEKS/2026-08-17/stories/whats-on-story/whats-on-story.png"
    },
-   "alert": "Rule change: the What's On story is a repost of the grid post, posted the day after."
+   "alert": "Follows the grid post: What's On story reposts the day after, now Friday 21st."
   },
   {
    "id": "wed-grid-flexible",
@@ -613,7 +621,8 @@
  ],
  "alerts": [
   "Schedule change: Park Life announce went out Monday 17th. The weekend recap reel moves to Tuesday 18th. Wednesday's grid slot is now open.",
-  "Schedule change: Carnival in the Courtyard posted early (Wed 19th) as an off-framework grid post + story, to get ahead on bank holiday promo. Thursday's weekend photos carousel and Ask us anything story both moved up to Wednesday to make room. Thursday is currently open, needs a decision."
+  "Schedule change: Carnival in the Courtyard posted early (Wed 19th) as an off-framework grid post + story, to get ahead on bank holiday promo. Thursday's weekend photos carousel and Ask us anything story both moved up to Wednesday to make room. Thursday is currently open, needs a decision.",
+  "Schedule change: What's On this week moved to Thursday 20th (Carnival promo took Wednesday). Its story repost follows on Friday 21st."
  ],
  "prep": [
   {
