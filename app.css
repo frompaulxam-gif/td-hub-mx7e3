@@ -225,6 +225,7 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .mini-status.ready { color: var(--st-ready); background: color-mix(in srgb, var(--st-ready) 14%, transparent); }
 .mini-status.changes { color: var(--st-changes); background: color-mix(in srgb, var(--st-changes) 14%, transparent); }
 .mini-status.approved { color: var(--st-done); background: color-mix(in srgb, var(--st-done) 13%, transparent); }
+.mini-status.scheduled { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); }
 .mini-status.posted { color: var(--ok); background: color-mix(in srgb, var(--ok) 16%, transparent); }
 .cell-off { font-size: 12.5px; color: var(--ink-mid); padding: 2px 0; }
 
@@ -680,3 +681,5 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: .01ms !important; }
 }
+
+.xbtn.scheduled.is-on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }

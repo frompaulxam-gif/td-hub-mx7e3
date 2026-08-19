@@ -14,7 +14,7 @@ const state = {
   view: "board",
 };
 
-const DONE = new Set(["approved", "posted"]);
+const DONE = new Set(["approved", "scheduled", "posted"]);
 const REACTIVE_MENU = [
   { name: "Poll question", prompt: "QUESTION BOX or poll sticker. A real decision: Sax or DJ this Saturday? Spritz or pint first?" },
   { name: "Clip of the vibe", prompt: "One clip that shows what it feels like: room mid-song, table mid-laugh, the pour. Raw is fine." },
@@ -30,7 +30,7 @@ const REACTIVE_MENU = [
   { name: "People / UGC", prompt: "Reshare every tag and mention, repost customer stories, staff intro when someone new starts." },
   { name: "Countdown", prompt: "Countdown sticker to Friday doors, PL fixtures, bank holiday Sunday, season close weekend." },
 ];
-const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", changes: "changes asked", posted: "✓ posted" };
+const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", scheduled: "\u23F1 scheduled", changes: "changes asked", posted: "✓ posted" };
 
 /* ---------- data ---------- */
 
@@ -575,6 +575,17 @@ function makeXpost(week, s) {
     if (await patchSlot(s, { set: { status: to } }, true)) { toast(to === "posted" ? "Marked posted" : "Back to approved"); render(); }
   });
   actions.appendChild(posted);
+  const sched = document.createElement("button");
+  sched.className = "xbtn scheduled" + (s.status === "scheduled" ? " is-on" : "");
+  sched.textContent = s.status === "scheduled" ? "Scheduled \u23F1" : "Scheduled";
+  sched.addEventListener("click", async () => {
+    const to = s.status === "scheduled" ? "approved" : "scheduled";
+    if (await patchSlot(s, { set: { status: to } }, true)) {
+      toast(to === "scheduled" ? "Marked scheduled" : "Back to approved");
+      render();
+    }
+  });
+  actions.appendChild(sched);
   if (state.live && s.template?.content && (s.template?.out || s.template?.outdir)) {
     const adj = document.createElement("button");
     adj.className = "xbtn";

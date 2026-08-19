@@ -127,7 +127,7 @@ def build_export(venue, week, day=None):
             title = _slug(s.get("title") or s.get("slot"))
             base = f"{n} {dayslug} {title}".strip()
             status = s.get("status", "")
-            approved = status in ("approved", "posted")
+            approved = status in ("approved", "scheduled", "posted")
             media = s.get("media") or []
             crops = s.get("crops") or {}
             if not media:

@@ -87,7 +87,7 @@
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "approved",
+   "status": "scheduled",
    "media": [
     "grid/tuesday-whats-on/final-slide-01.jpg",
     "grid/tuesday-whats-on/final-slide-02.jpg"
@@ -106,6 +106,10 @@
     {
      "ts": "2026-08-19",
      "text": "Moved from Wednesday to Thursday per Paul. Carnival announce took Wednesday. Pin swap happens after it posts Thursday."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Scheduled by Paul in the Instagram scheduler. Nothing more to do, it goes out on its own."
     }
    ],
    "checklist": [
@@ -135,7 +139,7 @@
    "kind": "story",
    "slot": "Story version, post day after the grid",
    "title": "What's On story",
-   "status": "ready",
+   "status": "scheduled",
    "media": [
     "stories/whats-on-story/whats-on-story.png"
    ],
@@ -150,6 +154,10 @@
     {
      "ts": "2026-08-19",
      "text": "Shifted with the grid post to keep the day-after repost rule."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Scheduled by Paul in the Instagram scheduler. Nothing more to do, it goes out on its own."
     }
    ],
    "checklist": [],
@@ -218,7 +226,7 @@
    "kind": "grid",
    "slot": "Photos from the weekend",
    "title": "Weekend photos carousel",
-   "status": "approved",
+   "status": "scheduled",
    "media": [
     "grid/thursday-weekend-photos/RING1467.jpg",
     "grid/thursday-weekend-photos/RING1477.jpg",
@@ -245,6 +253,10 @@
     {
      "ts": "2026-08-19",
      "text": "Paul is moving this to Wednesday (today) alongside the Carnival post. Thursday is now open, no plan set yet."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Scheduled by Paul in the Instagram scheduler. Nothing more to do, it goes out on its own."
     }
    ],
    "checklist": [
