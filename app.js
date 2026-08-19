@@ -914,11 +914,18 @@ function makeCarouselQC(week, s) {
   wrap.appendChild(ig);
 
   // QC strip: kept in order, then cut dimmed
+  const labelRow = document.createElement("div");
+  labelRow.className = "xcap-label-row";
+  labelRow.style.marginTop = "12px";
   const label = document.createElement("span");
   label.className = "xpane-label";
-  label.style.marginTop = "12px";
-  label.textContent = "Cut and reorder, drag to move, tap × to cut";
-  wrap.appendChild(label);
+  label.textContent = `Cut and reorder, drag to move (${kept.length} of ${s.candidates.length})`;
+  const seeAll = document.createElement("button");
+  seeAll.className = "mini-btn";
+  seeAll.textContent = "See all " + s.candidates.length;
+  seeAll.addEventListener("click", () => openGallery(week, s));
+  labelRow.append(label, seeAll);
+  wrap.appendChild(labelRow);
   const strip = document.createElement("div");
   strip.className = "car-qc";
   const save = async (newKept) => {
@@ -1000,6 +1007,46 @@ function attachCrop(img, s, path) {
     img.addEventListener("pointerup", up);
   });
 }
+
+function openGallery(week, s) {
+  const grid = $("#gallery-grid");
+  const render_ = () => {
+    const kept = s.media || [];
+    $("#gallery-title").textContent = s.title || s.slot;
+    $("#gallery-count").textContent = `${kept.length} in the carousel, ${s.candidates.length} to choose from`;
+    grid.innerHTML = "";
+    for (const path of s.candidates) {
+      const i = kept.indexOf(path);
+      const inCar = i >= 0;
+      const tile = document.createElement("div");
+      tile.className = "g-tile" + (inCar ? "" : " is-out");
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.src = mediaUrl(week, path, s);
+      img.alt = "";
+      tile.appendChild(img);
+      const num = document.createElement("span");
+      num.className = "g-num";
+      num.textContent = inCar ? String(i + 1) : "out";
+      tile.appendChild(num);
+      const pick = document.createElement("button");
+      pick.className = "g-pick";
+      pick.textContent = inCar ? "\u00d7" : "+";
+      pick.title = inCar ? "Remove from the carousel" : "Add to the carousel";
+      pick.addEventListener("click", async () => {
+        const next = inCar ? kept.filter(p => p !== path) : [...kept, path];
+        if (await patchSlot(s, { set: { media: next } }, true)) { render_(); render(); }
+      });
+      tile.appendChild(pick);
+      grid.appendChild(tile);
+    }
+  };
+  render_();
+  $("#gallery").hidden = false;
+}
+
+$("#gallery-close").addEventListener("click", () => { $("#gallery").hidden = true; });
+$("#gallery").addEventListener("click", e => { if (e.target === $("#gallery")) $("#gallery").hidden = true; });
 
 /* ---------- calendar ---------- */
 
@@ -1341,6 +1388,7 @@ window.addEventListener("resize", () => {
 
 document.addEventListener("keydown", e => {
   if (e.key !== "Escape") return;
+  if (!$("#gallery").hidden) { $("#gallery").hidden = true; return; }
   if (!$("#photo-picker").hidden) { $("#photo-picker").hidden = true; return; }
   if (!$("#editor").hidden) closeEditor();
 });
