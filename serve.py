@@ -306,7 +306,36 @@ class Handler(SimpleHTTPRequestHandler):
             return self._render(body)
         if u.path == "/api/setbg":
             return self._setbg(body)
+        if u.path == "/api/song-used":
+            return self._song_used(body)
         return self._json({"error": "unknown endpoint"}, 404)
+
+    def _song_used(self, body):
+        """Log a song as used so future suggestions avoid repeats."""
+        venue = body.get("venue")
+        song = (body.get("song") or "").strip()
+        if venue not in VENUES or not song:
+            return self._json({"error": "bad request"}, 400)
+        path = os.path.join(VENUES[venue]["root"], "songs-used.json")
+        try:
+            with open(path) as f:
+                log = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            log = []
+        key = song.split("\u00b7")[0].strip().lower()
+        existing = next((r for r in log if r.get("key") == key), None)
+        if body.get("undo"):
+            log = [r for r in log if r.get("key") != key]
+        elif not existing:
+            from datetime import date
+            log.append({"key": key, "song": song.split("\u00b7")[0].strip(),
+                        "date": str(date.today()), "week": body.get("week_start", ""),
+                        "slot": body.get("title", "")})
+        tmp = path + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(log, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, path)
+        return self._json({"ok": True, "used": [r["key"] for r in log]})
 
     def _setbg(self, body):
         """Point a templated slot's content at a different photo, then re-render."""

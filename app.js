@@ -79,6 +79,11 @@ async function boot() {
         const r = await fetch(`/root/${v.slug}/captions-bank.json`);
         if (r.ok) state.banks[v.slug] = await r.json();
       } catch { /* no bank for this venue */ }
+      try {
+        const r2 = await fetch(`/root/${v.slug}/songs-used.json`);
+        state.songsUsed = state.songsUsed || {};
+        state.songsUsed[v.slug] = r2.ok ? await r2.json() : [];
+      } catch { (state.songsUsed = state.songsUsed || {})[v.slug] = []; }
     }));
   }
   render();
@@ -655,14 +660,39 @@ function makeXpost(week, s) {
     sWrap.appendChild(sLabel);
     const list = document.createElement("div");
     list.className = "song-row";
+    const usedLog = state.songsUsed?.[state.venue] || [];
+    const keyOf = t => t.split("\u00b7")[0].trim().toLowerCase();
     s.songs.forEach((song, i) => {
+      const key = keyOf(song);
+      const used = usedLog.find(r => r.key === key);
       const b = document.createElement("button");
-      b.className = "song-chip" + (i === 0 ? " is-pick" : "");
+      b.className = "song-chip" + (i === 0 && !used ? " is-pick" : "") + (used ? " is-used" : "");
       b.textContent = song;
-      b.title = "Copy";
+      if (used) {
+        const tag = document.createElement("span");
+        tag.className = "song-used";
+        tag.textContent = "used " + used.date;
+        b.appendChild(tag);
+      }
+      b.title = used ? "Already used, tap to copy and untick" : "Copy and mark as used";
       b.addEventListener("click", async () => {
-        await navigator.clipboard.writeText(song.replace(/^[^·]*·\s*/, ""));
-        toast("Copied");
+        const title = song.split("\u00b7")[0].trim();
+        try { await navigator.clipboard.writeText(title); } catch { /* clipboard blocked, logging still runs */ }
+        try {
+          const r = await fetch("/api/song-used", {
+            method: "POST", headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ venue: state.venue, song, undo: !!used,
+                                   week_start: week.week_start, title: s.title || s.slot }),
+          });
+          if (r.ok) {
+            const j = await r.json();
+            const log = state.songsUsed[state.venue] || [];
+            if (used) state.songsUsed[state.venue] = log.filter(x => x.key !== key);
+            else log.push({ key, song: title, date: new Date().toLocaleDateString("sv-SE") });
+            toast(used ? "Copied, unmarked" : "Copied and logged as used");
+            render();
+          }
+        } catch { toast("Copied"); }
       });
       list.appendChild(b);
     });
