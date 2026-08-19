@@ -187,6 +187,14 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         u = urlparse(self.path)
+        if u.path == "/api/kinda-chic-photos":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            if venue not in VENUES:
+                return self._json({"error": "unknown venue"}, 400)
+            pool = os.path.join(VENUES[venue]["root"], "HUB", "refs", "H-chic", "photos")
+            files = sorted(os.listdir(pool)) if os.path.isdir(pool) else []
+            return self._json({"photos": [f for f in files if f.lower().endswith((".jpg", ".jpeg", ".png"))]})
         if u.path == "/api/template":
             q = parse_qs(u.query)
             venue = q.get("venue", [""])[0]
@@ -310,7 +318,35 @@ class Handler(SimpleHTTPRequestHandler):
             return self._song_used(body)
         if u.path == "/api/reactive":
             return self._reactive(body)
+        if u.path == "/api/kinda-chic-render":
+            return self._kinda_chic_render(body)
         return self._json({"error": "unknown endpoint"}, 404)
+
+    def _kinda_chic_render(self, body):
+        """Re-render one kinda-chic slide with a new line and/or photo."""
+        venue = body.get("venue")
+        photo = body.get("photo", "")
+        line = (body.get("line") or "").strip()
+        out_rel = body.get("out", "")
+        if venue not in VENUES or not photo or not line or not out_rel:
+            return self._json({"error": "missing fields"}, 400)
+        if "/" in photo or ".." in photo:
+            return self._json({"error": "bad photo"}, 400)
+        week_root = os.path.realpath(week_dir(venue, body.get("week_start", "")))
+        out_path = os.path.realpath(os.path.join(week_root, out_rel))
+        if not out_path.startswith(week_root):
+            return self._json({"error": "bad path"}, 400)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        renderer = os.path.join(VENUES[venue]["root"], "HUB", "refs", "H-chic", "render.py")
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("chic_render", renderer)
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            mod.render(photo, line, out_path)
+        except Exception as e:
+            return self._json({"error": str(e)}, 500)
+        return self._json({"ok": True})
 
     def _reactive(self, body):
         """Keep/skip decisions from the swipe QC page."""
