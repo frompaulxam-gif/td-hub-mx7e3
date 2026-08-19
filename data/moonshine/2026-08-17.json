@@ -186,7 +186,7 @@
    "kind": "story",
    "slot": "Photos / reel from the weekend",
    "title": "Weekend collage story",
-   "status": "draft",
+   "status": "posted",
    "media": [
     "stories/wednesday-collage/weekend-collage.png"
    ],
