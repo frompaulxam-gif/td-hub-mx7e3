@@ -220,9 +220,9 @@
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
    "title": "Wednesday post - Reel / Carousel / Photo",
-   "status": "draft",
+   "status": "ready",
    "media": [
-    "grid/wednesday-reel/piano-drums-v2.mp4"
+    "grid/wednesday-reel/piano-drums-v2-captioned.mp4"
    ],
    "media_kind": "video",
    "caption": "Some things don't come through a recording.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
@@ -246,12 +246,16 @@
     {
      "ts": "2026-08-19",
      "text": "New video uploaded, replaces the earlier clip. On-screen line set to 'The finer details...'"
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Line burned onto the video with the real Playfair Display Italic (fetched from Google Fonts, now installed). Clean copy without text is still at piano-drums-v2.mp4 if you want to re-cut in CapCut."
     }
    ],
    "checklist": [
     {
-     "text": "On-screen line: The finer details... (Playfair Display Italic, size 10). Alternatives in the notes below.",
-     "done": false
+     "text": "On-screen line is burned in already: The finer details... (real Playfair Display Italic)",
+     "done": true
     },
     {
      "text": "Source clip is 4K vertical, 13s (new upload, 19 Aug)",

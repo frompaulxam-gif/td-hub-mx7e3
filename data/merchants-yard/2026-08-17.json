@@ -141,7 +141,7 @@
    "title": "What's On story",
    "status": "scheduled",
    "media": [
-    "stories/whats-on-story/whats-on-story.png"
+    "stories/whats-on-story/whats-on-story-from-final.png"
    ],
    "media_kind": "image",
    "caption": "Story version of the What's On, post the day after the grid carousel.",
@@ -158,15 +158,13 @@
     {
      "ts": "2026-08-19",
      "text": "Scheduled by Paul in the Instagram scheduler. Nothing more to do, it goes out on its own."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Rebuilt from Paul's own final slide so the story matches the grid post exactly. Replaces the earlier template render."
     }
    ],
    "checklist": [],
-   "template": {
-    "name": "lineup-story",
-    "layout": "WEEKS/2026-08-17/renders/whats-on-story.layout.json",
-    "content": "WEEKS/2026-08-17/renders/whats-on-story.content.json",
-    "out": "WEEKS/2026-08-17/stories/whats-on-story/whats-on-story.png"
-   },
    "alert": "Follows the grid post: What's On story reposts the day after, now Friday 21st."
   },
   {
