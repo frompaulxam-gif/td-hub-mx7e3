@@ -234,6 +234,7 @@ function toggleCollapse(id) {
 $$("[data-collapse]").forEach(b => b.addEventListener("click", () => toggleCollapse(b.dataset.collapse)));
 
 function renderLinks() {
+  // studio tools live alongside the venue links
   const week = curWeek();
   const el = $("#links");
   const links = week?.links || [];

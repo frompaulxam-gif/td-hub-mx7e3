@@ -308,7 +308,34 @@ class Handler(SimpleHTTPRequestHandler):
             return self._setbg(body)
         if u.path == "/api/song-used":
             return self._song_used(body)
+        if u.path == "/api/reactive":
+            return self._reactive(body)
         return self._json({"error": "unknown endpoint"}, 404)
+
+    def _reactive(self, body):
+        """Keep/skip decisions from the swipe QC page."""
+        venue = body.get("venue")
+        if venue not in VENUES:
+            return self._json({"error": "unknown venue"}, 400)
+        path = os.path.join(VENUES[venue]["root"], "reactive-ideas.json")
+        try:
+            with open(path) as f:
+                data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            return self._json({"error": "no ideas file"}, 404)
+        if body.get("reset"):
+            for x in data["ideas"]:
+                x["status"] = "new"
+        else:
+            idea = next((x for x in data["ideas"] if x["id"] == body.get("id")), None)
+            if not idea:
+                return self._json({"error": "unknown idea"}, 404)
+            idea["status"] = body.get("status", "new")
+        tmp = path + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, path)
+        return self._json({"ok": True})
 
     def _song_used(self, body):
         """Log a song as used so future suggestions avoid repeats."""

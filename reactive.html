@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Reactive stories</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body {
+    font: 15px/1.5 -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background: #efece7; color: #211a12; min-height: 100dvh;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  header {
+    width: 100%; background: #fff; border-bottom: 2px solid #211a12;
+    padding: 12px 18px; display: flex; align-items: center; gap: 14px;
+  }
+  h1 { font-size: 17px; font-weight: 800; }
+  .prog { color: #6b6259; font-size: 14px; }
+  .spacer { flex: 1; }
+  .mini { font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+          border: 2px solid #211a12; background: #fff; padding: 5px 11px; }
+  .mini:hover { background: #211a12; color: #fff; }
+
+  #stack { position: relative; width: 380px; height: 620px; margin: 26px 0 18px; }
+  .card {
+    position: absolute; inset: 0; background: #fff; border: 3px solid #211a12;
+    padding: 22px; display: flex; flex-direction: column;
+    box-shadow: 0 10px 30px rgba(33,26,18,.13);
+    transition: transform .28s ease, opacity .28s ease;
+  }
+  .card.gone-yes { transform: translateX(460px) rotate(13deg); opacity: 0; }
+  .card.gone-no  { transform: translateX(-460px) rotate(-13deg); opacity: 0; }
+
+  .fam { font-size: 11px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+         color: #2e6b38; margin-bottom: 8px; }
+  .ttl { font-size: 25px; font-weight: 800; line-height: 1.15; margin-bottom: 4px; }
+  .when { font-size: 13px; color: #6b6259; margin-bottom: 16px; }
+
+  .phone {
+    background: #211a12; color: #fff; padding: 20px 16px; margin-bottom: 14px;
+    min-height: 132px; display: flex; flex-direction: column; justify-content: center;
+  }
+  .ontext { font-size: 21px; font-weight: 800; text-align: center; white-space: pre-line; line-height: 1.25; }
+  .opts { display: flex; flex-direction: column; gap: 6px; margin-top: 13px; }
+  .opt { background: #fff; color: #211a12; font-weight: 700; font-size: 14px;
+         padding: 7px 12px; text-align: center; }
+
+  .why { font-size: 13.5px; color: #4a423a; margin-bottom: 12px; }
+  .alts { font-size: 12.5px; color: #6b6259; border-top: 1px solid #ded8d0; padding-top: 10px; }
+  .alts b { color: #211a12; display: block; margin-bottom: 4px; font-size: 11px;
+            letter-spacing: .07em; text-transform: uppercase; }
+  .alts div { padding: 2px 0; }
+  .clip { margin-top: auto; font-size: 12px; color: #6b6259; padding-top: 10px; }
+
+  #btns { display: flex; gap: 16px; }
+  .big {
+    font: inherit; font-size: 15px; font-weight: 800; cursor: pointer;
+    border: 3px solid #211a12; padding: 13px 30px; background: #fff;
+  }
+  .no:hover  { background: #b3402f; border-color: #b3402f; color: #fff; }
+  .yes:hover { background: #2e6b38; border-color: #2e6b38; color: #fff; }
+  .hint { font-size: 12px; color: #6b6259; margin: 14px 0 30px; }
+  #done { display: none; text-align: center; padding: 60px 24px; }
+  #done h2 { font-size: 22px; margin-bottom: 10px; }
+  @media (max-width: 430px) { #stack { width: calc(100vw - 28px); height: 600px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Reactive stories</h1>
+  <span class="prog" id="prog"></span>
+  <span class="spacer"></span>
+  <button class="mini" id="reset">Start over</button>
+</header>
+
+<div id="stack"></div>
+<div id="btns">
+  <button class="big no"  id="btn-no">Nope</button>
+  <button class="big yes" id="btn-yes">Yes, use it</button>
+</div>
+<p class="hint">Arrow keys work too. Left to skip, right to keep.</p>
+
+<div id="done">
+  <h2 id="done-h">All done</h2>
+  <p id="done-p"></p>
+  <p style="margin-top:18px"><button class="mini" id="reset2">Go again</button></p>
+</div>
+
+<script>
+const VENUE = new URLSearchParams(location.search).get("venue") || "merchants-yard";
+let ideas = [], i = 0, busy = false;
+
+async function load() {
+  const r = await fetch(`/root/${VENUE}/reactive-ideas.json`);
+  ideas = (await r.json()).ideas;
+  i = ideas.findIndex(x => x.status === "new");
+  if (i < 0) i = ideas.length;
+  draw();
+}
+
+function draw() {
+  const stack = document.getElementById("stack");
+  const kept = ideas.filter(x => x.status === "yes").length;
+  document.getElementById("prog").textContent =
+    Math.min(i + 1, ideas.length) + " of " + ideas.length + "  ·  " + kept + " kept";
+  if (i >= ideas.length) {
+    stack.innerHTML = ""; document.getElementById("btns").style.display = "none";
+    document.querySelector(".hint").style.display = "none";
+    document.getElementById("done").style.display = "block";
+    document.getElementById("done-p").textContent =
+      kept + " ideas kept. They're saved, ready to build.";
+    return;
+  }
+  const d = ideas[i];
+  stack.innerHTML = "";
+  const c = document.createElement("div");
+  c.className = "card";
+  c.innerHTML = `
+    <div class="fam">${d.family}</div>
+    <div class="ttl">${d.title}</div>
+    <div class="when">${d.when}</div>
+    <div class="phone">
+      <div class="ontext">${d.text.replace(/</g,"&lt;")}</div>
+      ${d.options && d.options.length ? '<div class="opts">' +
+        d.options.map(o => `<div class="opt">${o}</div>`).join("") + "</div>" : ""}
+    </div>
+    <div class="why">${d.why}</div>
+    <div class="alts"><b>Other wordings</b>${
+      d.captions.map(x => `<div>${x.replace(/</g,"&lt;")}</div>`).join("")}</div>
+    <div class="clip">${d.clip ? "Clip: " + d.clip : "Clip: pick any that fits, or I'll pair one"}</div>`;
+  stack.appendChild(c);
+}
+
+async function vote(yes) {
+  if (busy || i >= ideas.length) return;
+  busy = true;
+  const card = document.querySelector(".card");
+  if (card) card.classList.add(yes ? "gone-yes" : "gone-no");
+  ideas[i].status = yes ? "yes" : "no";
+  fetch("/api/reactive", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ venue: VENUE, id: ideas[i].id, status: yes ? "yes" : "no" }),
+  }).catch(() => {});
+  setTimeout(() => { i++; draw(); busy = false; }, 250);
+}
+
+document.getElementById("btn-yes").addEventListener("click", () => vote(true));
+document.getElementById("btn-no").addEventListener("click", () => vote(false));
+addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") vote(true);
+  if (e.key === "ArrowLeft") vote(false);
+});
+async function reset() {
+  await fetch("/api/reactive", {
+    method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ venue: VENUE, reset: true }),
+  });
+  document.getElementById("btns").style.display = "flex";
+  document.querySelector(".hint").style.display = "block";
+  document.getElementById("done").style.display = "none";
+  load();
+}
+document.getElementById("reset").addEventListener("click", reset);
+document.getElementById("reset2").addEventListener("click", reset);
+load();
+</script>
+</body>
+</html>
