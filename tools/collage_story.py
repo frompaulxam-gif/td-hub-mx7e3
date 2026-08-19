@@ -50,6 +50,8 @@ p.add_argument("--font", choices=["serif", "sans"], default="serif")
 p.add_argument("--size", type=int, default=58)
 p.add_argument("--track", type=float, default=2.5)
 p.add_argument("--leading", type=float, default=1.02)
+p.add_argument("--ratio", type=float, default=0.72)
+p.add_argument("--margin", type=int, default=110)
 p.add_argument("--caps", action="store_true", default=True)
 p.add_argument("--box", action="store_true", default=False)
 p.add_argument("--out", required=True)
@@ -68,37 +70,52 @@ for i, path in enumerate(a.photos):
 
 if a.caption:
     d = ImageDraw.Draw(canvas, "RGBA")
-    lines = [ln.upper() for ln in a.caption.split("\n")] if a.caps else a.caption.split("\n")
-    max_w = W - 120
+    raw = a.caption.split("\n")
+    if a.caps:
+        raw = [ln.upper() for ln in raw]
+    # a blank line splits the caption: everything after it renders smaller
+    if "" in [ln.strip() for ln in raw]:
+        cut = [ln.strip() for ln in raw].index("")
+        blocks = [[l for l in raw[:cut] if l.strip()], [l for l in raw[cut:] if l.strip()]]
+    else:
+        blocks = [[l for l in raw if l.strip()], []]
+    max_w = W - a.margin * 2
 
     def line_w(text, font, track):
         return sum(d.textlength(c, font=font) + track for c in text) - track if text else 0
 
-    # auto-fit: shrink until the longest line sits inside the margins
+    # auto-fit: shrink both blocks together until the widest line fits the margins
     size, track = a.size, a.track
     while size > 18:
-        font = load_font(size, a.font)
-        if max(line_w(ln, font, track) for ln in lines) <= max_w:
+        f1 = load_font(size, a.font)
+        f2 = load_font(max(14, int(size * a.ratio)), a.font)
+        widest = max([line_w(l, f1, track) for l in blocks[0]] or [0] +
+                     [line_w(l, f2, track) for l in blocks[1]] or [0])
+        if blocks[1]:
+            widest = max(widest, max(line_w(l, f2, track) for l in blocks[1]))
+        if widest <= max_w:
             break
         size -= 2
-    font = load_font(size, a.font)
+    f1 = load_font(size, a.font)
+    size2 = max(14, int(size * a.ratio))
+    f2 = load_font(size2, a.font)
 
-    def draw_tracked(x, y, text, fill):
+    def draw_tracked(x, y, text, font):
         for c in text:
-            d.text((x, y), c, font=font, fill=fill)
+            d.text((x, y), c, font=font, fill=(255, 255, 255, 255))
             x += d.textlength(c, font=font) + track
 
-    line_h = int(size * a.leading)
-    total_h = line_h * len(lines)
+    lh1, lh2 = int(size * a.leading), int(size2 * a.leading)
+    gap = int(size * 0.30) if blocks[1] else 0
+    total_h = lh1 * len(blocks[0]) + gap + lh2 * len(blocks[1])
     y = a.top + ch - total_h // 2
-    for ln in lines:
-        x = (W - line_w(ln, font, track)) / 2
-        if a.box:
-            pass
-        else:
-            draw_tracked(x + 2, y + 3, ln, (0, 0, 0, 130))   # soft shadow for legibility
-        draw_tracked(x, y, ln, (255, 255, 255, 255))
-        y += line_h
+    for ln in blocks[0]:
+        draw_tracked((W - line_w(ln, f1, track)) / 2, y, ln, f1)
+        y += lh1
+    y += gap
+    for ln in blocks[1]:
+        draw_tracked((W - line_w(ln, f2, track)) / 2, y, ln, f2)
+        y += lh2
 
 os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
 canvas.save(a.out, "PNG")
