@@ -976,7 +976,11 @@ function makeCarouselQC(week, s) {
   const seeAll = document.createElement("button");
   seeAll.className = "mini-btn";
   seeAll.textContent = "See all " + s.candidates.length;
-  seeAll.addEventListener("click", () => openGallery(week, s));
+  seeAll.addEventListener("click", () => {
+    const u = `picker.html?venue=${state.venue}&week=${week.week_start}&id=${encodeURIComponent(s.id)}`;
+    if (state.live) window.open(u, "_blank");
+    else openGallery(week, s);       // snapshot has no write API, fall back to the modal
+  });
   labelRow.append(label, seeAll);
   wrap.appendChild(labelRow);
   const strip = document.createElement("div");
