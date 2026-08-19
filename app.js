@@ -978,9 +978,7 @@ function makeCarouselQC(week, s) {
   seeAll.className = "mini-btn";
   seeAll.textContent = "See all " + s.candidates.length;
   seeAll.addEventListener("click", () => {
-    const u = `picker.html?venue=${state.venue}&week=${week.week_start}&id=${encodeURIComponent(s.id)}`;
-    if (state.live) window.open(u, "_blank");
-    else openGallery(week, s);       // snapshot has no write API, fall back to the modal
+    location.href = `picker.html?venue=${state.venue}&week=${week.week_start}&id=${encodeURIComponent(s.id)}`;
   });
   labelRow.append(label, seeAll);
   wrap.appendChild(labelRow);
@@ -1065,45 +1063,6 @@ function attachCrop(img, s, path) {
     img.addEventListener("pointerup", up);
   });
 }
-
-function openGallery(week, s) {
-  const grid = $("#gallery-grid");
-  const render_ = () => {
-    const kept = s.media || [];
-    $("#gallery-title").textContent = s.title || s.slot;
-    $("#gallery-count").textContent = `${kept.length} in the carousel, ${s.candidates.length} to choose from`;
-    grid.innerHTML = "";
-    for (const path of s.candidates) {
-      const i = kept.indexOf(path);
-      const inCar = i >= 0;
-      const tile = document.createElement("div");
-      tile.className = "g-tile" + (inCar ? " is-kept" : " is-out");
-      const img = document.createElement("img");
-      img.src = mediaUrl(week, path, s);
-      img.alt = "";
-      tile.appendChild(img);
-      const num = document.createElement("span");
-      num.className = "g-num";
-      num.textContent = inCar ? String(i + 1) : "out";
-      tile.appendChild(num);
-      const pick = document.createElement("button");
-      pick.className = "g-pick";
-      pick.textContent = inCar ? "\u00d7" : "+";
-      pick.title = inCar ? "Remove from the carousel" : "Add to the carousel";
-      pick.addEventListener("click", async () => {
-        const next = inCar ? kept.filter(p => p !== path) : [...kept, path];
-        if (await patchSlot(s, { set: { media: next } }, true)) { render_(); render(); }
-      });
-      tile.appendChild(pick);
-      grid.appendChild(tile);
-    }
-  };
-  render_();
-  $("#gallery").hidden = false;
-}
-
-$("#gallery-close").addEventListener("click", () => { $("#gallery").hidden = true; });
-$("#gallery").addEventListener("click", e => { if (e.target === $("#gallery")) $("#gallery").hidden = true; });
 
 /* ---------- calendar ---------- */
 
@@ -1445,7 +1404,6 @@ window.addEventListener("resize", () => {
 
 document.addEventListener("keydown", e => {
   if (e.key !== "Escape") return;
-  if (!$("#gallery").hidden) { $("#gallery").hidden = true; return; }
   if (!$("#photo-picker").hidden) { $("#photo-picker").hidden = true; return; }
   if (!$("#editor").hidden) closeEditor();
 });

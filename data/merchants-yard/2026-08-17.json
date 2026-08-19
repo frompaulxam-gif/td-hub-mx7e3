@@ -617,6 +617,49 @@
     }
    ],
    "alert": "New: posted today alongside the Carnival grid post."
+  },
+  {
+   "id": "story-entry-policy-2026",
+   "day": "Any day",
+   "date": "2026-08-17",
+   "kind": "story",
+   "slot": "Reactive: entry policy",
+   "title": "Door policy + opening hours",
+   "status": "ready",
+   "media_kind": "image",
+   "media": [
+    "stories/entry-policy/entry-policy-1.png",
+    "stories/entry-policy/entry-policy-2.png"
+   ],
+   "caption": "Two stories, back to back. One: door policy. Two: opening hours. Save both to a Highlight called Info, then re-post before big nights.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Save to a Highlight called Info or Door",
+     "done": false
+    },
+    {
+     "text": "Re-post before Park Life and before the Carnival",
+     "done": false
+    },
+    {
+     "text": "18+ / ID wording still blocked, chase the venue before adding it",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Rendered from the confirmed playbook wording. The 18+/ID lines are deliberately left off, still not signed off by the venue."
+    }
+   ],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-17/renders/entry-policy-1.layout.json",
+    "content": "WEEKS/2026-08-17/renders/entry-policy-1.content.json",
+    "out": "WEEKS/2026-08-17/stories/entry-policy/entry-policy-1.png"
+   }
   }
  ],
  "alerts": [
