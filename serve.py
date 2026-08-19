@@ -170,7 +170,9 @@ class Handler(SimpleHTTPRequestHandler):
 
     def end_headers(self):
         # app shell must never go stale; media stays cacheable (busted via ?v=)
-        if not self.path.startswith(("/media/", "/root/")):
+        if self.path.startswith(("/media/", "/root/")):
+            self.send_header("Cache-Control", "no-cache")
+        else:
             self.send_header("Cache-Control", "no-store")
         super().end_headers()
 

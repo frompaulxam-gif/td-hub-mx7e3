@@ -62,6 +62,14 @@ async function boot() {
     if (cur >= 0) idx = cur;
     state.weekIdx[v.slug] = idx;
   }
+  // a refresh should land back on the same week, not jump to the current one
+  try {
+    const keep = JSON.parse(sessionStorage.getItem("hub-restore") || "null");
+    if (keep && keep.venue && state.weeks[keep.venue]) {
+      state.venue = keep.venue;
+      if (Number.isInteger(keep.weekIdx)) state.weekIdx[keep.venue] = keep.weekIdx;
+    }
+  } catch { /* first load */ }
   if (!state.weeks[state.venue]) state.venue = state.venues[0]?.slug;
   document.documentElement.dataset.venue = state.venue;
   if (state.live) {
@@ -74,6 +82,26 @@ async function boot() {
     }));
   }
   render();
+  // ...and back to the exact scroll position
+  try {
+    const keep = JSON.parse(sessionStorage.getItem("hub-restore") || "null");
+    if (keep && keep.scrollY) {
+      const y = keep.scrollY;
+      requestAnimationFrame(() => window.scrollTo(0, y));
+      setTimeout(() => window.scrollTo(0, y), 250);   // after images size the page
+    }
+    sessionStorage.removeItem("hub-restore");
+  } catch { /* nothing to restore */ }
+}
+
+function rememberPlace() {
+  try {
+    sessionStorage.setItem("hub-restore", JSON.stringify({
+      venue: state.venue,
+      weekIdx: state.weekIdx[state.venue],
+      scrollY: window.scrollY,
+    }));
+  } catch { /* private mode */ }
 }
 
 function curWeek() {
@@ -1375,6 +1403,13 @@ async function pickPhoto(rel) {
     toast("Photo swap failed: " + e.message);
   }
 }
+
+$("#refresh-btn").addEventListener("click", () => {
+  $("#refresh-btn").classList.add("is-spinning");
+  rememberPlace();
+  location.reload();
+});
+window.addEventListener("beforeunload", rememberPlace);
 
 let toastTimer;
 function toast(msg) {
