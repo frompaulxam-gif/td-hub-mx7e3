@@ -222,7 +222,7 @@
    "title": "Wednesday post - Reel / Carousel / Photo",
    "status": "draft",
    "media": [
-    "grid/wednesday-reel/RING1757.mp4"
+    "grid/wednesday-reel/piano-drums-v2.mp4"
    ],
    "media_kind": "video",
    "caption": "Some things don't come through a recording.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
@@ -242,15 +242,19 @@
     {
      "ts": "2026-08-18",
      "text": "ON-SCREEN TEXT options (Playfair Display Italic, size 10, centred): Everyone watches the singer... | The details you don't hear... | Listen past the vocals... | Nobody films the piano... | The quiet half of a loud night... | Behind every voice, four people listening... | The part you feel but never notice... | Where the song actually starts... | The bit that doesn't make the video... | You came for the singer. Stay for this...  Top picks: the first two."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "New video uploaded, replaces the earlier clip. On-screen line set to 'The finer details...'"
     }
    ],
    "checklist": [
     {
-     "text": "On-screen line: Everyone watches the singer... (Playfair Display Italic, size 10). Alternatives in the notes below.",
+     "text": "On-screen line: The finer details... (Playfair Display Italic, size 10). Alternatives in the notes below.",
      "done": false
     },
     {
-     "text": "Source clip is 4K vertical, 14s",
+     "text": "Source clip is 4K vertical, 13s (new upload, 19 Aug)",
      "done": false
     }
    ],
