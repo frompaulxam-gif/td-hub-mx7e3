@@ -220,7 +220,7 @@
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
    "title": "Wednesday post - Reel / Carousel / Photo",
-   "status": "ready",
+   "status": "scheduled",
    "media": [
     "grid/wednesday-reel/piano-drums-v2-captioned.mp4"
    ],
@@ -449,22 +449,40 @@
    "day": "Saturday AM",
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
-   "title": "Saturday post - Reel / Carousel / Photo",
-   "status": "waiting",
+   "title": "Saturday post - Reel: When everyone is part of the performance",
+   "status": "draft",
    "media": [],
    "media_kind": "none",
-   "caption": "",
-   "alternates": [],
+   "caption": "She came for a drink and left as part of the band.\n\nLive music, every weekend at Moonshine.",
+   "alternates": [
+    "The best nights are the ones you end up in.\n\nLive at Moonshine, every weekend.",
+    "Nobody stays in their seat for long.\n\nLive music every weekend at Moonshine.",
+    "There's always a tambourine, and always someone brave enough.\n\nLive at Moonshine."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
      "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Paul's reel: singer in the sequin gown with a guest up on stage on tambourine. Caption tells that story rather than repeating the on-screen line."
     }
    ],
-   "checklist": [],
+   "checklist": [
+    {
+     "text": "On-screen line already burned in: When everyone is part of the performance",
+     "done": true
+    }
+   ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-photos-2.jpg",
-   "reference_label": "Last week: weekend photos"
+   "reference_label": "Last week: weekend photos",
+   "songs": [
+    "Louis Prima - Jump, Jive an' Wail  ·  swing energy, made for a band pulling the room in",
+    "Tom Jones - It's Not Unusual  ·  cabaret and instantly recognisable, matches the gown and the stage",
+    "Aretha Franklin - Respect  ·  joyful singalong, everyone knows the words"
+   ]
   },
   {
    "id": "sat-am-story-sat-artist",
