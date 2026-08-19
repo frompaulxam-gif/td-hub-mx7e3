@@ -359,7 +359,11 @@
     "grid/friday-kinda-chic/44-when-the-staff-are-having-more-fun.jpg",
     "grid/friday-kinda-chic/46-to-be-hotter-than-your-ex.jpg",
     "grid/friday-kinda-chic/41-to-move-tables-as-the-sun-moves.jpg",
-    "grid/friday-kinda-chic/09-to-come-straight-from-work.jpg"
+    "grid/friday-kinda-chic/09-to-come-straight-from-work.jpg",
+    "grid/friday-kinda-chic/10-to-bring-your-mum.jpg",
+    "grid/friday-kinda-chic/08-that-one-drink-turned-into-five.jpg",
+    "grid/friday-kinda-chic/13-to-know-every-word-when-the-dj-plays-that-so.jpg",
+    "grid/friday-kinda-chic/40-to-get-a-tan-line-at-the-bar.jpg"
    ],
    "media_kind": "carousel",
    "caption": "Kinda chic at Merchants Yard.\n\nCome to the yard and find out what your 'kinda chic' moment is\n\nFridays open from 5pm\nSaturdays open from 2pm",
@@ -383,6 +387,10 @@
     {
      "ts": "2026-08-19",
      "text": "Added 'to come straight from work' back in, Paul's pick. This one was rendered last week but never actually posted, so it's not a repeat."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Added bring your mum (rendered last week, never posted, so not a repeat) plus the three Paul screenshotted: one drink turned into five, every word when the dj plays that song, tan line at the bar."
     }
    ],
    "checklist": [
@@ -450,7 +458,8 @@
     "grid/friday-kinda-chic/50-to-get-ready-for-a-courtyard.jpg",
     "grid/friday-kinda-chic/51-to-be-someone-s-favourite-regular.jpg",
     "grid/friday-kinda-chic/52-to-still-be-here-at-closing.jpg",
-    "grid/friday-kinda-chic/09-to-come-straight-from-work.jpg"
+    "grid/friday-kinda-chic/09-to-come-straight-from-work.jpg",
+    "grid/friday-kinda-chic/10-to-bring-your-mum.jpg"
    ],
    "songs": [
     "Stardust - Music Sounds Better With You  ·  disco-house, matches the kinda chic mood",
