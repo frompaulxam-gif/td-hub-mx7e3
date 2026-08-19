@@ -645,6 +645,31 @@ function makeXpost(week, s) {
     right.appendChild(altWrap);
   }
 
+  // sound suggestions
+  if (s.songs?.length) {
+    const sWrap = document.createElement("div");
+    const sLabel = document.createElement("span");
+    sLabel.className = "xpane-label";
+    sLabel.style.marginTop = "12px";
+    sLabel.textContent = "Sound, tap to copy";
+    sWrap.appendChild(sLabel);
+    const list = document.createElement("div");
+    list.className = "song-row";
+    s.songs.forEach((song, i) => {
+      const b = document.createElement("button");
+      b.className = "song-chip" + (i === 0 ? " is-pick" : "");
+      b.textContent = song;
+      b.title = "Copy";
+      b.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(song.replace(/^[^·]*·\s*/, ""));
+        toast("Copied");
+      });
+      list.appendChild(b);
+    });
+    sWrap.appendChild(list);
+    right.appendChild(sWrap);
+  }
+
   // caption helper: similar past captions of this slot's category
   const bank = state.banks?.[state.venue];
   if (bank && s.kind === "grid") {

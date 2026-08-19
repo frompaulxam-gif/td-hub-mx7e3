@@ -57,7 +57,11 @@
     }
    ],
    "template": null,
-   "alert": "Moved from Monday: Park Life took Monday's grid slot, recap goes out Tuesday."
+   "alert": "Moved from Monday: Park Life took Monday's grid slot, recap goes out Tuesday.",
+   "songs": [
+    "Fred again.. - Delilah  ·  builds, good for a montage",
+    "Chic - Good Times  ·  warm, sunny, fits the yard in daylight"
+   ]
   },
   {
    "id": "mon-story-repost",
@@ -113,7 +117,12 @@
    },
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
    "reference_label": "Canva reference",
-   "alert": "Moved to Wednesday per Paul: the recap owns Tuesday, What's On replaces the flexible slot."
+   "alert": "Moved to Wednesday per Paul: the recap owns Tuesday, What's On replaces the flexible slot.",
+   "songs": [
+    "Blur - Parklife  ·  the obvious one, and it works",
+    "Oasis - Some Might Say  ·  Britpop without being on the nose",
+    "Pulp - Common People  ·  the singalong everyone knows"
+   ]
   },
   {
    "id": "tue-story-whatson",
@@ -241,6 +250,10 @@
     "grid/thursday-weekend-photos/RING1570.jpg",
     "grid/thursday-weekend-photos/RING1720.jpg",
     "grid/thursday-weekend-photos/RING1729.jpg"
+   ],
+   "songs": [
+    "Whitney Houston - I Wanna Dance With Somebody  ·  matches the dancing-like-no-one's-around caption",
+    "Robin S - Show Me Love  ·  house classic, instantly recognisable"
    ]
   },
   {
@@ -402,6 +415,10 @@
     "grid/friday-kinda-chic/50-to-get-ready-for-a-courtyard.jpg",
     "grid/friday-kinda-chic/51-to-be-someone-s-favourite-regular.jpg",
     "grid/friday-kinda-chic/52-to-still-be-here-at-closing.jpg"
+   ],
+   "songs": [
+    "Stardust - Music Sounds Better With You  ·  disco-house, matches the kinda chic mood",
+    "Kaytranada - 10%  ·  cool, current, good under a photo carousel"
    ]
   },
   {

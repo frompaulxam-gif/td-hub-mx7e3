@@ -391,6 +391,17 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 .thread-input input::placeholder { color: var(--ink-mid); }
 .thread-input input:focus { border-color: var(--accent); background: var(--surface); outline: none; }
 
+/* ---------- sound suggestions ---------- */
+.song-row { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
+.song-chip {
+  text-align: left; font-size: 13px; line-height: 1.45;
+  background: var(--surface-2); color: var(--ink-mid);
+  padding: 9px 12px;
+  transition: color .15s var(--ease), background-color .15s var(--ease);
+}
+.song-chip:hover { color: var(--ink-strong); background: color-mix(in srgb, var(--surface-2) 60%, var(--line)); }
+.song-chip.is-pick { color: var(--ink-strong); font-weight: 600; }
+
 /* ---------- caption helper ---------- */
 .cap-ref {
   background: var(--surface-2); padding: 11px 13px; margin-top: 8px;

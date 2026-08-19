@@ -94,7 +94,11 @@
     "grid/tuesday-post/RING1881.jpg"
    ],
    "reference": "WEEKS/2026-08-10/ig/reel_Db6LOCmMjVg.mp4",
-   "reference_label": "Last Tuesday: the reel (playable)"
+   "reference_label": "Last Tuesday: the reel (playable)",
+   "songs": [
+    "Sister Nancy - Bam Bam  ·  carnival staple, endlessly sampled",
+    "Bill Withers - Lovely Day  ·  warm, universal, suits a photo carousel"
+   ]
   },
   {
    "id": "tue-story-whatson",
@@ -165,7 +169,12 @@
    ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-artist-elyssa.jpg",
-   "reference_label": "Last artist post (Elyssa Dean)"
+   "reference_label": "Last artist post (Elyssa Dean)",
+   "songs": [
+    "Hot 8 Brass Band - Sexual Healing  ·  brass cover of a song everyone knows, reads as NOLA in two seconds",
+    "Rebirth Brass Band - Do Whatcha Wanna  ·  the second-line anthem, pure New Orleans",
+    "Trombone Shorty - Hurricane Season  ·  modern NOLA brass, punchier if you want energy"
+   ]
   },
   {
    "id": "wed-am-story-weekend",
@@ -195,7 +204,11 @@
    ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-photos-2.jpg",
-   "reference_label": "Last week: weekend photos"
+   "reference_label": "Last week: weekend photos",
+   "songs": [
+    "Khruangbin - Texas Sun  ·  slow, red-lit, suits the collage",
+    "Sade - Smooth Operator  ·  speakeasy shorthand"
+   ]
   },
   {
    "id": "wed-pm-grid-reel",
@@ -240,7 +253,12 @@
    ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/reel_Db-_bl0MySq.mp4",
-   "reference_label": "Last week's reel (playable)"
+   "reference_label": "Last week's reel (playable)",
+   "songs": [
+    "Nina Simone - Feeling Good  ·  builds to the drop, matches piano-then-drums",
+    "Chase & Status ft. Bou - Baddadan  ·  if you want the cut to hit hard",
+    "Ezra Collective - Victory Dance  ·  modern live-band jazz, exactly this room's energy"
+   ]
   },
   {
    "id": "thu-am-grid-fri-artist",
@@ -298,7 +316,11 @@
    "checklist": [
     "Happy hour details needed"
    ],
-   "template": null
+   "template": null,
+   "songs": [
+    "Louis Armstrong - Basin Street Blues  ·  classic, elegant, speakeasy-appropriate",
+    "The Meters - Cissy Strut  ·  NOLA funk groove, cool without being obvious"
+   ]
   },
   {
    "id": "thu-pm-grid-flex",
