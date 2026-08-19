@@ -225,10 +225,11 @@
     "grid/wednesday-reel/piano-drums-v2-captioned.mp4"
    ],
    "media_kind": "video",
-   "caption": "Some things don't come through a recording.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
+   "caption": "The things you'd miss if you weren't paying attention.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
    "alternates": [
-    "You can hear the music from the street.\n\nYou can't hear the room.\n\nLive at Moonshine, every weekend.",
-    "No playlist does this.\n\nFour players, one room, and whatever the night decides.\n\nJoin us this weekend."
+    "You don't notice it until you do.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
+    "This is the part that makes it live music, not just music.\n\nThe hands on the keys. The stick counting it in. The room holding its breath before the chorus.\n\nLive, every weekend at Moonshine.",
+    "Nobody's watching the piano. That's kind of the point.\n\nLive, every weekend at Moonshine."
    ],
    "notes": [
     {
@@ -250,6 +251,10 @@
     {
      "ts": "2026-08-19",
      "text": "Line burned onto the video with the real Playfair Display Italic (fetched from Google Fonts, now installed). Clean copy without text is still at piano-drums-v2.mp4 if you want to re-cut in CapCut."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Captions reworked to match the on-screen line's angle: what you'd miss if you weren't paying attention, not a room description."
     }
    ],
    "checklist": [
