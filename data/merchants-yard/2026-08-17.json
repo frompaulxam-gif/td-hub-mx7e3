@@ -504,7 +504,12 @@
     "Friday's sorted. The Friday Social with Jonna, doors 5pm.",
     "Doors 5pm. Jonna on the mic. Park Life tomorrow. Easy decision."
    ],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-19",
+     "text": "Background swapped to a party shot (LV407725, dancing under the lanterns), band scrim added so the text still reads."
+    }
+   ],
    "checklist": [],
    "template": {
     "name": "lineup-story",
