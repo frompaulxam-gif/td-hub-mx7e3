@@ -423,7 +423,12 @@
    ],
    "template": null,
    "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
-   "reference_label": "Canva reference"
+   "reference_label": "Canva reference",
+   "songs": [
+    "Ella Fitzgerald - Get Ready  ·  your pick, and it works: a Motown song (Temptations, Smokey Robinson) sung by a jazz great, which is exactly this room doing Motown",
+    "The Four Tops - I Can't Help Myself  ·  named in your own caption, everyone knows it in two seconds",
+    "Otis Redding - Try a Little Tenderness  ·  also named in the caption, slow build into a huge finish, made for a live tribute"
+   ]
   },
   {
    "id": "fri-am-story-fri-artist",
