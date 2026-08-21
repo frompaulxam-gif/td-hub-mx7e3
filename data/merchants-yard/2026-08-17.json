@@ -139,9 +139,9 @@
    "kind": "story",
    "slot": "Story version, post day after the grid",
    "title": "What's On story",
-   "status": "scheduled",
+   "status": "ready",
    "media": [
-    "stories/whats-on-story/whats-on-story-from-final.png"
+    "stories/whats-on-story/whats-on-story.png"
    ],
    "media_kind": "image",
    "caption": "Story version of the What's On, post the day after the grid carousel.",
@@ -162,10 +162,20 @@
     {
      "ts": "2026-08-19",
      "text": "Rebuilt from Paul's own final slide so the story matches the grid post exactly. Replaces the earlier template render."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "Rebuilt natively at 9:16 on a different photo (LV409458, yard with bunting). Band scrim so the photo keeps its colour, description rebalanced to three even lines. Editable again via Adjust layout / Change photo."
     }
    ],
    "checklist": [],
-   "alert": "Follows the grid post: What's On story reposts the day after, now Friday 21st."
+   "alert": "Follows the grid post: What's On story reposts the day after, now Friday 21st.",
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-17/renders/whats-on-story.layout.json",
+    "content": "WEEKS/2026-08-17/renders/whats-on-story.content.json",
+    "out": "WEEKS/2026-08-17/stories/whats-on-story/whats-on-story.png"
+   }
   },
   {
    "id": "wed-grid-flexible",
