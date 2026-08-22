@@ -565,6 +565,10 @@
     {
      "ts": "2026-08-22",
      "text": "Scrim removed entirely per Paul. Legibility now comes from a two-pass gaussian halo drawn from the type's own alpha mask, so only the letters carry shadow and the footage is untouched."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "HDR off: source is HLG/BT.2020 Dolby Vision, and the earlier exports were still carrying those tags so players treated them as HDR. Now forced to BT.709 SDR via setparams (encoder flags alone were being overridden), 8-bit, limited range, with contrast/gamma compensation for the flatter HLG curve."
     }
    ],
    "checklist": [
