@@ -425,9 +425,9 @@
    "reference": "TEMPLATES/canva-refs/ms-artist-djbenzo-ref.png",
    "reference_label": "Canva reference",
    "songs": [
-    "Ella Fitzgerald - Get Ready  ·  your pick, and it works: a Motown song (Temptations, Smokey Robinson) sung by a jazz great, which is exactly this room doing Motown",
-    "The Four Tops - I Can't Help Myself  ·  named in your own caption, everyone knows it in two seconds",
-    "Otis Redding - Try a Little Tenderness  ·  also named in the caption, slow build into a huge finish, made for a live tribute"
+    "The Temptations - My Girl  ·  the most recognisable Motown record there is, that bassline is identifiable in two notes",
+    "The Jackson 5 - I Want You Back  ·  the piano intro lands instantly, more energy if you want it upbeat",
+    "Marvin Gaye - I Heard It Through the Grapevine  ·  moodier and darker, suits the red-lit room"
    ]
   },
   {
@@ -517,7 +517,12 @@
     }
    ],
    "checklist": [],
-   "template": null
+   "template": null,
+   "songs": [
+    "The Temptations - My Girl  ·  the most recognisable Motown record there is, that bassline is identifiable in two notes",
+    "The Jackson 5 - I Want You Back  ·  the piano intro lands instantly, more energy if you want it upbeat",
+    "Marvin Gaye - I Heard It Through the Grapevine  ·  moodier and darker, suits the red-lit room"
+   ]
   }
  ],
  "prep": [
