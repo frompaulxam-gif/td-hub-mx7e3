@@ -505,10 +505,10 @@
    "title": "Saturday artist story",
    "status": "approved",
    "media": [
-    "stories/saturday-artist/saturday-artist-story.png"
+    "stories/saturday-artist/saturday-artist-story-tonight.png"
    ],
    "media_kind": "image",
-   "caption": "Tonight, the room does Motown.",
+   "caption": "Text is burned in, no sticker needed. Clean version without the Tonight line is saved alongside as saturday-artist-story.png.",
    "alternates": [
     "Tonight. Soul, Motown, and every word you already know.",
     "Tonight belongs to the classics.",
@@ -520,6 +520,10 @@
     {
      "ts": "2026-08-17",
      "text": "Chelsea's 9:16 story art."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "Tonight line overlaid in Bodoni to match the poster's own Didone, placed in the clear band above the performer and kept left of the Moonshine badge. Halo drawn from the type so the artwork is not dimmed."
     }
    ],
    "checklist": [],
