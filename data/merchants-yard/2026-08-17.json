@@ -561,6 +561,10 @@
     {
      "ts": "2026-08-22",
      "text": "Redesigned: continuous type block from 25% to 77% of frame so there is no dead middle. Hierarchy now comes from weight contrast (Archivo Black for the two anchors, Helvetica Neue Light/Regular/Medium for supporting) rather than everything being bold. Scrim rebuilt as a gaussian band plus edge falloff, mathematically continuous."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "Scrim removed entirely per Paul. Legibility now comes from a two-pass gaussian halo drawn from the type's own alpha mask, so only the letters carry shadow and the footage is untouched."
     }
    ],
    "checklist": [
