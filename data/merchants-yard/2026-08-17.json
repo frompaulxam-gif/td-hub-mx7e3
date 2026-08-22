@@ -557,6 +557,10 @@
     {
      "ts": "2026-08-22",
      "text": "Reworked: date line added, act pulled into the middle with hairline rules so there is no dead space, Merchants Yard logo at the bottom, and a light grade (contrast 1.06, saturation 1.10, gentle sharpen)."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "Redesigned: continuous type block from 25% to 77% of frame so there is no dead middle. Hierarchy now comes from weight contrast (Archivo Black for the two anchors, Helvetica Neue Light/Regular/Medium for supporting) rather than everything being bold. Scrim rebuilt as a gaussian band plus edge falloff, mathematically continuous."
     }
    ],
    "checklist": [
