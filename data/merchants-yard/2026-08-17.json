@@ -526,13 +526,13 @@
    "day": "Saturday",
    "kind": "story",
    "slot": "Doors open story",
-   "title": "Park Life story",
-   "status": "draft",
+   "title": "Park Life story - today",
+   "status": "ready",
    "media": [
-    "stories/saturday-lineup/park-life-story.png"
+    "stories/saturday-lineup/park-life-today.mp4"
    ],
-   "media_kind": "image",
-   "caption": "Today. Park Life at Merchants Yard. King Ocean Club live, Britpop anthems all day. Doors 2pm, pay on the door.",
+   "media_kind": "video",
+   "caption": "Story for today. Poster over live footage from the yard, no sticker needed, the TODAY line is burned in.",
    "alternates": [
     "Park Life. Today from 2pm. King Ocean Club live, Britpop all day, pay on the door.",
     "Saturday's plans found you. Park Life from 2pm, tables via the website."
@@ -545,6 +545,10 @@
     {
      "ts": "2026-08-17",
      "text": "PROPOSAL ONLY, Paul reviews before anything is used. Say the word to revert this slot to how it was."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "Built from Paul's IMG_6242 clip: DJ under the LED wall whose pattern reads as a mod target, which matches the poster's Britpop artwork. Poster laid over it as a flyer card with TODAY above."
     }
    ],
    "checklist": [
@@ -555,7 +559,13 @@
    ],
    "template": null,
    "reference": "TEMPLATES/canva-refs/MY - What's On.png",
-   "reference_label": "Canva voice reference"
+   "reference_label": "Canva voice reference",
+   "source_clip": "../../../Downloads/IMG_6242.MOV",
+   "songs": [
+    "Blur - Parklife  ·  the obvious one and it lands instantly",
+    "Oasis - Some Might Say  ·  Britpop without being on the nose",
+    "Pulp - Common People  ·  the singalong everyone knows"
+   ]
   },
   {
    "id": "sun-story-reactive",
