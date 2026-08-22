@@ -508,8 +508,14 @@
     "stories/saturday-artist/saturday-artist-story.png"
    ],
    "media_kind": "image",
-   "caption": "Story version, post Saturday AM with a sticker line: Tonight at Moonshine ✨",
-   "alternates": [],
+   "caption": "Tonight, the room does Motown.",
+   "alternates": [
+    "Tonight. Soul, Motown, and every word you already know.",
+    "Tonight belongs to the classics.",
+    "Tonight, Otis and the Four Tops walk in.",
+    "Tonight sounds like 1965.",
+    "Tonight. Marcius Riley, live at Moonshine."
+   ],
    "notes": [
     {
      "ts": "2026-08-17",
