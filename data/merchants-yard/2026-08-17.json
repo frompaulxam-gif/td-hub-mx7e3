@@ -532,7 +532,7 @@
     "stories/saturday-lineup/park-life-today.mp4"
    ],
    "media_kind": "video",
-   "caption": "Story for today. Poster over live footage from the yard, no sticker needed, the TODAY line is burned in.",
+   "caption": "Story for today. Text is burned in, no sticker needed. Add the booking link sticker if you want it.",
    "alternates": [
     "Park Life. Today from 2pm. King Ocean Club live, Britpop all day, pay on the door.",
     "Saturday's plans found you. Park Life from 2pm, tables via the website."
@@ -549,6 +549,10 @@
     {
      "ts": "2026-08-22",
      "text": "Built from Paul's IMG_6242 clip: DJ under the LED wall whose pattern reads as a mod target, which matches the poster's Britpop artwork. Poster laid over it as a flyer card with TODAY above."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "Poster dropped per Paul: now Instagram-style text over the live footage. Archivo Black for PARK LIFE (IG Strong), Helvetica Neue Bold for the details (IG Classic), all inside the safe zones."
     }
    ],
    "checklist": [
