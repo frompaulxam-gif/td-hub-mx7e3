@@ -60,12 +60,11 @@
    "status": "posted",
    "media": [
     "grid/tuesday-post/RING1881.jpg",
-    "grid/tuesday-post/RING1752.jpg",
     "grid/tuesday-post/RING1774.jpg",
-    "grid/tuesday-post/RING1837.jpg",
-    "grid/tuesday-post/RING1755.jpg",
+    "grid/tuesday-post/RING1752.jpg",
     "grid/tuesday-post/RING1802.jpg",
-    "grid/tuesday-post/RING1804.jpg"
+    "grid/tuesday-post/RING1837.jpg",
+    "grid/tuesday-post/RING1755.jpg"
    ],
    "media_kind": "carousel",
    "caption": "Saturday, as it happened.\n\nGood music, better company. Joining us this weekend?",
@@ -85,6 +84,10 @@
     {
      "ts": "2026-08-23",
      "text": "INSIGHTS: 2,600 reach, 2 reposts, 5 shares. Sound used: Rufus, Chaka Khan - Ain't Nobody (Live)."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "Corrected against Instagram: 6 slides posted, RING1804 was cut, and the running order differs from the board. Verified at 0.99 confidence or better."
     }
    ],
    "checklist": [
