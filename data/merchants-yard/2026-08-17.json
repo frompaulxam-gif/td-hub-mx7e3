@@ -14,7 +14,7 @@
    "kind": "grid",
    "slot": "Recap montage reel",
    "title": "Weekend recap reel",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "grid/monday-recap-reel/trial-reel-preview.png"
    ],
@@ -36,6 +36,10 @@
     {
      "ts": "2026-08-17",
      "text": "Reel edited and sitting in trial reels with the Life without trending audio on-screen text. Use that thumbnail. Post Tuesday evening."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 6,800 reach, 3 reposts, 4 shares. Sound used: merchants.yard original audio."
     }
    ],
    "checklist": [
@@ -61,7 +65,13 @@
    "songs": [
     "Fred again.. - Delilah  ·  builds, good for a montage",
     "Chic - Good Times  ·  warm, sunny, fits the yard in daylight"
-   ]
+   ],
+   "performance": {
+    "reach": 6800,
+    "reposts": 3,
+    "shares": 4,
+    "sound": "merchants.yard original audio"
+   }
   },
   {
    "id": "mon-story-repost",
@@ -92,7 +102,7 @@
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "scheduled",
+   "status": "posted",
    "media": [
     "grid/tuesday-whats-on/final-slide-01.jpg",
     "grid/tuesday-whats-on/final-slide-02.jpg"
@@ -115,6 +125,10 @@
     {
      "ts": "2026-08-19",
      "text": "Scheduled by Paul in the Instagram scheduler. Nothing more to do, it goes out on its own."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 3,900 reach, 4 reposts, 7 shares. Sound used: The Verve - Bitter Sweet Symphony."
     }
    ],
    "checklist": [
@@ -135,7 +149,13 @@
     "Oasis - Some Might Say  ·  Britpop without being on the nose",
     "Pulp - Common People  ·  the singalong everyone knows"
    ],
-   "_v": 1
+   "_v": 1,
+   "performance": {
+    "reach": 3900,
+    "reposts": 4,
+    "shares": 7,
+    "sound": "The Verve - Bitter Sweet Symphony"
+   }
   },
   {
    "id": "tue-story-whatson",
@@ -208,13 +228,23 @@
     {
      "ts": "2026-08-17",
      "text": "Caption replaced with the live posted one from Paul's ChatGPT flow. Performances from 5pm with the usual anthems before and after, per the band's WhatsApp."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 2,500 reach, 3 reposts, 4 shares. Sound used: Supergrass - Alright."
     }
    ],
    "checklist": [],
    "template": null,
    "reference": "WEEKS/2026-08-10/grid/wednesday-beer-pour/beers.mp4",
    "reference_label": "Last Wednesday: beer pour",
-   "alert": "Schedule change: posted Monday instead of the planned Wednesday slot."
+   "alert": "Schedule change: posted Monday instead of the planned Wednesday slot.",
+   "performance": {
+    "reach": 2500,
+    "reposts": 3,
+    "shares": 4,
+    "sound": "Supergrass - Alright"
+   }
   },
   {
    "id": "wed-story-reactive",
@@ -239,7 +269,7 @@
    "kind": "grid",
    "slot": "Photos from the weekend",
    "title": "Weekend photos carousel",
-   "status": "scheduled",
+   "status": "posted",
    "media": [
     "grid/thursday-weekend-photos/RING1467.jpg",
     "grid/thursday-weekend-photos/RING1477.jpg",
@@ -271,6 +301,10 @@
     {
      "ts": "2026-08-19",
      "text": "Scheduled by Paul in the Instagram scheduler. Nothing more to do, it goes out on its own."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 3,000 reach, 4 reposts, 1 shares. Sound used: Eve - Who's That Girl?."
     }
    ],
    "checklist": [
@@ -294,7 +328,13 @@
     "Bill Withers - Lovely Day  ·  easy and universal, suits a daytime photo set",
     "Chic - Good Times  ·  the yard in daylight, no effort needed"
    ],
-   "alert": "Moved from Thursday to Wednesday: weekend photos carousel brought forward to make room for the Carnival promo push."
+   "alert": "Moved from Thursday to Wednesday: weekend photos carousel brought forward to make room for the Carnival promo push.",
+   "performance": {
+    "reach": 3000,
+    "reposts": 4,
+    "shares": 1,
+    "sound": "Eve - Who's That Girl?"
+   }
   },
   {
    "id": "thu-story-weather",
@@ -377,7 +417,7 @@
    "kind": "grid",
    "slot": "Flexible trend",
    "title": "Flexible trend - Kinda chic",
-   "status": "scheduled",
+   "status": "posted",
    "media": [
     "grid/friday-kinda-chic/28-to-never-look-at-the-menu.jpg",
     "grid/friday-kinda-chic/32-that-nobody-asks-what-you-do-for-a-living.jpg",
@@ -421,6 +461,10 @@
     {
      "ts": "2026-08-19",
      "text": "Scheduled by Paul in the IG app. 11 slides, final order locked."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 2,800 reach, 1 reposts, 0 shares. Sound used: Crystal Waters - Gypsy Woman."
     }
    ],
    "checklist": [
@@ -494,7 +538,13 @@
    "songs": [
     "Stardust - Music Sounds Better With You  ·  disco-house, matches the kinda chic mood",
     "Kaytranada - 10%  ·  cool, current, good under a photo carousel"
-   ]
+   ],
+   "performance": {
+    "reach": 2800,
+    "reposts": 1,
+    "shares": 0,
+    "sound": "Crystal Waters - Gypsy Woman"
+   }
   },
   {
    "id": "fri-story-lineup",
@@ -701,9 +751,19 @@
     {
      "ts": "2026-08-19",
      "text": "Posted live by Paul, off the framework: early promo push for the 30 Aug bank holiday carnival. Filed from his screenshot; caption text is my best read of what's visible, not pulled from a source file. Used Sister Nancy - Bam Bam, the recommended pick from the song list drafted for this post."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 5,900 reach, 4 reposts, 69 shares. Sound used: Sister Nancy - Bam Bam."
     }
    ],
-   "alert": "New: posted today, off-framework, to get ahead on Carnival promo."
+   "alert": "New: posted today, off-framework, to get ahead on Carnival promo.",
+   "performance": {
+    "reach": 5900,
+    "reposts": 4,
+    "shares": 69,
+    "sound": "Sister Nancy - Bam Bam"
+   }
   },
   {
    "id": "wed-story-carnival",

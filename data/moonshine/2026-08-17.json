@@ -30,6 +30,10 @@
     {
      "ts": "2026-08-17",
      "text": "Already live and pinned on the grid (posted 17 Aug ~12:00, caption above is the live one). Still to do: run it as a native story with a sticker line."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 1,200 reach, 2 reposts, 2 shares. Sound used: McFadden & Whitehead - Ain't No Stoppin' Us Now."
     }
    ],
    "checklist": [
@@ -38,7 +42,13 @@
    ],
    "template": null,
    "reference": "WEEKS/2026-08-10/ig/last-whats-on.jpg",
-   "reference_label": "Last Monday: What's On"
+   "reference_label": "Last Monday: What's On",
+   "performance": {
+    "reach": 1200,
+    "reposts": 2,
+    "shares": 2,
+    "sound": "McFadden & Whitehead - Ain't No Stoppin' Us Now"
+   }
   },
   {
    "id": "tue-grid-flex",
@@ -47,7 +57,7 @@
    "kind": "grid",
    "slot": "Carousel from Ringlight delivery",
    "title": "Weekend photos carousel",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "grid/tuesday-post/RING1881.jpg",
     "grid/tuesday-post/RING1752.jpg",
@@ -71,6 +81,10 @@
     {
      "ts": "2026-08-17",
      "text": "Seven Ringlight shots from the Cigarto night loaded as candidates. Cut and reorder in the carousel QC, the IG preview shows the real 4:5 crop."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 2,600 reach, 2 reposts, 5 shares. Sound used: Rufus, Chaka Khan - Ain't Nobody (Live)."
     }
    ],
    "checklist": [
@@ -98,7 +112,13 @@
    "songs": [
     "Sister Nancy - Bam Bam  ·  carnival staple, endlessly sampled",
     "Bill Withers - Lovely Day  ·  warm, universal, suits a photo carousel"
-   ]
+   ],
+   "performance": {
+    "reach": 2600,
+    "reposts": 2,
+    "shares": 5,
+    "sound": "Rufus, Chaka Khan - Ain't Nobody (Live)"
+   }
   },
   {
    "id": "tue-story-whatson",
@@ -163,6 +183,10 @@
     {
      "ts": "2026-08-19",
      "text": "Chelsea's finished graphic, filed from chat. Post today (Wednesday AM slot)."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 1,500 reach, 6 reposts, 5 shares. Sound used: Fats Domino - I'm Walkin'."
     }
    ],
    "checklist": [
@@ -181,7 +205,13 @@
     "Fats Domino - I'm Walkin'  ·  vintage New Orleans vocals, warm and easy",
     "Tank and the Bangas - Nice Things  ·  modern NOLA vocals if you want something less expected",
     "Louis Armstrong - When the Saints Go Marching In  ·  the obvious one, and it lands instantly"
-   ]
+   ],
+   "performance": {
+    "reach": 1500,
+    "reposts": 6,
+    "shares": 5,
+    "sound": "Fats Domino - I'm Walkin'"
+   }
   },
   {
    "id": "wed-am-story-weekend",
@@ -228,7 +258,7 @@
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
    "title": "Wednesday post - Reel / Carousel / Photo",
-   "status": "scheduled",
+   "status": "posted",
    "media": [
     "grid/wednesday-reel/piano-drums-v2-captioned.mp4"
    ],
@@ -267,6 +297,10 @@
     {
      "ts": "2026-08-19",
      "text": "Paul kept the 'you don't notice it until you do' opener, cut the stick/breath-before-the-chorus line. Default is now opener + sign-off only."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 842 reach, 2 reposts, 4 shares. Sound used: original audio."
     }
    ],
    "checklist": [
@@ -286,7 +320,13 @@
     "Nina Simone - Feeling Good  ·  builds to the drop, matches piano-then-drums",
     "Chase & Status ft. Bou - Baddadan  ·  if you want the cut to hit hard",
     "Ezra Collective - Victory Dance  ·  modern live-band jazz, exactly this room's energy"
-   ]
+   ],
+   "performance": {
+    "reach": 842,
+    "reposts": 2,
+    "shares": 4,
+    "sound": "original audio"
+   }
   },
   {
    "id": "thu-am-grid-fri-artist",
@@ -295,7 +335,7 @@
    "kind": "grid",
    "slot": "Friday artist graphic",
    "title": "Friday artist: DJ Benzo",
-   "status": "ready",
+   "status": "posted",
    "media": [
     "grid/thursday-friday-artist/friday-artist-dj-benzo.png"
    ],
@@ -309,6 +349,10 @@
     {
      "ts": "2026-08-17",
      "text": "Chelsea's finished graphic, filed from her Drive folder."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 1,000 reach, 1 reposts, 1 shares. Sound used: Silk Sonic - Leave The Door Open."
     }
    ],
    "checklist": [
@@ -324,7 +368,13 @@
     "Silk Sonic (Bruno Mars & Anderson .Paak) - Leave The Door Open  ·  huge and mainstream, but built as retro soul, could have been written for a speakeasy",
     "Beyonce - Crazy In Love  ·  R&B classic everyone knows, instant recognition within two seconds",
     "Daft Punk ft. Pharrell - Get Lucky  ·  the house/funk crossover, mainstream but still sophisticated, covers the poster's house classics line"
-   ]
+   ],
+   "performance": {
+    "reach": 1000,
+    "reposts": 1,
+    "shares": 1,
+    "sound": "Silk Sonic - Leave The Door Open"
+   }
   },
   {
    "id": "thu-am-story-artist-hh",
@@ -366,7 +416,7 @@
    "kind": "grid",
    "slot": "Reel / Carousel / Photo",
    "title": "Thursday post - Reel: When class is the dress code",
-   "status": "scheduled",
+   "status": "posted",
    "media": [],
    "media_kind": "none",
    "caption": "The kind of room you dress up for.\n\nLive music, every weekend at Moonshine.",
@@ -383,6 +433,10 @@
     {
      "ts": "2026-08-19",
      "text": "Paul's reel, guitarist and singer in the red room. Caption complements the on-screen line rather than repeating it."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 1,200 reach, 1 reposts, 5 shares. Sound used: original audio."
     }
    ],
    "checklist": [
@@ -398,7 +452,13 @@
     "Peggy Lee - Fever  ·  sultry and instantly recognisable, matches the red light and the dress",
     "Dean Martin - Sway  ·  elegant and dressed up, reads as class in two seconds",
     "Etta James - I Just Want to Make Love to You  ·  bluesy, suits a live band rather than a DJ"
-   ]
+   ],
+   "performance": {
+    "reach": 1200,
+    "reposts": 1,
+    "shares": 5,
+    "sound": "original audio"
+   }
   },
   {
    "id": "fri-am-grid-sat-artist",
@@ -407,7 +467,7 @@
    "kind": "grid",
    "slot": "Saturday artist graphic",
    "title": "Saturday artist: Marcius Riley",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "grid/friday-saturday-artist/saturday-artist-marcius-riley.png"
    ],
@@ -425,6 +485,10 @@
     {
      "ts": "2026-08-17",
      "text": "Chelsea's finished graphic, filed from her Drive folder."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "INSIGHTS: 1,200 reach, 3 reposts, 1 shares. Sound used: Ella Fitzgerald - Get Ready."
     }
    ],
    "checklist": [
@@ -440,7 +504,13 @@
     "The Temptations - My Girl  ·  the most recognisable Motown record there is, that bassline is identifiable in two notes",
     "The Jackson 5 - I Want You Back  ·  the piano intro lands instantly, more energy if you want it upbeat",
     "Marvin Gaye - I Heard It Through the Grapevine  ·  moodier and darker, suits the red-lit room"
-   ]
+   ],
+   "performance": {
+    "reach": 1200,
+    "reposts": 3,
+    "shares": 1,
+    "sound": "Ella Fitzgerald - Get Ready"
+   }
   },
   {
    "id": "fri-am-story-fri-artist",
