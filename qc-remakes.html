@@ -1,74 +1,36 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><title>Font QC</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif;background:#161311;color:#f2efec;padding:26px 22px 70px}
-  h1{font-size:20px;font-weight:800}
-  .sub{color:#a99;font-size:13px;margin:4px 0 24px}
-  h2{font-size:16px;font-weight:800;margin:34px 0 4px;border-top:2px solid #3a322c;padding-top:16px}
-  .meta{font-size:13px;color:#b0a89f;margin-bottom:12px;max-width:760px}
-  .vrow{display:flex;gap:14px;align-items:flex-start;margin-bottom:8px}
-  .vrow figure{width:270px}
-  .vrow img{width:100%;display:block;background:#000}
-  figcaption{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#cfc7be;padding:5px 2px}
-  .best figcaption{color:#7fc383}
-  .best img{outline:3px solid #2e6b38}
-  .scores{font-size:12.5px;color:#b0a89f;align-self:center;max-width:330px}
-  .scores b{color:#f2efec}
-  .strip{margin:6px 0 22px}
-  .strip img{width:100%;max-width:1000px;display:block;background:#000;margin-bottom:4px}
-  .lbl{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#8d857c;margin-bottom:8px}
-  .note{font-size:13px;color:#d8b56a;max-width:760px;margin-top:6px}
-</style>
-</head>
-<body>
-<h1>Font QC — original left, rebuilds right</h1>
-<p class="sub">Original repeated on the left of every row. Ranked by an independent judge who scored likeness blind, plus pixel metrics (width and stroke ratios; 1.00 = identical to posted).</p>
-
-<h2>When class is the dress code</h2>
-<p class="meta">Posted line measured off the live reel at 1080p: wide-set, hairline-contrast Didone italic. 24 candidates brute-forced.</p>
-
-<div class="vrow best">
-  <figure><img src="qc-assets/og-class.png"><figcaption>OG posted</figcaption></figure>
-  <figure><img src="qc-assets/v-playfair.png"><figcaption>V1 — Playfair var, opsz 900, wght 300, wide</figcaption></figure>
-  <p class="scores"><b>Judge: 84/100, ranked 1st.</b> Nails weight, contrast and line width. Only tell: slightly bulbier ball terminals. Metrics: width 1.03, stroke 1.02.</p>
-</div>
-<div class="vrow">
-  <figure><img src="qc-assets/og-class.png"><figcaption>OG posted</figcaption></figure>
-  <figure><img src="qc-assets/v-didot112.png"><figcaption>V2 — Didot Italic, widened 12%, tracked</figcaption></figure>
-  <p class="scores"><b>Judge: 74/100.</b> Right skeleton and width, hairlines read too thin and airy. Metrics: width 1.00, stroke 0.91.</p>
-</div>
-<div class="vrow">
-  <figure><img src="qc-assets/og-class.png"><figcaption>OG posted</figcaption></figure>
-  <figure><img src="qc-assets/v-didot106.png"><figcaption>V3 — Didot Italic, widened 6%, tracked</figcaption></figure>
-  <p class="scores"><b>Judge: 60/100.</b> Runs about 7% narrow and too light overall. Metrics: width 0.95, stroke 0.91.</p>
-</div>
-
-<p class="lbl">Text lines at full width, original then V1 V2 V3</p>
-<div class="strip">
-  <img src="qc-assets/z-og.png">
-  <img src="qc-assets/z-playfair.png">
-  <img src="qc-assets/z-didot112.png">
-  <img src="qc-assets/z-didot106.png">
-</div>
-<p class="note">Pick one and I rebuild the reel with it in one pass. V1 is my recommendation and the judge's.</p>
-
-<h2>Merchants Yard — What's On headline</h2>
-<p class="meta">Your posted final slide vs candidates. Winner: <b style="color:#7fc383">Open Sauce Sans 500 (Medium)</b> — stroke ratio 0.99, effectively exact. Helvetica Neue and Inter both lose on stroke. Locked in for next week's What's On.</p>
-<p class="lbl">Posted headline, then Open Sauce 500 at matched height</p>
-<div class="strip">
-  <img src="qc-assets/wo-og.png">
-  <img src="qc-assets/wo-opensauce500.png">
-</div>
-
-<h2>Font inventory, researched</h2>
-<p class="meta">
-  <b>Instagram stories (typed in app):</b> Instagram Sans, proprietary to Meta, not licensed outside the app. Baked-file substitutes: Inter 700 (default look), Courier New Bold (Typewriter, effectively exact), Archivo Black (heavy caps).<br><br>
-  <b>Merchants Yard:</b> Open Sauce Sans — headline weight confirmed 500, details 400, emphasis 700. Free and already bundled.<br><br>
-  <b>Moonshine display type:</b> Perandory Condensed by Kulturë Type, uppercase only. <span style="color:#d8b56a">Free for personal use only — commercial licence required for client work, so it is not installed.</span> Worth Chelsea or Nico confirming the licence they hold; until then renders use the Bodoni 72 substitute. The thin italic (class reel, Today at Moonshine) is the Playfair recipe above.
-</p>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Font QC sweep</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif;background:#161311;color:#f2efec;padding:26px 22px 70px}
+h1{font-size:20px;font-weight:800}
+.sub{color:#a99;font-size:13px;margin:4px 0 20px;max-width:820px}
+h2{font-size:16px;font-weight:800;margin:34px 0 10px;border-top:2px solid #3a322c;padding-top:16px}
+.pair{margin-bottom:26px}
+.pair img{display:block;width:100%;max-width:1340px;margin-bottom:2px}
+.note{font-size:13px;color:#d8b56a;max-width:820px;margin:10px 0}
+</style></head><body>
+<h1>Font QC — full sweep</h1>
+<p class="sub">Every candidate at the exact height of the posted original (so width and weight differences are real). The original is repeated above every candidate. Labels and metrics are baked into each image: width and stroke of 1.00 mean identical to posted. All strips are pure letterforms, no background, so nothing hides.</p>
+<p class="note">The previous page had frame images mislabelled (the "Playfair" frame was actually the stretched Didot) — that is what looked too wide and squat. These strips carry their own labels so that cannot happen again.</p>
+<h2>When class is the dress code — 12 candidates</h2>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-A.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-B.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-C.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-D.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-E.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-F.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-G.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-H.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-I.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-J.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-K.png"></div>
+<div class="pair"><img src="qc-assets/cl-og.png"><img src="qc-assets/cl-L.png"></div>
+<h2>Merchants Yard What&rsquo;s On headline — 5 candidates</h2>
+<div class="pair"><img src="qc-assets/wo-og2.png"><img src="qc-assets/wo-500.png"></div>
+<div class="pair"><img src="qc-assets/wo-og2.png"><img src="qc-assets/wo-700.png"></div>
+<div class="pair"><img src="qc-assets/wo-og2.png"><img src="qc-assets/wo-hnm.png"></div>
+<div class="pair"><img src="qc-assets/wo-og2.png"><img src="qc-assets/wo-400.png"></div>
+<div class="pair"><img src="qc-assets/wo-og2.png"><img src="qc-assets/wo-hnb.png"></div>
+<p class="note">My reads: class line = C (Playfair var, opsz 900, weight 400, wide — width 0.99, stroke 0.98). What&rsquo;s On = 500 by stroke measurement (0.99 vs your slide); 700 measures 15% heavier than the posted headline, but both are on screen above — your call. Say a letter or a weight and I rebuild with it.</p>
+</body></html>
