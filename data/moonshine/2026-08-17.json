@@ -420,8 +420,10 @@
    "slot": "Reel / Carousel / Photo",
    "title": "Thursday post - Reel: When class is the dress code",
    "status": "posted",
-   "media": [],
-   "media_kind": "none",
+   "media": [
+    "grid/thursday-pm-reel/when-class-is-the-dress-code.mp4"
+   ],
+   "media_kind": "video",
    "caption": "The kind of room you dress up for.\n\nLive music, every weekend at Moonshine.",
    "alternates": [
     "Some nights you make an effort. This is one of them.\n\nLive at Moonshine, every weekend.",
@@ -440,6 +442,10 @@
     {
      "ts": "2026-08-23",
      "text": "INSIGHTS: 1,200 reach, 1 reposts, 5 shares. Sound used: original audio."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "Built from Paul's RING6093 clip. On-screen line in Playfair Display Italic to match the posted version. Source was already BT.709, no HDR conversion needed."
     }
    ],
    "checklist": [
@@ -461,7 +467,8 @@
     "reposts": 1,
     "shares": 5,
     "sound": "original audio"
-   }
+   },
+   "source_clip": "../../../../Downloads/RING6093.mov"
   },
   {
    "id": "fri-am-grid-sat-artist",
@@ -541,49 +548,6 @@
    ],
    "checklist": [],
    "template": null
-  },
-  {
-   "id": "sat-am-grid-flex",
-   "date": "2026-08-22",
-   "day": "Saturday AM",
-   "kind": "grid",
-   "slot": "Reel / Carousel / Photo",
-   "title": "Saturday post - Reel: When everyone is part of the performance",
-   "status": "scheduled",
-   "media": [],
-   "media_kind": "none",
-   "caption": "Nobody stays in their seat for long.\n\nLive music, every weekend at Moonshine.",
-   "alternates": [
-    "The best acts of the night weren't booked.\n\nLive at Moonshine, every weekend.",
-    "The audience never stays an audience.\n\nLive music every weekend at Moonshine.",
-    "You come to watch. You end up in it.\n\nLive at Moonshine, every weekend.",
-    "The guest list becomes the line-up.\n\nLive music, every weekend at Moonshine.",
-    "She came for a drink and left as part of the band.\n\nLive music, every weekend at Moonshine."
-   ],
-   "notes": [
-    {
-     "ts": "2026-08-17",
-     "text": "Paul edits reels himself. Session's job: shortlist reference clips and reel examples, not produce the edit."
-    },
-    {
-     "ts": "2026-08-19",
-     "text": "Paul's reel: singer in the sequin gown with a guest up on stage on tambourine. Caption tells that story rather than repeating the on-screen line."
-    }
-   ],
-   "checklist": [
-    {
-     "text": "On-screen line already burned in: When everyone is part of the performance",
-     "done": true
-    }
-   ],
-   "template": null,
-   "reference": "WEEKS/2026-08-10/ig/last-photos-2.jpg",
-   "reference_label": "Last week: weekend photos",
-   "songs": [
-    "Louis Prima - Jump, Jive an' Wail  ·  swing energy, made for a band pulling the room in",
-    "Tom Jones - It's Not Unusual  ·  cabaret and instantly recognisable, matches the gown and the stage",
-    "Aretha Franklin - Respect  ·  joyful singalong, everyone knows the words"
-   ]
   },
   {
    "id": "sat-am-story-sat-artist",
@@ -669,6 +633,7 @@
   }
  ],
  "alerts": [
-  "Chelsea's graphics are in and marked ready: Friday artist (DJ Benzo), Saturday artist (Marcius Riley), both story versions. Still to come from her: the Thursday artist graphic."
+  "Chelsea's graphics are in and marked ready: Friday artist (DJ Benzo), Saturday artist (Marcius Riley), both story versions. Still to come from her: the Thursday artist graphic.",
+  "Saturday grid post was deleted, slot removed from the week."
  ]
 }

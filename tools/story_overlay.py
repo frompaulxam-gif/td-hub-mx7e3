@@ -21,15 +21,24 @@ import tempfile
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1920
+# See tdg-hub/INSTAGRAM-FONTS.md. Instagram Sans is proprietary to Meta and is
+# not used here. These are the closest legitimate matches, researched 23 Aug 2026.
 FONTS = {
-    "classic": ("/System/Library/Fonts/HelveticaNeue.ttc", 1),
-    "strong": (os.path.expanduser("~/Library/Fonts/ArchivoBlack.ttf"), 0),
+    "classic":    (os.path.expanduser("~/Library/Fonts/Inter-Variable.ttf"), 0, 700),
+    "strong":     (os.path.expanduser("~/Library/Fonts/ArchivoBlack.ttf"), 0, None),
+    "typewriter": ("/System/Library/Fonts/Supplemental/Courier New Bold.ttf", 0, None),
 }
 
 
 def load(style, size):
-    path, idx = FONTS[style]
-    return ImageFont.truetype(path, size, index=idx)
+    path, idx, wght = FONTS[style]
+    f = ImageFont.truetype(path, size, index=idx)
+    if wght:
+        try:
+            f.set_variation_by_axes([14, wght])
+        except Exception:
+            pass
+    return f
 
 
 def wrap(draw, text, font, max_w):
