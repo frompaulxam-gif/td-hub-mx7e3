@@ -4,11 +4,12 @@
  "label": "W/C Mon 24 Aug 2026",
  "archived": false,
  "key_dates": [
-  "Sun 30 Aug: Carnival in the Courtyard, bank holiday Sunday, open 2pm (website + playbook)",
-  "Mon 31 Aug: bank holiday Monday, closed",
-  "Fri 28: The Friday Social with Jonna & Yumna Black · Sat 29: MY Presents: DJ Benzo (website)"
+  "Sun 30 Aug: Carnival in the Courtyard, 2pm til midnight, ticketed",
+  "Mon 31 Aug: CLOSED (bank holiday Monday)"
  ],
- "alerts": [],
+ "alerts": [
+  "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED."
+ ],
  "links": [
   {
    "label": "Photos drive",
@@ -99,7 +100,12 @@
    "media_kind": "carousel",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-23",
+     "text": "BLOCKED: the website's events section is empty, no acts published for Fri 28 or Sat 29. Only Carnival (Sun 30) is confirmed. Needs Chelsea or the website updating before this can be built."
+    }
+   ],
    "checklist": [
     {
      "text": "Line-up comes from the website events list: Fri Social with Jonna & Yumna Black, Sat MY Presents: DJ Benzo, Sun Carnival in the Courtyard",
@@ -138,13 +144,18 @@
    "day": "Wednesday",
    "kind": "grid",
    "slot": "Flexible, pick one",
-   "title": "Flexible post",
+   "title": "Flexible post - Carnival push",
    "status": "waiting",
    "media": [],
    "media_kind": "none",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-23",
+     "text": "The Carnival announce did 5,900 reach and 69 shares, far and away the best share rate of the week. A second push in Carnival week is the obvious use of this slot."
+    }
+   ],
    "checklist": [
     {
      "text": "Carnival announce is the obvious pick if Chelsea's poster lands",
@@ -287,20 +298,30 @@
    "day": "Sunday",
    "kind": "story",
    "slot": "Event day story",
-   "title": "Carnival in the Courtyard story",
-   "status": "waiting",
+   "title": "Carnival in the Courtyard - today",
+   "status": "draft",
    "media": [],
    "media_kind": "none",
-   "caption": "",
+   "caption": "Carnival in the Courtyard. Bank holiday Sunday, 2pm til midnight.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-23",
+     "text": "Sister Nancy - Bam Bam is already used on the announce, so it is excluded here. Build this the same way as the Park Life today story once Paul sends footage."
+    }
+   ],
    "checklist": [
     {
      "text": "Bank holiday Sunday, open 2pm, carnival décor and 90s vs 00s anthems",
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "songs": [
+    "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand, instantly recognisable",
+    "Kevin Lyttle - Turn Me On  ·  hook lands in two seconds",
+    "Shy FX & UK Apache - Original Nuttah  ·  covers the jungle line, drops hard on a reveal"
+   ]
   }
  ]
 }
