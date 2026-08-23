@@ -42,3 +42,27 @@ Only bake text into a file when the asset has to exist as a finished file
 
 Installed and available: Inter, DM Sans, Poppins, Archivo Black, Courier New,
 Bodoni 72, Playfair Display Italic, Open Sauce Sans.
+
+
+## Measured matches (brute-forced against posted files, 23 Aug 2026)
+
+**The Moonshine thin-italic line** ("When class is the dress code",
+"Today at Moonshine"): posted line is a wide, hairline Didone italic.
+Winner by blind judge (84/100) and metrics (width 1.03, stroke 1.02):
+**Playfair variable Italic — opsz 900, wght 300, wdth 112.5, tracking ~6% of em**
+(/tmp copy installed; file: Playfair-Italic[opsz,wdth,wght].ttf from google/fonts/ofl/playfair).
+Runner-up: Didot Italic stretched 1.12 with tracking (width 1.00 but hairlines too thin, 74/100).
+The old recipe (Playfair DISPLAY Italic, no width) reads too narrow — do not reuse.
+
+**Merchants Yard What's On headline**: Open Sauce Sans **500** (stroke ratio 0.99
+vs the posted slide). 400 and Helvetica Neue read too light, 700 too heavy.
+Headline = 500, body/details = 400, emphasis = 700.
+
+**Moonshine display caps** ("THIS WEEK"): Perandory Condensed by Kulturë Type,
+uppercase only. FREE FOR PERSONAL USE ONLY — commercial licence required, so it
+is deliberately not installed for client work. Ask Chelsea/Nico what licence the
+Canva file uses. Until licensed: Bodoni 72 with scaleX 0.529 stays the substitute.
+
+**Ground truth kept**: four screen recordings of real posted stories are the
+reference set for IG-typed text (DJ Benzo story, Secure your dancefloor, weather
+sticker, When we're open) — originally in ~/Downloads, uuid-named .MOVs.
