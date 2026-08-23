@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>In-context font QC</title><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.5 -apple-system,"Helvetica Neue",Arial,sans-serif;background:#14110f;color:#f2efec;padding:26px 22px 80px}
+h1{font-size:21px;font-weight:800}
+.sub{color:#a99;font-size:13px;margin:4px 0 24px;max-width:900px}
+h2{font-size:17px;font-weight:800;margin:38px 0 4px;border-top:2px solid #3a322c;padding-top:18px}
+.hint{font-size:13px;color:#9d958c;margin-bottom:18px}
+.name{font-size:15px;font-weight:800;color:#e8dfd4;margin:22px 0 8px}
+.name span{font-weight:400;color:#9d958c;font-size:13px}
+.name em{font-style:normal;color:#7fc383;font-weight:700}
+.pair{display:flex;gap:18px;align-items:flex-start}
+.pair figure{flex:1;max-width:460px}
+.pair img{width:100%;display:block;background:#000}
+figcaption{font-size:11.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#b8b0a7;padding:6px 2px}
+.note{font-size:13px;color:#d8b56a;max-width:900px;margin-top:20px}
+</style></head><body>
+<h1>How each one actually looks</h1>
+<p class="sub">Original on the left, candidate on the right, both full frame. Text is set at the exact height and position measured off the posted original, so the only thing changing is the typeface.</p>
+
+<h2>Moonshine — When class is the dress code</h2>
+<p class="hint">Left is the real posted reel frame. Right is the same scene from the source clip with the candidate set on it.</p>
+<p class="name">C <em>my pick</em> <span>— Playfair var · optical size 900 · weight 400 · wide axis · tracked 8 · 624px wide vs OG 626px · stroke 0.97</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-cl-og.png"><figcaption>Original, as posted</figcaption></figure><figure><img src="qc-assets/ctx-cl-C.png"><figcaption>C</figcaption></figure></div>
+<p class="name">D <span>— Playfair var · optical size 300 · weight 300 · wide axis · tracked 8 · 625px vs 626px · stroke 0.94</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-cl-og.png"><figcaption>Original, as posted</figcaption></figure><figure><img src="qc-assets/ctx-cl-D.png"><figcaption>D</figcaption></figure></div>
+<p class="name">I <span>— Didot Italic · stretched 12% · tracked 16 · 620px vs 626px · stroke 0.83</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-cl-og.png"><figcaption>Original, as posted</figcaption></figure><figure><img src="qc-assets/ctx-cl-I.png"><figcaption>I</figcaption></figure></div>
+<p class="name">B <span>— Playfair var · optical size 900 · weight 300 · wide axis · tracked 8 · 617px vs 626px · stroke 0.91</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-cl-og.png"><figcaption>Original, as posted</figcaption></figure><figure><img src="qc-assets/ctx-cl-B.png"><figcaption>B</figcaption></figure></div>
+<p class="name">A <em>widest</em> <span>— Playfair var · optical size 900 · weight 300 · wide · tracked 12 · 643px vs 626px · stroke 0.88</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-cl-og.png"><figcaption>Original, as posted</figcaption></figure><figure><img src="qc-assets/ctx-cl-A.png"><figcaption>A</figcaption></figure></div>
+<h2>Merchants Yard — What’s On</h2>
+<p class="hint">Left is your posted slide. Right is our template rendered at that weight, so this is exactly what next week would look like.</p>
+<p class="name">700 <em>your instinct</em> <span>— Open Sauce Sans 700 Bold · what the template renders today</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-wo-og.jpg"><figcaption>Your posted slide</figcaption></figure><figure><img src="qc-assets/ctx-wo-700.png"><figcaption>Template at 700</figcaption></figure></div>
+<p class="name">500 <em>measured pick</em> <span>— Open Sauce Sans 500 Medium · closest to your posted slide by stroke measurement (0.99)</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-wo-og.jpg"><figcaption>Your posted slide</figcaption></figure><figure><img src="qc-assets/ctx-wo-500.png"><figcaption>Template at 500</figcaption></figure></div>
+<p class="name">400 <span>— Open Sauce Sans 400 Regular · noticeably lighter</span></p>
+<div class="pair"><figure><img src="qc-assets/ctx-wo-og.jpg"><figcaption>Your posted slide</figcaption></figure><figure><img src="qc-assets/ctx-wo-400.png"><figcaption>Template at 400</figcaption></figure></div>
+<p class="note">The What’s On backgrounds differ because your posted slide used the bunting photo and our template render uses the balcony shot — judge the headline weight, not the picture. Say a letter and a weight and I rebuild both files.</p>
+</body></html>
