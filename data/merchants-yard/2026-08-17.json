@@ -75,7 +75,12 @@
    "media_kind": "none",
    "caption": "Park Life poster ran as the story too, with the announce.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-17",
+     "text": "POSTED 2026-08-17 14:04. Park Life poster to story, with the 'Live performances from 5pm' caption bar. Sound: Supergrass - Alright."
+    }
+   ],
    "checklist": [],
    "template": null,
    "alert": "Swapped with the schedule: Park Life share instead of the recap repost."
@@ -335,7 +340,7 @@
    "kind": "story",
    "slot": "Reactive",
    "title": "Reactive: Nowhere else will get you dancing like this",
-   "status": "ready",
+   "status": "posted",
    "media": [
     "stories/reactive-built/nowhere-else-dancing.mp4"
    ],
@@ -354,6 +359,10 @@
     {
      "ts": "2026-08-19",
      "text": "Paul's call: Thursday's reactive becomes the LED-wall dancing clip with 'Nowhere else will get you dancing like this', replacing both Ask us anything and the earlier 'That Ibiza feeling' wording."
+    },
+    {
+     "ts": "2026-08-20",
+     "text": "POSTED 2026-08-20 12:10. Text used: 'No where else gets you moving like this' with a dancer emoji. No music."
     }
    ],
    "checklist": [],
@@ -494,7 +503,7 @@
    "kind": "story",
    "slot": "Doors open story",
    "title": "Friday doors open story",
-   "status": "draft",
+   "status": "posted",
    "media": [
     "stories/friday-lineup/friday-lineup.png"
    ],
@@ -508,6 +517,10 @@
     {
      "ts": "2026-08-19",
      "text": "Background swapped to a party shot (LV407725, dancing under the lanterns), band scrim added so the text still reads."
+    },
+    {
+     "ts": "2026-08-21",
+     "text": "POSTED 2026-08-21 13:57. What's on tonight, Friday Social with Jonna. Sound: Jorja Smith - Little Things x Gypsy Woman."
     }
    ],
    "checklist": [],
@@ -527,7 +540,7 @@
    "kind": "story",
    "slot": "Doors open story",
    "title": "Park Life story - today",
-   "status": "ready",
+   "status": "posted",
    "media": [
     "stories/saturday-lineup/park-life-today.mp4"
    ],
@@ -573,6 +586,10 @@
     {
      "ts": "2026-08-22",
      "text": "Washed-out look fixed properly: re-tagging alone left the pixels HLG-encoded, which reads flat on an SDR player. Built an HLG BT.2020 to BT.709 LUT (diffuse white at 75% signal normalised to SDR white, highlight shoulder, gamut matrix) and baked it with lut3d, since this ffmpeg has no zscale. LUT saved at tdg-hub/tools/luts/hlg_to_709.cube for reuse on any iPhone HDR clip."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "POSTED 2026-08-22 14:28. Park Life TODAY over the LED wall footage. Sound: Supergrass - Alright."
     }
    ],
    "checklist": [
@@ -644,7 +661,7 @@
    "kind": "story",
    "slot": "Reactive",
    "title": "Reactive: Secure your dancefloor",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "stories/reactive/secure-your-dancefloor-preview.png"
    ],
@@ -655,6 +672,10 @@
     {
      "ts": "2026-08-17",
      "text": "Paul built this in the IG app from the weekend clip."
+    },
+    {
+     "ts": "2026-08-18",
+     "text": "POSTED 2026-08-18 18:11. SECURE YOUR DANCEFLOOR over the horsebox bar, with a Book your table link sticker. No music."
     }
    ],
    "checklist": [],
@@ -701,6 +722,10 @@
     {
      "ts": "2026-08-19",
      "text": "Posted live by Paul alongside the grid post."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "POSTED 2026-08-19 11:22. Carnival in the Courtyard poster with a Tickets link sticker. Sound: Sister Nancy - Bam Bam."
     }
    ],
    "alert": "New: posted today alongside the Carnival grid post."

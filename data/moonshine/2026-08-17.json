@@ -107,7 +107,7 @@
    "kind": "story",
    "slot": "Repost the grid post",
    "title": "What's On story",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "stories/whats-on-story/whats-on-story.png"
    ],
@@ -118,6 +118,10 @@
     {
      "ts": "2026-08-17",
      "text": "Recreated at 9:16 on RING1837 per Paul. Editable: Adjust layout for text, Change photo to swap the background."
+    },
+    {
+     "ts": "2026-08-18",
+     "text": "POSTED 2026-08-18 18:15. What's On This Week story, all three nights listed. Sound: Rufus, Chaka Khan - Ain't Nobody (Live)."
     }
    ],
    "checklist": [],
@@ -197,6 +201,10 @@
     {
      "ts": "2026-08-17",
      "text": "Built with tools/collage_story.py. Currently uses RING1752, RING1837, RING1881, RING1804 from the same night as a stand-in for the guitarist, bar-wide and band-on-stage shots."
+    },
+    {
+     "ts": "2026-08-19",
+     "text": "POSTED 2026-08-19 12:54. Weekend collage, 'A few moments from inside Moonshine'. Sound: Peaches & Herb - Shake Your Groove Thing."
     }
    ],
    "checklist": [
@@ -325,7 +333,7 @@
    "kind": "story",
    "slot": "Thursday artist graphic + Happy Hour",
    "title": "Thursday artist story + Happy Hour",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "stories/thursday-artist/nola-jam-session-story.jpg"
    ],
@@ -336,6 +344,10 @@
     {
      "ts": "2026-08-19",
      "text": "9:16 version of the NOLA graphic, filed from chat."
+    },
+    {
+     "ts": "2026-08-20",
+     "text": "POSTED 2026-08-20 14:25. NOLA Jam Session graphic with a 'Tonight at Moonshine' sticker. No music."
     }
    ],
    "checklist": [
@@ -437,7 +449,7 @@
    "kind": "story",
    "slot": "Friday artist graphic",
    "title": "Friday artist story",
-   "status": "ready",
+   "status": "posted",
    "media": [
     "stories/friday-artist/friday-artist-story.png"
    ],
@@ -448,6 +460,10 @@
     {
      "ts": "2026-08-17",
      "text": "Chelsea's 9:16 story art."
+    },
+    {
+     "ts": "2026-08-21",
+     "text": "POSTED 2026-08-21 12:10. DJ Benzo graphic, 'Today at Moonshine'. Sound: Kool & The Gang - Get Down On It."
     }
    ],
    "checklist": [],
@@ -503,7 +519,7 @@
    "kind": "story",
    "slot": "Saturday artist graphic",
    "title": "Saturday artist story",
-   "status": "approved",
+   "status": "posted",
    "media": [
     "stories/saturday-artist/saturday-artist-story-tonight.png"
    ],
@@ -524,6 +540,10 @@
     {
      "ts": "2026-08-22",
      "text": "Tonight line overlaid in Bodoni to match the poster's own Didone, placed in the clear band above the performer and kept left of the Moonshine badge. Halo drawn from the type so the artwork is not dimmed."
+    },
+    {
+     "ts": "2026-08-22",
+     "text": "POSTED 2026-08-22 15:38. Marcius Riley graphic. Text used: 'Saturday at Moonshine, Motown is coming'. Sound: Marvin Gaye - I Heard It Through The Grapevine."
     }
    ],
    "checklist": [],
