@@ -251,24 +251,36 @@
    "day": "Friday",
    "kind": "grid",
    "slot": "Flexible trend",
-   "title": "Flexible trend - TBC",
-   "status": "waiting",
-   "media": [],
+   "title": "Friday post - Yard pan (Carnival push)",
+   "status": "ready",
+   "media": [
+    "grid/friday-post/yard-pan.mp4"
+   ],
    "media_kind": "video",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
+   "caption": "Two days until the yard turns carnival. 🎪\n\nCarnival in the Courtyard, bank holiday Sunday 30th August. 2pm til midnight.",
+   "alternates": [
+    "This, but with carnival decor and the biggest 90s vs 00s anthems.\n\nBank holiday Sunday 30th August.",
+    "Sunday, this whole place goes carnival. 🎪\n\n2pm til midnight.",
+    "One more sleep and a bit. Carnival in the Courtyard, bank holiday Sunday."
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Paul's clip, posting Friday. 6s daylight pan across the full yard, 4K portrait, already BT.709 so no HDR fix needed. Drives to Sunday's Carnival since Friday and Saturday are closed."
+    }
+   ],
    "checklist": [
     {
-     "text": "YOU: send the trend link",
-     "done": false
-    },
-    {
-     "text": "STUDIO: recreation brief + caption",
+     "text": "Venue is CLOSED Friday and Saturday, so no doors-open wording",
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "songs": [
+    "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand, lands instantly",
+    "Kevin Lyttle - Turn Me On  ·  hook in two seconds, pure bank holiday",
+    "Sister Sledge - He's the Greatest Dancer  ·  warm and sunny, matches the daylight pan"
+   ]
   },
   {
    "id": "fri-story-doors",
@@ -277,19 +289,25 @@
    "kind": "story",
    "slot": "Doors open story",
    "title": "Friday doors open story",
-   "status": "waiting",
+   "status": "changes",
    "media": [],
    "media_kind": "none",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Closed Friday, so the doors-open story is invalid this week."
+    }
+   ],
    "checklist": [
     {
      "text": "The Friday Social with Jonna & Yumna Black, doors 5pm",
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "* Venue CLOSED Friday. A doors-open story cannot run. Repurpose as a Carnival countdown or drop."
   },
   {
    "id": "sat-story-doors",
@@ -298,7 +316,7 @@
    "kind": "story",
    "slot": "Doors open story",
    "title": "Saturday doors open story",
-   "status": "waiting",
+   "status": "changes",
    "media": [],
    "media_kind": "none",
    "caption": "",
@@ -310,7 +328,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "* Venue CLOSED Saturday. Same as Friday, repurpose or drop."
   },
   {
    "id": "sun-story-carnival",
