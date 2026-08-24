@@ -10,7 +10,8 @@
  "alerts": [
   "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED.",
   "This week is Merchants Yard only. Moonshine is paused, see its own board.",
-  "* Closed FRIDAY only. Saturday 29th DJ Benzo and Sunday 30th Carnival are both on."
+  "* Closed FRIDAY only. Saturday 29th DJ Benzo and Sunday 30th Carnival are both on.",
+  "* Friday has both the yard pan and the day-to-night transition assigned. Confirm which is the grid post."
  ],
  "links": [
   {
@@ -396,8 +397,8 @@
   },
   {
    "id": "story-carnival-poll",
-   "day": "Any day",
-   "date": "2026-08-24",
+   "day": "Wednesday",
+   "date": "2026-08-26",
    "kind": "story",
    "slot": "Reactive: Carnival genre poll",
    "title": "Poll: which carnival genre",
@@ -434,8 +435,8 @@
   },
   {
    "id": "story-carnival-moves",
-   "day": "Any day",
-   "date": "2026-08-24",
+   "day": "Tuesday",
+   "date": "2026-08-25",
    "kind": "story",
    "slot": "Reactive: carnival moves",
    "title": "Reactive: Get your carnival moves ready",
@@ -478,6 +479,85 @@
     {
      "ts": "2026-08-24",
      "text": "Posting via Instagram trial reels. Downloaded to MY w-c 24 Aug/reels for the Drive handover."
+    }
+   ]
+  },
+  {
+   "id": "thu-story-abroad",
+   "day": "Thursday",
+   "date": "2026-08-27",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Abroad? No this is Leicester",
+   "status": "ready",
+   "media": [
+    "../../../Downloads/MY reactive stories/abroad no this is leicester.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Text burned in.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Scheduled Thursday per Paul."
+    }
+   ]
+  },
+  {
+   "id": "sat-story-settingup",
+   "day": "Saturday",
+   "date": "2026-08-29",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Setting up for bank holiday weekend",
+   "status": "ready",
+   "media": [
+    "../../../Downloads/MY reactive stories/setting up saturday morning.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Post early Saturday morning. Text burned in.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Post early, before doors",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Empty yard being set up, blue sky. Scheduled Saturday morning per Paul."
+    }
+   ]
+  },
+  {
+   "id": "story-dont-miss-out",
+   "day": "Any day",
+   "date": "2026-08-24",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "You don't want to miss out this bank holiday",
+   "status": "ready",
+   "media": [
+    "../../../Downloads/MY reactive stories/dont miss out bank holiday.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Text burned in. Add the LINK sticker to the Fatsoma ticket page.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Add Fatsoma link sticker",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Second CTA story, unscheduled. Use whenever ticket push is needed."
     }
    ]
   }
