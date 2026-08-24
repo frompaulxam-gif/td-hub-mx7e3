@@ -126,6 +126,10 @@
     {
      "ts": "2026-08-24",
      "text": "QC fix: slide 2 was the 9:16 poster. A carousel forces one aspect ratio, so the 9:16 would have been centre-cropped and lost the title and ticket line. Swapped to the 4:5 poster."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "QC pass: rebuilt without Friday (venue closed), moved to the colourful crowd photo, and the Carnival poster downscaled from print size (2791x4961) to 1080x1350 so both carousel slides match at 4:5."
     }
    ],
    "checklist": [
