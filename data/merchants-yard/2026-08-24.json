@@ -95,32 +95,45 @@
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "waiting",
-   "media": [],
+   "status": "ready",
+   "media": [
+    "grid/tuesday-whats-on/slide-01.png",
+    "grid/tuesday-whats-on/slide-02.png"
+   ],
    "media_kind": "carousel",
-   "caption": "",
+   "caption": "Big bank holiday weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna & Yumna Black. Laid-back after-work vibes, plus our £15 burger and drink offer until 7pm.\n\n🎧 Saturday - DJ Benzo. A journey through the decades, music you'll know and music you'll sing.\n\n🎪 Bank holiday Sunday - Carnival in the Courtyard. An explosion of colour, immersive carnival decor and the biggest 90s vs 00s singalong anthems. 2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
    "alternates": [],
    "notes": [
     {
      "ts": "2026-08-23",
      "text": "BLOCKED: the website's events section is empty, no acts published for Fri 28 or Sat 29. Only Carnival (Sun 30) is confirmed. Needs Chelsea or the website updating before this can be built."
+    },
+    {
+     "ts": "2026-08-23",
+     "text": "Built from the website line-up now that events are published. Template extended to three nights (Fri, Sat, bank holiday Sunday) since the old layout only held two."
     }
    ],
    "checklist": [
     {
-     "text": "Line-up comes from the website events list: Fri Social with Jonna & Yumna Black, Sat MY Presents: DJ Benzo, Sun Carnival in the Courtyard",
+     "text": "Unpin last week's What's On, pin this one",
      "done": false
     },
     {
-     "text": "Bank holiday weekend, three events on the cover slide",
-     "done": false
-    },
-    {
-     "text": "Unpin last week's What's On, pin the new one",
+     "text": "Carnival tickets say Coming Soon on the website but Get Tickets on the poster, confirm before promising either",
      "done": false
     }
    ],
-   "template": null
+   "template": {
+    "name": "whats-on",
+    "layout": "WEEKS/2026-08-24/renders/whats-on.layout.json",
+    "content": "WEEKS/2026-08-24/renders/whats-on.content.json",
+    "outdir": "WEEKS/2026-08-24/grid/tuesday-whats-on/"
+   },
+   "songs": [
+    "Blur - Girls & Boys  ·  90s singalong, matches the Carnival billing",
+    "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand",
+    "Sister Sledge - He's the Greatest Dancer  ·  warm and universal for the weekend"
+   ]
   },
   {
    "id": "tue-story-reactive",
