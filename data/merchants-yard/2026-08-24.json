@@ -1,7 +1,7 @@
 {
  "venue": "merchants-yard",
  "week_start": "2026-08-24",
- "label": "W/C Mon 24 Aug 2026",
+ "label": "W/C Mon 24 Aug 2026 — Merchants Yard only",
  "archived": false,
  "key_dates": [
   "Sun 30 Aug: Carnival in the Courtyard, 2pm til midnight, ticketed",
@@ -9,7 +9,8 @@
  ],
  "alerts": [
   "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED.",
-  "* Closed from Friday 28th. Friday and Saturday line-ups are off. Carnival in the Courtyard on bank holiday Sunday 30th needs confirming as still going ahead."
+  "* Closed from Friday 28th. Friday and Saturday line-ups are off. Carnival in the Courtyard on bank holiday Sunday 30th needs confirming as still going ahead.",
+  "This week is Merchants Yard only. Moonshine is paused, see its own board."
  ],
  "links": [
   {
@@ -341,6 +342,30 @@
     "Kevin Lyttle - Turn Me On  ·  hook lands in two seconds",
     "Shy FX & UK Apache - Original Nuttah  ·  covers the jungle line, drops hard on a reveal"
    ]
+  },
+  {
+   "id": "mon-story-carnival",
+   "day": "Monday",
+   "date": "2026-08-24",
+   "kind": "story",
+   "slot": "Carnival story",
+   "title": "Carnival in the Courtyard story",
+   "status": "posted",
+   "media": [
+    "../2026-08-17/stories/wednesday-carnival/carnival-9x16.png"
+   ],
+   "media_kind": "image",
+   "caption": "Carnival story, posted Monday 24th as a standalone push for bank holiday Sunday.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Posted by Paul today, on its own. Confirms Carnival on Sunday 30th is going ahead despite the venue being closed Friday and Saturday."
+    }
+   ],
+   "alert": "Posted today, standalone Carnival push."
   }
  ]
 }

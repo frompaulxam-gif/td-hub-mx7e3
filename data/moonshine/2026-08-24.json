@@ -1,14 +1,15 @@
 {
  "venue": "moonshine",
  "week_start": "2026-08-24",
- "label": "W/C Mon 24 Aug 2026",
+ "label": "W/C Mon 24 Aug 2026 — PAUSED",
  "archived": false,
  "key_dates": [
   "Sun 30 Aug: Ben DJ 6pm, Tanni Browne 9:30pm (bank holiday Sunday)",
   "Sat 29 Aug: Hayley Di Rito brunch 4pm, Stacey Lynn Crowe 9:30pm"
  ],
  "alerts": [
-  "Bank holiday weekend. Calendar has Sat 29 (Hayley Di Rito brunch 4pm, Stacey Lynn Crowe 9:30pm) and Sun 30 (Ben DJ 6pm, Tanni Browne 9:30pm). Thursday 27 is empty and Friday 28 is marked 'no act, bank holiday'. Both need confirming with Chelsea before any graphic goes out."
+  "Bank holiday weekend. Calendar has Sat 29 (Hayley Di Rito brunch 4pm, Stacey Lynn Crowe 9:30pm) and Sun 30 (Ben DJ 6pm, Tanni Browne 9:30pm). Thursday 27 is empty and Friday 28 is marked 'no act, bank holiday'. Both need confirming with Chelsea before any graphic goes out.",
+  "* PAUSED this week. Paul is focusing on Merchants Yard only. Nothing here is being worked or posted."
  ],
  "links": [
   {
@@ -74,7 +75,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "tue-grid-flex",
@@ -95,7 +97,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "tue-story-whatson",
@@ -111,7 +114,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "wed-am-grid-thu-artist",
@@ -137,7 +141,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "wed-am-story-weekend",
@@ -153,7 +158,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "wed-pm-grid-reel",
@@ -169,7 +175,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "thu-am-grid-fri-artist",
@@ -195,7 +202,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "thu-am-story-artist-hh",
@@ -211,7 +219,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "thu-pm-grid-flex",
@@ -227,7 +236,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "fri-am-grid-sat-artist",
@@ -257,7 +267,8 @@
      "done": false
     }
    ],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "fri-am-story-fri-artist",
@@ -273,7 +284,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "sat-am-grid-flex",
@@ -289,7 +301,8 @@
    "alternates": [],
    "notes": [],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   },
   {
    "id": "sat-am-story-sat-artist",
@@ -310,7 +323,8 @@
     }
    ],
    "checklist": [],
-   "template": null
+   "template": null,
+   "alert": "Paused this week, Merchants Yard only."
   }
  ]
 }
