@@ -8,7 +8,8 @@
   "Mon 31 Aug: CLOSED (bank holiday Monday)"
  ],
  "alerts": [
-  "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED."
+  "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED.",
+  "* Closed from Friday 28th. Friday and Saturday line-ups are off. Carnival in the Courtyard on bank holiday Sunday 30th needs confirming as still going ahead."
  ],
  "links": [
   {
@@ -95,7 +96,7 @@
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "ready",
+   "status": "changes",
    "media": [
     "grid/tuesday-whats-on/slide-01.png",
     "grid/tuesday-whats-on/slide-02.png"
@@ -111,6 +112,10 @@
     {
      "ts": "2026-08-23",
      "text": "Built from the website line-up now that events are published. Template extended to three nights (Fri, Sat, bank holiday Sunday) since the old layout only held two."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "Paul: closed from Friday. The rendered What's On is now wrong on two of its three nights. Needs rebuilding as a Carnival-only graphic, or pulling."
     }
    ],
    "checklist": [
@@ -133,7 +138,8 @@
     "Blur - Girls & Boys  ·  90s singalong, matches the Carnival billing",
     "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand",
     "Sister Sledge - He's the Greatest Dancer  ·  warm and universal for the weekend"
-   ]
+   ],
+   "alert": "* VENUE CLOSED FROM FRIDAY. This graphic still lists Friday 28 (The Friday Social) and Saturday 29 (DJ Benzo). Do not post until corrected."
   },
   {
    "id": "tue-story-reactive",
