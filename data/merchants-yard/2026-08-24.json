@@ -101,7 +101,7 @@
    "status": "ready",
    "media": [
     "grid/tuesday-whats-on/slide-01.png",
-    "../../../Downloads/Carnival Courtyard/Carnival_9x16.png"
+    "../../../Downloads/Carnival Courtyard/Carnival_4x5.png"
    ],
    "media_kind": "carousel",
    "caption": "Big bank holiday weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna & Yumna Black. Laid-back after-work vibes, plus our £15 burger and drink offer until 7pm.\n\n🎧 Saturday - DJ Benzo. A journey through the decades, music you'll know and music you'll sing.\n\n🎪 Bank holiday Sunday - Carnival in the Courtyard. An explosion of colour, immersive carnival decor and the biggest 90s vs 00s singalong anthems. 2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
@@ -122,6 +122,10 @@
     {
      "ts": "2026-08-24",
      "text": "Paul: posts Wednesday as a 2-slide carousel, What's On then the Carnival poster."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "QC fix: slide 2 was the 9:16 poster. A carousel forces one aspect ratio, so the 9:16 would have been centre-cropped and lost the title and ticket line. Swapped to the 4:5 poster."
     }
    ],
    "checklist": [
@@ -195,19 +199,31 @@
   },
   {
    "id": "wed-story-whatson",
-   "date": "2026-08-26",
-   "day": "Wednesday",
+   "date": "2026-08-27",
+   "day": "Thursday",
    "kind": "story",
    "slot": "Repost the grid post",
-   "title": "What's On story share",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
+   "title": "What's On story (9:16)",
+   "status": "ready",
+   "media": [
+    "stories/whats-on-story/whats-on-story.png"
+   ],
+   "media_kind": "image",
    "caption": "Repost the What's On carousel to story, the day after the grid post.",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "QC fix: this slot was empty on Wednesday while the built story had no home. Moved to Thursday per Paul's schedule and attached."
+    }
+   ],
    "checklist": [],
-   "template": null
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-24/renders/whats-on-story.layout.json",
+    "content": "WEEKS/2026-08-24/renders/whats-on-story.content.json",
+    "out": "WEEKS/2026-08-24/stories/whats-on-story/whats-on-story.png"
+   }
   },
   {
    "id": "thu-grid-photos",
