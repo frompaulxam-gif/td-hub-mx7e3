@@ -9,8 +9,8 @@
  ],
  "alerts": [
   "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED.",
-  "* Closed from Friday 28th. Friday and Saturday line-ups are off. Carnival in the Courtyard on bank holiday Sunday 30th needs confirming as still going ahead.",
-  "This week is Merchants Yard only. Moonshine is paused, see its own board."
+  "This week is Merchants Yard only. Moonshine is paused, see its own board.",
+  "* Closed FRIDAY only. Saturday 29th DJ Benzo and Sunday 30th Carnival are both on."
  ],
  "links": [
   {
@@ -307,7 +307,7 @@
     }
    ],
    "template": null,
-   "alert": "* Venue CLOSED Friday. A doors-open story cannot run. Repurpose as a Carnival countdown or drop."
+   "alert": "* CLOSED Friday only. Saturday and Sunday are open."
   },
   {
    "id": "sat-story-doors",
@@ -316,20 +316,24 @@
    "kind": "story",
    "slot": "Doors open story",
    "title": "Saturday doors open story",
-   "status": "changes",
+   "status": "ready",
    "media": [],
    "media_kind": "none",
    "caption": "",
    "alternates": [],
-   "notes": [],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "CORRECTION: Saturday is open (DJ Benzo). Only Friday is closed. My earlier flag on this slot was wrong."
+    }
+   ],
    "checklist": [
     {
      "text": "MY Presents: DJ Benzo, doors 2pm",
      "done": false
     }
    ],
-   "template": null,
-   "alert": "* Venue CLOSED Saturday. Same as Friday, repurpose or drop."
+   "template": null
   },
   {
    "id": "sun-story-carnival",
@@ -385,6 +389,44 @@
     }
    ],
    "alert": "Posted today, standalone Carnival push."
+  },
+  {
+   "id": "story-carnival-poll",
+   "day": "Any day",
+   "date": "2026-08-24",
+   "kind": "story",
+   "slot": "Reactive: Carnival genre poll",
+   "title": "Poll: which carnival genre",
+   "status": "ready",
+   "media": [
+    "stories/carnival-poll/carnival-poll.png"
+   ],
+   "media_kind": "image",
+   "caption": "Background only. Add the POLL sticker in the app over the lower half.\n\nQuestion: Which one are you coming for?\nOptions (IG allows up to 4): House · Garage · Reggae · Disco\n\nAlternate split if you'd rather: RnB · Jungle.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Add poll sticker in-app, options House / Garage / Reggae / Disco",
+     "done": false
+    },
+    {
+     "text": "Post a results follow-up a few hours later",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Built to the past poll recipe: short caps kicker, big question, photo behind, sticker added in-app. Genres taken from the Carnival poster."
+    }
+   ],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-24/renders/carnival-poll.layout.json",
+    "content": "WEEKS/2026-08-24/renders/carnival-poll.content.json",
+    "out": "WEEKS/2026-08-24/stories/carnival-poll/carnival-poll.png"
+   }
   }
  ]
 }

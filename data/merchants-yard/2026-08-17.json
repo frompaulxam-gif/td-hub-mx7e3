@@ -954,13 +954,13 @@
    "date": "2026-08-17",
    "kind": "story",
    "slot": "Reactive story",
-   "title": "Reactive poll: Carnival genre",
+   "title": "Reactive: Poll question",
    "status": "ready",
    "media": [
     "stories/reactive-built/poll-carnival-genre-clean.mp4"
    ],
    "media_kind": "video",
-   "caption": "Week of 24 Aug  ·  Clean clip. Poll sticker: WHICH ONE ARE YOU COMING FOR, House / Garage / Reggae / Disco.",
+   "caption": "QUESTION BOX or poll sticker. A real decision: Sax or DJ this Saturday? Spritz or pint first?",
    "alternates": [],
    "songs": [],
    "checklist": [],
@@ -968,6 +968,11 @@
     {
      "ts": "2026-08-19",
      "text": "Built from the iPhone camera folder, 9:16, text baked in Instagram-style type. Clean clip. Poll sticker: WHICH ONE ARE YOU COMING FOR, House / Garage / Reggae / Disco."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "Picked Poll question from the reactive menu.",
+     "by": "paul"
     }
    ],
    "source_clip": "IPHONE MERCHANTS YARD/FED40AF3-EB59-48AF-B279-E1CE2F25B8C6.MOV"
