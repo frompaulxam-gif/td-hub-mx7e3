@@ -92,15 +92,15 @@
   },
   {
    "id": "tue-grid-whatson",
-   "date": "2026-08-25",
-   "day": "Tuesday",
+   "date": "2026-08-26",
+   "day": "Wednesday",
    "kind": "grid",
    "slot": "What's On carousel",
    "title": "What's on this week",
-   "status": "changes",
+   "status": "ready",
    "media": [
     "grid/tuesday-whats-on/slide-01.png",
-    "grid/tuesday-whats-on/slide-02.png"
+    "../../../Downloads/Carnival Courtyard/Carnival_9x16.png"
    ],
    "media_kind": "carousel",
    "caption": "Big bank holiday weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna & Yumna Black. Laid-back after-work vibes, plus our £15 burger and drink offer until 7pm.\n\n🎧 Saturday - DJ Benzo. A journey through the decades, music you'll know and music you'll sing.\n\n🎪 Bank holiday Sunday - Carnival in the Courtyard. An explosion of colour, immersive carnival decor and the biggest 90s vs 00s singalong anthems. 2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
@@ -117,6 +117,10 @@
     {
      "ts": "2026-08-24",
      "text": "Paul: closed from Friday. The rendered What's On is now wrong on two of its three nights. Needs rebuilding as a Carnival-only graphic, or pulling."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "Paul: posts Wednesday as a 2-slide carousel, What's On then the Carnival poster."
     }
    ],
    "checklist": [
@@ -427,6 +431,55 @@
     "content": "WEEKS/2026-08-24/renders/carnival-poll.content.json",
     "out": "WEEKS/2026-08-24/stories/carnival-poll/carnival-poll.png"
    }
+  },
+  {
+   "id": "story-carnival-moves",
+   "day": "Any day",
+   "date": "2026-08-24",
+   "kind": "story",
+   "slot": "Reactive: carnival moves",
+   "title": "Reactive: Get your carnival moves ready",
+   "status": "ready",
+   "media": [
+    "../../../Downloads/MY reactive stories/get your carnival moves ready.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Text burned in. Add the LINK sticker in the bottom third pointing at the Fatsoma ticket page.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Add Fatsoma link sticker, bottom third",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Tickets are on Fatsoma, not the website. Website still says Coming Soon, so the link sticker is the only route."
+    }
+   ]
+  },
+  {
+   "id": "tue-grid-trialreel",
+   "day": "Tuesday",
+   "date": "2026-08-25",
+   "kind": "grid",
+   "slot": "Trial reel",
+   "title": "Trial reel (Paul's edit)",
+   "status": "scheduled",
+   "media": [],
+   "media_kind": "video",
+   "caption": "Paul's trial reel, posting Tuesday. Downloaded copy is in the handover folder.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "Posting via Instagram trial reels. Downloaded to MY w-c 24 Aug/reels for the Drive handover."
+    }
+   ]
   }
  ]
 }
