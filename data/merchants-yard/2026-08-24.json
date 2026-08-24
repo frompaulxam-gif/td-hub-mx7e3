@@ -532,7 +532,7 @@
    "kind": "story",
    "slot": "Reactive story",
    "title": "Setting up for bank holiday weekend",
-   "status": "ready",
+   "status": "changes",
    "media": [
     "../../../Downloads/MY reactive stories/setting up saturday morning.mp4"
    ],
@@ -550,8 +550,13 @@
     {
      "ts": "2026-08-24",
      "text": "Empty yard being set up, blue sky. Scheduled Saturday morning per Paul."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "QC flag: side-by-side against the same elevated angle in summer shows a bare tree vs full canopy, and an undecorated yard. Reads as spring footage captioned as bank holiday setup."
     }
-   ]
+   ],
+   "alert": "* Footage looks out of season. Tree is sparse, no festoons lit, no LED wall, damp ground, long sleeves. Compare against any summer clip. Paul to confirm or reshoot on the day."
   },
   {
    "id": "story-dont-miss-out",
@@ -578,6 +583,38 @@
     {
      "ts": "2026-08-24",
      "text": "Second CTA story, unscheduled. Use whenever ticket push is needed."
+    }
+   ]
+  },
+  {
+   "id": "sun-story-doors-today",
+   "day": "Sunday",
+   "date": "2026-08-30",
+   "kind": "story",
+   "slot": "Carnival day",
+   "title": "Carnival today, doors 2pm",
+   "status": "ready",
+   "media": [
+    "../../../Downloads/MY reactive stories/sunday doors today.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Post Sunday morning. Text burned in. Add the Fatsoma link sticker.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Add Fatsoma link sticker",
+     "done": false
+    },
+    {
+     "text": "Post before 2pm doors",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-24",
+     "text": "QC found the event day itself had no content. The week ran Tuesday to Saturday and stopped. This is the day-of doors story."
     }
    ]
   }
