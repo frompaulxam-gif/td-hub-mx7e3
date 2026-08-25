@@ -651,6 +651,29 @@
      "text": "QC found the event day itself had no content. The week ran Tuesday to Saturday and stopped. This is the day-of doors story."
     }
    ]
+  },
+  {
+   "id": "wed-story-howitfeels",
+   "day": "Wednesday",
+   "date": "2026-08-26",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "How it feels that it's bank holiday",
+   "status": "ready",
+   "media": [
+    "../../../Downloads/MY reactive stories/how it feels bank holiday.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Text burned in. Paul built this one in the app first.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-08-25",
+     "text": "Paul's own story, rebuilt as a file for the handover folder. Same clip as the spare 'sound of merchants yard', which stays unscheduled so there is no clash."
+    }
+   ]
   }
  ]
 }
