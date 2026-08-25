@@ -85,6 +85,7 @@ def build(venue, week):
     venue: {json.dumps(venue)},
     name: {json.dumps(NAMES[venue])},
     week: {json.dumps(week)},
+    v: "{v}",
     hideDays: {json.dumps(HIDE_DAYS)}
   }};
 </script>

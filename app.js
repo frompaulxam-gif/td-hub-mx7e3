@@ -134,7 +134,10 @@ async function bootShare() {
   state.live = false;
   state.venue = SHARE.venue;
   state.venues = [{ slug: SHARE.venue, name: SHARE.name || SHARE.venue }];
-  const wk = await (await fetch(`${SHARE.base}data/${SHARE.venue}/${SHARE.week}.json`)).json();
+  // ?v= the build stamp: without it a client who opened the link yesterday keeps
+  // the browser-cached week and never sees the update
+  const url = `${SHARE.base}data/${SHARE.venue}/${SHARE.week}.json?v=${SHARE.v || ""}`;
+  const wk = await (await fetch(url)).json();
   const skip = new Set((SHARE.hideDays || []).map(d => d.toLowerCase()));
   wk.slots = (wk.slots || []).filter(s => !skip.has((s.day || "").toLowerCase()));
   // Strip studio-only content at the DATA level, not with CSS: alerts and notes
@@ -144,7 +147,13 @@ async function bootShare() {
   wk.links = [];
   wk.alerts = [];
   wk.key_dates = [];
-  wk.slots.forEach(s => { delete s.alert; s.notes = []; });
+  wk.slots.forEach(s => {
+    delete s.alert;
+    s.notes = [];
+    // a posted slot's caption is already live on Instagram, and the field is
+    // sometimes reused for a studio note, so it has no place on the client link
+    if (s.status === "posted") { s.caption = ""; s.alternates = []; }
+  });
   state.weeks[SHARE.venue] = [wk];
   state.weekIdx[SHARE.venue] = 0;
   document.documentElement.dataset.venue = SHARE.venue;
