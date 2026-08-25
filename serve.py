@@ -274,6 +274,16 @@ class Handler(SimpleHTTPRequestHandler):
                              f'attachment; filename="{tail}.jpg"')
             self.end_headers()
             return self.wfile.write(body)
+        if u.path == "/api/open-folder":
+            q = parse_qs(u.query)
+            path = os.path.realpath(unquote(q.get("path", [""])[0]))
+            home = os.path.realpath(os.path.expanduser("~"))
+            allowed = [os.path.join(home, "Downloads")] + [
+                os.path.realpath(v["root"]) for v in VENUES.values()]
+            if not any(path.startswith(a) for a in allowed) or not os.path.isdir(path):
+                return self._json({"error": "not an allowed folder"}, 400)
+            subprocess.run(["open", path], check=False)
+            return self._json({"ok": True, "opened": path})
         if u.path == "/api/kinda-chic-photos":
             q = parse_qs(u.query)
             venue = q.get("venue", [""])[0]

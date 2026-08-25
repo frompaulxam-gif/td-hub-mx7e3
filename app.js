@@ -55,11 +55,21 @@ async function boot() {
         v.weeks.map(async wk => (await fetch(`data/${v.slug}/${wk}.json`)).json()));
     }));
   }
+  // open on the week that contains today, so the board is always current
+  const todayStr = new Date().toLocaleDateString("sv-SE");
   for (const v of state.venues) {
     const ws = state.weeks[v.slug] || [];
-    let idx = ws.length - 1;
-    const cur = ws.findIndex(w => !w.archived);
-    if (cur >= 0) idx = cur;
+    let idx = -1;
+    // the latest week whose Monday is on or before today
+    ws.forEach((w, i) => {
+      if (w.week_start && w.week_start <= todayStr) {
+        if (idx < 0 || w.week_start > ws[idx].week_start) idx = i;
+      }
+    });
+    if (idx < 0) {                       // nothing started yet, take the soonest
+      const cur = ws.findIndex(w => !w.archived);
+      idx = cur >= 0 ? cur : ws.length - 1;
+    }
     state.weekIdx[v.slug] = idx;
   }
   // a refresh should land back on the same week, not jump to the current one
@@ -241,6 +251,18 @@ function renderLinks() {
   el.hidden = !links.length || state.view !== "board";
   el.innerHTML = "";
   links.forEach(l => {
+    if (l.folder) {                       // local folder: ask the server to reveal it in Finder
+      const b = document.createElement("button");
+      b.className = "link-chip";
+      b.textContent = l.label;
+      b.title = l.folder;
+      b.addEventListener("click", async () => {
+        const r = await fetch("/api/open-folder?path=" + encodeURIComponent(l.folder));
+        toast(r.ok ? "Opened in Finder" : "Could not open that folder");
+      });
+      el.appendChild(b);
+      return;
+    }
     const a = document.createElement("a");
     a.href = l.url;
     a.target = "_blank";
