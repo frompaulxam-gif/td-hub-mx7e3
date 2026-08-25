@@ -734,6 +734,32 @@
      "text": "Paul built and scheduled this in the app. Rebuilt as a file for the handover folder."
     }
    ]
+  },
+  {
+   "id": "wed-story-dancefloor",
+   "day": "Wednesday",
+   "date": "2026-08-26",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Secure your dancefloor for bank holiday",
+   "status": "scheduled",
+   "media": [],
+   "media_kind": "video",
+   "caption": "Paul's own in-app build. BOOK YOUR TABLE link sticker. Wednesday.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Link sticker: BOOK YOUR TABLE",
+     "done": true
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-25",
+     "text": "Table-booking CTA, distinct from Tuesday's ticket CTA. Source clip (daytime horsebox bar) is not in the studio folders, so no file copy for the handover."
+    }
+   ]
   }
  ]
 }
