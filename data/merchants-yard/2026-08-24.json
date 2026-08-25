@@ -443,18 +443,18 @@
    "date": "2026-08-26",
    "kind": "story",
    "slot": "Reactive: Carnival genre poll",
-   "title": "Poll: which carnival genre",
+   "title": "Poll: Saturday or Sunday",
    "status": "ready",
    "media": [
     "stories/carnival-poll/carnival-poll.png"
    ],
    "media_kind": "image",
-   "caption": "Background only. Add the POLL sticker in the app over the lower half.\n\nQuestion: Which one are you coming for?\nOptions (IG allows up to 4): House · Garage · Reggae · Disco\n\nAlternate split if you'd rather: RnB · Jungle.",
+   "caption": "Background only. Add the POLL sticker in the app.\n\nQuestion: Which one are you coming to?\nOptions: Saturday  /  Sunday\n\nSaturday is DJ Benzo, Sunday is Carnival in the Courtyard.",
    "alternates": [],
    "songs": [],
    "checklist": [
     {
-     "text": "Add poll sticker in-app, options House / Garage / Reggae / Disco",
+     "text": "Add poll sticker, two options: Saturday / Sunday",
      "done": false
     },
     {
@@ -466,6 +466,10 @@
     {
      "ts": "2026-08-24",
      "text": "Built to the past poll recipe: short caps kicker, big question, photo behind, sticker added in-app. Genres taken from the Carnival poster."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Reframed from carnival genres to a Saturday-or-Sunday choice. Two options rather than four, so the split is readable and it doubles as a headcount for both nights."
     }
    ],
    "template": {
@@ -654,17 +658,15 @@
   },
   {
    "id": "wed-story-howitfeels",
-   "day": "Wednesday",
-   "date": "2026-08-26",
+   "day": "Saturday",
+   "date": "2026-08-29",
    "kind": "story",
    "slot": "Reactive story",
-   "title": "How it feels that it's bank holiday",
-   "status": "ready",
-   "media": [
-    "../../../Downloads/MY reactive stories/how it feels bank holiday.mp4"
-   ],
+   "title": "How it feels that it's bank holiday this weekend",
+   "status": "scheduled",
+   "media": [],
    "media_kind": "video",
-   "caption": "Text burned in. Paul built this one in the app first.",
+   "caption": "Paul's own in-app build on the rainbow LED wall clip. Saturday story.",
    "alternates": [],
    "songs": [],
    "checklist": [],
@@ -672,6 +674,10 @@
     {
      "ts": "2026-08-25",
      "text": "Paul's own story, rebuilt as a file for the handover folder. Same clip as the spare 'sound of merchants yard', which stays unscheduled so there is no clash."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Moved Wednesday to Saturday, and Paul rebuilt it on a different clip (crowd at benches, rainbow LED wall) rather than the 4873 version. Source clip not in the studio folders, so no file copy."
     }
    ]
   },
