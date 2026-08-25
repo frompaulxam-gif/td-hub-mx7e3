@@ -674,6 +674,32 @@
      "text": "Paul's own story, rebuilt as a file for the handover folder. Same clip as the spare 'sound of merchants yard', which stays unscheduled so there is no clash."
     }
    ]
+  },
+  {
+   "id": "sun-story-nowork",
+   "day": "Sunday",
+   "date": "2026-08-30",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "How it feels that there's no work tomorrow",
+   "status": "scheduled",
+   "media": [],
+   "media_kind": "video",
+   "caption": "Paul's own in-app story. Scheduled Sunday 12pm, two hours before doors.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Post Sunday 12pm",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-25",
+     "text": "Built by Paul in the Instagram app. Source clip not in the studio folders, so no file copy for the handover. Works because Monday 31st is a bank holiday and the venue is closed, so nobody has work."
+    }
+   ]
   }
  ]
 }
