@@ -366,10 +366,23 @@ function makeMini(week, s, g) {
     img.alt = "";
     b.appendChild(img);
   } else if (first) {
-    const d = document.createElement("div");
-    d.className = "mini-thumb is-video";
-    d.textContent = "▶";
-    b.appendChild(d);
+    // video: show a real poster frame, with the play glyph over it
+    const wrap = document.createElement("div");
+    wrap.className = "mini-thumb is-video";
+    if (state.live) {
+      const img = document.createElement("img");
+      img.className = "mini-poster";
+      img.loading = "lazy";
+      img.alt = "";
+      img.src = `/api/poster?venue=${state.venue}&week=${week.week_start}&path=${encodeURIComponent(first)}`;
+      img.addEventListener("error", () => img.remove());
+      wrap.appendChild(img);
+    }
+    const play = document.createElement("span");
+    play.className = "mini-play";
+    play.textContent = "▶";
+    wrap.appendChild(play);
+    b.appendChild(wrap);
   } else {
     const d = document.createElement("div");
     d.className = "mini-thumb is-empty";

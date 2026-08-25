@@ -274,6 +274,39 @@ class Handler(SimpleHTTPRequestHandler):
                              f'attachment; filename="{tail}.jpg"')
             self.end_headers()
             return self.wfile.write(body)
+        if u.path == "/api/poster":
+            q = parse_qs(u.query)
+            venue = q.get("venue", [""])[0]
+            week = q.get("week", [""])[0]
+            rel = unquote(q.get("path", [""])[0])
+            if venue not in VENUES or not rel:
+                return self.send_error(404)
+            try:
+                wdir = week_dir(venue, week)
+            except ValueError:
+                return self.send_error(404)
+            src = os.path.realpath(os.path.join(wdir, rel))
+            root = os.path.realpath(VENUES[venue]["root"])
+            if not src.startswith(root) or not os.path.isfile(src):
+                return self.send_error(404)
+            cache = os.path.join(HUB, ".posters")
+            os.makedirs(cache, exist_ok=True)
+            key = re.sub(r"[^A-Za-z0-9]+", "_", f"{venue}_{week}_{rel}")[:180] + ".jpg"
+            dst = os.path.join(cache, key)
+            if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
+                subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", "1.2",
+                    "-i", src, "-frames:v", "1", "-vf", "scale=240:-1", dst],
+                    capture_output=True)
+            if not os.path.exists(dst):
+                return self.send_error(404)
+            with open(dst, "rb") as f:
+                body = f.read()
+            self.send_response(200)
+            self.send_header("Content-Type", "image/jpeg")
+            self.send_header("Content-Length", str(len(body)))
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            return self.wfile.write(body)
         if u.path == "/api/open-folder":
             q = parse_qs(u.query)
             path = os.path.realpath(unquote(q.get("path", [""])[0]))

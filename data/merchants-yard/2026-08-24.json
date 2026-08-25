@@ -51,63 +51,6 @@
  ],
  "slots": [
   {
-   "id": "mon-grid-recap",
-   "date": "2026-08-24",
-   "day": "Monday",
-   "kind": "grid",
-   "slot": "Recap montage reel",
-   "title": "Weekend recap reel",
-   "status": "changes",
-   "media": [],
-   "media_kind": "video",
-   "caption": "",
-   "alternates": [],
-   "notes": [
-    {
-     "ts": "2026-08-25",
-     "text": "Left empty: this week is a single-event Carnival push, so the standing recap and reactive-pick slots were not filled."
-    }
-   ],
-   "checklist": [
-    {
-     "text": "YOU: edit the reel from Park Life weekend clips",
-     "done": false
-    },
-    {
-     "text": "STUDIO: references + caption options",
-     "done": false
-    },
-    {
-     "text": "Post Monday evening",
-     "done": false
-    }
-   ],
-   "template": null,
-   "alert": "* Not used this week. The Carnival push replaced the usual recap and reactive slots."
-  },
-  {
-   "id": "mon-story-repost",
-   "date": "2026-08-24",
-   "day": "Monday",
-   "kind": "story",
-   "slot": "Repost the recap",
-   "title": "Repost recap + reshare weekend tags",
-   "status": "changes",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
-   "notes": [
-    {
-     "ts": "2026-08-25",
-     "text": "Left empty: this week is a single-event Carnival push, so the standing recap and reactive-pick slots were not filled."
-    }
-   ],
-   "checklist": [],
-   "template": null,
-   "alert": "* Not used this week. The Carnival push replaced the usual recap and reactive slots."
-  },
-  {
    "id": "tue-grid-whatson",
    "date": "2026-08-26",
    "day": "Wednesday",
@@ -172,58 +115,6 @@
    "alert": "* VENUE CLOSED FROM FRIDAY. This graphic still lists Friday 28 (The Friday Social) and Saturday 29 (DJ Benzo). Do not post until corrected."
   },
   {
-   "id": "tue-story-reactive",
-   "date": "2026-08-25",
-   "day": "Tuesday",
-   "kind": "story",
-   "slot": "Reactive",
-   "title": "Reactive pick of the day",
-   "status": "changes",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
-   "notes": [
-    {
-     "ts": "2026-08-25",
-     "text": "Left empty: this week is a single-event Carnival push, so the standing recap and reactive-pick slots were not filled."
-    }
-   ],
-   "checklist": [],
-   "template": null,
-   "alert": "* Not used this week. The Carnival push replaced the usual recap and reactive slots."
-  },
-  {
-   "id": "wed-grid-flexible",
-   "date": "2026-08-26",
-   "day": "Wednesday",
-   "kind": "grid",
-   "slot": "Flexible, pick one",
-   "title": "Flexible post - Carnival push",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
-   "notes": [
-    {
-     "ts": "2026-08-23",
-     "text": "The Carnival announce did 5,900 reach and 69 shares, far and away the best share rate of the week. A second push in Carnival week is the obvious use of this slot."
-    }
-   ],
-   "checklist": [
-    {
-     "text": "Carnival announce is the obvious pick if Chelsea's poster lands",
-     "done": false
-    },
-    {
-     "text": "Otherwise: drinks hero / repost winner / photo single",
-     "done": false
-    }
-   ],
-   "template": null
-  },
-  {
    "id": "wed-story-whatson",
    "date": "2026-08-27",
    "day": "Thursday",
@@ -250,47 +141,6 @@
     "content": "WEEKS/2026-08-24/renders/whats-on-story.content.json",
     "out": "WEEKS/2026-08-24/stories/whats-on-story/whats-on-story.png"
    }
-  },
-  {
-   "id": "thu-grid-photos",
-   "date": "2026-08-27",
-   "day": "Thursday",
-   "kind": "grid",
-   "slot": "Photos from the weekend",
-   "title": "Weekend photos carousel",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "carousel",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
-   "checklist": [
-    {
-     "text": "Park Life photos, lead with the best crowd singalong",
-     "done": false
-    },
-    {
-     "text": "6 to 8, no repeats within 14 days",
-     "done": false
-    }
-   ],
-   "template": null
-  },
-  {
-   "id": "thu-story-reactive",
-   "date": "2026-08-27",
-   "day": "Thursday",
-   "kind": "story",
-   "slot": "Reactive",
-   "title": "Reactive pick of the day",
-   "status": "waiting",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
-   "notes": [],
-   "checklist": [],
-   "template": null
   },
   {
    "id": "fri-grid-trend",
@@ -328,33 +178,6 @@
     "Kevin Lyttle - Turn Me On  ·  hook in two seconds, pure bank holiday",
     "Sister Sledge - He's the Greatest Dancer  ·  warm and sunny, matches the daylight pan"
    ]
-  },
-  {
-   "id": "fri-story-doors",
-   "date": "2026-08-28",
-   "day": "Friday",
-   "kind": "story",
-   "slot": "Doors open story",
-   "title": "Friday doors open story",
-   "status": "changes",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
-   "alternates": [],
-   "notes": [
-    {
-     "ts": "2026-08-24",
-     "text": "Closed Friday, so the doors-open story is invalid this week."
-    }
-   ],
-   "checklist": [
-    {
-     "text": "The Friday Social with Jonna & Yumna Black, doors 5pm",
-     "done": false
-    }
-   ],
-   "template": null,
-   "alert": "* CLOSED Friday only. Saturday and Sunday are open."
   },
   {
    "id": "sat-story-doors",
