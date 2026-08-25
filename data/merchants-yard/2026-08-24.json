@@ -97,6 +97,10 @@
     {
      "ts": "2026-08-25",
      "text": "Caption rebuilt without Friday (Paul: Fridays are finished). Three options on the slot, facts aligned to the rendered slide (genres, 70s to today, 2pm til midnight). Slide 2 media path moved to a week-relative symlink."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Paul challenged Blur - Girls & Boys: it was drafted against the old '90s vs 00s' caption and does not match the poster's genre billing. Swapped for Soul II Soul - Back to Life."
     }
    ],
    "checklist": [
@@ -116,9 +120,9 @@
     "outdir": "WEEKS/2026-08-24/grid/tuesday-whats-on/"
    },
    "songs": [
-    "Blur - Girls & Boys  ·  90s singalong, matches the Carnival billing",
+    "Soul II Soul - Back to Life  ·  RnB singalong with real carnival heritage, straight off the poster's billing",
     "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand",
-    "Sister Sledge - He's the Greatest Dancer  ·  warm and universal for the weekend"
+    "Sister Sledge - He's the Greatest Dancer  ·  disco is on the billing, warm and universal for the weekend"
    ],
    "alert": "* VENUE CLOSED FROM FRIDAY. This graphic still lists Friday 28 (The Friday Social) and Saturday 29 (DJ Benzo). Do not post until corrected."
   },

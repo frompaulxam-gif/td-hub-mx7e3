@@ -814,37 +814,9 @@ function makeXpost(week, s) {
   // scaffolded by the studio, the picker was clutter. REACTIVE_MENU stays as the
   // studio's option list.)
 
-  // checklist with tickboxes (string items and {text, done} both supported)
-  if (s.checklist?.length) {
-    const cl = document.createElement("ul");
-    cl.className = "xchecklist";
-    s.checklist.forEach((item, i) => {
-      const text = typeof item === "string" ? item : item.text;
-      const done = typeof item === "object" && !!item.done;
-      const li = document.createElement("li");
-      li.className = done ? "is-ticked" : "";
-      const wrap = document.createElement("label");
-      wrap.className = "tick-label";
-      const box = document.createElement("input");
-      box.type = "checkbox";
-      box.checked = done;
-      box.disabled = !state.live;
-      box.addEventListener("change", async () => {
-        const next = s.checklist.map(it => typeof it === "string" ? { text: it, done: false } : { ...it });
-        next[i].done = box.checked;
-        if (await patchSlot(s, { set: { checklist: next } }, true)) {
-          toast(box.checked ? "Ticked off" : "Unticked");
-          render();
-        }
-      });
-      const label = document.createElement("span");
-      label.textContent = text;
-      wrap.append(box, label);
-      li.appendChild(wrap);
-      cl.appendChild(li);
-    });
-    right.appendChild(cl);
-  }
+  // (checklists removed from the board per Paul, 25 Aug: a slot shows media,
+  // caption and sound on grid posts, media and sound on stories, plus his
+  // comments. Checklist data stays in week.json as the studio's prep tracker.)
 
   // comment thread: Paul's comments only. Studio notes stay in week.json as the
   // work log but never render on the board (Paul, 25 Aug: not needed).
