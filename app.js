@@ -645,36 +645,39 @@ function makeXpost(week, s) {
   }
   right.appendChild(actions);
 
-  // caption
-  const capRow = document.createElement("div");
-  capRow.className = "xcap-label-row";
-  const capLabel = document.createElement("span");
-  capLabel.className = "xpane-label";
-  capLabel.textContent = "Caption";
-  const copyBtn = document.createElement("button");
-  copyBtn.className = "mini-btn";
-  copyBtn.textContent = "Copy";
-  capRow.append(capLabel, copyBtn);
-  right.appendChild(capRow);
-  const cap = document.createElement("div");
-  cap.className = "caption-edit";
-  cap.textContent = s.caption || "";
-  cap.contentEditable = state.live ? "plaintext-only" : "false";
-  cap.spellcheck = false;
-  cap.addEventListener("blur", async () => {
-    if (!state.live) return;
-    const text = cap.innerText.replace(/\n{3,}/g, "\n\n").trimEnd();
-    if (text === (s.caption || "")) return;
-    if (await patchSlot(s, { set: { caption: text } }, true)) toast("Caption saved");
-  });
-  copyBtn.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(cap.innerText);
-    toast("Caption copied");
-  });
-  right.appendChild(cap);
+  // caption: grid posts only. Stories are built in the IG app, so their slot
+  // shows just the media and Sound (Paul, 25 Aug).
+  if (s.kind !== "story") {
+    const capRow = document.createElement("div");
+    capRow.className = "xcap-label-row";
+    const capLabel = document.createElement("span");
+    capLabel.className = "xpane-label";
+    capLabel.textContent = "Caption";
+    const copyBtn = document.createElement("button");
+    copyBtn.className = "mini-btn";
+    copyBtn.textContent = "Copy";
+    capRow.append(capLabel, copyBtn);
+    right.appendChild(capRow);
+    const cap = document.createElement("div");
+    cap.className = "caption-edit";
+    cap.textContent = s.caption || "";
+    cap.contentEditable = state.live ? "plaintext-only" : "false";
+    cap.spellcheck = false;
+    cap.addEventListener("blur", async () => {
+      if (!state.live) return;
+      const text = cap.innerText.replace(/\n{3,}/g, "\n\n").trimEnd();
+      if (text === (s.caption || "")) return;
+      if (await patchSlot(s, { set: { caption: text } }, true)) toast("Caption saved");
+    });
+    copyBtn.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(cap.innerText);
+      toast("Caption copied");
+    });
+    right.appendChild(cap);
+  }
 
   // caption options: the live one plus pre-drafted alternates, pick of three
-  if (s.alternates?.length) {
+  if (s.kind !== "story" && s.alternates?.length) {
     const altWrap = document.createElement("div");
     const altLabel = document.createElement("span");
     altLabel.className = "xpane-label";
@@ -807,33 +810,9 @@ function makeXpost(week, s) {
     }
   }
 
-  // reactive idea clicker for open reactive story slots
-  const isReactive = (s.slot || "").toLowerCase().includes("reactive") && s.kind === "story";
-  if (isReactive && state.live) {
-    const rWrap = document.createElement("div");
-    const rLabel = document.createElement("span");
-    rLabel.className = "xpane-label";
-    rLabel.style.marginTop = "12px";
-    rLabel.textContent = "Reactive menu, tap to pick";
-    rWrap.appendChild(rLabel);
-    const rRow = document.createElement("div");
-    rRow.className = "reactive-row";
-    for (const opt of REACTIVE_MENU) {
-      const b = document.createElement("button");
-      b.className = "r-chip" + ((s.title || "").includes(opt.name) ? " is-picked" : "");
-      b.textContent = opt.name;
-      b.title = opt.prompt;
-      b.addEventListener("click", async () => {
-        if (await patchSlot(s, {
-          set: { title: "Reactive: " + opt.name, caption: opt.prompt },
-          add_note: { text: "Picked " + opt.name + " from the reactive menu." },
-        }, true)) { toast(opt.name + " picked"); render(); }
-      });
-      rRow.appendChild(b);
-    }
-    rWrap.appendChild(rRow);
-    right.appendChild(rWrap);
-  }
+  // (reactive menu removed from the board per Paul, 25 Aug: reactive stories are
+  // scaffolded by the studio, the picker was clutter. REACTIVE_MENU stays as the
+  // studio's option list.)
 
   // checklist with tickboxes (string items and {text, done} both supported)
   if (s.checklist?.length) {
@@ -867,10 +846,11 @@ function makeXpost(week, s) {
     right.appendChild(cl);
   }
 
-  // comment thread
+  // comment thread: Paul's comments only. Studio notes stay in week.json as the
+  // work log but never render on the board (Paul, 25 Aug: not needed).
   const thread = document.createElement("ul");
   thread.className = "thread";
-  for (const n of s.notes || []) {
+  for (const n of (s.notes || []).filter(n => n.by === "paul")) {
     const li = document.createElement("li");
     const meta = document.createElement("span");
     meta.className = "t-meta";
@@ -1034,7 +1014,8 @@ function makeCarouselQC(week, s) {
   seeAll.className = "mini-btn";
   seeAll.textContent = "See all " + s.candidates.length;
   seeAll.addEventListener("click", () => {
-    location.href = `picker.html?venue=${state.venue}&week=${week.week_start}&id=${encodeURIComponent(s.id)}`;
+    // replace() keeps history at one entry so the single-window close keeps working
+    location.replace(`picker.html?venue=${state.venue}&week=${week.week_start}&id=${encodeURIComponent(s.id)}`);
   });
   labelRow.append(label, seeAll);
   wrap.appendChild(labelRow);

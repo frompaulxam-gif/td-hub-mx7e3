@@ -14,6 +14,7 @@ APIs
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -28,6 +29,20 @@ VENUES = {
 }
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+# The app launcher starts this server with the bare LaunchServices PATH, so
+# resolve ffmpeg to an absolute path rather than trusting the environment.
+FFMPEG = shutil.which("ffmpeg") or next(
+    (p for p in ("/opt/homebrew/bin/ffmpeg", "/usr/local/bin/ffmpeg") if os.path.exists(p)),
+    "ffmpeg")
+
+DOWNLOADS = os.path.realpath(os.path.expanduser("~/Downloads"))
+
+
+def allowed_media(venue, path):
+    """Slot media may live in the venue folder or (via symlink) ~/Downloads."""
+    roots = [os.path.realpath(VENUES[venue]["root"]), DOWNLOADS]
+    return any(path == r or path.startswith(r + os.sep) for r in roots)
 
 
 def week_dir(venue, week):
@@ -286,17 +301,19 @@ class Handler(SimpleHTTPRequestHandler):
             except ValueError:
                 return self.send_error(404)
             src = os.path.realpath(os.path.join(wdir, rel))
-            root = os.path.realpath(VENUES[venue]["root"])
-            if not src.startswith(root) or not os.path.isfile(src):
+            if not allowed_media(venue, src) or not os.path.isfile(src):
                 return self.send_error(404)
             cache = os.path.join(HUB, ".posters")
             os.makedirs(cache, exist_ok=True)
             key = re.sub(r"[^A-Za-z0-9]+", "_", f"{venue}_{week}_{rel}")[:180] + ".jpg"
             dst = os.path.join(cache, key)
             if not os.path.exists(dst) or os.path.getmtime(dst) < os.path.getmtime(src):
-                subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", "1.2",
-                    "-i", src, "-frames:v", "1", "-vf", "scale=240:-1", dst],
-                    capture_output=True)
+                for ss in ("1.2", "0"):   # clips under 1.2s need the second try
+                    subprocess.run([FFMPEG, "-nostdin", "-v", "error", "-y", "-ss", ss,
+                        "-i", src, "-frames:v", "1", "-vf", "scale=240:-1", dst],
+                        capture_output=True)
+                    if os.path.exists(dst):
+                        break
             if not os.path.exists(dst):
                 return self.send_error(404)
             with open(dst, "rb") as f:
@@ -361,7 +378,7 @@ class Handler(SimpleHTTPRequestHandler):
                 return self.send_error(404)
             base = week_dir(venue, week)
             path = os.path.realpath(os.path.join(base, rel))
-            if not path.startswith(base) or not os.path.isfile(path):
+            if not allowed_media(venue, path) or not os.path.isfile(path):
                 return self.send_error(404)
             return self._serve_file(path)
         m = re.match(r"^/root/([a-z-]+)/(.+)$", u.path)

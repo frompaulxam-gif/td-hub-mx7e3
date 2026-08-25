@@ -11,7 +11,8 @@
   "* Website events section is EMPTY for this week, so the Friday and Saturday line-up is unknown. Carnival in the Courtyard on bank holiday Sunday 30 Aug is the only confirmed event. Monday 31 Aug the venue is CLOSED.",
   "This week is Merchants Yard only. Moonshine is paused, see its own board.",
   "* Closed FRIDAY only. Saturday 29th DJ Benzo and Sunday 30th Carnival are both on.",
-  "* Friday has both the yard pan and the day-to-night transition assigned. Confirm which is the grid post."
+  "* Friday has both the yard pan and the day-to-night transition assigned. Confirm which is the grid post.",
+  "* How it feels that it's bank holiday this weekend moved Saturday 29th to Friday 28th (Paul). Friday had no story slot and Saturday had three. Venue is still CLOSED Friday, so it is anticipation only. Needs re-queuing in the IG app."
  ],
  "links": [
   {
@@ -60,11 +61,14 @@
    "status": "ready",
    "media": [
     "grid/tuesday-whats-on/slide-01.png",
-    "../../../Downloads/Carnival Courtyard/Carnival_4x5.png"
+    "grid/tuesday-whats-on/Carnival_4x5.png"
    ],
    "media_kind": "carousel",
-   "caption": "Big bank holiday weekend ☀️\n\n🍹 Friday - The Friday Social with Jonna & Yumna Black. Laid-back after-work vibes, plus our £15 burger and drink offer until 7pm.\n\n🎧 Saturday - DJ Benzo. A journey through the decades, music you'll know and music you'll sing.\n\n🎪 Bank holiday Sunday - Carnival in the Courtyard. An explosion of colour, immersive carnival decor and the biggest 90s vs 00s singalong anthems. 2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
-   "alternates": [],
+   "caption": "Bank holiday weekend in the yard ☀️\n\n🎧 Saturday - MY Presents: DJ Benzo. A journey through the decades, music you'll know, music you'll sing, music you'll dance to.\n\n🎪 Bank holiday Sunday - Carnival in the Courtyard. An explosion of colour, House, RnB, Garage, Reggae, Disco and Jungle, plus the biggest singalong anthems from the 70s to today. 2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [
+    "Bank holiday weekend ☀️\n\n🎧 Saturday - DJ Benzo, a journey through the decades.\n🎪 Sunday - Carnival in the Courtyard, 2pm til midnight.\n\nTables via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+    "No work Monday, you know what that means 🍒🪩\n\nSaturday it's DJ Benzo with a journey through the decades. Sunday it's Carnival in the Courtyard, colour everywhere, singalong anthems from the 70s to today, 2pm til midnight.\n\nGrab a table via www.merchantsyardleicester.co.uk and pick your day. Or don't pick, do both.\n\nSee you in the yard."
+   ],
    "notes": [
     {
      "ts": "2026-08-23",
@@ -89,6 +93,10 @@
     {
      "ts": "2026-08-24",
      "text": "QC pass: rebuilt without Friday (venue closed), moved to the colourful crowd photo, and the Carnival poster downscaled from print size (2791x4961) to 1080x1350 so both carousel slides match at 4:5."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Caption rebuilt without Friday (Paul: Fridays are finished). Three options on the slot, facts aligned to the rendered slide (genres, 70s to today, 2pm til midnight). Slide 2 media path moved to a week-relative symlink."
     }
    ],
    "checklist": [
@@ -187,23 +195,47 @@
    "slot": "Doors open story",
    "title": "Saturday doors open story",
    "status": "ready",
-   "media": [],
-   "media_kind": "none",
-   "caption": "",
+   "media": [
+    "stories/saturday-doors/saturday-doors.png"
+   ],
+   "media_kind": "image",
+   "caption": "Saturday morning doors-open story, Paul posts it.\n\nIn the app: tag the Merchants Yard location, add the link sticker to merchantsyardleicester.co.uk for tables, and a music sticker if you want sound.",
    "alternates": [],
    "notes": [
     {
      "ts": "2026-08-24",
      "text": "CORRECTION: Saturday is open (DJ Benzo). Only Friday is closed. My earlier flag on this slot was wrong."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Poster built on lineup-story. Facts checked against the website today: DJ Benzo listed for Sat 29th, and the site's seasonal hours say Saturdays and bank holiday Sundays 2pm til midnight, which is where doors 2pm comes from. Photo LV404194 from the 20.06.26 delivery, never used on this account before. Text sits between y=250 and y=1670 so the IG profile row and reply bar do not cover the logo or the day line."
     }
    ],
    "checklist": [
     {
      "text": "MY Presents: DJ Benzo, doors 2pm",
+     "done": true
+    },
+    {
+     "text": "Tag the Merchants Yard location",
+     "done": false
+    },
+    {
+     "text": "Add the tables link sticker",
      "done": false
     }
    ],
-   "template": null
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-24/renders/saturday-doors.layout.json",
+    "content": "WEEKS/2026-08-24/renders/saturday-doors.content.json",
+    "out": "WEEKS/2026-08-24/stories/saturday-doors/saturday-doors.png"
+   },
+   "songs": [
+    "Stevie Wonder - Master Blaster (Jammin')  ·  sunny 2pm opener, spans the decades like Benzo's set",
+    "Chic - Good Times  ·  recognisable in two seconds, matches the daytime yard",
+    "Fatboy Slim - Praise You  ·  big singalong energy for the bank holiday build-up"
+   ]
   },
   {
    "id": "mon-story-carnival",
@@ -243,7 +275,11 @@
    "media_kind": "image",
    "caption": "Background only. Add the POLL sticker in the app.\n\nQuestion: Which one are you coming to?\nOptions: Saturday  /  Sunday\n\nSaturday is DJ Benzo, Sunday is Carnival in the Courtyard.",
    "alternates": [],
-   "songs": [],
+   "songs": [
+    "General Levy - Incredible  ·  jungle heat for the Carnival side of the poll",
+    "Whitney Houston - I Wanna Dance with Somebody  ·  decades singalong, Benzo's lane",
+    "Robin S - Show Me Love  ·  house classic that covers both days"
+   ],
    "checklist": [
     {
      "text": "Add poll sticker, two options: Saturday / Sunday",
@@ -262,6 +298,10 @@
     {
      "ts": "2026-08-25",
      "text": "Reframed from carnival genres to a Saturday-or-Sunday choice. Two options rather than four, so the split is readable and it doubles as a headcount for both nights."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Headline re-rendered per Paul: 'Which day are you going out this bank holiday weekend?'. Kicker dropped (it duplicated the headline), headline 76 to 70 to fit the longer line."
     }
    ],
    "template": {
@@ -280,7 +320,7 @@
    "title": "Reactive: Get your carnival moves ready",
    "status": "ready",
    "media": [
-    "../../../Downloads/MY reactive stories/get your carnival moves ready.mp4"
+    "stories/reactive/get your carnival moves ready.mp4"
    ],
    "media_kind": "video",
    "caption": "Text burned in. Add the LINK sticker in the bottom third pointing at the Fatsoma ticket page.",
@@ -339,7 +379,7 @@
    "title": "Abroad? No this is Leicester",
    "status": "posted",
    "media": [
-    "../../../Downloads/MY reactive stories/abroad no this is leicester.mp4"
+    "stories/reactive/abroad no this is leicester.mp4"
    ],
    "media_kind": "video",
    "caption": "Text burned in.",
@@ -366,7 +406,7 @@
    "title": "Setting up for bank holiday weekend",
    "status": "changes",
    "media": [
-    "../../../Downloads/MY reactive stories/setting up saturday morning.mp4"
+    "stories/reactive/setting up saturday morning.mp4"
    ],
    "media_kind": "video",
    "caption": "Post early Saturday morning. Text burned in.",
@@ -399,7 +439,7 @@
    "title": "You don't want to miss out this bank holiday",
    "status": "ready",
    "media": [
-    "../../../Downloads/MY reactive stories/dont miss out bank holiday.mp4"
+    "stories/reactive/dont miss out bank holiday.mp4"
    ],
    "media_kind": "video",
    "caption": "Text burned in. Add the LINK sticker to the Fatsoma ticket page.",
@@ -427,7 +467,7 @@
    "title": "Carnival today, doors 2pm",
    "status": "ready",
    "media": [
-    "../../../Downloads/MY reactive stories/sunday doors today.mp4"
+    "stories/reactive/sunday doors today.mp4"
    ],
    "media_kind": "video",
    "caption": "Post Sunday morning. Text burned in. Add the Fatsoma link sticker.",
@@ -452,18 +492,29 @@
   },
   {
    "id": "wed-story-howitfeels",
-   "day": "Saturday",
-   "date": "2026-08-29",
+   "day": "Friday",
+   "date": "2026-08-28",
    "kind": "story",
    "slot": "Reactive story",
    "title": "How it feels that it's bank holiday this weekend",
    "status": "scheduled",
-   "media": [],
+   "media": [
+    "stories/reactive/how it feels bank holiday.mp4"
+   ],
    "media_kind": "video",
-   "caption": "Paul's own in-app build on the rainbow LED wall clip. Saturday story.",
+   "caption": "Paul's own in-app build on the rainbow LED wall clip. Friday story.",
    "alternates": [],
    "songs": [],
-   "checklist": [],
+   "checklist": [
+    {
+     "text": "Re-queue in the IG app for Friday, it is still scheduled Saturday in there",
+     "done": false
+    },
+    {
+     "text": "Venue is CLOSED Friday, so keep it anticipation only, no doors or come-down-tonight wording",
+     "done": false
+    }
+   ],
    "notes": [
     {
      "ts": "2026-08-25",
@@ -472,8 +523,13 @@
     {
      "ts": "2026-08-25",
      "text": "Moved Wednesday to Saturday, and Paul rebuilt it on a different clip (crowd at benches, rainbow LED wall) rather than the 4873 version. Source clip not in the studio folders, so no file copy."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Paul: moved Saturday to Friday. Reads better as the Friday feeling that the bank holiday weekend has landed, and Friday had no story at all while Saturday had three, so this also fixes the one-story-a-day minimum. Venue is closed Friday, so it stays anticipation, not a doors story."
     }
-   ]
+   ],
+   "alert": true
   },
   {
    "id": "sun-story-nowork",
@@ -510,7 +566,7 @@
    "title": "Secure your bank holiday weekend",
    "status": "scheduled",
    "media": [
-    "../../../Downloads/MY reactive stories/secure your bank holiday weekend.mp4"
+    "stories/reactive/secure your bank holiday weekend.mp4"
    ],
    "media_kind": "video",
    "caption": "Ticket CTA with the BANK HOLIDAY TICKETS link sticker. Going out Tuesday afternoon.",
@@ -537,21 +593,35 @@
    "slot": "Reactive story",
    "title": "Secure your dancefloor for bank holiday",
    "status": "scheduled",
-   "media": [],
-   "media_kind": "video",
+   "media": [
+    "stories/secure-dancefloor/secure-dancefloor.png"
+   ],
+   "media_kind": "image",
    "caption": "Paul's own in-app build. BOOK YOUR TABLE link sticker. Wednesday.",
    "alternates": [],
-   "songs": [],
+   "songs": [
+    "Todd Terry - Something Goin' On  ·  dancefloor shorthand, lands in two seconds",
+    "Armand Van Helden - You Don't Know Me  ·  big room energy for a sell-out push",
+    "Mary J Blige - Family Affair  ·  crowd-pleaser that matches the mixed-age yard in the clip"
+   ],
    "checklist": [
     {
      "text": "Link sticker: BOOK YOUR TABLE",
      "done": true
+    },
+    {
+     "text": "Add the tables link sticker and tag the location",
+     "done": false
     }
    ],
    "notes": [
     {
      "ts": "2026-08-25",
      "text": "Table-booking CTA, distinct from Tuesday's ticket CTA. Source clip (daytime horsebox bar) is not in the studio folders, so no file copy for the handover."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Filed from Paul's screenshot of his IG draft (IMG_5153, 25 Aug 14:06). Cropped to the story canvas: status bar, the Messenger notification that was covering the top of the frame, the Add a caption overlay and the Your stories bar are all gone. The IG editor buttons down the right edge could NOT be cropped out because the headline runs under them, the word FOR ends at x1050 and the first button starts at x1040, so cutting them would have clipped the text. They are editor UI only and will not appear on the posted story."
     }
    ]
   }

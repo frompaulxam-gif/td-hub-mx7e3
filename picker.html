@@ -298,7 +298,7 @@ document.getElementById("clear").addEventListener("click", () => {
   if (confirm("Remove all slides from the carousel?")) save([]);
 });
 document.getElementById("close").addEventListener("click", () => {
-  if (history.length > 1) history.back(); else close();
+  location.replace("/");   // board restores venue/week/scroll from hub-restore
 });
 load();
 </script>

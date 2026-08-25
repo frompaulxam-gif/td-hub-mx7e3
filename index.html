@@ -7,6 +7,29 @@
 <title>TDG Hub</title>
 <link rel="stylesheet" href="app.css?v=31">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='4' y='4' width='56' height='56' rx='14' fill='%23211a12'/><circle cx='32' cy='32' r='9' fill='%232e6b38'/></svg>">
+<script>
+// Single-window rule: each new hub window broadcasts a claim and every older
+// window closes itself, so relaunching TDG Hub.app never stacks windows.
+// Chrome only lets a window self-close while its history has one entry, hence
+// all internal navigation here uses location.replace().
+(() => {
+  try {
+    const bc = new BroadcastChannel("tdg-hub-window");
+    const me = { ts: Date.now(), id: Math.random().toString(36).slice(2) };
+    let stale = false;
+    bc.onmessage = e => {
+      const c = e.data;
+      if (stale || !c || c.type !== "claim") return;
+      if (c.ts > me.ts || (c.ts === me.ts && c.id > me.id)) {
+        stale = true;
+        window.close();
+        setTimeout(() => { if (!window.closed) location.replace("about:blank"); }, 400);
+      }
+    };
+    bc.postMessage({ type: "claim", ts: me.ts, id: me.id });
+  } catch { /* no BroadcastChannel: fall back to stacking windows */ }
+})();
+</script>
 </head>
 <body>
 <header class="topbar">
