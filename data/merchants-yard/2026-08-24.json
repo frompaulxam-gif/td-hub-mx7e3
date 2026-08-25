@@ -459,8 +459,8 @@
   },
   {
    "id": "story-carnival-moves",
-   "day": "Tuesday",
-   "date": "2026-08-25",
+   "day": "Thursday",
+   "date": "2026-08-27",
    "kind": "story",
    "slot": "Reactive: carnival moves",
    "title": "Reactive: Get your carnival moves ready",
@@ -482,6 +482,10 @@
     {
      "ts": "2026-08-24",
      "text": "Tickets are on Fatsoma, not the website. Website still says Coming Soon, so the link sticker is the only route."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "Swapped with the abroad story per Paul. Also fixes the QC finding that this and the Tuesday grid reel opened on the same shot."
     }
    ]
   },
@@ -508,8 +512,8 @@
   },
   {
    "id": "thu-story-abroad",
-   "day": "Thursday",
-   "date": "2026-08-27",
+   "day": "Tuesday",
+   "date": "2026-08-25",
    "kind": "story",
    "slot": "Reactive story",
    "title": "Abroad? No this is Leicester",
@@ -526,6 +530,10 @@
     {
      "ts": "2026-08-24",
      "text": "Scheduled Thursday per Paul."
+    },
+    {
+     "ts": "2026-08-24",
+     "text": "Swapped to Tuesday per Paul."
     }
    ]
   },
