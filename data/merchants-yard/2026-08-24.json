@@ -411,7 +411,7 @@
    "kind": "story",
    "slot": "Reactive story",
    "title": "Setting up for bank holiday weekend",
-   "status": "changes",
+   "status": "ready",
    "media": [
     "stories/reactive/setting up saturday morning.mp4"
    ],
@@ -433,9 +433,12 @@
     {
      "ts": "2026-08-24",
      "text": "QC flag: side-by-side against the same elevated angle in summer shows a bare tree vs full canopy, and an undecorated yard. Reads as spring footage captioned as bank holiday setup."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Paul: the out-of-season footage flag is fine, clip stays. Cleared changes asked back to ready and removed the alert."
     }
-   ],
-   "alert": "* Footage looks out of season. Tree is sparse, no festoons lit, no LED wall, damp ground, long sleeves. Compare against any summer clip. Paul to confirm or reshoot on the day."
+   ]
   },
   {
    "id": "story-dont-miss-out",

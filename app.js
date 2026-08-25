@@ -31,6 +31,11 @@ const REACTIVE_MENU = [
   { name: "Countdown", prompt: "Countdown sticker to Friday doors, PL fixtures, bank holiday Sunday, season close weekend." },
 ];
 const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready for QC", approved: "approved", scheduled: "\u23F1 scheduled", changes: "changes asked", posted: "✓ posted" };
+// On the client share link the internal QC states mean nothing, so anything
+// not yet scheduled or posted reads simply as "ready" (Paul, 25 Aug 2026).
+const SHARE_STATUS_LABEL = { scheduled: "\u23F1 scheduled", posted: "\u2713 posted" };
+const statusLabel = st =>
+  (window.SHARE ? (SHARE_STATUS_LABEL[st] || "ready") : (STATUS_LABEL[st] || st));
 
 /* ---------- data ---------- */
 
@@ -446,7 +451,7 @@ function makeMini(week, s, g) {
   }
   const st = document.createElement("div");
   st.className = "mini-status " + s.status;
-  st.textContent = STATUS_LABEL[s.status] || s.status;
+  st.textContent = statusLabel(s.status);
   main.append(t, st);
   b.appendChild(main);
   b.addEventListener("click", () => {
@@ -579,7 +584,7 @@ function makeXpost(week, s) {
   slotName.textContent = s.slot;
   const stTag = document.createElement("span");
   stTag.className = "mini-status " + s.status;
-  stTag.textContent = STATUS_LABEL[s.status] || s.status;
+  stTag.textContent = statusLabel(s.status);
   stTag.style.marginLeft = "auto";
   head.append(title, slotName, stTag);
   card.appendChild(head);
