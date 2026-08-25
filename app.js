@@ -563,10 +563,11 @@ function makeXpost(week, s) {
   stTag.style.marginLeft = "auto";
   head.append(title, slotName, stTag);
   card.appendChild(head);
-  if (s.alert) {
+  // guard the type: a bare `alert: true` used to render as the literal "* true"
+  if (typeof s.alert === "string" && s.alert.trim()) {
     const al = document.createElement("div");
     al.className = "xalert";
-    al.textContent = "* " + s.alert;
+    al.textContent = "* " + s.alert.replace(/^\*\s*/, "");
     card.appendChild(al);
   }
 

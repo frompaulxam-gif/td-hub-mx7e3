@@ -706,6 +706,9 @@ body.is-share #links,
 body.is-share #prep,
 body.is-share #ro-pill,
 body.is-share .thread-input,
+body.is-share #keydates,
+body.is-share .xalert,
+body.is-share .mini-alert,
 body.is-share [data-collapse] { display: none !important; }
 body.is-share .wordmark::after { content: " · Merchants Yard"; font-weight: 400; color: var(--ink-mid); }
 body.is-share .week-row { justify-content: center; }

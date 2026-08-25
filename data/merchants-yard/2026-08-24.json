@@ -1,7 +1,7 @@
 {
  "venue": "merchants-yard",
  "week_start": "2026-08-24",
- "label": "W/C Mon 24 Aug 2026 — Merchants Yard only",
+ "label": "W/C Mon 24 Aug 2026, Merchants Yard only",
  "archived": false,
  "key_dates": [
   "Sun 30 Aug: Carnival in the Courtyard, 2pm til midnight, ticketed",
@@ -101,6 +101,10 @@
     {
      "ts": "2026-08-25",
      "text": "Paul challenged Blur - Girls & Boys: it was drafted against the old '90s vs 00s' caption and does not match the poster's genre billing. Swapped for Soul II Soul - Back to Life."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Cleared the stale 'still lists Friday 28' alert: the graphic was rebuilt without Friday on 24 Aug, so the warning no longer applied."
     }
    ],
    "checklist": [
@@ -123,8 +127,7 @@
     "Soul II Soul - Back to Life  ·  RnB singalong with real carnival heritage, straight off the poster's billing",
     "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand",
     "Sister Sledge - He's the Greatest Dancer  ·  disco is on the billing, warm and universal for the weekend"
-   ],
-   "alert": "* VENUE CLOSED FROM FRIDAY. This graphic still lists Friday 28 (The Friday Social) and Saturday 29 (DJ Benzo). Do not post until corrected."
+   ]
   },
   {
    "id": "wed-story-whatson",
@@ -533,7 +536,7 @@
      "text": "Paul: moved Saturday to Friday. Reads better as the Friday feeling that the bank holiday weekend has landed, and Friday had no story at all while Saturday had three, so this also fixes the one-story-a-day minimum. Venue is closed Friday, so it stays anticipation, not a doors story."
     }
    ],
-   "alert": true
+   "alert": "Moved Saturday 29th to Friday 28th (Paul). Re-queue it in the IG app, it is still scheduled for Saturday in there."
   },
   {
    "id": "sun-story-nowork",
