@@ -206,37 +206,6 @@
    "template": null
   },
   {
-   "id": "sun-story-carnival",
-   "date": "2026-08-30",
-   "day": "Sunday",
-   "kind": "story",
-   "slot": "Event day story",
-   "title": "Carnival in the Courtyard - today",
-   "status": "draft",
-   "media": [],
-   "media_kind": "none",
-   "caption": "Carnival in the Courtyard. Bank holiday Sunday, 2pm til midnight.",
-   "alternates": [],
-   "notes": [
-    {
-     "ts": "2026-08-23",
-     "text": "Sister Nancy - Bam Bam is already used on the announce, so it is excluded here. Build this the same way as the Park Life today story once Paul sends footage."
-    }
-   ],
-   "checklist": [
-    {
-     "text": "Bank holiday Sunday, open 2pm, carnival décor and 90s vs 00s anthems",
-     "done": false
-    }
-   ],
-   "template": null,
-   "songs": [
-    "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand, instantly recognisable",
-    "Kevin Lyttle - Turn Me On  ·  hook lands in two seconds",
-    "Shy FX & UK Apache - Original Nuttah  ·  covers the jungle line, drops hard on a reveal"
-   ]
-  },
-  {
    "id": "mon-story-carnival",
    "day": "Monday",
    "date": "2026-08-24",
@@ -342,7 +311,9 @@
    "slot": "Trial reel",
    "title": "Trial reel (Paul's edit)",
    "status": "posted",
-   "media": [],
+   "media": [
+    "grid/tuesday-trial-reel/trial-reel.mp4"
+   ],
    "media_kind": "video",
    "caption": "Paul's trial reel, posting Tuesday. Downloaded copy is in the handover folder.",
    "alternates": [],
