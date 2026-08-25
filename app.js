@@ -137,12 +137,23 @@ async function bootShare() {
   const wk = await (await fetch(`${SHARE.base}data/${SHARE.venue}/${SHARE.week}.json`)).json();
   const skip = new Set((SHARE.hideDays || []).map(d => d.toLowerCase()));
   wk.slots = (wk.slots || []).filter(s => !skip.has((s.day || "").toLowerCase()));
+  // Strip studio-only content at the DATA level, not with CSS: alerts and notes
+  // carry internal instructions and the other venue's name, and hidden text is
+  // still in the page source.
   wk.prep = [];
   wk.links = [];
+  wk.alerts = [];
+  wk.key_dates = [];
+  wk.slots.forEach(s => { delete s.alert; s.notes = []; });
   state.weeks[SHARE.venue] = [wk];
   state.weekIdx[SHARE.venue] = 0;
   document.documentElement.dataset.venue = SHARE.venue;
   document.body.classList.add("is-share");
+  // the venue switcher names the other client in its markup, so remove it
+  // outright. The rest of the chrome is hidden by the is-share CSS, which is
+  // safe because render() still needs those elements to exist.
+  document.querySelectorAll(".venue-switch, .view-switch, #editor, #photo-picker")
+    .forEach(el => el.remove());
   render();
 }
 
