@@ -700,6 +700,34 @@
      "text": "Built by Paul in the Instagram app. Source clip not in the studio folders, so no file copy for the handover. Works because Monday 31st is a bank holiday and the venue is closed, so nobody has work."
     }
    ]
+  },
+  {
+   "id": "tue-story-secure",
+   "day": "Tuesday",
+   "date": "2026-08-25",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Secure your bank holiday weekend",
+   "status": "scheduled",
+   "media": [
+    "../../../Downloads/MY reactive stories/secure your bank holiday weekend.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Ticket CTA with the BANK HOLIDAY TICKETS link sticker. Going out Tuesday afternoon.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "Link sticker: BANK HOLIDAY TICKETS",
+     "done": true
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-08-25",
+     "text": "Paul built and scheduled this in the app. Rebuilt as a file for the handover folder."
+    }
+   ]
   }
  ]
 }
