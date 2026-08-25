@@ -34,7 +34,13 @@ const STATUS_LABEL = { waiting: "waiting on info", draft: "draft", ready: "ready
 
 /* ---------- data ---------- */
 
+// Share mode: the same board, pinned to one venue and one week, chrome stripped,
+// for the link Paul sends the client. Set by share/<name>/index.html before this
+// file loads: { base, venue, week, hideDays: [] }.
+const SHARE = window.SHARE || null;
+
 async function boot() {
+  if (SHARE) return bootShare();
   try {
     const r = await fetch("/api/venues", { signal: AbortSignal.timeout(1500) });
     if (!r.ok) throw 0;
@@ -124,15 +130,32 @@ function curWeek() {
   return ws[state.weekIdx[state.venue]] || null;
 }
 
+async function bootShare() {
+  state.live = false;
+  state.venue = SHARE.venue;
+  state.venues = [{ slug: SHARE.venue, name: SHARE.name || SHARE.venue }];
+  const wk = await (await fetch(`${SHARE.base}data/${SHARE.venue}/${SHARE.week}.json`)).json();
+  const skip = new Set((SHARE.hideDays || []).map(d => d.toLowerCase()));
+  wk.slots = (wk.slots || []).filter(s => !skip.has((s.day || "").toLowerCase()));
+  wk.prep = [];
+  wk.links = [];
+  state.weeks[SHARE.venue] = [wk];
+  state.weekIdx[SHARE.venue] = 0;
+  document.documentElement.dataset.venue = SHARE.venue;
+  document.body.classList.add("is-share");
+  render();
+}
+
 function mediaUrl(week, path, slot) {
-  const base = state.live ? "/media/" : "media/";
+  const base = state.live ? "/media/" : (SHARE ? SHARE.base + "media/" : "media/");
   const v = state.live && slot?._v ? "?v=" + slot._v : "";
   return base + state.venue + "/" + week.week_start + "/" + path.split("/").map(encodeURIComponent).join("/") + v;
 }
 
 function rootUrl(path) {
   const enc = path.split("/").map(encodeURIComponent).join("/");
-  return state.live ? `/root/${state.venue}/${enc}` : `media/${state.venue}/refs/${enc.split("/").pop()}`;
+  if (state.live) return `/root/${state.venue}/${enc}`;
+  return `${SHARE ? SHARE.base : ""}media/${state.venue}/refs/${enc.split("/").pop()}`;
 }
 
 async function patchSlot(slot, payload, quiet) {
@@ -369,15 +392,16 @@ function makeMini(week, s, g) {
     // video: show a real poster frame, with the play glyph over it
     const wrap = document.createElement("div");
     wrap.className = "mini-thumb is-video";
-    if (state.live) {
-      const img = document.createElement("img");
-      img.className = "mini-poster";
-      img.loading = "lazy";
-      img.alt = "";
-      img.src = `/api/poster?venue=${state.venue}&week=${week.week_start}&path=${encodeURIComponent(first)}`;
-      img.addEventListener("error", () => img.remove());
-      wrap.appendChild(img);
-    }
+    // live: ffmpeg on demand. snapshot/share: the .jpg build made beside the proxy.
+    const img = document.createElement("img");
+    img.className = "mini-poster";
+    img.loading = "lazy";
+    img.alt = "";
+    img.src = state.live
+      ? `/api/poster?venue=${state.venue}&week=${week.week_start}&path=${encodeURIComponent(first)}`
+      : mediaUrl(week, first.replace(/\.[^.]+$/, ".jpg"), s);
+    img.addEventListener("error", () => img.remove());
+    wrap.appendChild(img);
     const play = document.createElement("span");
     play.className = "mini-play";
     play.textContent = "▶";
@@ -894,6 +918,9 @@ function makeMedia(week, s) {
     const v = document.createElement("video");
     v.src = mediaUrl(week, path, s);
     v.controls = true; v.playsInline = true; v.preload = "metadata";
+    // snapshot/share builds ship a poster jpg beside each proxy, so a video
+    // reads as its opening frame instead of a black rectangle
+    if (!state.live) v.poster = mediaUrl(week, path.replace(/\.[^.]+$/, ".jpg"), s);
     m.appendChild(v);
   } else {
     const img = document.createElement("img");

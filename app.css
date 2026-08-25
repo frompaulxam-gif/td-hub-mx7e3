@@ -691,3 +691,21 @@ button:focus-visible, [contenteditable]:focus-visible, input:focus-visible, sele
 }
 
 .xbtn.scheduled.is-on { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+
+/* ---------- share mode ----------
+   The client link runs the real board, pinned to one venue and one week.
+   Everything that only makes sense inside the studio is hidden here rather
+   than duplicated into a separate template. */
+body.is-share .venue-switch,
+body.is-share .view-switch,
+body.is-share #week-prev,
+body.is-share #week-next,
+body.is-share #week-download,
+body.is-share #week-progress,
+body.is-share #links,
+body.is-share #prep,
+body.is-share #ro-pill,
+body.is-share .thread-input,
+body.is-share [data-collapse] { display: none !important; }
+body.is-share .wordmark::after { content: " · Merchants Yard"; font-weight: 400; color: var(--ink-mid); }
+body.is-share .week-row { justify-content: center; }
