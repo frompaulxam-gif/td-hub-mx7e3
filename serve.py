@@ -2,7 +2,7 @@
 """TDG Hub local server.
 
 Serves the QC site, venue media, and write-back APIs.
-Run:  python3 /Users/paulventura/tdg-hub/serve.py   (port 4870)
+Run:  python3 /Users/paulventura/TDG/hub/serve.py   (port 4870)
 
 APIs
   GET  /api/venues                       venue list + current week
@@ -17,6 +17,7 @@ import re
 import shutil
 import subprocess
 import sys
+import threading
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs, unquote
 
@@ -24,8 +25,8 @@ HUB = os.path.dirname(os.path.abspath(__file__))
 PORT = 4870
 
 VENUES = {
-    "merchants-yard": {"root": "/Users/paulventura/merchantsyard_tdg", "name": "Merchants Yard"},
-    "moonshine": {"root": "/Users/paulventura/moonshine_tdg", "name": "Moonshine"},
+    "merchants-yard": {"root": "/Users/paulventura/TDG/merchants-yard", "name": "Merchants Yard"},
+    "moonshine": {"root": "/Users/paulventura/TDG/moonshine", "name": "Moonshine"},
 }
 
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -457,6 +458,24 @@ class Handler(SimpleHTTPRequestHandler):
             return self._patch_slot(body)
         if u.path == "/api/week":
             return self._patch_week(body)
+        if u.path == "/api/talking-head":
+            # save the QC page's per-line picks into the week folder
+            venue, week = body.get("venue"), body.get("week")
+            if venue not in VENUES:
+                return self._json({"error": "unknown venue"}, 404)
+            try:
+                wdir = week_dir(venue, week)
+            except (ValueError, TypeError):
+                return self._json({"error": "unknown week"}, 404)
+            os.makedirs(os.path.join(wdir, "renders"), exist_ok=True)
+            out = os.path.join(wdir, "renders", "talking-head-selections.json")
+            # atomic replace: concurrent saves from rapid taps must never
+            # interleave into a half-written file
+            tmp = out + f".{os.getpid()}.{threading.get_ident()}.tmp"
+            with open(tmp, "w") as f:
+                json.dump(body.get("selections") or {}, f, indent=2, ensure_ascii=False)
+            os.replace(tmp, out)
+            return self._json({"ok": True})
         if u.path == "/api/render":
             return self._render(body)
         if u.path == "/api/setbg":

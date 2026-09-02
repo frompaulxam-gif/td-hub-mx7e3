@@ -18,7 +18,8 @@ import math
 import re
 import sys
 import urllib.request
-from datetime import date, datetime, timedelta
+from datetime import timedelta
+from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -56,11 +57,6 @@ S = OUT_SCALE * SS  # canvas units per reference unit
 BORDER = 3.0
 CORNER_R = 10.5
 RULE_XS = (217.5, 433.5)   # centres of the two vertical rules
-# the card can be 2 or 3 columns; values measured off the BBC reference
-GEOM = {
-    3: {"ref_w": 654, "lefts": (3.0, 219.5, 435.5), "rules": (217.5, 433.5)},
-    2: {"ref_w": 438, "lefts": (3.0, 219.5),        "rules": (217.5,)},
-}
 RULE_W = 2.0
 RULE_Y0, RULE_Y1 = 3.0, 178.0
 COL_LEFTS = (3.0, 219.5, 435.5)   # interior left edge of each column
@@ -271,11 +267,7 @@ def draw_icon(canvas, col_left, kind):
 # ---------------------------------------------------------------- card
 
 def render(forecast):
-    g = GEOM.get(len(forecast))
-    if not g:
-        sys.exit(f"error: card geometry only defined for {sorted(GEOM)} columns")
-    ref_w, col_lefts, rule_xs = g["ref_w"], g["lefts"], g["rules"]
-    W, H = ref_w * S, REF_H * S
+    W, H = REF_W * S, REF_H * S
     canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(canvas)
 
@@ -286,7 +278,7 @@ def render(forecast):
                         radius=(CORNER_R - BORDER) * S, fill=WHITE)
 
     # vertical rules
-    for rx in rule_xs:
+    for rx in RULE_XS:
         d.rectangle([(rx - RULE_W / 2) * S, RULE_Y0 * S,
                      (rx + RULE_W / 2) * S, RULE_Y1 * S], fill=RULE_GREY)
 
@@ -298,7 +290,7 @@ def render(forecast):
     f_hi = fit_font(bold_path, bold_idx, HI_INK_H, "3")
     f_lo = fit_font(reg_path, reg_idx, LO_INK_H, "1")
 
-    for col_left, day in zip(col_lefts, forecast):
+    for col_left, day in zip(COL_LEFTS, forecast):
         # header: bold day + grey ordinal
         right = draw_text_ink(d, (col_left + TEXT_PAD_X) * S, HEADER_INK_TOP * S,
                               day["label"], f_day, DARK)
@@ -313,7 +305,7 @@ def render(forecast):
         draw_text_ink(d, (col_left + TEMPS_RIGHT) * S, LO_INK_TOP * S,
                       f"{day['lo']}°", f_lo, DARK, align="right")
 
-    return canvas.resize((ref_w * OUT_SCALE, REF_H * OUT_SCALE), Image.LANCZOS)
+    return canvas.resize((REF_W * OUT_SCALE, REF_H * OUT_SCALE), Image.LANCZOS)
 
 
 # ---------------------------------------------------------------- output path
@@ -346,35 +338,16 @@ def main():
     ap = argparse.ArgumentParser(description="BBC-style Thu/Fri/Sat weather sticker for Leicester")
     ap.add_argument("--venue", choices=sorted(VENUE_ROOTS), default="merchants-yard")
     ap.add_argument("--out", type=Path, default=None, help="explicit output PNG path")
-    ap.add_argument("--days", default=None,
-                    help="ISO dates, comma separated, instead of the automatic Thu/Fri/Sat")
-    ap.add_argument("--set", action="append", default=[], metavar="DATE=HI/LO/ICON",
-                    help="override a day, e.g. 2026-09-05=20/12/partly. Repeatable. "
-                         "Use when the venue is going off a different forecast to open-meteo.")
     args = ap.parse_args()
 
     today = datetime.now(ZoneInfo("Europe/London")).date()
-    if args.days:
-        days = [date.fromisoformat(x.strip()) for x in args.days.split(",") if x.strip()]
-    else:
-        days = pick_days(today)
+    days = pick_days(today)
     forecast = fetch_forecast(days)
-
-    for spec in args.set:
-        key, _, vals = spec.partition("=")
-        hi, lo, icon = (vals.split("/") + [None, None, None])[:3]
-        for f in forecast:
-            if f["date"].isoformat() == key.strip():
-                if hi: f["hi"] = int(hi)
-                if lo: f["lo"] = int(lo)
-                if icon: f["icon"] = icon.strip()
-                f["overridden"] = True
 
     print("Leicester forecast (open-meteo):")
     for f in forecast:
         print(f"  {f['label']} {f['date'].isoformat()}  hi {f['hi']}°  lo {f['lo']}°  "
-              f"code {f['code']} -> {f['icon']}"
-              + ("   [overridden]" if f.get("overridden") else ""))
+              f"code {f['code']} -> {f['icon']}")
 
     img = render(forecast)
 

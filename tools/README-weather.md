@@ -1,7 +1,7 @@
 # weather_sticker.py
 
 Generates a transparent-background PNG weather card (BBC-forecast style, matching
-`merchantsyard_tdg/HUB/refs/weathercheckaa-final.png`) for Leicester, covering
+`merchants-yard/HUB/refs/weathercheckaa-final.png`) for Leicester, covering
 Thursday / Friday / Saturday of the current week. Output is 1308x374 (2x the
 reference), RGBA with transparency outside the rounded corners — drop it straight
 onto an Instagram story.
@@ -9,7 +9,7 @@ onto an Instagram story.
 ## Run
 
 ```
-python3 /Users/paulventura/tdg-hub/tools/weather_sticker.py
+python3 /Users/paulventura/TDG/hub/tools/weather_sticker.py
 ```
 
 No pip installs needed (stdlib + Pillow, macOS system Helvetica). Fetches live
@@ -31,7 +31,7 @@ flag) under the venue root, in a `stories/` subfolder (created if missing):
 <venue root>/WEEKS/<newest week>/stories/weather-sticker-<thursday YYYY-MM-DD>.png
 ```
 
-e.g. `/Users/paulventura/merchantsyard_tdg/WEEKS/2026-08-17/stories/weather-sticker-2026-08-20.png`
+e.g. `/Users/paulventura/TDG/merchants-yard/WEEKS/2026-08-17/stories/weather-sticker-2026-08-20.png`
 
 ## Behaviour notes
 

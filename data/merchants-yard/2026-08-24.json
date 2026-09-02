@@ -20,6 +20,10 @@
    "folder": "/Users/paulventura/Downloads/Merchants Yard - week 24 Aug"
   },
   {
+   "label": "Talking head QC",
+   "url": "/talking-head.html?venue=merchants-yard&week=2026-08-24"
+  },
+  {
    "label": "Photos drive",
    "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
   },
@@ -105,6 +109,10 @@
     {
      "ts": "2026-08-25",
      "text": "Cleared the stale 'still lists Friday 28' alert: the graphic was rebuilt without Friday on 24 Aug, so the warning no longer applied."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Paul confirmed CARNIVAL DANCERS at the Carnival (added to the talking head script). Not on the poster or the website, so it is usable in captions and video now that Paul is the source, but do not put it on a rendered graphic without checking he wants it there."
     }
    ],
    "checklist": [
@@ -169,16 +177,23 @@
     "grid/friday-post/yard-pan.mp4"
    ],
    "media_kind": "video",
-   "caption": "Two days until the yard turns carnival. 🎪\n\nCarnival in the Courtyard, bank holiday Sunday 30th August. 2pm til midnight.",
+   "caption": "Afternoon in the sun or midnight on the dance floor. Which one are you? 🎪\n\nCarnival in the Courtyard does both. Bank holiday Sunday 30th August, 2pm till midnight.\n\nTickets and tables on our website.\n\nSee you in the yard.",
    "alternates": [
-    "This, but with carnival decor and the biggest 90s vs 00s anthems.\n\nBank holiday Sunday 30th August.",
-    "Sunday, this whole place goes carnival. 🎪\n\n2pm til midnight.",
-    "One more sleep and a bit. Carnival in the Courtyard, bank holiday Sunday."
+    "Day or night? 🎪\n\nCarnival in the Courtyard, bank holiday Sunday. 2pm till midnight, so you don't have to choose.\n\nTickets and tables on our website.",
+    "Are you a 2pm in the sunshine person, or a midnight on the dance floor person? 🎪\n\nCarnival in the Courtyard runs ten hours, so be both.\n\nBank holiday Sunday 30th, and no work on Monday. Tickets and tables on our website."
    ],
    "notes": [
     {
      "ts": "2026-08-24",
      "text": "Paul's clip, posting Friday. 6s daylight pan across the full yard, 4K portrait, already BT.709 so no HDR fix needed. Drives to Sunday's Carnival since Friday and Saturday are closed."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Paul sent a re-export of this clip (Downloads/0824 (1).mp4) for captions. Frames are pixel identical to the filed yard-pan.mp4, same 5.93s and 2160x3840, so nothing new was filed. Three caption options drafted, plus songs. This also looks like the answer to the open Friday alert, the yard pan is the grid post, but leaving the alert up until Paul says so."
+    },
+    {
+     "ts": "2026-08-25",
+     "text": "Paul: wanted the day or night, which one are you device instead of the countdown. Rewritten in the style of the 5 Aug recap-mood caption (3pm in the sun or 11pm on the dance floor), fresh wording not the banked line. Fits the footage, which runs daylight into dusk."
     }
    ],
    "checklist": [
@@ -189,10 +204,11 @@
    ],
    "template": null,
    "songs": [
-    "Chaka Demus & Pliers - Murder She Wrote  ·  carnival shorthand, lands instantly",
-    "Kevin Lyttle - Turn Me On  ·  hook in two seconds, pure bank holiday",
-    "Sister Sledge - He's the Greatest Dancer  ·  warm and sunny, matches the daylight pan"
-   ]
+    "Kevin Lyttle - Turn Me On  ·  soca carnival energy, recognised in two seconds",
+    "Dawn Penn - You Don't Love Me (No No No)  ·  reggae is on the Carnival billing, instant hit of recognition",
+    "Lumidee - Never Leave You (Uh Oooh)  ·  summer bank holiday feeling, sits well under fast cuts"
+   ],
+   "caption_ref": "2026-08-05:recap-mood"
   },
   {
    "id": "sat-story-doors",

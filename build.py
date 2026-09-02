@@ -6,8 +6,8 @@ proxies of all referenced media into media/, and writes data/manifest.json.
 The live site (serve.py) never uses these; they exist only so the published
 read-only snapshot can show previews without shipping 100MB originals.
 
-Run:  python3 /Users/paulventura/tdg-hub/build.py          (build only)
-      python3 /Users/paulventura/tdg-hub/build.py --push   (build + commit + push)
+Run:  python3 /Users/paulventura/TDG/hub/build.py          (build only)
+      python3 /Users/paulventura/TDG/hub/build.py --push   (build + commit + push)
 """
 import json
 import os
@@ -17,8 +17,8 @@ import sys
 
 HUB = os.path.dirname(os.path.abspath(__file__))
 VENUES = {
-    "merchants-yard": {"root": "/Users/paulventura/merchantsyard_tdg", "name": "Merchants Yard"},
-    "moonshine": {"root": "/Users/paulventura/moonshine_tdg", "name": "Moonshine"},
+    "merchants-yard": {"root": "/Users/paulventura/TDG/merchants-yard", "name": "Merchants Yard"},
+    "moonshine": {"root": "/Users/paulventura/TDG/moonshine", "name": "Moonshine"},
 }
 IMG_EXT = {".jpg", ".jpeg", ".png", ".webp"}
 VID_EXT = {".mp4", ".mov", ".m4v", ".webm"}

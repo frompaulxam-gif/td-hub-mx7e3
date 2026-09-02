@@ -1,0 +1,981 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-08-31",
+ "label": "W/C Mon 31 Aug 2026, Merchants Yard only",
+ "archived": false,
+ "key_dates": [
+  "Mon 31 Aug: CLOSED (bank holiday Monday), nothing posted",
+  "Sat 5 Sep: MY Presents: DJ Benzo, 2pm til midnight",
+  "Sun 6 Sep: closed, ordinary Sunday",
+  "Sat 19 + 26 Sep: Oktoberfest, tickets Coming Soon",
+  "Sat 3 Oct: MY Closing Weekend, Oktoberfest"
+ ],
+ "alerts": [
+  "* One event week. Saturday 5 Sept only, ordinary Sundays are closed and Fridays are finished.",
+  "* The website's opening hours still say Friday 5pm til midnight. That is wrong now, worth Chelsea fixing."
+ ],
+ "links": [
+  {
+   "label": "📁 Week folder",
+   "folder": "/Users/paulventura/Downloads/Merchants Yard - week 31 Aug"
+  },
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  }
+ ],
+ "prep": [
+  {
+   "text": "Scroll for a trend to recreate for Wednesday and Friday, send me the links",
+   "done": false
+  },
+  {
+   "text": "Upload the Carnival weekend photos and videos to the Merchants Yard photos drive",
+   "done": false
+  },
+  {
+   "text": "Pick 4 to 8 photos from the delivery for the Thursday kiss faces carousel",
+   "done": false
+  },
+  {
+   "text": "iPhone clips from 22 Aug and Carnival photos filed and scanned, story clips symlinked into stories/clips",
+   "done": true
+  }
+ ],
+ "slots": [
+  {
+   "kind": "grid",
+   "status": "ready",
+   "media": [
+    "grid/whats-on/slide-01.png",
+    "grid/whats-on/slide-02.png"
+   ],
+   "media_kind": "carousel",
+   "caption": "September's here. Summer's not done yet ☀️\n\n🎤 Saturday - MY Presents: DJ Benzo. A journey through the decades, music you'll know, music you'll sing, music you'll dance to.\n\n2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [
+    "September's here ☀️\n\n🎤 Saturday - MY Presents: DJ Benzo. A journey through the decades.\n\n2pm til midnight. Tables via www.merchantsyardleicester.co.uk",
+    "September's here. Summer's not done yet ☀️\n\nDJ Benzo takes Saturday. Every decade, every song you know the words to.\n\n2pm til midnight, tables on our website.\n\nSee you in the yard."
+   ],
+   "songs": [
+    "Earth, Wind & Fire - September  ·  it is literally September and the night is billed as a journey through the decades",
+    "Daft Punk - One More Time  ·  the 00s end of the decades promise, builds well under a swipe",
+    "Blondie - Heart of Glass  ·  covers the older end, cooler than a straight party track"
+   ],
+   "checklist": [
+    {
+     "text": "Unpin last week's What's On, pin this one",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Built from the website line-up: Saturday 5 Sept, DJ Benzo. Ordinary Sundays are closed so this is a one event week and the layout was recentred. Photo B picked by Paul, shade lightened 35 percent (shadeScale 0.65)."
+    }
+   ],
+   "template": {
+    "name": "whats-on",
+    "layout": "WEEKS/2026-08-31/renders/whats-on.layout.json",
+    "content": "WEEKS/2026-08-31/renders/whats-on.content.json",
+    "out": "WEEKS/2026-08-31/grid/whats-on/"
+   },
+   "id": "tue-grid-whatson",
+   "date": "2026-09-01",
+   "day": "Tuesday",
+   "slot": "What's On carousel",
+   "title": "What's on this weekend"
+  },
+  {
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "stories/whats-on-story/whats-on-story.png"
+   ],
+   "media_kind": "image",
+   "caption": "Repost the What's On to story, the day after the grid post.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-31/renders/whats-on-story.layout.json",
+    "content": "WEEKS/2026-08-31/renders/whats-on-story.content.json",
+    "out": "WEEKS/2026-08-31/stories/whats-on-story/whats-on-story.png"
+   },
+   "id": "wed-story-whatson",
+   "date": "2026-09-02",
+   "day": "Wednesday",
+   "slot": "Repost the grid post",
+   "title": "What's On story (9:16)"
+  },
+  {
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Send me the reel link and I will write the shot by shot recreation brief.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Waiting on Paul: scroll for a trend and send the link. That link IS the brief trigger."
+    }
+   ],
+   "template": null,
+   "id": "wed-grid-flex",
+   "date": "2026-09-02",
+   "day": "Wednesday",
+   "slot": "Flexible pick",
+   "title": "Flexible pick - waiting on a trend link"
+  },
+  {
+   "kind": "grid",
+   "status": "draft",
+   "media": [],
+   "media_kind": "carousel",
+   "caption": "Give us a kiss. 😘\n\nLast weekend in the yard, and you lot did not hold back.\n\nSaturday from 2pm. Carnival in the Courtyard was one for the books.\n\nTables are available via www.merchantsyardleicester.co.uk",
+   "alternates": [],
+   "songs": [
+    "Calvin Harris & Dua Lipa - One Kiss  ·  house leaning so it fits the venue, known in two seconds",
+    "Prince - Kiss  ·  the definitive one, funky and full of character",
+    "Doja Cat - Kiss Me More  ·  the current option, playful RnB lane"
+   ],
+   "checklist": [
+    {
+     "text": "Confirm carousel order and whether it is all four or mixed with crowd shots",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Paul is doing a kiss faces carousel from the Carnival weekend delivery. Photos not filed yet, waiting on him to drop the folder."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Delivery 30.08.26 filed and scanned on Paul's say-so: 47 photos from Carnival night, now in HUB/deliveries/Merchants Yard 30.08.26 with a _SCAN.md. Shortlist for the carousel: LV400722, LV401140, LV400719, LV401121, LV400826, LV401065, LV401215, LV400869. Flags: 19 of 47 are black and white, and the LED wall reads MOONSHINE in LV400769, LV400770 and LV400890."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Paul picked LV400950, LV400969, LV400756, LV401140. All four are dancer shots, so the dancers are the story rather than the crowd. Two are black and white (950, 969) and two colour (756, 1140): he is happy with the mono, so drop my earlier flag about asking for colour versions."
+    }
+   ],
+   "template": null,
+   "id": "thu-grid-photos",
+   "date": "2026-09-03",
+   "day": "Thursday",
+   "slot": "Weekend photos carousel",
+   "title": "Carnival weekend photos"
+  },
+  {
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Send me the reel link and I will write the recreation brief.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Venue is closed Fridays now, so this is a content only slot, not a doors post."
+    }
+   ],
+   "template": null,
+   "id": "fri-grid-trend",
+   "date": "2026-09-04",
+   "day": "Friday",
+   "slot": "Flexible trend",
+   "title": "Flexible trend - waiting on a link"
+  },
+  {
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Paul's Saturday morning doors story.\n\nIn the app: tag the Merchants Yard location and add the tables link sticker.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [
+    {
+     "text": "MY Presents: DJ Benzo, doors 2pm",
+     "done": false
+    }
+   ],
+   "notes": [],
+   "template": null,
+   "id": "sat-story-doors",
+   "date": "2026-09-05",
+   "day": "Saturday",
+   "slot": "Doors open story",
+   "title": "Saturday doors open story"
+  },
+  {
+   "kind": "story",
+   "status": "approved",
+   "media": [
+    "stories/final/thu 3 still not over sunday.jpg"
+   ],
+   "media_kind": "image",
+   "caption": "Photo story, no video of Carnival exists so a still is the honest asset.\n\nOn screen: Still not over Sunday.\nSecond line: Back Saturday, 2pm.\n\nLV401140 first, LV400722 as the alternate.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: Best of the week. You have the footage and nobody has seen most of it yet."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Was 'Carnival recap clip'. There is no Carnival video in either folder, only the photographer stills, so this is a photo story."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 1: KEEP. Mockup attached as reference; post the raw clip and build the sticker in the app to match."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ],
+   "template": null,
+   "id": "reactive-1",
+   "date": "2026-09-03",
+   "day": "Thursday",
+   "slot": "Reactive story",
+   "title": "Still not over Sunday (Carnival photo)",
+   "reference": "stories/final/thu 3 still not over sunday.orig.jpg",
+   "reference_label": "Before the text"
+  },
+  {
+   "kind": "story",
+   "status": "approved",
+   "media": [
+    "stories/final/thu 2 four saturdays left.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "COUNTDOWN sticker to Saturday 2pm over the blue sky wide.\n\nOn screen: Four Saturdays left this season.\nSecond line: Do not waste them.\n\nTrue count: 5, 12, 19, 26 Sept. Season closes Sat 26 Sep.",
+   "alternates": [],
+   "songs": [
+    "Corona - Rhythm of the Night  ·  big, sunny, instantly known"
+   ],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: Genuine urgency, and true. Checked against the website line-up."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Blue sky packed yard wide from 22 Aug. The sunniest establishing shot in the set."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 1: KEEP. Mockup attached as reference; post the raw clip and build the sticker in the app to match."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ],
+   "template": null,
+   "id": "reactive-2",
+   "date": "2026-09-03",
+   "day": "Thursday",
+   "slot": "Reactive story",
+   "title": "Four Saturdays left",
+   "reference": "stories/final/thu 2 four saturdays left.orig.jpg",
+   "reference_label": "Before the text"
+  },
+  {
+   "kind": "story",
+   "status": "approved",
+   "media": [
+    "stories/final/wed 2 decades.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "POLL sticker on the DJ clip.\n\nOn screen: Saturday. DJ Benzo, a journey through the decades.\nQuestion: Which decade does he go hardest on?\nOptions: 70s / 80s / 90s / 00s\n\nScreenshot the result Friday and send it to Benzo, it feeds his set.",
+   "alternates": [],
+   "songs": [
+    "Bee Gees - Stayin' Alive  ·  70s opener, sets the decades game up in two seconds"
+   ],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: Poll answers feed Saturday's set and next week's captions."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Upgraded from the Guess the decade idea. Clip is the DJ at the swirl screen from Park Life night, 22 Aug iPhone set."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 1: KEEP. Mockup attached as reference; post the raw clip and build the sticker in the app to match."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ],
+   "template": null,
+   "id": "reactive-3",
+   "date": "2026-09-03",
+   "day": "Wednesday",
+   "slot": "Reactive story",
+   "title": "Poll: which decade does Benzo go hardest on",
+   "reference": "stories/final/wed 2 decades.orig.jpg",
+   "reference_label": "Before the text"
+  },
+  {
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "stories/weather-news/weather-sticker-on-clip.mp4",
+    "stories/weather-sticker-sat-sun.png"
+   ],
+   "media_kind": "video",
+   "caption": "Ready to post as is: the sticker is burned onto the crowd clip.\n\nSat 20/12, Sun 24/13. The transparent PNG is attached too if you would rather place it yourself in the app.\n\nIn the app: tag the Merchants Yard location.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: Reactive only, never a fixed slot."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Paul: Saturday and Sunday only, sunny icons, temperatures corrected to his forecast. open-meteo gave Sat 19/12 and Sun 24/15 with cloud codes, his source (BBC) gives Sat 20/12 and Sun 24/13 sunny spells. Overridden to match his. Tool now does 2 column cards and takes --days and --set."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Burned onto '20.15 crowd mingling under three lions crest (4875).MOV'. Source is 3840x2160 with a -90 rotation flag so it decodes portrait; output is native 2160x3840, audio kept."
+    }
+   ],
+   "template": null,
+   "id": "reactive-4",
+   "date": "2026-09-03",
+   "day": "Thursday",
+   "slot": "Reactive story",
+   "title": "Reactive: Weather check"
+  },
+  {
+   "kind": "story",
+   "status": "approved",
+   "media": [
+    "stories/final/fri 1 tables are going.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "LINK sticker to merchantsyardleicester.co.uk over the horsebox bar crowd.\n\nOn screen: Saturday tables are going.\nThe only hard sell of the week, keep it to this one.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: The only hard sell story of the week, keep it to one."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Horsebox bar wide under festoons, 22 Aug."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 1: KEEP. Mockup attached as reference; post the raw clip and build the sticker in the app to match."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ],
+   "template": null,
+   "id": "reactive-5",
+   "date": "2026-09-04",
+   "day": "Friday",
+   "slot": "Reactive story",
+   "title": "Tables are going",
+   "reference": "stories/final/fri 1 tables are going.orig.jpg",
+   "reference_label": "Before the text"
+  },
+  {
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Paul shoots this on the day: chalkboard, kegs, festoons coming on, sound check. The venue waking up.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: Cheap to shoot, always performs, and it is yours before the night gets busy."
+    }
+   ],
+   "template": null,
+   "id": "reactive-6",
+   "date": "2026-09-05",
+   "day": "Saturday",
+   "slot": "Reactive story",
+   "title": "Reactive: Setup before doors"
+  },
+  {
+   "kind": "story",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Every tag and mention from Carnival weekend, reposted through the week.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Why this one: Free content and it makes the people who came feel seen."
+    }
+   ],
+   "template": null,
+   "id": "reactive-7",
+   "date": "",
+   "day": "Any day",
+   "slot": "Reactive story",
+   "title": "Reactive: Reshare the tags"
+  },
+  {
+   "id": "story-weather-news",
+   "date": "2026-09-02",
+   "day": "Wednesday",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Weather news card",
+   "status": "ready",
+   "media": [
+    "stories/weather-news/weather-news-story.png"
+   ],
+   "media_kind": "image",
+   "caption": "News style card for the weekend weather.\n\nIn the app: tag the Merchants Yard location, add the tables link sticker.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-08-31/renders/weather-news-story.layout.json",
+    "content": "WEEKS/2026-08-31/renders/weather-news-story.content.json",
+    "out": "WEEKS/2026-08-31/stories/weather-news/weather-news-story.png"
+   },
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Paul asked for a news style story off a Daily Star heatwave post. CHECKED FIRST: the Met Office is publicly pushing back on those headlines, saying a return to exceptional heat 'does not appear to be the most likely outcome' and that a heatwave is 'far from certain'. Local forecast for Sat 5 Sept is 20 degrees, which is below the 25 degree Leicestershire heatwave threshold. So the card carries the real forecast instead of the heatwave claim. If Paul still wants the heatwave angle it has to be framed as what the papers are saying, not as fact."
+    }
+   ]
+  },
+  {
+   "id": "story-news-card",
+   "date": "2026-09-02",
+   "day": "Wednesday",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Met Office verdict news card",
+   "status": "ready",
+   "media": [
+    "stories/news-card/heatwave-news-card.png"
+   ],
+   "media_kind": "image",
+   "caption": "Unbranded news card, no Merchants Yard logo. React to it in the app.\n\nSuggested line over the top: sunny spells and 20 degrees will do us. Saturday, 2pm.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Headline is the Daily Star's, credited on the card. Met Office is publicly disputing these headlines and Leicester is forecast 20 degrees Saturday, below the 25 degree heatwave threshold, so the credit line matters: it reads as what a paper said, not as something Merchants Yard is claiming. Background is a deliberate abstract heat gradient, NOT a drawn UK forecast map, because a made up map would imply real Met Office data."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Paul picked option I: 'Met Office verdict: more warm spells to come'. Accurate against the Metro piece, the Met Office long range forecast predicts brief warm or very warm spells early September. Deliberately no 25C figure: that is WX Charts for SOUTHERN England on 5 Sept, and Leicester is forecast 20C."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Background upscaled via Google Flow (Nano Banana 2, 0 credits). Winner crop-v1 measured 0.987 correlation against the real WX Charts map, so the geography is resolved rather than redrawn, and no labels, grid lines or invented coastline appeared. The full-map runs scored 0.29 to 0.60 and were discarded: forcing a 1.9:1 landscape map into Flow's 3:4 made it reframe and reinvent the forecast. Headline also reduced 74 to 58 for phone safety."
+    },
+    {
+     "ts": "2026-09-01",
+     "text": "Font switched from Inter Bold to Poppins SemiBold to match the Daily Star reference card. Identified by letterform, not guessed: the reference has a single-storey geometric 'a', which rules out Inter and DM Sans and points to Poppins. SemiBold matches the reference weight, Bold read too heavy. Note this does NOT break the brand rule about Poppins being the kinda-chic set only, because this card is deliberately unbranded and is meant to read as a news outlet, not as Merchants Yard."
+    }
+   ]
+  },
+  {
+   "id": "story-song-request",
+   "date": "2026-09-05",
+   "day": "Saturday",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Question: one song Benzo has to play",
+   "status": "approved",
+   "media": [
+    "stories/final/sat 1 song request.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "QUESTION sticker over hands in the air at the DJ.\n\nOn screen: One song Benzo HAS to play tonight.\n\nPost at midday. Screenshot the answers at 6pm and hand them to Benzo, he can drop a couple in and shout the names.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-01",
+     "text": "Playbook: poll answers feed the DJ. This is the direct version of that."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 1: KEEP. Mockup attached as reference; post the raw clip and build the sticker in the app to match."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ],
+   "reference": "stories/final/sat 1 song request.orig.jpg",
+   "reference_label": "Before the text"
+  },
+  {
+   "id": "story-quiz-doors",
+   "date": "2026-09-02",
+   "day": "Wednesday",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Quiz: doors open Saturday at",
+   "status": "approved",
+   "media": [
+    "stories/final/wed 1 quick one.mp4"
+   ],
+   "media_kind": "video",
+   "reference": "stories/final/wed 1 quick one.orig.jpg",
+   "reference_label": "Before the text",
+   "caption": "QUIZ sticker.\n\nOn screen: Quick one.\nQuestion: Doors open Saturday at\nOptions: 12pm / 2pm / 4pm. Correct answer 2pm.\n\nTeaches the door time without a graphic.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 2: KEEP. Post the raw clip, build the sticker in the app to match the mockup."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ]
+  },
+  {
+   "id": "story-poll-table",
+   "date": "2026-09-03",
+   "day": "Thursday",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Poll: booked a table or winging it",
+   "status": "approved",
+   "media": [
+    "stories/final/thu 1 how are you doing it.mp4"
+   ],
+   "media_kind": "video",
+   "reference": "stories/final/thu 1 how are you doing it.orig.jpg",
+   "reference_label": "Before the text",
+   "caption": "POLL sticker.\n\nOn screen: Saturday. How are you doing it?\nQuestion: Be honest\nOptions: Booked a table / Winging it\n\nFollow it Friday with the Tables are going story.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 2: KEEP. Post the raw clip, build the sticker in the app to match the mockup."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ]
+  },
+  {
+   "id": "story-funny-one-drink",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "One drink, they said",
+   "status": "approved",
+   "media": [
+    "stories/final/any 1 one drink they said.mp4"
+   ],
+   "media_kind": "video",
+   "reference": "stories/final/any 1 one drink they said.orig.jpg",
+   "reference_label": "Before the text",
+   "caption": "Caption doing the work, no sticker.\n\nOn screen: One drink, they said.\nSecond line, lower: Two hours ago.\n\nKeep the second line clear of faces in the app.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 2: KEEP. Post the raw clip, build the sticker in the app to match the mockup."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ]
+  },
+  {
+   "id": "story-reminder-benzo",
+   "date": "2026-09-02",
+   "day": "Wednesday",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reminder sticker: DJ Benzo",
+   "status": "approved",
+   "media": [
+    "stories/final/wed 3 set a reminder.mp4"
+   ],
+   "media_kind": "video",
+   "reference": "stories/final/wed 3 set a reminder.orig.jpg",
+   "reference_label": "Before the text",
+   "caption": "REMINDER sticker (Instagram sends a notification on the day).\n\nOn screen: Set a reminder. You will forget.\nEvent: MY Presents: DJ Benzo\nWhen: Sat 5 Sep, 2pm till midnight",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 2: KEEP. Post the raw clip, build the sticker in the app to match the mockup."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ]
+  },
+  {
+   "id": "story-addyours-summer",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Add yours: best photo you took here",
+   "status": "approved",
+   "media": [
+    "stories/final/any 2 your summer in the yard.mp4"
+   ],
+   "media_kind": "video",
+   "reference": "stories/final/any 2 your summer in the yard.orig.jpg",
+   "reference_label": "Before the text",
+   "caption": "ADD YOURS sticker.\n\nOn screen: Your summer in the yard.\nPrompt: Best photo you took here\n\nFollowers add their own photo to the chain, each one shows up as a story on their account with the prompt attached. Reshare the best ones.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 2: KEEP. Post the raw clip, build the sticker in the app to match the mockup."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    }
+   ]
+  },
+  {
+   "id": "faq-f01-hours",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "FAQ story",
+   "title": "FAQ: What are your opening hours?",
+   "status": "approved",
+   "media": [
+    "stories/faq/f01d-hours.png"
+   ],
+   "media_kind": "image",
+   "reference": "stories/faq/f01d-hours.orig.jpg",
+   "reference_label": "Photo before the card",
+   "caption": "FAQ card, finished graphic. Source: merchantsyardleicester.co.uk FAQ section.\n\nWhat are your opening hours?\nSaturdays and bank holiday Sundays, 2pm till midnight. Hours may vary slightly for special events.\n\nSuggested use: one a day when a day is quiet, or all ten into a Good to know highlight.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Proposed, not decided. Website FAQ still lists Friday hours; the card drops Friday because Fridays finished on 25 Aug. The 18+ card uses the venue's own website wording, so it counts as confirmed by the venue, but Paul flagged 18+ wording as blocked earlier, so it stays his call."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 3: text moved to the middle."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 4: keep with note, more photo options requested (round 5)."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 5: KEEP option D, dusk crowd under the festoons. C left, E and F killed."
+    }
+   ]
+  },
+  {
+   "id": "faq-f04-table",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "FAQ story",
+   "title": "FAQ: Can I book a table?",
+   "status": "approved",
+   "media": [
+    "stories/faq/f04c-table.png"
+   ],
+   "media_kind": "image",
+   "reference": "stories/faq/f04c-table.orig.jpg",
+   "reference_label": "Photo before the card",
+   "caption": "FAQ card, finished graphic. Source: merchantsyardleicester.co.uk FAQ section.\n\nCan I book a table?\nYes. Free to book, three hour slots, through the booking section on our website. Walk-ins are always welcome, but booking ahead is best on busy days.\n\nSuggested use: one a day when a day is quiet, or all ten into a Good to know highlight.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Proposed, not decided. Website FAQ still lists Friday hours; the card drops Friday because Fridays finished on 25 Aug. The 18+ card uses the venue's own website wording, so it counts as confirmed by the venue, but Paul flagged 18+ wording as blocked earlier, so it stays his call."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 3: text moved to the middle, photo changed, option A on the slot, B in the folder, shade lightened."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 4: A and B both kept, B on the slot, more photo options requested (round 5)."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 5: KEEP option C, four at a bench with drinks. B, D, E, F left."
+    }
+   ]
+  },
+  {
+   "id": "faq-f06-food",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "FAQ story",
+   "title": "FAQ: Is there food?",
+   "status": "approved",
+   "media": [
+    "stories/faq/f06-food.png"
+   ],
+   "media_kind": "image",
+   "reference": "stories/faq/f06-food.orig.jpg",
+   "reference_label": "Photo before the card",
+   "caption": "FAQ card, finished graphic. Source: merchantsyardleicester.co.uk FAQ section.\n\nIs there food?\nYes. Ember Leicester is serving throughout the season. Please do not bring outside food or drink into the venue.\n\nSuggested use: one a day when a day is quiet, or all ten into a Good to know highlight.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Proposed, not decided. Website FAQ still lists Friday hours; the card drops Friday because Fridays finished on 25 Aug. The 18+ card uses the venue's own website wording, so it counts as confirmed by the venue, but Paul flagged 18+ wording as blocked earlier, so it stays his call."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 3: text moved to the middle."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 4: KEEP."
+    }
+   ]
+  },
+  {
+   "id": "faq-f07-dress-code",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "FAQ story",
+   "title": "FAQ: Is there a dress code?",
+   "status": "approved",
+   "media": [
+    "stories/faq/f07b-dress-code.png"
+   ],
+   "media_kind": "image",
+   "reference": "stories/faq/f07b-dress-code.orig.jpg",
+   "reference_label": "Photo before the card",
+   "caption": "FAQ card, finished graphic. Source: merchantsyardleicester.co.uk FAQ section.\n\nIs there a dress code?\nNo strict dress code, just keep it right for the time and the event. Casual sportswear is fine in the daytime but may be refused on busier evenings. No football tops.\n\nSuggested use: one a day when a day is quiet, or all ten into a Good to know highlight.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Proposed, not decided. Website FAQ still lists Friday hours; the card drops Friday because Fridays finished on 25 Aug. The 18+ card uses the venue's own website wording, so it counts as confirmed by the venue, but Paul flagged 18+ wording as blocked earlier, so it stays his call."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 3: text moved to the middle, photo changed, option A on the slot, B in the folder."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 4: KEEP option B (three women on the grass). Option A left."
+    }
+   ]
+  },
+  {
+   "id": "faq-f08-18-plus",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "FAQ story",
+   "title": "FAQ: Is Merchants Yard 18+?",
+   "status": "approved",
+   "media": [
+    "stories/faq/f08-18-plus.png"
+   ],
+   "media_kind": "image",
+   "reference": "stories/faq/f08-18-plus.orig.jpg",
+   "reference_label": "Photo before the card",
+   "caption": "FAQ card, finished graphic. Source: merchantsyardleicester.co.uk FAQ section.\n\nIs Merchants Yard 18+?\nYes, strictly 18+. Challenge 25 may be in operation, so bring valid photo ID.\n\nSuggested use: one a day when a day is quiet, or all ten into a Good to know highlight.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Proposed, not decided. Website FAQ still lists Friday hours; the card drops Friday because Fridays finished on 25 Aug. The 18+ card uses the venue's own website wording, so it counts as confirmed by the venue, but Paul flagged 18+ wording as blocked earlier, so it stays his call."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 3: text moved to the middle."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 4: KEEP."
+    }
+   ]
+  }
+ ],
+ "qc": [
+  {
+   "round": "stories r1",
+   "date": "2026-09-02",
+   "kept": [
+    "01-poll-decade",
+    "02-four-saturdays",
+    "03-still-not-over-sunday",
+    "05-tables-going",
+    "07-song-request"
+   ],
+   "killed": [
+    "01b (left)",
+    "02b",
+    "03b",
+    "03c",
+    "04",
+    "04b",
+    "06",
+    "08",
+    "09"
+   ]
+  },
+  {
+   "round": "stories r2",
+   "date": "2026-09-02",
+   "kept": [
+    "r01-quiz-doors",
+    "r02-poll-table",
+    "r06-funny-one-drink",
+    "r07-reminder-benzo",
+    "r10-addyours-summer"
+   ],
+   "killed": [
+    "r03",
+    "r04",
+    "r05",
+    "r08"
+   ],
+   "left": [
+    "r09"
+   ],
+   "note": "Paul asked if Add Yours is possible (yes, standard IG story sticker) and asked for FAQ stories using photos not from last weekend."
+  },
+  {
+   "round": "stories r3 FAQ",
+   "date": "2026-09-02",
+   "left_with_notes": [
+    "f01",
+    "f04",
+    "f06",
+    "f07",
+    "f08"
+   ],
+   "killed": [
+    "f02",
+    "f03",
+    "f05",
+    "f09",
+    "f10"
+   ]
+  },
+  {
+   "round": "stories r4 FAQ",
+   "date": "2026-09-02",
+   "kept": [
+    "f01 (more photos)",
+    "f04a (more photos)",
+    "f04b",
+    "f06",
+    "f07b",
+    "f08"
+   ],
+   "left": [
+    "f07a"
+   ]
+  },
+  {
+   "round": "stories r5 photo options",
+   "date": "2026-09-02",
+   "kept": [
+    "f01d",
+    "f04c"
+   ],
+   "killed": [
+    "f01e",
+    "f01f"
+   ],
+   "left": [
+    "f01c",
+    "f04d",
+    "f04e",
+    "f04f"
+   ]
+  }
+ ]
+}

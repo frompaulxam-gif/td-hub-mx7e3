@@ -630,7 +630,7 @@
     },
     {
      "ts": "2026-08-22",
-     "text": "Washed-out look fixed properly: re-tagging alone left the pixels HLG-encoded, which reads flat on an SDR player. Built an HLG BT.2020 to BT.709 LUT (diffuse white at 75% signal normalised to SDR white, highlight shoulder, gamut matrix) and baked it with lut3d, since this ffmpeg has no zscale. LUT saved at tdg-hub/tools/luts/hlg_to_709.cube for reuse on any iPhone HDR clip."
+     "text": "Washed-out look fixed properly: re-tagging alone left the pixels HLG-encoded, which reads flat on an SDR player. Built an HLG BT.2020 to BT.709 LUT (diffuse white at 75% signal normalised to SDR white, highlight shoulder, gamut matrix) and baked it with lut3d, since this ffmpeg has no zscale. LUT saved at TDG/hub/tools/luts/hlg_to_709.cube for reuse on any iPhone HDR clip."
     },
     {
      "ts": "2026-08-22",

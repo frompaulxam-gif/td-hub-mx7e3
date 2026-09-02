@@ -21,7 +21,7 @@ import tempfile
 from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1080, 1920
-# See tdg-hub/INSTAGRAM-FONTS.md. Instagram Sans is proprietary to Meta and is
+# See TDG/hub/INSTAGRAM-FONTS.md. Instagram Sans is proprietary to Meta and is
 # not used here. These are the closest legitimate matches, researched 23 Aug 2026.
 FONTS = {
     "classic":    (os.path.expanduser("~/Library/Fonts/Inter-Variable.ttf"), 0, 700),

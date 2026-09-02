@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en" data-venue="merchants-yard">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Talking head QC</title>
+<style>
+  :root { --bg:#fbfaf8; --ink:#211a12; --mid:#6d655a; --line:#e7e1d8; --green:#2e6b38; --green-soft:rgba(46,107,56,.10); --card:#ffffff; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--ink); font:15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .wrap { max-width:1200px; margin:0 auto; padding:22px 18px 80px; display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:26px; }
+  header { grid-column:1 / -1; border-bottom:1px solid var(--line); padding-bottom:14px; }
+  header h1 { font-size:20px; }
+  header p { color:var(--mid); font-size:13.5px; margin-top:3px; max-width:70ch; }
+  h2 { font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--mid); margin:26px 0 10px; }
+  .line { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:14px; }
+  .line h3 { font-size:15px; margin-bottom:2px; }
+  .shoot { color:var(--mid); font-size:12.5px; margin-bottom:10px; }
+  .opt { display:block; width:100%; text-align:left; font:inherit; color:inherit; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:9px 12px; margin-top:7px; cursor:pointer; }
+  .opt.is-on { background:var(--green-soft); border-color:var(--green); }
+  .opt .tag { display:inline-block; font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--mid); margin-right:8px; }
+  .opt.is-on .tag { color:var(--green); font-weight:600; }
+  .hookcard.is-on { border-color:var(--green); }
+  .watch { font-size:12.5px; color:#8a5a2b; margin-top:6px; }
+  .custom { margin-top:7px; display:flex; gap:8px; }
+  .custom input { flex:1; font:inherit; padding:9px 12px; border:1px dashed var(--line); border-radius:10px; background:var(--bg); color:inherit; }
+  .custom input:focus { outline:2px solid var(--green); border-style:solid; }
+  /* sticky assembled script */
+  aside { position:sticky; top:16px; align-self:start; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; max-height:calc(100vh - 32px); overflow:auto; }
+  aside h2 { margin:0 0 10px; }
+  .script-line { padding:7px 0; border-bottom:1px dashed var(--line); font-size:14.5px; }
+  .script-line:last-of-type { border-bottom:0; }
+  .script-line .k { display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:.07em; color:var(--mid); }
+  .script-line.unpicked { color:var(--mid); font-style:italic; }
+  .take { display:flex; gap:8px; align-items:baseline; margin-top:4px; }
+  .take-n { flex:none; width:17px; height:17px; border-radius:50%; background:var(--green-soft); color:var(--green); font-size:10.5px; font-weight:700; display:grid; place-items:center; }
+  .meta { color:var(--mid); font-size:12.5px; margin:10px 0; }
+  .btn { font:inherit; font-weight:600; background:var(--green); color:#fff; border:0; border-radius:10px; padding:10px 16px; cursor:pointer; width:100%; }
+  .btn.ghost { background:var(--bg); color:var(--ink); border:1px solid var(--line); margin-top:8px; }
+  .place { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-bottom:10px; }
+  .place b { display:block; font-size:14px; }
+  .place .s { color:var(--mid); font-size:12.5px; margin-top:2px; }
+  .place .u { font-size:12.5px; margin-top:4px; color:var(--green); }
+  ul.flat { padding-left:18px; }
+  ul.flat li { margin-bottom:5px; font-size:13.5px; }
+  #toast { position:fixed; bottom:16px; left:50%; transform:translateX(-50%); background:var(--ink); color:#fff; padding:8px 16px; border-radius:99px; font-size:13px; opacity:0; transition:opacity .2s; pointer-events:none; }
+  #toast.show { opacity:1; }
+  @media (max-width: 900px) {
+    .wrap { grid-template-columns:1fr; padding-bottom:46vh; }
+    aside { position:fixed; left:0; right:0; bottom:0; top:auto; max-height:42vh; border-radius:16px 16px 0 0; box-shadow:0 -6px 24px rgba(33,26,18,.12); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Carnival in the Courtyard, talking head</h1>
+    <p id="intro"></p>
+  </header>
+
+  <main>
+    <h2 id="hooks-head" hidden>Visual hook, how the reel opens</h2>
+    <div id="hooks"></div>
+    <div id="lines"></div>
+    <h2>Where to shoot it</h2>
+    <div id="locations"></div>
+    <h2>B-roll to grab</h2>
+    <ul class="flat" id="broll"></ul>
+    <h2>Edit notes</h2>
+    <ul class="flat" id="editing"></ul>
+  </main>
+
+  <aside>
+    <h2>Your script so far</h2>
+    <div id="script"></div>
+    <div class="meta" id="counts"></div>
+    <button class="btn" id="copyShoot">Copy the filming list</button>
+    <button class="btn ghost" id="copy">Copy one take per line</button>
+  </aside>
+</div>
+<div id="toast"></div>
+
+<script>
+const qs = new URLSearchParams(location.search);
+const VENUE = qs.get("venue") || "merchants-yard";
+const WEEK = qs.get("week") || "2026-08-24";
+let DATA = null, SEL = {};
+
+const $ = s => document.querySelector(s);
+const toast = t => { const el = $("#toast"); el.textContent = t; el.classList.add("show"); setTimeout(() => el.classList.remove("show"), 1400); };
+
+// Multi-select: a line can carry several takes to film, plus a written-in one.
+// Older saves used {pick:n}/{custom:"..."}, so normalise them on the way in.
+function normalise(sel) {
+  const out = {};
+  for (const [id, s] of Object.entries(sel || {})) {
+    if (!s) continue;
+    const picks = Array.isArray(s.picks) ? s.picks.slice()
+                : Number.isInteger(s.pick) ? [s.pick] : [];
+    const entry = { picks };   // order is the take order, do not sort
+    if (s.custom) entry.custom = s.custom;
+    if (entry.picks.length || entry.custom) out[id] = entry;
+  }
+  return out;
+}
+
+// every take for this line, in option order, custom last
+function chosenTexts(line) {
+  const s = SEL[line.id];
+  if (!s) return [];
+  const list = (s.picks || []).map(i => line.options[i]).filter(Boolean);
+  if (s.custom) list.push(s.custom);
+  return list;
+}
+
+const isPicked = (id, i) => !!SEL[id]?.picks?.includes(i);
+
+// visual hooks live under their own key so they never collide with a line id
+const HOOK_KEY = "__hooks";
+function chosenHooks() {
+  const picks = SEL[HOOK_KEY]?.picks || [];
+  return picks.map(i => (DATA.visual_hooks || [])[i]).filter(Boolean);
+}
+
+function togglePick(id, i) {
+  const cur = SEL[id] || { picks: [] };
+  const picks = (cur.picks || []).slice();
+  const at = picks.indexOf(i);
+  // append on select so take 1 is whatever was picked first
+  at === -1 ? picks.push(i) : picks.splice(at, 1);
+  const next = { picks };
+  if (cur.custom) next.custom = cur.custom;
+  if (next.picks.length || next.custom) SEL[id] = next; else delete SEL[id];
+}
+
+// debounced and serialised: rapid taps collapse into one save, and a save never
+// starts while the previous one is still in flight
+let saveTimer = null, saveChain = Promise.resolve();
+function save() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    saveChain = saveChain.then(async () => {
+      try {
+        const r = await fetch("/api/talking-head", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ venue: VENUE, week: WEEK, selections: SEL }),
+        });
+        if (!r.ok) throw 0;
+      } catch { toast("Could not save. Open this on the Mac hub."); }
+    });
+  }, 250);
+}
+
+const wc = t => t.trim().split(/\s+/).length;
+
+function renderScript() {
+  const box = $("#script");
+  box.innerHTML = "";
+  let covered = 0, takes = 0, minW = 0, maxW = 0;
+  for (const line of DATA.lines) {
+    const list = chosenTexts(line);
+    const div = document.createElement("div");
+    div.className = "script-line" + (list.length ? "" : " unpicked");
+    const k = document.createElement("span");
+    k.className = "k";
+    k.textContent = line.label + (list.length > 1 ? ` · ${list.length} takes` : "");
+    div.appendChild(k);
+    if (!list.length) {
+      div.appendChild(document.createTextNode("nothing picked yet"));
+    } else {
+      list.forEach((t, i) => {
+        const row = document.createElement("div");
+        row.className = "take";
+        if (list.length > 1) {
+          const n = document.createElement("span");
+          n.className = "take-n";
+          n.textContent = i + 1;
+          row.appendChild(n);
+        }
+        row.appendChild(document.createTextNode(t));
+        div.appendChild(row);
+      });
+      covered++;
+      takes += list.length;
+      const lens = list.map(wc);
+      minW += Math.min(...lens);
+      maxW += Math.max(...lens);
+    }
+    box.appendChild(div);
+  }
+  const s = w => Math.round(w / 2.5);
+  const range = minW === maxW ? `${s(minW)}s` : `${s(minW)} to ${s(maxW)}s`;
+  $("#counts").textContent =
+    `${covered} of ${DATA.lines.length} lines covered · ${takes} take${takes === 1 ? "" : "s"} to film · finished cut roughly ${range}`;
+}
+
+function render() {
+  $("#intro").textContent = "Tap as many options per line as you want to film. Each one becomes a numbered take in the filming list. Picks save on their own and any session can read them back.";
+  const wrap = $("#lines");
+  wrap.innerHTML = "";
+  for (const line of DATA.lines) {
+    const card = document.createElement("div");
+    card.className = "line";
+    const h = document.createElement("h3"); h.textContent = line.label;
+    const sh = document.createElement("div"); sh.className = "shoot"; sh.textContent = "Shoot: " + line.shoot;
+    card.append(h, sh);
+    const order = (SEL[line.id]?.picks || []);
+    line.options.forEach((opt, i) => {
+      const on = isPicked(line.id, i);
+      const b = document.createElement("button");
+      b.className = "opt" + (on ? " is-on" : "");
+      const tag = document.createElement("span"); tag.className = "tag";
+      tag.textContent = on
+        ? (order.length > 1 ? `Take ${order.indexOf(i) + 1} ✓` : "Filming ✓")
+        : "Option " + (i + 1);
+      b.append(tag, document.createTextNode(opt));
+      b.addEventListener("click", () => { togglePick(line.id, i); save(); render(); });
+      card.appendChild(b);
+    });
+    const cRow = document.createElement("div"); cRow.className = "custom";
+    const inp = document.createElement("input");
+    inp.placeholder = "Or write your own line, filmed as an extra take";
+    if (SEL[line.id]?.custom) inp.value = SEL[line.id].custom;
+    inp.addEventListener("change", () => {
+      const v = inp.value.trim();
+      const cur = SEL[line.id] || { picks: [] };
+      if (v) SEL[line.id] = { picks: cur.picks || [], custom: v };
+      else if (cur.custom) {
+        if ((cur.picks || []).length) SEL[line.id] = { picks: cur.picks };
+        else delete SEL[line.id];
+      }
+      save(); render();
+    });
+    cRow.appendChild(inp);
+    card.appendChild(cRow);
+    wrap.appendChild(card);
+  }
+  const hooks = DATA.visual_hooks || [];
+  $("#hooks-head").hidden = !hooks.length;
+  const hbox = $("#hooks");
+  hbox.innerHTML = "";
+  hooks.forEach((h, i) => {
+    const on = isPicked(HOOK_KEY, i);
+    const card = document.createElement("div");
+    card.className = "line hookcard" + (on ? " is-on" : "");
+    const b = document.createElement("button");
+    b.className = "opt" + (on ? " is-on" : "");
+    const tag = document.createElement("span"); tag.className = "tag";
+    tag.textContent = on ? "Shooting \u2713" : "Idea " + (i + 1);
+    b.append(tag, document.createTextNode(h.name));
+    b.addEventListener("click", () => { togglePick(HOOK_KEY, i); save(); render(); });
+    card.appendChild(b);
+    const how = document.createElement("div");
+    how.className = "shoot"; how.style.marginTop = "8px";
+    how.textContent = h.how;
+    card.appendChild(how);
+    if (h.watch) {
+      const w = document.createElement("div");
+      w.className = "watch";
+      w.textContent = "Watch out: " + h.watch;
+      card.appendChild(w);
+    }
+    hbox.appendChild(card);
+  });
+
+  const locs = $("#locations");
+  locs.innerHTML = "";
+  for (const p of DATA.locations) {
+    const d = document.createElement("div"); d.className = "place";
+    d.innerHTML = `<b></b><div class="s"></div><div class="u"></div>`;
+    d.querySelector("b").textContent = p.name;
+    d.querySelector(".s").textContent = p.shot;
+    d.querySelector(".u").textContent = "Use for: " + p.use;
+    locs.appendChild(d);
+  }
+  for (const [id, arr] of [["#broll", DATA.broll], ["#editing", DATA.editing]]) {
+    const ul = $(id); ul.innerHTML = "";
+    for (const t of arr) { const li = document.createElement("li"); li.textContent = t; ul.appendChild(li); }
+  }
+  renderScript();
+}
+
+$("#copy").addEventListener("click", async () => {
+  // the assembly: first take of each line, what the cut sounds like
+  const txt = DATA.lines.map(l => chosenTexts(l)[0]).filter(Boolean).join("\n");
+  await navigator.clipboard.writeText(txt);
+  toast("First take of each line copied");
+});
+$("#copyShoot").addEventListener("click", async () => {
+  const hookTxt = chosenHooks().map((h, i) => `Hook idea ${i + 1}: ${h.name}\n  ${h.how}`).join("\n\n");
+  // the filming list: every take to say, grouped by line, with the shoot note
+  const txt = DATA.lines.map(l => {
+    const list = chosenTexts(l);
+    if (!list.length) return null;
+    const body = list.length > 1
+      ? list.map((t, i) => `  Take ${i + 1}: ${t}`).join("\n")
+      : `  ${list[0]}`;
+    return `${l.label}\nShoot: ${l.shoot}\n${body}`;
+  }).filter(Boolean).join("\n\n");
+  await navigator.clipboard.writeText(
+    (hookTxt ? "VISUAL HOOKS\n\n" + hookTxt + "\n\n" : "") + "SCRIPT\n\n" + txt);
+  toast("Filming list copied");
+});
+
+(async () => {
+  try {
+    DATA = await (await fetch(`/media/${VENUE}/${WEEK}/renders/talking-head.json`)).json();
+  } catch {
+    document.body.innerHTML = '<p style="padding:40px;color:#6d655a">This page needs the live hub. Open it from the Mac.</p>';
+    return;
+  }
+  try {
+    const r = await fetch(`/media/${VENUE}/${WEEK}/renders/talking-head-selections.json`);
+    if (r.ok) SEL = normalise(await r.json());
+  } catch { /* nothing picked yet */ }
+  render();
+})();
+</script>
+</body>
+</html>
