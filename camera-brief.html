@@ -1,0 +1,188 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Merchants Yard camera brief</title><style>
+@font-face{font-family:"Archivo Black";src:local("Archivo Black"),local("ArchivoBlack"),url("file:///Users/paulventura/Library/Fonts/ArchivoBlack.ttf")}
+@font-face{font-family:"InterV";src:local("Inter"),url("file:///Users/paulventura/Library/Fonts/Inter-Variable.ttf")}
+@page{size:1920px 1080px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#141414}
+body{font-family:"InterV","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;color:#141414;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:1920px;height:1080px;position:relative;overflow:hidden;page-break-after:always;background:#fff}
+.page:last-child{page-break-after:auto}
+h1,h2{font-family:"Archivo Black","Arial Black",sans-serif;text-transform:uppercase;letter-spacing:-.035em;line-height:.9}
+h1{font-size:186px}h2{font-size:104px}
+.or{color:#D9613B}.wh{color:#fff}
+p,li{font-size:27px;line-height:1.4}
+.lead{font-weight:700;margin-bottom:16px}
+ul{list-style:none;margin:12px 0}
+li{padding-left:28px;position:relative;margin:6px 0}
+li:before{content:"";position:absolute;left:6px;top:16px;width:9px;height:9px;border-radius:50%;background:currentColor}
+.k{font-size:20px;letter-spacing:.06em;text-transform:uppercase;line-height:1.3}
+.small{font-size:21px;line-height:1.4}
+.photo{position:absolute;background-size:cover;background-position:center}
+.full{inset:0}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.4) 60%,rgba(0,0,0,.65) 100%)}
+.orange{position:absolute;background:#D9613B;color:#fff}
+.panel{position:absolute}
+table{border-collapse:collapse;width:100%}
+th{background:#D9613B;color:#fff;text-align:left;padding:12px 15px;font-size:21px}
+td{padding:13px 15px;font-size:23px;border-bottom:1px solid #ddd;vertical-align:top;line-height:1.32}
+td.n{font-family:"Archivo Black";font-size:26px;white-space:nowrap}
+.rule{position:absolute;right:0;top:0;bottom:0;width:60px;background:#D9613B}
+.circ{display:inline-block;width:104px;height:104px;border:6px solid #fff;border-radius:50%;vertical-align:middle;margin-left:24px;position:relative;top:-22px}
+.circ:after{content:"\2192";color:#fff;font-family:Helvetica,Arial;font-size:60px;line-height:92px;display:block;text-align:center}
+.foot{position:absolute;left:70px;bottom:26px;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:#999}
+
+html,body{background:#1a1a1a}
+.deck{padding:0}
+.slide{margin:0 auto;position:relative}
+.page{box-shadow:0 6px 40px rgba(0,0,0,.5)}
+.strip{position:absolute;left:0;right:0;bottom:0;display:flex;gap:0;z-index:2;justify-content:center;align-items:flex-end;background:#111}
+.strip video,.strip img{display:block;background:#000;object-fit:contain;flex:0 0 auto}
+.strip video{cursor:pointer}
+.vidcap{position:absolute;right:96px;bottom:14px;font-size:17px;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.8);z-index:3}
+.vidsec .rule{background:#C22E2E}.vidsec .or{color:#C22E2E}
+.photosec .rule{background:#1F5D3C}.photosec .or{color:#1F5D3C}
+.chip.red{background:#C22E2E}.chip.grn{background:#1F5D3C}
+.cards6{position:absolute;left:80px;right:100px;top:190px;bottom:36px;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:1fr 1fr;gap:18px 16px}
+.card{position:relative;border:2px solid #e4e1da;border-radius:10px;overflow:hidden;background:#fff}
+.card .th{position:absolute;left:0;right:0;top:0;bottom:92px;background-size:cover;background-position:center}
+.card .cb{position:absolute;left:12px;top:12px;width:34px;height:34px;border-radius:50%;border:3px solid #fff;background:rgba(0,0,0,.35)}
+.card .nm{position:absolute;left:0;right:0;bottom:44px;padding:0 14px;font-family:"Archivo Black";text-transform:uppercase;font-size:19px;line-height:1.05;letter-spacing:-.01em}
+.card .sb{position:absolute;left:0;right:0;bottom:14px;padding:0 14px;font-size:15px;color:#6b675e}
+.card.video{border-color:#C22E2E}.card.video .nm{color:#C22E2E}
+.card.photo{border-color:#1F5D3C}.card.photo .nm{color:#1F5D3C}
+.refs{position:absolute;right:90px;top:90px;bottom:90px;display:flex;gap:26px}
+.refcard{background:#fff;border:3px solid #C22E2E;border-radius:12px;overflow:hidden;width:390px;display:flex;flex-direction:column}
+.refcard video{flex:1;width:100%;min-height:0;object-fit:cover;background:#000;display:block}
+.refcard .meta{padding:16px 18px}
+.refcard .nm{font-family:"Archivo Black";text-transform:uppercase;font-size:21px;line-height:1.05;color:#C22E2E}
+.refcard .url{font-size:16px;color:#6b675e;margin-top:8px;word-break:break-all}
+.badge{position:absolute;right:150px;top:90px;font-family:"Archivo Black","Arial Black",sans-serif;text-transform:uppercase;font-size:74px;line-height:.92;letter-spacing:-.03em;color:#1F5D3C;text-align:right;z-index:4}
+.badge:after{content:"";display:block;height:10px;background:#1F5D3C;margin-top:16px}
+.badge.inline{position:static;text-align:left;font-size:52px;margin-top:34px}
+.badge.inline:after{height:8px;margin-top:12px}
+.chip{display:inline-block;margin-bottom:6px;background:#141414;color:#fff;font-size:19px;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px;border-radius:5px;margin-left:14px;vertical-align:middle}
+.chip.lite{background:#e4e1da;color:#333}
+.chip.or{background:#D9613B}
+.rules{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.rules span{background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.45);padding:12px 20px;font-size:24px}
+.rules b{color:#ffd0b3}
+.cards{display:flex;gap:18px}
+.cards>div{flex:1;background:#fff;border:2px solid #e4e1da;padding:24px 26px}
+.cards>div.big{border-color:#D9613B;background:#fffaf6}
+.cards b{display:block;font-size:30px;font-family:"Archivo Black";text-transform:uppercase;letter-spacing:-.02em;margin-bottom:8px}
+.cards span{font-size:22px;color:#555;line-height:1.35}
+.num{position:absolute;right:96px;bottom:30px;font-size:18px;letter-spacing:.1em;color:#bbb}
+.two{display:flex;gap:48px}
+.two>div{flex:1}
+.nav{position:fixed;left:0;right:0;bottom:0;background:rgba(20,20,20,.94);padding:9px 16px;display:flex;gap:8px;overflow-x:auto;z-index:9}
+.nav a{color:#bbb;font-size:12px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;padding:5px 10px;border-radius:4px;white-space:nowrap}
+.nav a:hover{background:#D9613B;color:#fff}
+</style></head>
+<body><div class="deck"><div class="slide" id="s0"><div class="page "><div class="photo full" style="background-image:url(../CLOSING-PLAN/deck/assets/crowdhigh.jpg)"></div><div class="shade"></div>
+<div class="panel wh k" style="left:90px;top:80px">Triple Down Group<br>Merchants Yard</div>
+<div class="panel wh" style="right:90px;top:80px;font-size:32px;letter-spacing:.02em">CAMERA BRIEF</div>
+<div class="panel" style="left:90px;bottom:120px"><h1 class="wh" style="font-size:150px">Saturday<br>camera brief<span class="circ"></span></h1>
+<p class="wh" style="font-size:28px;margin-top:22px;max-width:1300px">A checklist of what to look for. No numbers, take as many as you get.<br>Vertical. Sound on. Around <b>8 seconds</b> a clip, and hold the frame still all the way through.</p></div><div class="num">1 / 17</div></div></div><div class="slide" id="s1"><div class="page listsec"><div class="rule" style="background:#141414"></div>
+<div class="panel" style="left:80px;top:44px;width:1740px"><p class="k" style="color:#141414">Everything you are looking for, on one page</p>
+<h2 style="font-size:60px;margin-top:4px">The list</h2></div>
+<div class="cards6"><div class="card video"><div class="th" style="background-image:url(refs/thumbs/dancing.jpg)"></div>
+<div class="cb"></div><div class="nm">Dancing</div><div class="sb">zoom 2x</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/together.jpg)"></div>
+<div class="cb"></div><div class="nm">People dancing together</div><div class="sb">zoom 2x</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/singalong.jpg)"></div>
+<div class="cb"></div><div class="nm">The singalong</div><div class="sb">sound on</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/staff.jpg)"></div>
+<div class="cb"></div><div class="nm">Bar staff doing their job</div><div class="sb">either</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/crowd.jpg)"></div>
+<div class="cb"></div><div class="nm">The crowd, two ways</div><div class="sb">no zoom</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/performer.jpg)"></div>
+<div class="cb"></div><div class="nm">The performer or DJ</div><div class="sb">2x, then no zoom</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-groups.jpg)"></div>
+<div class="cb"></div><div class="nm">Groups</div><div class="sb">we need most</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-moments.jpg)"></div>
+<div class="cb"></div><div class="nm">Moments</div><div class="sb">group preferred</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-staff.jpg)"></div>
+<div class="cb"></div><div class="nm">Staff serving</div><div class="sb">looking happy</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-dj.jpg)"></div>
+<div class="cb"></div><div class="nm">DJ or performer</div><div class="sb">only one</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-drink.jpg)"></div>
+<div class="cb"></div><div class="nm">One drink</div><div class="sb">only a few</div></div><div class="card photo"><div class="th" style="background-image:url(../CLOSING-PLAN/deck/assets/peace.jpg)"></div>
+<div class="cb"></div><div class="nm">The gesture</div><div class="sb">same one all night</div></div></div><div class="num">2 / 17</div></div></div><div class="slide" id="s2"><div class="page vidsec"><div class="rule"></div>
+<div class="panel" style="left:80px;top:70px;width:880px"><p class="k or">Watch these two first</p>
+<h2 class="or" style="font-size:76px;margin-top:6px">Video<br>references</h2>
+<ul style="margin-top:30px;font-size:27px">
+<li>Both are Merchants Yard reels that already worked. Every shot in this brief is in one of them</li>
+<li>One reached 45,200 views and 92 per cent of that was people who do not follow the page</li>
+<li>The clips you send get used for these, and for future b roll and montages, so we want plenty to choose from</li></ul></div>
+<div class="refs"><div class="refcard"><video src="refs/reels/DcbeuXfN6vu.mp4" controls playsinline preload="metadata"></video>
+<div class="meta"><p class="nm">Merchants Yard in under 10 seconds</p><p class="url">https://www.instagram.com/p/DcbeuXfN6vu/</p></div></div><div class="refcard"><video src="refs/reels/DcI1yZ5Nv2e.mp4" controls playsinline preload="metadata"></video>
+<div class="meta"><p class="nm">Life without trending audio</p><p class="url">https://www.instagram.com/p/DcI1yZ5Nv2e/</p></div></div></div><div class="num">3 / 17</div></div></div><div class="slide" id="s3"><div class="page divsec"><div class="photo full" style="background-image:url(../CLOSING-PLAN/deck/assets/djarms.jpg)"></div>
+<div class="panel" style="inset:0;background:#C22E2E;opacity:.88"></div>
+<div class="panel wh" style="left:90px;top:120px;width:1220px">
+<h2 class="wh" style="font-size:170px;line-height:.85">Video</h2>
+<p class="lead" style="margin-top:20px;font-size:42px;line-height:1.1">Zoomed 2x for videos</p>
+<ul style="margin-top:34px;font-size:31px">
+<li>Vertical, sound on</li>
+<li><b>2x zoom</b> for most shots (iPhone), around <b>50mm</b> on a camera</li>
+<li><b>8 seconds</b> a clip, and hold the frame still</li>
+<li>Start filming <b>2 seconds early</b>, stop <b>2 seconds late</b>, so the ends are not shaky. We cut the spare off</li></ul></div><div class="num">4 / 17</div></div></div><div class="slide" id="s4"><div class="page vidsec"><div class="rule"></div>
+<div class="panel" style="left:80px;top:40px;width:1700px"><p class="k or">Video</p>
+<h2 class="or" style="font-size:62px;margin-top:4px">Dancing<span class="chip red">zoom 2x</span><span class="chip lite">8 seconds</span></h2><ul style="margin-top:12px;font-size:26px"><li>The one person going for it. Somebody's mate who has committed.</li></ul></div>
+<div class="strip" style="left:0;right:0;bottom:0;height:853px"><video src="refs/stack/solo-18-older-woman-arms-wide-laughing.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video><video src="refs/stack/solo-19-blonde-floral-dress-dancing.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video><video src="refs/stack/solo-03-older-woman-dancing-fists-up.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video><video src="refs/cuts/DcbeuXfN6vu-01.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video></div><div class="num">5 / 17</div></div></div><div class="slide" id="s5"><div class="page vidsec"><div class="rule" style="right:auto;left:689px;width:16px;z-index:3;background:#C22E2E"></div>
+<div class="panel" style="left:80px;top:110px;width:555px"><p class="k or">Video</p>
+<h2 class="or" style="font-size:52px;margin-top:4px">People dancing together</h2><ul style="margin-top:12px;font-size:26px"><li>Two or more, in it with each other</li><li>Let it run the full 8 seconds, the good bit is usually halfway through</li></ul>
+<div style="margin-top:20px"><span class="chip red">zoom 2x</span><span class="chip lite">8 seconds</span></div></div>
+<div class="strip" style="left:705px;right:0;bottom:0;height:1080px;background:none"><video src="refs/stack/pair-06-red-polo-dancing-with-her.mp4" controls muted playsinline preload="metadata" style="height:1080px;width:608px"></video><video src="refs/cuts/DcbeuXfN6vu-02.mp4" controls muted playsinline preload="metadata" style="height:1080px;width:608px"></video></div><div class="num">6 / 17</div></div></div><div class="slide" id="s6"><div class="page vidsec"><div class="rule"></div>
+<div class="panel" style="left:80px;top:40px;width:1700px"><p class="k or">Video</p>
+<h2 class="or" style="font-size:62px;margin-top:4px">The singalong<span class="chip red">sound on</span><span class="chip lite">8 seconds</span></h2><ul style="margin-top:12px;font-size:26px"><li>A big song gets to the chorus, the DJ drops the music out, and the whole crowd carries it on their own</li><li>Arms up, phones up, everybody singing. That moment is the shot</li><li>Get the phone up before the drop out, not after it. Film the crowd, not the DJ, and let it run</li></ul></div>
+<div class="strip" style="left:0;right:0;bottom:0;height:853px"><video src="refs/new/singalong.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video><video src="refs/stack/pair-16-two-lads-on-mics-faces-close.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video><video src="refs/stack/table-13-women-at-table-arms-up.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video><video src="refs/cuts/DcbeuXfN6vu-03.mp4" controls muted playsinline preload="metadata" style="height:853px;width:480px"></video></div><div class="vidcap">First one is the moment. Chorus, music off, crowd singing.</div><div class="num">7 / 17</div></div></div><div class="slide" id="s7"><div class="page vidsec"><div class="rule" style="right:auto;left:454px;width:16px;z-index:3;background:#C22E2E"></div>
+<div class="panel" style="left:80px;top:110px;width:320px"><p class="k or">Video</p>
+<h2 class="or" style="font-size:52px;margin-top:4px">Bar staff doing their job</h2><ul style="margin-top:12px;font-size:26px"><li>A real drink being made and handed over</li><li>Staff getting on with it, not set up for the camera</li></ul>
+<div style="margin-top:20px"><span class="chip lite">either</span><span class="chip lite">8 seconds</span></div></div>
+<div class="strip" style="left:470px;right:0;bottom:0;height:859px;background:none"><video src="refs/serving/01-one-person-one-drink_stack.mp4" controls muted playsinline preload="metadata" style="height:859px;width:483px"></video><video src="refs/serving/02-shot07-bartender-behind-bar-smiling.mp4" controls muted playsinline preload="metadata" style="height:859px;width:483px"></video><video src="refs/serving/04-shot10-staff-holding-tray-of-food.mp4" controls muted playsinline preload="metadata" style="height:859px;width:483px"></video></div><div class="num">8 / 17</div></div></div><div class="slide" id="s8"><div class="page vidsec"><div class="rule" style="right:auto;left:454px;width:16px;z-index:3;background:#C22E2E"></div>
+<div class="panel" style="left:80px;top:110px;width:320px"><p class="k or">Video</p>
+<h2 class="or" style="font-size:52px;margin-top:4px">The crowd, two ways</h2><ul style="margin-top:12px;font-size:26px"><li>A sliding shot: walk slowly across or through, phone steady, one continuous move</li><li>Then a static shot: same crowd, locked off, no movement</li><li>Both of the same room, back to back. They cut together and we cannot fake either one afterwards</li></ul>
+<div style="margin-top:20px"><span class="chip lite">no zoom</span></div></div>
+<div class="strip" style="left:470px;right:0;bottom:0;height:859px;background:none"><video src="refs/new/crowd0909.mp4" controls muted playsinline preload="metadata" style="height:859px;width:483px"></video><video src="refs/new/crowdleic.mp4" controls muted playsinline preload="metadata" style="height:859px;width:483px"></video><video src="refs/stack/wide-28-big-push-across-packed-venue.mp4" controls muted playsinline preload="metadata" style="height:859px;width:483px"></video></div><div class="vidcap">First two are the crowd. Third is the slide across.</div><div class="num">9 / 17</div></div></div><div class="slide" id="s9"><div class="page vidsec"><div class="rule" style="right:auto;left:689px;width:16px;z-index:3;background:#C22E2E"></div>
+<div class="panel" style="left:80px;top:110px;width:555px"><p class="k or">Video</p>
+<h2 class="or" style="font-size:52px;margin-top:4px">The performer or DJ</h2><ul style="margin-top:12px;font-size:26px"><li>Close on them, zoomed 2x, only when they are properly going for it</li><li>Then one on no zoom with the performer and the crowd in the same shot, from the stage side if you can get there</li><li>A good one of these is really good. A row of ordinary ones is not</li></ul>
+<div style="margin-top:20px"><span class="chip red">zoom 2x</span><span class="chip lite">no zoom</span><span class="chip lite">rare</span></div></div>
+<div class="strip" style="left:705px;right:0;bottom:0;height:1080px;background:none"><video src="refs/stack/stage-15-the-singer-on-the-mic.mp4" controls muted playsinline preload="metadata" style="height:1080px;width:608px"></video><video src="refs/new/performer-crowd.mp4" controls muted playsinline preload="metadata" style="height:1080px;width:608px"></video></div><div class="vidcap">First is the close one. Second is the no zoom, performer and crowd together.</div><div class="num">10 / 17</div></div></div><div class="slide" id="s10"><div class="page divsec"><div class="photo full" style="background-image:url(../CLOSING-PLAN/deck/assets/group.jpg)"></div>
+<div class="panel" style="inset:0;background:#1F5D3C;opacity:.88"></div>
+<div class="panel wh" style="left:90px;top:110px;width:1150px">
+<h2 class="wh" style="font-size:170px;line-height:.85">Photos</h2>
+<p class="lead" style="margin-top:20px;font-size:42px;line-height:1.1">The gesture</p>
+<ul style="margin-top:30px;font-size:31px">
+<li>Try to get a gesture out of every group</li>
+<li>Any gesture. A wave is the easiest thing to ask a table for</li>
+<li>Same one all night, group after group</li>
+<li>Tell Paul which one you used so the caption matches</li></ul>
+<p class="lead" style="margin-top:40px;font-size:34px">16.4K and 11.5K views. 138 profile visits against 8 to 21 for a normal set.</p></div>
+<div class="photo" style="right:90px;bottom:110px;width:520px;height:650px;background-image:url(../CLOSING-PLAN/deck/assets/peace.jpg)"></div><div class="num">11 / 17</div></div></div><div class="slide" id="s11"><div class="page photosec"><div class="rule"></div><div class="badge">We need<br>most of these</div>
+<div class="panel" style="left:80px;top:40px;width:1700px"><p class="k or">Photos</p>
+<h2 class="or" style="font-size:62px;margin-top:4px">Groups<span class="chip grn">we need most</span></h2><ul style="margin-top:12px;font-size:26px"><li>One group per photo, however big the group is</li><li>Fill the frame with them so the picture has an obvious subject</li><li>Posing and looking at the camera is optional</li></ul></div>
+<div class="strip" style="left:0;right:0;bottom:0;height:480px"><img src="refs/photos/groups-01-LV404337.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/groups-02-LV400327.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/groups-03-LV400108.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/groups-04-LV404297.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/groups-05-LV405868.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/groups-06-LV409444.jpg" alt="" style="height:480px;width:320px"></div><div class="num">12 / 17</div></div></div><div class="slide" id="s12"><div class="page photosec"><div class="rule"></div>
+<div class="panel" style="left:80px;top:40px;width:1700px"><p class="k or">Photos</p>
+<h2 class="or" style="font-size:62px;margin-top:4px">Moments (group preferred)</h2><ul style="margin-top:12px;font-size:26px"><li>A group caught in a real moment together</li><li>Something is actually happening in the frame</li><li>Arms up mid song, two mates laughing, a table posing for a selfie, someone pointing at the camera</li></ul></div>
+<div class="strip" style="left:0;right:0;bottom:0;height:389px"><img src="refs/photos/hands-01.jpg" alt="" style="height:389px;width:259px"><img src="refs/photos/hands-02.jpg" alt="" style="height:389px;width:286px"><img src="refs/photos/hands-03.jpg" alt="" style="height:389px;width:295px"><img src="refs/photos/hands-04.jpg" alt="" style="height:389px;width:270px"><img src="refs/photos/hands-05.jpg" alt="" style="height:389px;width:266px"><img src="refs/photos/hands-06.jpg" alt="" style="height:389px;width:269px"><img src="refs/photos/hands-07.jpg" alt="" style="height:389px;width:274px"></div><div class="num">13 / 17</div></div></div><div class="slide" id="s13"><div class="page photosec"><div class="rule" style="right:auto;left:454px;width:16px;z-index:3;background:#1F5D3C"></div>
+<div class="panel" style="left:80px;top:110px;width:320px"><p class="k or">Photos</p>
+<h2 class="or" style="font-size:52px;margin-top:4px">Staff serving, looking happy</h2><ul style="margin-top:12px;font-size:26px"><li>The pour or the handover, with the staff member happy in frame</li><li>Them getting on with the job, not set up for the camera</li><li>We have almost none of these across a whole summer, so it is the easiest gap to fill</li></ul>
+<div style="margin-top:20px"></div></div>
+<div class="strip" style="left:470px;right:0;bottom:0;height:725px;background:none"><img src="refs/photos/staff-01-LV405755.jpg" alt="" style="height:725px;width:483px"><img src="refs/photos/staff-02-LV409401.jpg" alt="" style="height:725px;width:483px"><img src="refs/photos/staff-03-LV406424.jpg" alt="" style="height:725px;width:483px"></div><div class="num">14 / 17</div></div></div><div class="slide" id="s14"><div class="page photosec"><div class="rule" style="right:auto;left:465px;width:16px;z-index:3;background:#1F5D3C"></div>
+<div class="panel" style="left:80px;top:110px;width:331px"><p class="k or">Photos</p>
+<h2 class="or" style="font-size:52px;margin-top:4px">The DJ or performer</h2><ul style="margin-top:12px;font-size:26px"><li>Keep these rare, the DJ is a small part of the night</li><li>One good one is worth more than a row of ordinary ones</li></ul>
+<div style="margin-top:20px"><span class="chip lite">rare</span></div><div class="badge inline">Only one<br>is needed</div></div>
+<div class="strip" style="left:481px;right:0;bottom:0;height:1080px;background:none"><img src="refs/photos/dj-01-LV409432.jpg" alt="" style="height:1080px;width:720px"><img src="refs/photos/dj-02-LV405807.jpg" alt="" style="height:1080px;width:720px"></div><div class="num">15 / 17</div></div></div><div class="slide" id="s15"><div class="page photosec"><div class="rule"></div>
+<div class="panel" style="left:80px;top:40px;width:1700px"><p class="k or">Photos</p>
+<h2 class="or" style="font-size:62px;margin-top:4px">One drink looking nice<span class="chip lite">only a few</span></h2><ul style="margin-top:12px;font-size:26px"><li>Clean glass, good colour, simple background</li><li>The drink is the subject, not the table</li><li>Only need a few of these a night</li></ul></div>
+<div class="strip" style="left:0;right:0;bottom:0;height:480px"><img src="refs/photos/drink-01-LV409675.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/drink-02-LV405791.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/drink-03-LV404563.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/drink-04-LV409520.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/drink-05-LV407452.jpg" alt="" style="height:480px;width:320px"><img src="refs/photos/drink-06-LV405772.jpg" alt="" style="height:480px;width:320px"></div><div class="num">16 / 17</div></div></div><div class="slide" id="s16"><div class="page listsec"><div class="rule" style="background:#141414"></div>
+<div class="panel" style="left:80px;top:44px;width:1740px"><p class="k" style="color:#141414">Tick as you go</p>
+<h2 style="font-size:60px;margin-top:4px">The list<span style="font-family:InterV,Inter,Arial;font-size:30px;text-transform:none;letter-spacing:0;font-weight:600;margin-left:20px">Need 1 minimum per, then you can go shoot what you think is best</span></h2></div>
+<div class="cards6"><div class="card video"><div class="th" style="background-image:url(refs/thumbs/dancing.jpg)"></div>
+<div class="cb"></div><div class="nm">Dancing</div><div class="sb">zoom 2x</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/together.jpg)"></div>
+<div class="cb"></div><div class="nm">People dancing together</div><div class="sb">zoom 2x</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/singalong.jpg)"></div>
+<div class="cb"></div><div class="nm">The singalong</div><div class="sb">sound on</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/staff.jpg)"></div>
+<div class="cb"></div><div class="nm">Bar staff doing their job</div><div class="sb">either</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/crowd.jpg)"></div>
+<div class="cb"></div><div class="nm">The crowd, two ways</div><div class="sb">no zoom</div></div><div class="card video"><div class="th" style="background-image:url(refs/thumbs/performer.jpg)"></div>
+<div class="cb"></div><div class="nm">The performer or DJ</div><div class="sb">2x, then no zoom</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-groups.jpg)"></div>
+<div class="cb"></div><div class="nm">Groups</div><div class="sb">we need most</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-moments.jpg)"></div>
+<div class="cb"></div><div class="nm">Moments</div><div class="sb">group preferred</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-staff.jpg)"></div>
+<div class="cb"></div><div class="nm">Staff serving</div><div class="sb">looking happy</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-dj.jpg)"></div>
+<div class="cb"></div><div class="nm">DJ or performer</div><div class="sb">only one</div></div><div class="card photo"><div class="th" style="background-image:url(refs/thumbs/p-drink.jpg)"></div>
+<div class="cb"></div><div class="nm">One drink</div><div class="sb">only a few</div></div><div class="card photo"><div class="th" style="background-image:url(../CLOSING-PLAN/deck/assets/peace.jpg)"></div>
+<div class="cb"></div><div class="nm">The gesture</div><div class="sb">same one all night</div></div></div><div class="num">17 / 17</div></div></div></div><div class="nav"><a href="#s0">Cover</a><a href="#s1">The list</a><a href="#s2">Video references</a><a href="#s3">Video</a><a href="#s4">Dancing</a><a href="#s5">People dancing together</a><a href="#s6">The singalong</a><a href="#s7">Bar staff doing their job</a><a href="#s8">The crowd, two ways</a><a href="#s9">The performer or DJ</a><a href="#s10">Photos</a><a href="#s11">Groups</a><a href="#s12">Moments (group preferred)</a><a href="#s13">Staff serving, looking happy</a><a href="#s14">The DJ or performer</a><a href="#s15">One drink looking nice</a><a href="#s16">The list</a></div>
+<script>
+function fit(){const s=Math.min(1,(window.innerWidth-40)/1920);document.querySelectorAll('.slide').forEach(el=>{el.style.width='1920px';el.style.transform='scale('+s+')';el.style.transformOrigin='top left';el.style.height=(1080*s)+'px';el.style.marginBottom=(26*s)+'px'});document.querySelector('.deck').style.width=(1920*s)+'px';document.querySelector('.deck').style.margin='20px auto 70px'}
+fit();addEventListener('resize',fit);
+document.querySelectorAll('video').forEach(v=>{v.addEventListener('play',()=>document.querySelectorAll('video').forEach(o=>{if(o!==v)o.pause()}))});
+</script></body></html>
