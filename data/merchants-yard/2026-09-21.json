@@ -1,0 +1,429 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-09-21",
+ "label": "W/C Mon 21 Sep 2026, Merchants Yard, CLOSING WEEK",
+ "archived": false,
+ "key_dates": [
+  "Sat 12 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 19 Sep: billing TBC, Oktoberfest is OFF, ask Chelsea",
+  "Sat 26 Sep: SUMMER CLOSING PARTY (Chelsea, confirmed 9 Sep)",
+  "Sun 27 Sep: transition reel posts at midday",
+  "Reopening: TBC. Deck pencils preview Sat 17 Oct, opening Sat 24 Oct"
+ ],
+ "alerts": [
+  "* Closing date CONFIRMED: Sat 26 Sept. Countdowns unblocked.",
+  "* Oktoberfest is OFF. The 19th needs a confirmed act before its What's On renders.",
+  "* Stories every day except Sunday, before 11am (Chelsea). Evening story where we have material.",
+  "* Reopening date and name stay off every graphic until Chelsea and Nico confirm."
+ ],
+ "links": [
+  {
+   "label": "📁 Week folder",
+   "folder": "/Users/paulventura/TDG/merchants-yard/WEEKS/2026-09-21"
+  },
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "TDG Plan Ahead deck",
+   "url": "https://www.canva.com/design/DAHT9zw7brU/EDR09EW-IFw2rYNvj64anw/view"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  },
+  {
+   "label": "Closing plan PDF",
+   "folder": "/Users/paulventura/TDG/merchants-yard/CLOSING-PLAN"
+  }
+ ],
+ "prep": [],
+ "slots": [
+  {
+   "id": "0921-am",
+   "date": "2026-09-21",
+   "day": "Monday",
+   "slot": "Story, before 11am",
+   "title": "Last one.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/12-no-text.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Last one.\n\nSticker: Countdown to Sat 26 Sept, 2pm",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Closing week starts. Every story this week points at Saturday."
+    }
+   ],
+   "time": "10:30",
+   "sticker": "Countdown to Sat 26 Sept, 2pm"
+  },
+  {
+   "id": "0921-pm",
+   "date": "2026-09-21",
+   "day": "Monday",
+   "slot": "Story, evening (optional)",
+   "title": "Rate the last song out of ten.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/05-rate-the-last-song-out-of-ten.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Rate the last song out of ten.\n\nSticker: Emoji slider",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "19:00",
+   "sticker": "Emoji slider"
+  },
+  {
+   "id": "tue-grid-recap",
+   "date": "2026-09-22",
+   "day": "Tuesday",
+   "slot": "Weekend recap reel, Sat 19 Sept (optional)",
+   "title": "Weekend recap reel, Sat 19 Sept (optional)",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Optional, clips permitting."
+    }
+   ],
+   "time": "18:30"
+  },
+  {
+   "id": "0922-am",
+   "date": "2026-09-22",
+   "day": "Tuesday",
+   "slot": "Story, before 11am",
+   "title": "Front or back?",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/10-front-or-back.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Front or back?\n\nSticker: Poll: Front / Back",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Poll: Front / Back"
+  },
+  {
+   "id": "wed-grid-whatson",
+   "date": "2026-09-23",
+   "day": "Wednesday",
+   "slot": "What's On",
+   "title": "What's On: Summer Closing Party, Sat 26 Sept",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Needs the line-up, times and ticket route (Fatsoma?) from Chelsea. This is the one that has to land."
+    }
+   ],
+   "time": "18:30"
+  },
+  {
+   "id": "0923-am",
+   "date": "2026-09-23",
+   "day": "Wednesday",
+   "slot": "Story, before 11am",
+   "title": "What's On 9:16, Closing Party",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "What's On 9:16, Closing Party\n\nSticker: Link, tickets or tables",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Link, tickets or tables"
+  },
+  {
+   "id": "0923-pm",
+   "date": "2026-09-23",
+   "day": "Wednesday",
+   "slot": "Story, evening (optional)",
+   "title": "Can you spot Wally?",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/06-can-you-spot-wally.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Can you spot Wally?",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "19:00"
+  },
+  {
+   "id": "thu-grid-photos",
+   "date": "2026-09-24",
+   "day": "Thursday",
+   "slot": "Themed carousel from the 19th",
+   "title": "Themed carousel from the 19th",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "6 to 8 from the delivery. If the set has a gesture (wave, cheers, pout) that IS the carousel. If not, best candids, lead with the laugh. No photo reused within 14 days."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "0924-am",
+   "date": "2026-09-24",
+   "day": "Thursday",
+   "slot": "Story, before 11am",
+   "title": "Two more sleeps. The last Saturday of the summer.",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Two more sleeps. The last Saturday of the summer.\n\nSticker: Link",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "New frame, a crowd photo, renders in minutes."
+    }
+   ],
+   "time": "10:30",
+   "sticker": "Link"
+  },
+  {
+   "id": "0924-pm",
+   "date": "2026-09-24",
+   "day": "Thursday",
+   "slot": "Story, evening (optional)",
+   "title": "After Saturday, the yard changes.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/12-no-text.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "After Saturday, the yard changes.\n\nSticker: Question box: What do you reckon is coming?",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "THE MYSTERY STARTS HERE. No detail, no name, no date."
+    }
+   ],
+   "time": "19:00",
+   "sticker": "Question box: What do you reckon is coming?"
+  },
+  {
+   "id": "0925-am",
+   "date": "2026-09-25",
+   "day": "Friday",
+   "slot": "Story, before 11am",
+   "title": "Tomorrow. The last one.",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Tomorrow. The last one.\n\nSticker: Link",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Link"
+  },
+  {
+   "id": "0925-pm",
+   "date": "2026-09-25",
+   "day": "Friday",
+   "slot": "Story, evening (optional)",
+   "title": "One more Saturday. Then we start something.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/11-find-yourself.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "One more Saturday. Then we start something.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Second mystery beat."
+    }
+   ],
+   "time": "19:00"
+  },
+  {
+   "id": "sat-grid-moments",
+   "date": "2026-09-26",
+   "day": "Saturday",
+   "slot": "Moments at Merchants Yard",
+   "title": "Moments at Merchants Yard: the last Saturday",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Best of the summer's clips. Caption looks back and says thank you."
+    }
+   ],
+   "time": "11:00"
+  },
+  {
+   "id": "0926-capture",
+   "date": "2026-09-26",
+   "day": "Saturday",
+   "slot": "Shoot list",
+   "title": "CAPTURE: SHOOT NIGHT. Jan to camera, three takes of the transition li",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "SHOOT NIGHT. Jan to camera, three takes of the transition line (scripts on the closing page). Photographer doors to last song. Paul: the queue, the last pour, the group shot at peak, lights going off, the empty yard after. Venue phone on the six story run.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Not a post. What to film that day."
+    }
+   ]
+  },
+  {
+   "id": "0926-am",
+   "date": "2026-09-26",
+   "day": "Saturday",
+   "slot": "Story, before 11am",
+   "title": "Last one. Doors 2pm.",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Last one. Doors 2pm.\n\nSticker: Link",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:00",
+   "sticker": "Link"
+  },
+  {
+   "id": "sun-grid-transition",
+   "date": "2026-09-27",
+   "day": "Sunday",
+   "slot": "Transition reel",
+   "title": "Transition reel: Jan to camera",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Posts the day after so there is no gap. Caption: That's summer. We're not going anywhere. Chelsea's ask."
+    }
+   ],
+   "time": "12:00"
+  },
+  {
+   "id": "0927-am",
+   "date": "2026-09-27",
+   "day": "Sunday",
+   "slot": "Story, before 11am",
+   "title": "Share the transition reel",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Share the transition reel",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "The one Sunday story. It exists so the closed period starts the moment the party ends."
+    }
+   ],
+   "time": "12:00"
+  }
+ ],
+ "qc": []
+}

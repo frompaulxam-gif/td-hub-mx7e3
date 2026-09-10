@@ -1,0 +1,416 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-09-14",
+ "label": "W/C Mon 14 Sep 2026, Merchants Yard, phase 1 week 2",
+ "archived": false,
+ "key_dates": [
+  "Sat 12 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 19 Sep: billing TBC, Oktoberfest is OFF, ask Chelsea",
+  "Sat 26 Sep: SUMMER CLOSING PARTY (Chelsea, confirmed 9 Sep)",
+  "Sun 27 Sep: transition reel posts at midday",
+  "Reopening: TBC. Deck pencils preview Sat 17 Oct, opening Sat 24 Oct"
+ ],
+ "alerts": [
+  "* Closing date CONFIRMED: Sat 26 Sept. Countdowns unblocked.",
+  "* Oktoberfest is OFF. The 19th needs a confirmed act before its What's On renders.",
+  "* Stories every day except Sunday, before 11am (Chelsea). Evening story where we have material.",
+  "* Reopening date and name stay off every graphic until Chelsea and Nico confirm."
+ ],
+ "links": [
+  {
+   "label": "📁 Week folder",
+   "folder": "/Users/paulventura/TDG/merchants-yard/WEEKS/2026-09-14"
+  },
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "TDG Plan Ahead deck",
+   "url": "https://www.canva.com/design/DAHT9zw7brU/EDR09EW-IFw2rYNvj64anw/view"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  },
+  {
+   "label": "Closing plan PDF",
+   "folder": "/Users/paulventura/TDG/merchants-yard/CLOSING-PLAN"
+  }
+ ],
+ "prep": [],
+ "slots": [
+  {
+   "id": "0914-am",
+   "date": "2026-09-14",
+   "day": "Monday",
+   "slot": "Story, before 11am",
+   "title": "Share your Merchants Yard moment.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/02-share-your-merchants-yard-moment.jpg"
+   ],
+   "media_kind": "image",
+   "caption": "Share your Merchants Yard moment.\n\nSticker: Add Yours: Your Merchants Yard moment",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Add Yours: Your Merchants Yard moment"
+  },
+  {
+   "id": "0914-pm",
+   "date": "2026-09-14",
+   "day": "Monday",
+   "slot": "Story, evening (optional)",
+   "title": "Find yourself.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/11-find-yourself.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Find yourself.\n\nSticker: Countdown to Sat 26 Sept, 2pm",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "First countdown. Two Saturdays left after the 12th."
+    }
+   ],
+   "time": "19:00",
+   "sticker": "Countdown to Sat 26 Sept, 2pm"
+  },
+  {
+   "id": "tue-grid-recap",
+   "date": "2026-09-15",
+   "day": "Tuesday",
+   "slot": "Weekend recap reel, Sat 12 Sept (optional)",
+   "title": "Weekend recap reel, Sat 12 Sept (optional)",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Optional. Only if the clips from the 12th landed. Opens on Last Saturday with the date."
+    }
+   ],
+   "time": "18:30"
+  },
+  {
+   "id": "0915-am",
+   "date": "2026-09-15",
+   "day": "Tuesday",
+   "slot": "Story, before 11am",
+   "title": "Which is better?",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/03-which-is-better.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Which is better?\n\nSticker: Poll: Singalong songs / Dance along songs",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Poll: Singalong songs / Dance along songs"
+  },
+  {
+   "id": "wed-grid-whatson",
+   "date": "2026-09-16",
+   "day": "Wednesday",
+   "slot": "What's On, Sat 19 Sept",
+   "title": "What's On, Sat 19 Sept",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "BLOCKED: billing for the 19th is TBC. Oktoberfest is off. Ask Chelsea. Renders in 15 minutes once the act is confirmed."
+    }
+   ],
+   "time": "18:30"
+  },
+  {
+   "id": "0916-am",
+   "date": "2026-09-16",
+   "day": "Wednesday",
+   "slot": "Story, before 11am",
+   "title": "Can I book a table?",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Can I book a table?\n\nSticker: Link, book a table",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Approved FAQ card, stories/faq/f04c-table.png in w/c 31 Aug. Chelsea's table bookings subject."
+    }
+   ],
+   "time": "10:30",
+   "sticker": "Link, book a table"
+  },
+  {
+   "id": "0916-pm",
+   "date": "2026-09-16",
+   "day": "Wednesday",
+   "slot": "Story, evening (optional)",
+   "title": "What's On 9:16, Sat 19 Sept",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "What's On 9:16, Sat 19 Sept\n\nSticker: Link",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Renders with the grid post."
+    }
+   ],
+   "time": "19:00",
+   "sticker": "Link"
+  },
+  {
+   "id": "thu-grid-photos",
+   "date": "2026-09-17",
+   "day": "Thursday",
+   "slot": "Themed carousel from the 12th",
+   "title": "Themed carousel from the 12th",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "6 to 8 from the delivery. If the set has a gesture (wave, cheers, pout) that IS the carousel. If not, best candids, lead with the laugh. No photo reused within 14 days."
+    },
+    {
+     "ts": "2026-09-10",
+     "text": "One gesture across the set if the cameraman got it, otherwise the best candids. Paul picks 6 to 8 from the delivery."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "0917-am",
+   "date": "2026-09-17",
+   "day": "Thursday",
+   "slot": "Story, before 11am",
+   "title": "Which song gets you like this?",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/04-which-song-gets-you-like-this.jpg"
+   ],
+   "media_kind": "image",
+   "caption": "Which song gets you like this?\n\nSticker: Question box",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Question box"
+  },
+  {
+   "id": "0917-pm",
+   "date": "2026-09-17",
+   "day": "Thursday",
+   "slot": "Story, evening (optional)",
+   "title": "Weather check",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Weather check",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Only if Saturday looks good. Weather sticker tool, one day card, on a people clip."
+    }
+   ],
+   "time": "19:00"
+  },
+  {
+   "id": "0918-am",
+   "date": "2026-09-18",
+   "day": "Friday",
+   "slot": "Story, before 11am",
+   "title": "Get the table booked.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/09-get-the-table-booked.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Get the table booked.\n\nSticker: Link, book a table",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Link, book a table"
+  },
+  {
+   "id": "0918-pm",
+   "date": "2026-09-18",
+   "day": "Friday",
+   "slot": "Story, evening (optional)",
+   "title": "Two Saturdays left.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "../2026-09-07/stories/bank/FINAL/12-no-text.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Two Saturdays left.\n\nSticker: Countdown to Sat 26 Sept",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "19:00",
+   "sticker": "Countdown to Sat 26 Sept"
+  },
+  {
+   "id": "sat-grid-moments",
+   "date": "2026-09-19",
+   "day": "Saturday",
+   "slot": "Moments at Merchants Yard (montage reel)",
+   "title": "Moments at Merchants Yard (montage reel)",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Clips from the 12th plus archive. Fallback photo montage."
+    }
+   ],
+   "time": "11:00"
+  },
+  {
+   "id": "0919-capture",
+   "date": "2026-09-19",
+   "day": "Saturday",
+   "slot": "Shoot list",
+   "title": "CAPTURE: Cameraman on the brief again. Ask for the singalong moment s",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Cameraman on the brief again. Ask for the singalong moment specifically.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Not a post. What to film that day."
+    }
+   ]
+  },
+  {
+   "id": "0919-am",
+   "date": "2026-09-19",
+   "day": "Saturday",
+   "slot": "Story, before 11am",
+   "title": "Doors 2pm today.",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Doors 2pm today.\n\nSticker: Link, book a table",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Act line waits for Chelsea."
+    }
+   ],
+   "time": "10:00",
+   "sticker": "Link, book a table"
+  },
+  {
+   "id": "sun-grid-about",
+   "date": "2026-09-20",
+   "day": "Sunday",
+   "slot": "A Bit About the Yard, ep 2",
+   "title": "A Bit About the Yard, ep 2",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Needs verified answers. Fallback: the drinks, six photos, no facts needed."
+    }
+   ],
+   "time": "18:30"
+  }
+ ],
+ "qc": []
+}

@@ -1,0 +1,186 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-10-19",
+ "label": "W/C Mon 19 Oct 2026, Merchants Yard, Arrival: reopening week (all dates TBC until confirmed)",
+ "archived": false,
+ "key_dates": [
+  "Sat 12 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 19 Sep: billing TBC, Oktoberfest is OFF, ask Chelsea",
+  "Sat 26 Sep: SUMMER CLOSING PARTY (Chelsea, confirmed 9 Sep)",
+  "Sun 27 Sep: transition reel posts at midday",
+  "Reopening: TBC. Deck pencils preview Sat 17 Oct, opening Sat 24 Oct"
+ ],
+ "alerts": [
+  "* Closing date CONFIRMED: Sat 26 Sept. Countdowns unblocked.",
+  "* Oktoberfest is OFF. The 19th needs a confirmed act before its What's On renders.",
+  "* Stories every day except Sunday, before 11am (Chelsea). Evening story where we have material.",
+  "* Reopening date and name stay off every graphic until Chelsea and Nico confirm."
+ ],
+ "links": [
+  {
+   "label": "📁 Week folder",
+   "folder": "/Users/paulventura/TDG/merchants-yard/WEEKS/2026-10-19"
+  },
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "TDG Plan Ahead deck",
+   "url": "https://www.canva.com/design/DAHT9zw7brU/EDR09EW-IFw2rYNvj64anw/view"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  },
+  {
+   "label": "Closing plan PDF",
+   "folder": "/Users/paulventura/TDG/merchants-yard/CLOSING-PLAN"
+  }
+ ],
+ "prep": [],
+ "slots": [
+  {
+   "id": "mon-grid-reveal",
+   "date": "2026-10-19",
+   "day": "Monday",
+   "slot": "The reveal reel (from preview night)",
+   "title": "The reveal reel (from preview night)",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "Cut from preview night. This is the post the closed period was building to."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "stories-this-week",
+   "date": "2026-10-19",
+   "day": "Any day",
+   "slot": "Daily before 11am",
+   "title": "Stories this week",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Daily: one preview night clip with the countdown sticker. Sat: doors story then the live run, photographer on the brief.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Daily build clips come from the venue phone per the capture list."
+    }
+   ]
+  },
+  {
+   "id": "tue-grid-whatson",
+   "date": "2026-10-20",
+   "day": "Tuesday",
+   "slot": "What's On",
+   "title": "What's On: opening weekend",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "Render from the template once the venue confirms times and the ticket link."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "wed-grid-firstlook",
+   "date": "2026-10-21",
+   "day": "Wednesday",
+   "slot": "First look carousel",
+   "title": "First look carousel",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "The room from preview night, 6 to 8 photos."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "thu-grid-beforeafter",
+   "date": "2026-10-22",
+   "day": "Thursday",
+   "slot": "Before and after",
+   "title": "Before and after: August against now",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "The yard in August (delivery photos) against the tipi now, same angles where possible."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "fri-grid-countdown",
+   "date": "2026-10-23",
+   "day": "Friday",
+   "slot": "Doors tomorrow",
+   "title": "Doors tomorrow",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "Halloween date is from the TDG deck Q4 calendar, confirm before rendering."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  }
+ ],
+ "qc": []
+}

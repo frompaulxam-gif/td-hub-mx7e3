@@ -4,15 +4,21 @@
  "label": "W/C Mon 31 Aug 2026, Merchants Yard only",
  "archived": false,
  "key_dates": [
-  "Mon 31 Aug: CLOSED (bank holiday Monday), nothing posted",
-  "Sat 5 Sep: MY Presents: DJ Benzo, 2pm til midnight",
-  "Sun 6 Sep: closed, ordinary Sunday",
-  "Sat 19 + 26 Sep: Oktoberfest, tickets Coming Soon",
-  "Sat 3 Oct: MY Closing Weekend, Oktoberfest"
+  "Sat 5 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 12 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 19 Sep: Oktoberfest, tickets coming soon (website)",
+  "Sat 26 Sep: Oktoberfest, tickets coming soon (website). Nats wants this as CLOSING WEEKEND, pending confirmation",
+  "Sat 3 Oct: MY Closing Weekend: Oktoberfest, still on the website. Probably being dropped",
+  "Closed period: roughly 27 Sep to 16 Oct while the tipi goes up",
+  "Sat 17 Oct: Friends, Family and Press Preview, invite only (TDG deck)",
+  "Sat 24 Oct: Winter at the Yard, Opening Weekend (TDG deck)"
  ],
  "alerts": [
-  "* One event week. Saturday 5 Sept only, ordinary Sundays are closed and Fridays are finished.",
-  "* The website's opening hours still say Friday 5pm til midnight. That is wrong now, worth Chelsea fixing."
+  "* CLOSING DATE UNRESOLVED. Nats wants Sat 26 Sept, the website still says Sat 3 Oct (verified 7 Sept). No closing date and no Saturdays-left count on any graphic until Chelsea confirms. See CLOSING-AND-TIPI-BRIEF.md",
+  "* Only FOUR Saturdays of summer left if closing is 26 Sept: 5, 12, 19, 26. Five if it is 3 Oct. Every countdown post depends on that answer.",
+  "* After closing the venue reopens as a TIPI. Preview 17 Oct, opening 24 Oct per the TDG deck. The closed period is a content phase, not a gap.",
+  "* Fridays are finished, ordinary Sundays are closed. Saturdays only from here.",
+  "* The website footer still says Friday 4pm to 10pm even though Fridays are over. Worth Chelsea fixing."
  ],
  "links": [
   {
@@ -262,7 +268,7 @@
   },
   {
    "kind": "story",
-   "status": "approved",
+   "status": "waiting",
    "media": [
     "stories/final/thu 2 four saturdays left.mp4"
    ],
@@ -289,6 +295,14 @@
     {
      "ts": "2026-09-02",
      "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 6: clip changed to option B, wide of the crowd and the balcony bar, 19.10. Re-rendered at full quality, old file to Trash."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "BLOCKED. The count depends on whether closing weekend is 26 Sept or 3 Oct, which is not settled."
     }
    ],
    "template": null,
@@ -298,7 +312,8 @@
    "slot": "Reactive story",
    "title": "Four Saturdays left",
    "reference": "stories/final/thu 2 four saturdays left.orig.jpg",
-   "reference_label": "Before the text"
+   "reference_label": "Before the text",
+   "alert": true
   },
   {
    "kind": "story",
@@ -559,15 +574,15 @@
    "day": "Wednesday",
    "kind": "story",
    "slot": "Reactive story",
-   "title": "Quiz: doors open Saturday at",
+   "title": "Trivia question: doors open Saturday at",
    "status": "approved",
    "media": [
-    "stories/final/wed 1 quick one.mp4"
+    "stories/final/wed 1 trivia questions.mp4"
    ],
    "media_kind": "video",
-   "reference": "stories/final/wed 1 quick one.orig.jpg",
+   "reference": "stories/final/wed 1 trivia questions.orig.jpg",
    "reference_label": "Before the text",
-   "caption": "QUIZ sticker.\n\nOn screen: Quick one.\nQuestion: Doors open Saturday at\nOptions: 12pm / 2pm / 4pm. Correct answer 2pm.\n\nTeaches the door time without a graphic.",
+   "caption": "QUIZ sticker.\n\nOn screen: Trivia questions.\nQuestion: Doors open Saturday at\nOptions: 12pm / 2pm / 4pm. Correct answer 2pm.\n\nTeaches the door time without a graphic.",
    "alternates": [],
    "songs": [],
    "checklist": [],
@@ -580,6 +595,10 @@
     {
      "ts": "2026-09-02",
      "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "Paul: on screen line changed from Quick one to Trivia questions. Clip re-rendered, file renamed."
     }
    ]
   },
@@ -610,6 +629,10 @@
     {
      "ts": "2026-09-02",
      "text": "Final render: text burned in, sticker left off so Paul places it in the app. Clean no-text version in stories/final/clean."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "QC round 6: clip changed to option B, crowd on the benches under the banners, 18.50. Re-rendered at full quality, old file to Trash."
     }
    ]
   },
@@ -880,6 +903,165 @@
      "text": "QC round 4: KEEP."
     }
    ]
+  },
+  {
+   "id": "reactive-new-1",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: The violinist",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Clip: 18.40 violinist on stage retro swirl screen (4829).MOV\n\nNo text needed, the surprise is the point. If you want a line: live music in the yard, not just DJs.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: Nobody expects a violinist at an outdoor bar. It is the most unusual 18 seconds in the whole folder and it says the venue books more than DJs. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "reactive-new-2",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Balcony view",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Clip: 20.36 balcony view over yard and screen (4897).MOV\n\nText: the view from up here.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: Shows the whole venue in one shot. Nothing else in the folder gives scale like this, and people who have never been cannot picture the place from ground level clips. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "reactive-new-3",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Arrivals",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Clip: 19.04 women arriving under disco balls (4850).MOV\n\nText: 7pm and it is filling up.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: Arrival energy is the story that makes someone else get ready. Better than a peak time clip for a midweek nudge. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "reactive-new-4",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: The horsebox bar",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Clip: 20.08 crowd at horsebox bar (4862).MOV\n\nText: first one is always the best one.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: The horsebox is the most distinctive thing in the yard and it barely appears on the grid. Pure venue identity. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "reactive-new-5",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Empty to full",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Two clips, same angle, posted as one story or a two frame reel:\n  before  18.55 high view entrance gate and benches (4848).MOV\n  after   20.37 high view crowd under glowing screen (4899).MOV\n\nText: 6pm vs 8pm.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: The transformation does the work. Same camera position at two times of night is the cheapest strong idea in the folder. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "reactive-new-6",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Poll, what time do you land",
+   "status": "draft",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Poll sticker over a wide yard clip, for example 18.52 blue sky wide of packed yard (4844).MOV\n\nQuestion: what time are you getting here Saturday?\nOptions: 2pm, straight from work, after 9",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: Real answer Paul can use: it tells the venue when to staff the bar and tells you when to post the doors story. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    }
+   ],
+   "template": null
+  },
+  {
+   "id": "reactive-new-7",
+   "date": "",
+   "day": "Any day",
+   "kind": "story",
+   "slot": "Reactive story",
+   "title": "Reactive: Quiz, Saturdays left",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Quiz sticker over any dusk clip, for example 20.33 dusk crowd mingling under festoon lights (4889).MOV\n\nQuestion: how many Saturdays are left this season?\nOptions: 2, 4, 6. Correct answer is 4.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-02",
+     "text": "Why this one: Turns the season close into a game instead of an announcement. Checked against the website: 5th, 12th (DJ Benzo), 19th, 26th (Oktoberfest), then closing weekend 3 Oct. The count stays off until the closing date is confirmed. Clips are in ~/Downloads/merchants iphone 22nd aug/ (Park Life, 22 Aug)."
+    },
+    {
+     "ts": "2026-09-02",
+     "text": "BLOCKED. The count depends on whether closing weekend is 26 Sept or 3 Oct, which is not settled."
+    }
+   ],
+   "template": null,
+   "alert": true
   }
  ],
  "qc": [
@@ -975,6 +1157,22 @@
     "f04d",
     "f04e",
     "f04f"
+   ]
+  },
+  {
+   "round": "stories r6 new clips",
+   "date": "2026-09-02",
+   "kept": [
+    "sat4-B",
+    "doing-B"
+   ],
+   "left": [
+    "sat4-A",
+    "sat4-C",
+    "sat4-D",
+    "doing-A",
+    "doing-C",
+    "doing-D"
    ]
   }
  ]

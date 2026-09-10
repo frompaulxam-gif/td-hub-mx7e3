@@ -1,0 +1,365 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-09-07",
+ "label": "W/C Mon 7 Sep 2026, Merchants Yard, phase 1 week 1",
+ "archived": false,
+ "key_dates": [
+  "Sat 12 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 19 Sep: billing TBC, Oktoberfest is OFF, ask Chelsea",
+  "Sat 26 Sep: SUMMER CLOSING PARTY (Chelsea, confirmed 9 Sep)",
+  "Sun 27 Sep: transition reel posts at midday",
+  "Reopening: TBC. Deck pencils preview Sat 17 Oct, opening Sat 24 Oct"
+ ],
+ "alerts": [
+  "* Closing date CONFIRMED: Sat 26 Sept. Countdowns unblocked.",
+  "* Oktoberfest is OFF. The 19th needs a confirmed act before its What's On renders.",
+  "* Stories every day except Sunday, before 11am (Chelsea). Evening story where we have material.",
+  "* Reopening date and name stay off every graphic until Chelsea and Nico confirm."
+ ],
+ "links": [
+  {
+   "label": "📁 Week folder",
+   "folder": "/Users/paulventura/TDG/merchants-yard/WEEKS/2026-09-07"
+  },
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "TDG Plan Ahead deck",
+   "url": "https://www.canva.com/design/DAHT9zw7brU/EDR09EW-IFw2rYNvj64anw/view"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  },
+  {
+   "label": "Closing plan PDF",
+   "folder": "/Users/paulventura/TDG/merchants-yard/CLOSING-PLAN"
+  }
+ ],
+ "prep": [
+  {
+   "text": "Send the photographer brief (CLOSING-PLAN/briefs/photographer-brief.pdf)",
+   "done": false
+  },
+  {
+   "text": "Send the Saturday night brief to whoever holds the venue phone (CLOSING-PLAN/briefs/saturday-night-brief.pdf)",
+   "done": false
+  },
+  {
+   "text": "Ask Nico for the build archive (how Merchants Yard was built post)",
+   "done": false
+  },
+  {
+   "text": "Confirm the closing date with Chelsea, and whether the tipi can be named before then",
+   "done": false
+  },
+  {
+   "text": "Upload the weekend photos and videos to the Merchants Yard photos drive",
+   "done": false
+  }
+ ],
+ "slots": [
+  {
+   "id": "tue-grid-whatson",
+   "date": "2026-09-08",
+   "day": "Tuesday",
+   "slot": "What's On carousel",
+   "title": "What's on this weekend (Sat 12 Sept)",
+   "kind": "grid",
+   "status": "ready",
+   "media": [
+    "grid/whats-on/slide-01.png",
+    "grid/whats-on/slide-02.png"
+   ],
+   "media_kind": "carousel",
+   "caption": "Every decade, one Saturday ☀️\n\n🎤 Saturday - MY Presents: DJ Benzo. A journey through the decades. Music you'll know, music you'll sing, music you'll dance to.\n\n2pm til midnight.\n\nTables are available via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [
+    "Every decade, one Saturday ☀️\n\n🎤 Saturday - MY Presents: DJ Benzo. Music you'll know, music you'll sing, music you'll dance to.\n\n2pm til midnight. Tables via www.merchantsyardleicester.co.uk",
+    "You will know every single one ☀️\n\n🎤 Saturday - MY Presents: DJ Benzo. A journey through the decades.\n\n2pm til midnight. Get the table booked via www.merchantsyardleicester.co.uk\n\nSee you in the yard."
+   ],
+   "songs": [
+    "Earth, Wind & Fire - Boogie Wonderland  ·  the decades promise in one track, and everyone knows the chorus",
+    "Robin S - Show Me Love  ·  90s house, already used on a Yard story and it fits the dance side of the poll",
+    "Whitney Houston - I Wanna Dance With Somebody  ·  the safest singalong there is, works under a swipe"
+   ],
+   "checklist": [
+    {
+     "text": "Unpin last week's What's On, pin this one",
+     "done": false
+    }
+   ],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "Render from TEMPLATES/whats-on with the website line-up. Pin it, unpin last week's."
+    },
+    {
+     "ts": "2026-09-09",
+     "text": "QC'd 9 Sept: Paul picked the pink Carnival dancer. Slide 1 LV400722, slide 2 LV400756, both from the 30 Aug Carnival delivery. Shade lifted 0.65 to 0.55 and the weekend text block moved down 150px so her face is not covered. Story matches, text down 360px total and logo moved to y1620. NOTE: dancers are from Carnival 30 Aug, not this Saturday. NOTE: graphic says 2pm til midnight, website footer says 2pm to 10pm, worth Chelsea confirming."
+    }
+   ],
+   "template": {
+    "name": "whats-on",
+    "layout": "WEEKS/2026-09-07/renders/whats-on.layout.json",
+    "content": "WEEKS/2026-09-07/renders/whats-on.content.json",
+    "out": "WEEKS/2026-09-07/grid/whats-on/"
+   }
+  },
+  {
+   "id": "wed-story-whatson",
+   "date": "2026-09-09",
+   "day": "Wednesday",
+   "slot": "Repost the grid post",
+   "title": "What's On story (9:16)",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "stories/whats-on-story/whats-on-story.png"
+   ],
+   "media_kind": "image",
+   "caption": "Share the What's On to story the day after the grid post. Link sticker to the website.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [],
+   "template": {
+    "name": "lineup-story",
+    "layout": "WEEKS/2026-09-07/renders/whats-on-story.layout.json",
+    "content": "WEEKS/2026-09-07/renders/whats-on-story.content.json",
+    "out": "WEEKS/2026-09-07/stories/whats-on-story/whats-on-story.png"
+   }
+  },
+  {
+   "id": "thu-grid-photos",
+   "date": "2026-09-10",
+   "day": "Thursday",
+   "slot": "Themed carousel",
+   "title": "Weekend photos carousel (Sat 5 Sept)",
+   "kind": "grid",
+   "status": "ready",
+   "media": [
+    "grid/thursday-photos/LV400264.jpg",
+    "grid/thursday-photos/LV400327.jpg",
+    "grid/thursday-photos/LV400503.jpg",
+    "grid/thursday-photos/LV400510.jpg",
+    "grid/thursday-photos/LV400462.jpg",
+    "grid/thursday-photos/LV400274.jpg",
+    "grid/thursday-photos/LV400154.jpg",
+    "grid/thursday-photos/LV400120.jpg"
+   ],
+   "media_kind": "none",
+   "caption": "That bit where everyone's arms go up.\n\nDJ Benzo this Saturday, 2pm til midnight. Tables via www.merchantsyardleicester.co.uk\n\nSee you in the yard.",
+   "alternates": [
+    "Not one hand stayed down.\n\nDJ Benzo this Saturday, 2pm til midnight. Tables on our website.\n\nSee you in the yard.",
+    "Arms up, all night.\n\nSame again this Saturday. DJ Benzo, 2pm til midnight."
+   ],
+   "songs": [
+    "Ottawan - Hands Up (Give Me Your Heart)  ·  literally hands up baby hands up, 1981 disco so it fits the decades billing, warm rather than clubby",
+    "Fedde Le Grand - Put Your Hands Up For Detroit  ·  harder and more dancefloor, use it if you want it to feel like the night rather than the morning after",
+    "Busta Rhymes - Put Your Hands Where My Eyes Could See  ·  90s, recognisable in two notes"
+   ],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "6 to 8 from the delivery. If the set has a gesture (wave, cheers, pout) that IS the carousel. If not, best candids, lead with the laugh. No photo reused within 14 days."
+    },
+    {
+     "ts": "2026-09-08",
+     "text": "Paul picked these 8 from the 5 Sept delivery. Order to QC. Mixed mono and colour, and there is no single gesture running through them, so this is the classic weekend photos carousel rather than the themed one. LV400264 (mono, arms up, laughing) is the strongest lead. LV400327 (group round a table, peace signs, looking at camera) is the only one with a gesture and it is the best tag bait."
+    },
+    {
+     "ts": "2026-09-10",
+     "text": "Ready. Lead LV400264, then LV400327. Caption and Ottawan saved on the slot."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "0910-am",
+   "date": "2026-09-10",
+   "day": "Thursday",
+   "slot": "Story, before 11am",
+   "title": "Bench or dancefloor?",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "stories/bank/FINAL/07-bench-or-dancefloor.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "Bench or dancefloor?\n\nSticker: Poll: Bench / Dancefloor",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Poll: Bench / Dancefloor"
+  },
+  {
+   "id": "0910-pm",
+   "date": "2026-09-10",
+   "day": "Thursday",
+   "slot": "Story, evening (optional)",
+   "title": "What's On 9:16, Sat 12 Sept",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "What's On 9:16, Sat 12 Sept\n\nSticker: Link, book a table",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Rendered, stories/whats-on-story/whats-on-story.png"
+    }
+   ],
+   "time": "19:00",
+   "sticker": "Link, book a table"
+  },
+  {
+   "id": "0911-am",
+   "date": "2026-09-11",
+   "day": "Friday",
+   "slot": "Story, before 11am",
+   "title": "Tables for Saturday are up.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "stories/bank/FINAL/08-tables-for-saturday-are-up.jpg"
+   ],
+   "media_kind": "image",
+   "caption": "Tables for Saturday are up.\n\nSticker: Link, book a table",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "10:30",
+   "sticker": "Link, book a table"
+  },
+  {
+   "id": "0911-pm",
+   "date": "2026-09-11",
+   "day": "Friday",
+   "slot": "Story, evening (optional)",
+   "title": "See you Saturday. Doors 2pm.",
+   "kind": "story",
+   "status": "ready",
+   "media": [
+    "stories/bank/FINAL/01-see-you-saturday-doors-2pm.mp4"
+   ],
+   "media_kind": "video",
+   "caption": "See you Saturday. Doors 2pm.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [],
+   "time": "19:00"
+  },
+  {
+   "id": "sat-grid-moments",
+   "date": "2026-09-12",
+   "day": "Saturday",
+   "slot": "Moments at Merchants Yard (montage reel)",
+   "title": "Moments at Merchants Yard (montage reel)",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Needs the cameraman clips from the 5th. Fallback: photo montage from the 5 Sept delivery. Real sound, no trending audio."
+    }
+   ],
+   "time": "11:00"
+  },
+  {
+   "id": "0912-capture",
+   "date": "2026-09-12",
+   "day": "Saturday",
+   "slot": "Shoot list",
+   "title": "CAPTURE: Cameraman on the brief: six clips, one gesture across the gr",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Cameraman on the brief: six clips, one gesture across the groups. Venue phone: six story run, keep the originals.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Not a post. What to film that day."
+    }
+   ]
+  },
+  {
+   "id": "0912-am",
+   "date": "2026-09-12",
+   "day": "Saturday",
+   "slot": "Story, before 11am",
+   "title": "Doors 2pm. DJ Benzo, a journey through the decades.",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Doors 2pm. DJ Benzo, a journey through the decades.\n\nSticker: Link, book a table",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Paul's doors story. Live run from the venue phone after 2pm."
+    }
+   ],
+   "time": "10:00",
+   "sticker": "Link, book a table"
+  },
+  {
+   "id": "sun-grid-about",
+   "date": "2026-09-13",
+   "day": "Sunday",
+   "slot": "A Bit About the Yard, ep 1",
+   "title": "A Bit About the Yard, ep 1: How Merchants Yard started",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "BLOCKED on verified answers from the venue (see capture list, 10 questions for Jan). Fallback if no answers by Friday: Summer so far, six best photos across the deliveries."
+    }
+   ],
+   "time": "18:30"
+  }
+ ],
+ "qc": []
+}

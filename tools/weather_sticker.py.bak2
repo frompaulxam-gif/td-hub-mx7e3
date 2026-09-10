@@ -60,7 +60,6 @@ RULE_XS = (217.5, 433.5)   # centres of the two vertical rules
 GEOM = {
     3: {"ref_w": 654, "lefts": (3.0, 219.5, 435.5), "rules": (217.5, 433.5)},
     2: {"ref_w": 438, "lefts": (3.0, 219.5),        "rules": (217.5,)},
-    1: {"ref_w": 222, "lefts": (3.0,),              "rules": ()},
 }
 RULE_W = 2.0
 RULE_Y0, RULE_Y1 = 3.0, 178.0

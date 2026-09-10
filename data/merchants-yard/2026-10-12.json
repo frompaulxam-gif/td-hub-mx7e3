@@ -1,0 +1,145 @@
+{
+ "venue": "merchants-yard",
+ "week_start": "2026-10-12",
+ "label": "W/C Mon 12 Oct 2026, Merchants Yard, The Inbetween, week 3: name and date, if confirmed",
+ "archived": false,
+ "key_dates": [
+  "Sat 12 Sep: DJ Benzo, A journey through the decades (website)",
+  "Sat 19 Sep: billing TBC, Oktoberfest is OFF, ask Chelsea",
+  "Sat 26 Sep: SUMMER CLOSING PARTY (Chelsea, confirmed 9 Sep)",
+  "Sun 27 Sep: transition reel posts at midday",
+  "Reopening: TBC. Deck pencils preview Sat 17 Oct, opening Sat 24 Oct"
+ ],
+ "alerts": [
+  "* Closing date CONFIRMED: Sat 26 Sept. Countdowns unblocked.",
+  "* Oktoberfest is OFF. The 19th needs a confirmed act before its What's On renders.",
+  "* Stories every day except Sunday, before 11am (Chelsea). Evening story where we have material.",
+  "* Reopening date and name stay off every graphic until Chelsea and Nico confirm."
+ ],
+ "links": [
+  {
+   "label": "📁 Week folder",
+   "folder": "/Users/paulventura/TDG/merchants-yard/WEEKS/2026-10-12"
+  },
+  {
+   "label": "Photos drive",
+   "url": "https://drive.google.com/drive/folders/1cZVSM5QL7Q1nCJx-bDYnDPe8ab3hwSKH"
+  },
+  {
+   "label": "Canva file",
+   "url": "https://www.canva.com/design/DAHIDIWdn7g/zJ59v4mFBuhMvFG1bk4EuQ/edit"
+  },
+  {
+   "label": "TDG Plan Ahead deck",
+   "url": "https://www.canva.com/design/DAHT9zw7brU/EDR09EW-IFw2rYNvj64anw/view"
+  },
+  {
+   "label": "@merchants.yard",
+   "url": "https://www.instagram.com/merchants.yard/"
+  },
+  {
+   "label": "Closing plan PDF",
+   "folder": "/Users/paulventura/TDG/merchants-yard/CLOSING-PLAN"
+  }
+ ],
+ "prep": [],
+ "slots": [
+  {
+   "id": "mon-grid-announce",
+   "date": "2026-10-12",
+   "day": "Monday",
+   "slot": "ANNOUNCE",
+   "title": "ANNOUNCE: name and opening date",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "Name and date announced this week, per the TDG deck. Blocked until the venue confirms the opening date and the name."
+    },
+    {
+     "ts": "2026-09-10",
+     "text": "ONLY when Chelsea and Nico confirm. The deck pencils Winter at the Yard, Sat 24 Oct. Not before."
+    }
+   ],
+   "template": null,
+   "alert": "Opening date and name unconfirmed. Do not render until Chelsea confirms.",
+   "time": "18:30"
+  },
+  {
+   "id": "stories-this-week",
+   "date": "2026-10-12",
+   "day": "Any day",
+   "slot": "Daily before 11am",
+   "title": "Stories this week",
+   "kind": "story",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "Daily build clips. Countdown sticker to opening once the date is public. Sat 17 Oct: preview night (deck, TBC), photographer plus Paul, this fuels the reveal.",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Daily build clips come from the venue phone per the capture list."
+    }
+   ]
+  },
+  {
+   "id": "tue-grid-build-diary",
+   "date": "2026-10-13",
+   "day": "Tuesday",
+   "slot": "Build diary 2",
+   "title": "Build diary 2",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "notes": [
+    {
+     "ts": "2026-09-07",
+     "text": "Cut from Paul's weekly site visit. Tent going up, summer coming down, lights arriving. No full reveal until opening week."
+    }
+   ],
+   "template": null,
+   "time": "18:30"
+  },
+  {
+   "id": "thu-grid-about",
+   "date": "2026-10-15",
+   "day": "Thursday",
+   "slot": "A Bit About the Yard",
+   "title": "A Bit About the Yard: how it started (archive edition)",
+   "kind": "grid",
+   "status": "waiting",
+   "media": [],
+   "media_kind": "none",
+   "caption": "",
+   "alternates": [],
+   "songs": [],
+   "checklist": [],
+   "template": null,
+   "notes": [
+    {
+     "ts": "2026-09-10",
+     "text": "Needs Jan's answers and Nico's archive."
+    }
+   ],
+   "time": "18:30"
+  }
+ ],
+ "qc": []
+}
